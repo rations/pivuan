@@ -97,6 +97,7 @@ Run it with a menu, or give it a command:
 sudo pivuan-config                 # menu: system, network, localisation, software, desktops
 sudo pivuan-config --cmd help      # list the commands
 pivuan-config --help
+pivuan-config --doc                # this README
 ```
 
 ## Updates
