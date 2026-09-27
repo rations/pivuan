@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<p align="center"><b>Devuan with sysvinit for the Raspberry Pi. No systemd.</b></p>
+<p align="center"><b>Devuan with sysvinit for the Raspberry Pi.</b></p>
 
 ---
 
