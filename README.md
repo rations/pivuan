@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<p align="center"><b>Devuan with sysvinit for the Raspberry Pi.</b></p>
+<p align="center"><b>Devuan with sysvinit for the Raspberry Pi. No systemd.</b></p>
 
 ---
 
@@ -18,8 +18,8 @@ configuration tool), and gets its updates from Devuan and from its own apt repos
   `pivuan-config` tool. Add only what you need.
 - **sysvinit, no systemd**: `init` is PID 1, with elogind, eudev and ifupdown. Packages that
   would pull in systemd are left out.
-- **Desktop in one command**: XFCE with a LightDM login screen, installed from the Devuan
-  archive by `pivuan-config`.
+- **Desktop in one command**: XFCE or MATE with a LightDM login screen, installed from the
+  Devuan archive by `pivuan-config`.
 - **Kept up to date**: Devuan's security updates through apt, and the Raspberry Pi kernel,
   firmware, board support and `pivuan-config` through the Pivuan apt repository.
 
@@ -72,15 +72,17 @@ change it.
 
 ## Desktop
 
-The image is minimal on purpose. To add the XFCE desktop, log in and run:
+The image is minimal on purpose. To add a desktop, log in and run one of:
 
 ```sh
-sudo pivuan-config --cmd XFCE01
+sudo pivuan-config --cmd XFCE01    # XFCE
+sudo pivuan-config --cmd MATE01    # MATE
 ```
 
 This installs, from the Devuan archive:
 
-- **XFCE** with `xfce4-terminal`, the Pivuan menu icon and background,
+- **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `terminator`,
+  both with the Pivuan background,
 - the **LightDM** login screen (no automatic login),
 - **NetworkManager** with its tray applet (your wired and Wi-Fi settings are moved over),
 - **PulseAudio** for sound and Bluetooth audio,
@@ -99,6 +101,11 @@ sudo pivuan-config --cmd help      # list the commands
 pivuan-config --help
 pivuan-config --doc                # this README
 ```
+
+Network settings: with a desktop installed, NetworkManager runs the network. Use the
+network icon in the panel, or **Network → Network connections** in `pivuan-config` (the
+same as `sudo nmtui`). On a console-only system, **Network → Switch to NetworkManager**
+moves your wired and Wi-Fi settings over to it first.
 
 ## Updates
 
