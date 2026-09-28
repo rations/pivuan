@@ -1,0 +1,156 @@
+# Build XLibre (the X server and its libinput driver) for Pivuan and, with "publish", add it
+# to the Pivuan apt repository (this repository's gh-pages branch).
+#
+# xlibre-debian's packages need Devuan's backports on excalibur. These are built from X11Libre's
+# release tags with xlibre-debian's packaging (xlibre/xlibre.conf pins both), in an excalibur
+# arm64 root made with mmdebstrap from the Devuan archive (pinned Devuan keys), natively on
+# GitHub's arm64 runner, against excalibur's own libraries. The packages are then installed in a
+# clean excalibur root and checked: XLibre's Xorg runs, modesetting with glamor and libinput are
+# there and find their libraries, and the server uses libseat (seatd), not systemd-logind.
+#
+# The Devuan keyring check and the apt repository scripts are shared with the image build: they
+# are read from rations/build (branch pivuan, .github/pivuan/).
+#
+# Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
+# rations/build). The push to gh-pages uses this workflow's own token.
+
+name: XLibre for Pivuan
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the packages to the Pivuan apt repository"
+        type: boolean
+        default: false
+      build_ref:
+        description: "rations/build branch with the shared scripts"
+        type: string
+        default: pivuan
+  # A push to the xlibre branch builds and checks (never publishes). Starting the workflow
+  # by hand (and so publishing) needs it on the default branch.
+  push:
+    branches: [xlibre]
+    paths:
+      - "xlibre/**"
+      - ".github/workflows/xlibre.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pivuan-xlibre-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: XLibre for excalibur arm64
+    runs-on: ubuntu-24.04-arm
+    env:
+      DEVUAN_KEY_FINGERPRINTS: ${{ vars.DEVUAN_KEY_FINGERPRINTS || '72E3CB773315DFA2E464743D94532124541922FB 9F8D6C74DE661075FD171BE3B3982868D104092C' }}
+      # The Pivuan base stack, as on the image.
+      BASE_PACKAGES: >-
+        devuan-keyring ca-certificates file sysvinit-core sysv-rc orphan-sysvinit-scripts eudev
+        elogind libpam-elogind dbus
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - name: Host tools
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends mmdebstrap gpg gpgv xz-utils
+
+      - name: Devuan keyring
+        run: bash build-scripts/.github/pivuan/devuan-keyring.sh excalibur "${RUNNER_TEMP}/keys/devuan-archive-keyring.gpg"
+
+      - name: Build the excalibur arm64 root
+        run: |
+          set -euo pipefail
+          # apt trusts only the pinned Devuan keys (signed-by); only excalibur main, no backports.
+          keyring=/usr/share/keyrings/pivuan-check-devuan.gpg
+          sudo install -Dm 0644 "${RUNNER_TEMP}/keys/devuan-archive-keyring.gpg" "${keyring}"
+          sudo mmdebstrap --verbose --variant=minbase --architectures=arm64 \
+            --include="$(tr -s ' ' ',' <<< "${BASE_PACKAGES}")" \
+            --setup-hook="install -Dm 0644 '${keyring}' \"\$1${keyring}\"" \
+            --customize-hook="echo 'deb-src [signed-by=${keyring}] http://deb.devuan.org/merged excalibur main' >> \"\$1/etc/apt/sources.list\"" \
+            excalibur "${RUNNER_TEMP}/root.tar" \
+            "deb [signed-by=${keyring}] http://deb.devuan.org/merged excalibur main"
+          sudo docker import "${RUNNER_TEMP}/root.tar" pivuan-excalibur:xlibre
+          sudo rm -f "${RUNNER_TEMP}/root.tar"
+
+      - name: Build XLibre
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/out"
+          sudo docker run --rm -v "${PWD}:/src:ro" -v "${RUNNER_TEMP}/out:/out" \
+            pivuan-excalibur:xlibre bash /src/xlibre/build-xlibre.sh build /out
+
+      - name: Install and check in a clean root
+        run: |
+          set -euo pipefail
+          touch "${RUNNER_TEMP}/summary.md"
+          sudo docker run --rm -v "${PWD}:/src:ro" -v "${RUNNER_TEMP}/out:/debs:ro" \
+            -v "${RUNNER_TEMP}/summary.md:/summary.md" -e SUMMARY=/summary.md \
+            pivuan-excalibur:xlibre bash /src/xlibre/build-xlibre.sh check /debs \
+            || status=$?
+          cat "${RUNNER_TEMP}/summary.md" >> "${GITHUB_STEP_SUMMARY}"
+          exit "${status:-0}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xlibre-debs
+          path: ${{ runner.temp }}/out/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: inputs.publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: xlibre-debs
+          path: debs
+
+      - name: Publish to the Pivuan apt repository
+        env:
+          SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
+          REPO_TOKEN: ${{ github.token }}
+          PIVUAN_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
+          command -v apt-ftparchive > /dev/null || sudo apt-get install -y -q apt-utils
+          export GNUPGHOME="${RUNNER_TEMP}/gnupg"
+          mkdir -m 700 "${GNUPGHOME}"
+          gpg --batch --quiet --import <<< "${SIGNING_KEY}"
+          PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
+          [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
+          export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
+          bash build-scripts/.github/pivuan/publish-pages.sh "xlibre-${GITHUB_RUN_NUMBER}" debs
+          {
+            echo "## Apt repository"
+            echo ""
+            echo '```'
+            cat "${PIVUAN_PAGES_LIST}"
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"
