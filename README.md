@@ -81,7 +81,7 @@ sudo pivuan-config --cmd MATE01    # MATE
 
 This installs, from the Devuan archive:
 
-- **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `terminator`,
+- **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `mate-terminal`,
   both with the Pivuan background,
 - the **LightDM** login screen (no automatic login),
 - **NetworkManager** with its tray applet (your wired and Wi-Fi settings are moved over),
