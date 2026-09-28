@@ -147,19 +147,32 @@ cmd_check() {
 	summary "\`Xorg -version\`: $(grep -m1 'XLibre' <<< "${version}" || echo 'no XLibre line')"
 
 	# What the Pi 5 needs: modesetting with glamor (GPU acceleration through Mesa), libinput.
-	for f in /usr/lib/xorg/modules/drivers/modesetting_drv.so /usr/lib/xorg/modules/libglamoregl.so \
-		/usr/lib/xorg/modules/input/libinput_drv.so /usr/lib/xorg/Xorg; do
-		[[ -f "${f}" ]] || { echo "::error::missing ${f}"; fail=1; continue; }
-		if ldd "${f}" 2>&1 | grep -q 'not found'; then
-			echo "::error::${f}: $(ldd "${f}" | grep 'not found' | tr '\n' ' ')"
+	# XLibre keeps its own modules in modules/xlibre-25 (the ABI tag); driver packages may use
+	# the base folder, which the loader also searches.
+	local mod path
+	for mod in modesetting_drv.so libglamoregl.so libinput_drv.so; do
+		path="$(find /usr/lib/xorg/modules -name "${mod}" -print -quit)"
+		[[ -n "${path}" ]] || { echo "::error::no ${mod} under /usr/lib/xorg/modules"; fail=1; continue; }
+		summary "- \`${path}\`"
+		if ldd "${path}" 2>&1 | grep -q 'not found'; then
+			echo "::error::${path}: $(ldd "${path}" | grep 'not found' | tr '\n' ' ')"
+			fail=1
+		fi
+		if [[ "${mod}" == libglamoregl.so ]] && ! ldd "${path}" | grep -q 'libgbm'; then
+			echo "::error::glamor is not linked with Mesa's GBM"
 			fail=1
 		fi
 	done
-	ldd /usr/lib/xorg/modules/libglamoregl.so | grep -q 'libgbm' || { echo "::error::glamor is not linked with Mesa's GBM"; fail=1; }
+	if ldd /usr/lib/xorg/Xorg 2>&1 | grep -q 'not found'; then
+		echo "::error::/usr/lib/xorg/Xorg: $(ldd /usr/lib/xorg/Xorg | grep 'not found' | tr '\n' ' ')"
+		fail=1
+	fi
 
-	# The server was built with libseat (seatd), not systemd-logind.
+	# The server was built with libseat (seatd), not systemd-logind. (Devuan's libseat itself
+	# pulls in libsystemd0, so only the server's own dependencies count: its dynamic string
+	# table names the libraries it links.)
 	ldd /usr/lib/xorg/Xorg | grep -q 'libseat' || { echo "::error::Xorg is not linked with libseat"; fail=1; }
-	if ldd /usr/lib/xorg/Xorg | grep -q 'libsystemd'; then echo "::error::Xorg is linked with libsystemd"; fail=1; fi
+	if grep -q 'libsystemd\.so' /usr/lib/xorg/Xorg; then echo "::error::Xorg itself links libsystemd"; fail=1; fi
 
 	summary ""
 	summary "Checks: $([[ ${fail} == 0 ]] && echo passed || echo '**failed**')"
