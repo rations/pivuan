@@ -1,28 +1,29 @@
-# Add vstbridge and its Wine (wine-fex, wine-fex-i386, wine-fex-mono, vstbridge) to the Pivuan
-# apt repository (this repository's gh-pages branch), from a release of rations/vstbridge.
+# Build vstbridge and its Wine (wine-fex, wine-fex-i386, wine-fex-mono, vstbridge) for Pivuan and,
+# with "publish", add them to the Pivuan apt repository (this repository's gh-pages branch).
 #
-# The packages are built, installed and checked by the "aarch64 build" workflow in
-# rations/vstbridge, which makes a pre-release with them (tag aarch64-<version>-<commits>) when
-# it is started with "release". This workflow downloads a release's packages, checks them against
-# its SHA256SUMS and that they are exactly those four packages, and publishes them. Publishing
-# here, like XLibre, means the push to gh-pages uses this workflow's own token and rations/vstbridge
-# needs no token for this repository.
+# The build is rations/vstbridge's own "aarch64 build" workflow (.github/workflows/aarch64.yml on
+# its arm64 branch), called here as a reusable workflow: it builds Wine with FEX and vstbridge on
+# GitHub's arm64 runner, packages them, and installs and runs the packages in a clean Debian
+# trixie container. Because it runs as part of this workflow, the packages are an artifact of this
+# run, and publishing them needs no release in rations/vstbridge and no token for it, as for
+# XLibre. Its Wine and FEX builds are cached in this repository (the first run builds Wine, which
+# takes a few hours).
 #
 # The apt repository scripts are shared with the image build: they are read from rations/build
 # (branch pivuan, .github/pivuan/).
 #
 # Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
-# rations/build), which XLibre already uses.
+# rations/build). The push to gh-pages uses this workflow's own token.
 
 name: vstbridge for Pivuan
 
 on:
   workflow_dispatch:
     inputs:
-      release:
-        description: "rations/vstbridge release tag (empty: the newest aarch64 release)"
-        type: string
-        default: ""
+      publish:
+        description: "Publish the packages to the Pivuan apt repository"
+        type: boolean
+        default: true
       build_ref:
         description: "rations/build branch with the shared scripts"
         type: string
@@ -35,12 +36,18 @@ concurrency:
   group: pivuan-vstbridge
   cancel-in-progress: false
 
-env:
-  VSTBRIDGE_REPO: rations/vstbridge
-
 jobs:
+  # The branch in `uses` can't be an input: it is the same as `ref`, so the workflow and the
+  # code it builds come from the same branch.
+  build:
+    uses: rations/vstbridge/.github/workflows/aarch64.yml@arm64
+    with:
+      repository: rations/vstbridge
+      ref: arm64
+
   publish:
-    name: Publish vstbridge
+    needs: build
+    if: inputs.publish
     runs-on: ubuntu-24.04
     permissions:
       contents: write
@@ -53,31 +60,15 @@ jobs:
           path: build-scripts
           sparse-checkout: .github/pivuan
 
-      - name: Download the release
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ inputs.release }}
-        run: |
-          set -euo pipefail
-          if [[ -z "${TAG}" ]]; then
-            TAG="$(gh release list --repo "${VSTBRIDGE_REPO}" --limit 100 --json tagName,createdAt \
-              --jq '[.[] | select(.tagName | startswith("aarch64-"))] | sort_by(.createdAt) | last | .tagName // empty')"
-            [[ -n "${TAG}" ]] || { echo "::error::${VSTBRIDGE_REPO} has no aarch64 release"; exit 1; }
-          fi
-          echo "${VSTBRIDGE_REPO} ${TAG}"
-          echo "TAG=${TAG}" >> "${GITHUB_ENV}"
-          mkdir debs
-          gh release download "${TAG}" --repo "${VSTBRIDGE_REPO}" --dir debs --pattern '*.deb' --pattern SHA256SUMS
+      - uses: actions/download-artifact@v4
+        with:
+          name: pivuan-debs
+          path: debs
 
       - name: Check the packages
         run: |
           set -euo pipefail
           cd debs
-          # Every .deb listed in SHA256SUMS is here and intact, and there are no others
-          grep '\.deb$' SHA256SUMS | sha256sum --check --strict
-          [[ "$(grep -c '\.deb$' SHA256SUMS)" == "$(find . -name '*.deb' | wc -l)" ]] \
-            || { echo "::error::the release has .deb files that SHA256SUMS doesn't list"; exit 1; }
-          rm SHA256SUMS
           # Exactly vstbridge's four packages, for arm64 (the Mono installer is for all)
           found=""
           for deb in *.deb; do
@@ -98,6 +89,7 @@ jobs:
           SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
           REPO_TOKEN: ${{ github.token }}
           PIVUAN_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
         run: |
           set -euo pipefail
           [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
@@ -108,11 +100,11 @@ jobs:
           PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
           [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
           export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
-          bash build-scripts/.github/pivuan/publish-pages.sh "vstbridge-${TAG}" debs
+          bash build-scripts/.github/pivuan/publish-pages.sh "vstbridge-${VERSION}" debs
           {
             echo "## Apt repository"
             echo ""
-            echo "From ${GITHUB_SERVER_URL}/${VSTBRIDGE_REPO}/releases/tag/${TAG}"
+            echo "vstbridge ${VERSION}"
             echo ""
             echo '```'
             cat "${PIVUAN_PAGES_LIST}"
