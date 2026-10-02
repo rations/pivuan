@@ -19,8 +19,8 @@ configuration tool), and gets its updates from Devuan and from its own apt repos
 - **sysvinit, no systemd**: `init` is PID 1, with elogind, eudev and ifupdown. Packages that
   would pull in systemd are left out.
 - **Desktop in one command**: XFCE or MATE with a LightDM login screen, installed from the
-  Devuan archive by `pivuan-config`, or **Pivuan Audio** for music production (JWM and JACK),
-  which also runs Windows plugins.
+  Devuan archive (with XLibre from the Pivuan apt repository) by `pivuan-config`, or
+  **Pivuan Audio** for music production (JWM and JACK), which also runs Windows plugins.
 - **Kept up to date**: Devuan's security updates through apt, and the Raspberry Pi kernel,
   firmware, board support and `pivuan-config` through the Pivuan apt repository.
 
@@ -73,23 +73,8 @@ change it.
 
 ## Desktop
 
-The image is minimal on purpose. To add a desktop, log in and run one of:
-
-```sh
-sudo pivuan-config --cmd XFCE01    # XFCE
-sudo pivuan-config --cmd MATE01    # MATE
-```
-
-This installs, from the Devuan archive:
-
-- **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `mate-terminal`,
-  both with the Pivuan background,
-- the **LightDM** login screen (no automatic login),
-- **NetworkManager** with its tray applet (your wired and Wi-Fi settings are moved over),
-- **PulseAudio** for sound and Bluetooth audio,
-- **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
-
-When it finishes, the login screen appears. Log in with the user you created in the wizard.
+The image is minimal on purpose. To add a desktop, log in and install **Pivuan Audio**,
+the desktop Pivuan is made for, or XFCE or MATE.
 
 ### Pivuan Audio
 
@@ -135,6 +120,28 @@ It installs:
 The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's
 `~/.jwmrc` includes `/etc/jwm/pivuan.jwmrc`; add your own settings to
 `~/.jwmrc`. `sudo pivuan-config --cmd AUDI02` removes it and brings back the text login.
+
+### XFCE and MATE
+
+General-purpose desktops:
+
+```sh
+sudo pivuan-config --cmd XFCE01    # XFCE
+sudo pivuan-config --cmd MATE01    # MATE
+```
+
+This installs, from the Devuan archive:
+
+- **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `mate-terminal`,
+  both with the Pivuan background,
+- the **XLibre** X server from the Pivuan apt repository (as on Pivuan Audio), with the
+  **picom** compositor for smooth window moves,
+- the **LightDM** login screen (no automatic login),
+- **NetworkManager** with its tray applet (your wired and Wi-Fi settings are moved over),
+- **PulseAudio** for sound and Bluetooth audio,
+- **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
+
+When it finishes, the login screen appears. Log in with the user you created in the wizard.
 
 ## pivuan-config
 
@@ -183,7 +190,8 @@ Pivuan is a fork of the Armbian build framework that builds Devuan with sysvinit
 | [rations/vstbridge](https://github.com/rations/vstbridge) (branch `arm64`) | vstbridge, the Windows plugin bridge, and the build of its Wine with FEX ([wine-fex-info.md](wine-fex-info.md)) |
 
 Images are built by GitHub Actions in `rations/build`, from Devuan packages checked against
-Devuan's signing keys.
+Devuan's signing keys. The packages in the image, in each desktop and in the Pivuan apt
+repository are listed in [packages/](packages/).
 
 ## Thanks
 
