@@ -22,8 +22,10 @@ set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 conf="${here}/xlibre.conf"
 # The packages Pivuan installs; the rest of what the build makes (Xephyr, Xvfb, Xnest,
-# development files, debug symbols) is not published.
-PUBLISH=(xserver-xlibre-core xserver-xlibre-common xserver-xlibre-legacy xserver-xlibre-input-libinput)
+# development files, debug symbols) is not published. Nor is xserver-xlibre-legacy, the
+# setuid Xorg.wrap for startx: seatd (Pivuan Audio's xlogin) and LightDM (as root) give X its
+# devices.
+PUBLISH=(xserver-xlibre-core xserver-xlibre-common xserver-xlibre-input-libinput)
 export DEBIAN_FRONTEND=noninteractive
 
 die() { echo "::error::$*" >&2; exit 1; }
