@@ -1,0 +1,863 @@
+Package: armbian-bsp-cli-rpi4b-current-raspifw
+Architecture: arm64
+Version: 26.11.0.20
+Priority: optional
+Section: kernel
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 22083
+Provides: armbian-bsp-cli, linux-sysctl-defaults
+Depends: bash, linux-base, u-boot-tools, initramfs-tools, lsb-release, fping, device-tree-compiler
+Recommends: bsdutils, parted, util-linux, toilet
+Conflicts: linux-sysctl-defaults
+Breaks: armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.20)
+Replaces: zram-config, linux-sysctl-defaults, armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.20)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-current-raspifw/armbian-bsp-cli-rpi4b-current-raspifw_26.11.0.20_arm64.deb
+Size: 4741024
+MD5sum: 298e4def71b27a8bf903fae4a5f13a61
+SHA1: 96bd25aa0bf6a6efaccc90d42b135c99825226a9
+SHA256: 3fd27904f1e3ea6c155d5f8ea26004edeea0d22fd16d18ca42f4c99af751da70
+SHA512: c14c4dea695528fb9cb3dbcca6e2ffd2965c66f6d0da644f6d66fab064bcd4f06d3d9442e8d6de366e2c980fdf7612276d8e94a26d6c11d9c419ef3d058216ce
+Description: Armbian CLI BSP for board 'rpi4b' branch 'current' (variant '-raspifw')
+Armbian-Original-Hash: 1-PC5b3e-Vf345-H7908-B395a-R1b1e
+
+Package: armbian-bsp-cli-rpi4b-current-raspifw
+Architecture: arm64
+Version: 26.11.0.21
+Priority: optional
+Section: kernel
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 22083
+Provides: armbian-bsp-cli, linux-sysctl-defaults
+Depends: bash, linux-base, u-boot-tools, initramfs-tools, lsb-release, fping, device-tree-compiler
+Recommends: bsdutils, parted, util-linux, toilet
+Conflicts: linux-sysctl-defaults
+Breaks: armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.21)
+Replaces: zram-config, linux-sysctl-defaults, armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.21)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-current-raspifw/armbian-bsp-cli-rpi4b-current-raspifw_26.11.0.21_arm64.deb
+Size: 4741412
+MD5sum: 6ae906073c579e7db54028e13bcdb299
+SHA1: 6d7f84cd6bc4a587eb01f9c030b23c7aca6eed8f
+SHA256: 924918fced8059c412cb5720afb6ef4a245ead91daa001e8a5939e7ccb6e25ad
+SHA512: 88fe8a419832742cc79d13cbeaa72c1dbea9bdefa98fa041556b11c8695785cde912dd21dc9ae6522248897dc6f9ec6910ad8c8c1d78155ff1c707ad49708390
+Description: Armbian CLI BSP for board 'rpi4b' branch 'current' (variant '-raspifw')
+Armbian-Original-Hash: 1-PC5b3e-Vf345-H7908-B395a-R1b1e
+
+Package: armbian-bsp-cli-rpi4b-current-raspifw
+Architecture: arm64
+Version: 26.11.0.22
+Priority: optional
+Section: kernel
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 22086
+Provides: armbian-bsp-cli, linux-sysctl-defaults
+Depends: bash, linux-base, u-boot-tools, initramfs-tools, lsb-release, fping, device-tree-compiler
+Recommends: bsdutils, parted, util-linux, toilet
+Conflicts: linux-sysctl-defaults
+Breaks: armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.22)
+Replaces: zram-config, linux-sysctl-defaults, armbian-bsp-cli-rpi4b-raspifw (<< 26.11.0.22)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-current-raspifw/armbian-bsp-cli-rpi4b-current-raspifw_26.11.0.22_arm64.deb
+Size: 4742016
+MD5sum: 59bedae2b4b60ecbedf5a159fe17759c
+SHA1: b591bdbaedae432e2ef6e1bcd5cee13b2019e794
+SHA256: 6f02139fe95529c0f0f478014e3ae8693a1e255ca022bb72fdb7bf5444ee5a9c
+SHA512: bbd198a2d67172c17064cddb672a8aab9f75a9f3983380d71526d3529d2e4f510605801e901b00dbcc7e45fd429061fee2b2a69d7f392610bb9c122b1c1d088d
+Description: Armbian CLI BSP for board 'rpi4b' branch 'current' (variant '-raspifw')
+Armbian-Original-Hash: 1-PCdc2a-Vf345-H7908-B738e-R1b1e
+
+Package: armbian-bsp-cli-rpi4b-raspifw
+Architecture: arm64
+Version: 26.11.0.20
+Priority: optional
+Section: oldlibs
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 1
+Depends: armbian-bsp-cli-rpi4b-current-raspifw (= 26.11.0.20)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-raspifw/armbian-bsp-cli-rpi4b-raspifw_26.11.0.20_arm64.deb
+Size: 1324
+MD5sum: 072d766213bfdb1e24926845fecb3b07
+SHA1: e98a5b671241d1d26f3a68ebf8a1b156089f5e86
+SHA256: d2527c2a8977eadd4de1ddb5fd105f7c59d4f72724eff0fe93e7c7654e41c055
+SHA512: 4489610333ee1943290a4525b575bcc35bed3475837fc1a049786c813910124f05d9537c78d5ba7a84b08f653bdebdaf04038206e6f4be4e753ef65fa2fdbc32
+Description: Armbian CLI BSP for board 'rpi4b' - transitional package
+Armbian-Original-Hash: 1-PC5b3e-Vf345-H7908-B395a-R1b1e
+
+Package: armbian-bsp-cli-rpi4b-raspifw
+Architecture: arm64
+Version: 26.11.0.21
+Priority: optional
+Section: oldlibs
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 1
+Depends: armbian-bsp-cli-rpi4b-current-raspifw (= 26.11.0.21)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-raspifw/armbian-bsp-cli-rpi4b-raspifw_26.11.0.21_arm64.deb
+Size: 1324
+MD5sum: f394e0409a0a158462b0df9c17476d13
+SHA1: 9a4e331c12057655d40eec2a1fec802ab8aec3e6
+SHA256: 3037fe024f99c7f6b1e1467432da35954ec7a23240903185b5afa28718aa9a50
+SHA512: 49a7f32159414f2c90a472c8830f7dec1534a7cd0db0d102833241c652a234e965b93f48d2a4da24a61b62637ccf5f14bc77977cc73204e36fc252bb81448be3
+Description: Armbian CLI BSP for board 'rpi4b' - transitional package
+Armbian-Original-Hash: 1-PC5b3e-Vf345-H7908-B395a-R1b1e
+
+Package: armbian-bsp-cli-rpi4b-raspifw
+Architecture: arm64
+Version: 26.11.0.22
+Priority: optional
+Section: oldlibs
+Maintainer: John Doe <john.doe@somewhere.on.planet>
+Installed-Size: 1
+Depends: armbian-bsp-cli-rpi4b-current-raspifw (= 26.11.0.22)
+Filename: pool/main/a/armbian-bsp-cli-rpi4b-raspifw/armbian-bsp-cli-rpi4b-raspifw_26.11.0.22_arm64.deb
+Size: 1324
+MD5sum: 41b2dc883d0cab77f8295176a4222619
+SHA1: 4dcbac88c9c5f035c26cf5405aee25709506197a
+SHA256: ac13962d30a6f37cf75b2d5177dcfe858eba6111aa23460aafb8fd6505e5172c
+SHA512: 78df130c8c87265a3a8c827c0b73d5a1f2452632a6d873a7d87928c36bd91a9822c0392a33c2c989217b9373caff4c647d0a9687a66d4073dae45b4d73118f56
+Description: Armbian CLI BSP for board 'rpi4b' - transitional package
+Armbian-Original-Hash: 1-PCdc2a-Vf345-H7908-B738e-R1b1e
+
+Package: cpu-power
+Architecture: arm64
+Version: 0.1.0-pivuan1
+Priority: optional
+Section: admin
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 1240
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libstdc++6 (>= 11), libx11-6, pkexec, polkitd
+Filename: pool/main/c/cpu-power/cpu-power_0.1.0-pivuan1_arm64.deb
+Size: 720104
+MD5sum: bdb83b5e0d9613db84049f78bdabcab8
+SHA1: 1a67ae93011ac7c42f68fa027176962c44528d76
+SHA256: be22d5d776e54b8ef9a6a86b020168a9fabdd6dccdf5eda1b3ecbd90c2b46920
+SHA512: 1303cc09961d3242e854c19990663db4a2c8b0fe031d7efa54673e0c0d2130a269f6b4b13af6b26e8e71bc84061134c463c2f77d8703fb0e9d9d005b260b3b7b
+Homepage: https://github.com/rations/CPU-Power
+Description: CPU governor and low-latency (DAW mode) switch
+ A window to set the CPU frequency governor, energy preference and turbo, and
+ a DAW mode that keeps the CPU out of deep idle states. Changes go through a small
+ helper started with pkexec, and are undone when switched off.
+
+Package: cpu-power
+Architecture: arm64
+Version: 0.1.0-pivuan2
+Priority: optional
+Section: admin
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 1240
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libstdc++6 (>= 11), libx11-6, pkexec, polkitd
+Filename: pool/main/c/cpu-power/cpu-power_0.1.0-pivuan2_arm64.deb
+Size: 720272
+MD5sum: 796db2047a130ebc7d4c3f0b78009293
+SHA1: 02cb06bfd15487195438fb8a4b928ab27ca82c0d
+SHA256: 300ad52f9a60ae7340ce7a565ab1176b627223680e79f58fcb8870a517b87c4f
+SHA512: 7b51581f993362695b6eb4b01ce455fe47d5a96f38491354810ede3258f26e93b60996364e013f7d23b36a5523edaf8e843baec1b4fcad8ce6ad7a363ec9dcdd
+Homepage: https://github.com/rations/CPU-Power
+Description: CPU governor and low-latency (DAW mode) switch
+ A window to set the CPU frequency governor, energy preference and turbo, and
+ a DAW mode that keeps the CPU out of deep idle states. Changes go through a small
+ helper started with pkexec, and are undone when switched off.
+
+Package: drumix
+Architecture: arm64
+Version: 0.1.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 1252
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libstdc++6 (>= 14), libx11-6
+Filename: pool/main/d/drumix/drumix_0.1.0-pivuan1_arm64.deb
+Size: 533544
+MD5sum: 0ff93dec4a7f609124bffdfa2b91f2e0
+SHA1: 5e6825fb6e52f7f70188f8e1acf7bc0f72528eee
+SHA256: a9dd5ef58d07c77564ae841a161dcfbea5f958361ea28f2143f7dc5f4b1d733e
+SHA512: dea12ed26b5d8219e77ab79c73bfcee85494df500839663718dbb36592486bbf3916e7e5547ba98e89210210fcc3c44bdaf9c10c91ab23e8cff492fb588c1210
+Homepage: https://github.com/rations/DRUMix
+Description: MIDI drum sampler (VST3 and JACK standalone)
+ Loads a WAV file per pad and plays the pads from MIDI notes. A VST3
+ plug-in and a standalone JACK program. No samples are included.
+
+Package: jack-graph
+Architecture: arm64
+Version: 2.0.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 628
+Depends: libasound2t64 (>= 1.0.16), libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libstdc++6 (>= 11), libx11-6, jackd2 | jackd
+Filename: pool/main/j/jack-graph/jack-graph_2.0.0-pivuan1_arm64.deb
+Size: 199204
+MD5sum: 0631d9b495a7b2371ba7919ab566a5fd
+SHA1: d07100e1b43cc3f2d8b62c84bcd860ffeca12968
+SHA256: 9dd8a32d34c693993f118627167de5c30ad2f33806217d74f96ef75307e28adc
+SHA512: 8ee6b2838d32ed277fdfd016d01df097afcd0c8a6b5a9ebe83f904ebb75eaf842ae8bcd55c0156e13045767f0a574f6c1e5dbe985fb4971f0efbe2481d770417
+Homepage: https://github.com/rations/jack-graph
+Description: Connection manager for JACK and ALSA MIDI
+ Shows JACK audio and MIDI ports and ALSA sequencer clients as a graph and
+ connects them. Also starts and stops the JACK server.
+
+Package: jackdaw
+Architecture: arm64
+Version: 0.3.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 1128
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.2.4), libgcc-s1 (>= 3.0), libglib2.0-0t64 (>= 2.80.0), libgtk-3-0t64 (>= 3.21.5), libgtk2.0-0t64 (>= 2.8.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, liblilv-0-0 (>= 0.22.0~dfsg0), libsamplerate0 (>= 0.1.7), libserd-0-0 (>= 0~svn155), libsndfile1 (>= 1.0.20), libsratom-0-0 (>= 0.4.6~dfsg0), libstdc++6 (>= 14), libsuil-0-0 (>= 0.10.0~dfsg0), libx11-6
+Filename: pool/main/j/jackdaw/jackdaw_0.3.0-pivuan1_arm64.deb
+Size: 402060
+MD5sum: ef5f1c1fd7a949ba219d44b2af4d38aa
+SHA1: f9e79ff1b0b446770c8472fdcfc435302dd57e2a
+SHA256: 6da4af6c0229b74d1e89f0830840131a1668658328aa05a0b7395147c8b53a5c
+SHA512: a016b9ce66d1b8cf4dbce142c33da351e08501ca02069a6e65444a21a60432afcbf8519885da77fe336bd30c7319e677104a8c589457dc6468586267506742f0
+Homepage: https://github.com/rations/JackDAW
+Description: Multitrack audio and MIDI workstation for JACK
+ A digital audio workstation on JACK that hosts LV2, VST3, CLAP and
+ LADSPA plug-ins.
+
+Package: jackdaw
+Architecture: arm64
+Version: 0.4.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 1128
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.2.4), libgcc-s1 (>= 3.0), libglib2.0-0t64 (>= 2.80.0), libgtk-3-0t64 (>= 3.21.5), libgtk2.0-0t64 (>= 2.8.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, liblilv-0-0 (>= 0.22.0~dfsg0), libsamplerate0 (>= 0.1.7), libserd-0-0 (>= 0~svn155), libsndfile1 (>= 1.0.20), libsratom-0-0 (>= 0.4.6~dfsg0), libstdc++6 (>= 14), libsuil-0-0 (>= 0.10.0~dfsg0), libx11-6
+Filename: pool/main/j/jackdaw/jackdaw_0.4.0-pivuan1_arm64.deb
+Size: 401916
+MD5sum: 53d03d17fd43ec2e8c74cb36a85ecd7f
+SHA1: 666f15b89a2f7d4b17295ff2b0c838acbdc49bec
+SHA256: 856ff1505048c4f162d6d72edfc49c6c64195d34fa0c69c8efb17c517df9d2fc
+SHA512: 93eb966a54fac749ce3b3006d457d517bc735a18d50b6045d07127e8d983a2b5024262b9f34206cdd5ec3c638dee71c04c414370a0dd9abc261664d86e2ebdf2
+Homepage: https://github.com/rations/JackDAW
+Description: Multitrack audio and MIDI workstation for JACK
+ A digital audio workstation on JACK that hosts LV2, VST3, CLAP and
+ LADSPA plug-ins.
+
+Package: linux-dtb-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.20
+Priority: optional
+Section: kernel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 2167
+Provides: linux-dtb, linux-dtb-armbian, armbian-current
+Filename: pool/main/l/linux-dtb-current-bcm2711/linux-dtb-current-bcm2711_26.11.0.20_arm64.deb
+Size: 148628
+MD5sum: cc0f50cd4aeef5b0fe440c7def4155fb
+SHA1: 257d1b2ce62cc7e01c04cdbf4b73dd499bf09031
+SHA256: 05dfe756906a1e66eb2cb273a655e653f1fbc3770cc7a3b632883946eefba43e
+SHA512: 392028ae66d75867b2e637e5b9be9b4ed5d8dfc70d02b5de5bdcb09334a8d2b8ec4c3e55a2a61037f4dd95a782af7092267e0622b6cde660e4281a7012815149
+Description: Armbian Linux current DTBs in /boot/dtb-6.18.53-current-bcm2711
+ This package contains device tree blobs from the Linux kernel, version 6.18.53-current-bcm2711
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-dtb-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.21
+Priority: optional
+Section: kernel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 2167
+Provides: linux-dtb, linux-dtb-armbian, armbian-current
+Filename: pool/main/l/linux-dtb-current-bcm2711/linux-dtb-current-bcm2711_26.11.0.21_arm64.deb
+Size: 148620
+MD5sum: cc62228c6ba6070a51f3f9ea08ad7626
+SHA1: b5216663ae49d1cf98cd2d06ae64d455b49ff622
+SHA256: a8ed18e6bb21cd66f0eff80b8831e2a32e07367a726202b4023817bdd8422ccf
+SHA512: 5b822e49be0688c49c5b9b8dd9d20720cabd03c591db9c7f389d0db7bc179b8213bed0ace1bca1a84fe1b96b71115b0325a6630c521c7f5e7580adb967a2d8d9
+Description: Armbian Linux current DTBs in /boot/dtb-6.18.53-current-bcm2711
+ This package contains device tree blobs from the Linux kernel, version 6.18.53-current-bcm2711
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-dtb-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.22
+Priority: optional
+Section: kernel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 2167
+Provides: linux-dtb, linux-dtb-armbian, armbian-current
+Filename: pool/main/l/linux-dtb-current-bcm2711/linux-dtb-current-bcm2711_26.11.0.22_arm64.deb
+Size: 148620
+MD5sum: 8dd164390ec7618eb48297ab319a4720
+SHA1: 62fd88be89dcea16f1d9301298f88dc2bc797f15
+SHA256: 1e3d4bd526b1624d9b2550931fc7d5b37e6ca5aa68f2754483d1778b7cef8358
+SHA512: cfce3aa311a0ae18b39975b4afc2e1b01235e5525a2bdc483a915785072b136c73fad91d57e0ac7609c7d39ef7e944ba6f25f5c87115c74bce4d91863e5ded77
+Description: Armbian Linux current DTBs in /boot/dtb-6.18.53-current-bcm2711
+ This package contains device tree blobs from the Linux kernel, version 6.18.53-current-bcm2711
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-headers-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.20
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 83634
+Provides: linux-headers (= 6.18.53), linux-headers-armbian, armbian-current
+Depends: make, gcc, libc6-dev, bison, flex, libssl-dev, libelf-dev, pahole | dwarves
+Filename: pool/main/l/linux-headers-current-bcm2711/linux-headers-current-bcm2711_26.11.0.20_arm64.deb
+Size: 15780012
+MD5sum: 8b4a4357860514db1aeba7f68eaf509c
+SHA1: fdb060c98516fcb12790532a75602a3a776c7f2d
+SHA256: 83b907828b6bcf186c2e918ea94dc3a0cca6d765dfb34bd0a0e419bcc4bc5ea9
+SHA512: 599ac9139051218fea3e0d81e6550488dacfd77023b401db9e63c9d26403b74e5e4544d42a7d18b2b851dbda763659a3f3fde9268396c34c203efd5135594b04
+Description: Armbian Linux current headers 6.18.53-current-bcm2711
+ This package provides kernel header files for 6.18.53-current-bcm2711
+ .
+ This is useful for DKMS and building of external modules.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-headers-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.21
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 83634
+Provides: linux-headers (= 6.18.53), linux-headers-armbian, armbian-current
+Depends: make, gcc, libc6-dev, bison, flex, libssl-dev, libelf-dev, pahole | dwarves
+Filename: pool/main/l/linux-headers-current-bcm2711/linux-headers-current-bcm2711_26.11.0.21_arm64.deb
+Size: 15780080
+MD5sum: 044fb741107c2f07e3d7485e4f038b68
+SHA1: 825972c01a1aa78141b49d3215f867e9963beda0
+SHA256: 2c49a92d6f067bdab7d90ccd598d14591567a6e9ef390993cd84356b19ffacdd
+SHA512: 57da4c2b0dcec409507aa2b727775c129778b4654aca79f214539c30517c6cd2048014c6f56d63bcff5eb68c70a40cb1cc54c399570c4e741aba15c60902bc43
+Description: Armbian Linux current headers 6.18.53-current-bcm2711
+ This package provides kernel header files for 6.18.53-current-bcm2711
+ .
+ This is useful for DKMS and building of external modules.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-headers-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.22
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 83634
+Provides: linux-headers (= 6.18.53), linux-headers-armbian, armbian-current
+Depends: make, gcc, libc6-dev, bison, flex, libssl-dev, libelf-dev, pahole | dwarves
+Filename: pool/main/l/linux-headers-current-bcm2711/linux-headers-current-bcm2711_26.11.0.22_arm64.deb
+Size: 15780044
+MD5sum: 2be703f987c85def0a7e7e13e1b4c694
+SHA1: 09b334196356f4a3a162b47fa5be74c010abbc63
+SHA256: 501a29a06307e499ddfdf3bb0add92399efd45df79ad88eafef2f896529a1f89
+SHA512: 2203e6dc7c43761b2d68076f64877c60b74e93b7f6ad04531d77bd8f81dce7d67911c0d87136f78931724812b47ec1744cfc6339603e862416637da9cb9dc79f
+Description: Armbian Linux current headers 6.18.53-current-bcm2711
+ This package provides kernel header files for 6.18.53-current-bcm2711
+ .
+ This is useful for DKMS and building of external modules.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-image-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.20
+Priority: optional
+Section: kernel
+Source: linux-6.18.53
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 202498
+Provides: linux-image, linux-image-armbian, armbian-current, wireguard-modules
+Depends: initramfs-tools | linux-initramfs-tool
+Filename: pool/main/l/linux-image-current-bcm2711/linux-image-current-bcm2711_26.11.0.20_arm64.deb
+Size: 33276080
+MD5sum: fd401208518ba518a8a0cae0ed5392d3
+SHA1: 30e0c65701789c26fcd37c162c1ebbbfc793a098
+SHA256: 2af0353e2a7c4237ebec7b5a62b26bdee12b76af51964e3f090a6609d35b7c7c
+SHA512: b82ba5920ef05fab7307804bc1ae8ee69a3fe775f93d4993c1f7b383efe8b3a795579ce30a17e8580047526b6e554ccada2597be79072369979c652af9d1b1c7
+Description: Armbian Linux current kernel image 6.18.53-current-bcm2711
+ This package contains the Linux kernel, modules and corresponding other files.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Kernel-Version: 6.18.53
+Armbian-Kernel-Version-Family: 6.18.53-current-bcm2711
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-image-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.21
+Priority: optional
+Section: kernel
+Source: linux-6.18.53
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 202498
+Provides: linux-image, linux-image-armbian, armbian-current, wireguard-modules
+Depends: initramfs-tools | linux-initramfs-tool
+Filename: pool/main/l/linux-image-current-bcm2711/linux-image-current-bcm2711_26.11.0.21_arm64.deb
+Size: 33276084
+MD5sum: 1bc91fc0e533b04340570f76452af9ee
+SHA1: 1410d9a377fbd919a2a676028d8aeab580bffa7d
+SHA256: e63200f6abb38d5a21e457796e0bde355f5137411376f55a750be7c6ee0d1403
+SHA512: e0ec76c7c970e331386d1bf500c2f354600404dc1c5962260c9452c428c32c54aae612bc31109600507291bb162ebaa73896451229a41f27cbc57f1fbf88b6e9
+Description: Armbian Linux current kernel image 6.18.53-current-bcm2711
+ This package contains the Linux kernel, modules and corresponding other files.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Kernel-Version: 6.18.53
+Armbian-Kernel-Version-Family: 6.18.53-current-bcm2711
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-image-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.22
+Priority: optional
+Section: kernel
+Source: linux-6.18.53
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 202498
+Provides: linux-image, linux-image-armbian, armbian-current, wireguard-modules
+Depends: initramfs-tools | linux-initramfs-tool
+Filename: pool/main/l/linux-image-current-bcm2711/linux-image-current-bcm2711_26.11.0.22_arm64.deb
+Size: 33276056
+MD5sum: d1de8874a102a337ea9c3687bd5aac29
+SHA1: 5bc9f8627c71e3ddd831787cf960f4675e501e9f
+SHA256: 496347a6c3cd285316b1aff7fd068741d39fe10543b054c6bccd9fae5387f719
+SHA512: cd4039b5d17f0e010fcb234cf91274d31f9e7a86cd8e33c51e513c49de375265e0ab1cdb770e4e46df02a92ee4c2be8cf188867d71565c546f9b5747ea2662dc
+Description: Armbian Linux current kernel image 6.18.53-current-bcm2711
+ This package contains the Linux kernel, modules and corresponding other files.
+ version "6.18.53" git revision "7e030b60792de1c15b9ec1d8d5d34d63f0f0f1d8" codename "Baby Opossum Posse" drivers hash "f596023a_8990b58d" patches hash "0000000000000000" .config hash "2de2ede0f56e697e" .config hook hash "0496de3840494930" variables hash "c22207b66dc5dd57157df2cd7b9c20559b2ed8ac44b9c3c3b9704002c06b8921" framework bash hash "bec6a0aeabf4627e"
+Armbian-Kernel-Version: 6.18.53
+Armbian-Kernel-Version-Family: 6.18.53-current-bcm2711
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-libc-dev-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.20
+Multi-Arch: same
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 6870
+Provides: linux-libc-dev
+Conflicts: linux-libc-dev
+Filename: pool/main/l/linux-libc-dev-current-bcm2711/linux-libc-dev-current-bcm2711_26.11.0.20_arm64.deb
+Size: 1446896
+MD5sum: 7331a16ddb67ddd5ee68f0f1210a9eb7
+SHA1: 09102bf1206222803d4c10d3ba1a312ca50ba2ec
+SHA256: a36a0d598f3162a06f7377e774cf178068e707b976cad6c10aca82805c4d4d70
+SHA512: ea97918d80ee797aa149d562e5d26da803466bd5fef46a98698ef3f0a841e536c35ad162980cff95bbd10529ab2616bb9bfb506ad3a80ebfd5a41f48a1a8e0fd
+Description: Armbian Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-libc-dev-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.21
+Multi-Arch: same
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 6870
+Provides: linux-libc-dev
+Conflicts: linux-libc-dev
+Filename: pool/main/l/linux-libc-dev-current-bcm2711/linux-libc-dev-current-bcm2711_26.11.0.21_arm64.deb
+Size: 1446900
+MD5sum: 4caafc13d0bf8646faccfccffc253942
+SHA1: 4b71f8135891fc94fa1f381ee507680c25b3b75e
+SHA256: 23445dbe4f3866958c605f68616e0e8909264212a3ac88120906e802844cc508
+SHA512: c62b5691728a02abba7cfb5df566bb23b21ec629555f7c0694613810cf20b6ab1cae89d232465f41e13a1727b3a70f0d505694efcf1331f5e8883befda8c1bf3
+Description: Armbian Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: linux-libc-dev-current-bcm2711
+Architecture: arm64
+Version: 26.11.0.22
+Multi-Arch: same
+Priority: optional
+Section: devel
+Maintainer: Armbian Linux <info@armbian.com>
+Installed-Size: 6870
+Provides: linux-libc-dev
+Conflicts: linux-libc-dev
+Filename: pool/main/l/linux-libc-dev-current-bcm2711/linux-libc-dev-current-bcm2711_26.11.0.22_arm64.deb
+Size: 1446908
+MD5sum: 1c81dc00363cf1130cfc669257edab56
+SHA1: 766e8cc407ec0adf0419caaf211cc8031c66c2ab
+SHA256: f850363f201bd4ebe66828a48ba1c61cdba04dbab39a2bfc29c40b495df5ef9e
+SHA512: f18009917ccae682dc8a72a1fb59beedf920b9705edd240929d497810516de3abadde51283ad51b2b6e883c6094357c8b9c116b46f007e014cf072ca075f9b56
+Description: Armbian Linux support headers for userspace development
+ This package provides userspaces headers from the Linux kernel.  These headers
+ are used by the installed headers for GNU glibc and other system libraries.
+Armbian-Original-Hash: 6.18.53-S7e03-Df596-P0000-C2de2-H0496-HK01ba-Vc222-Bbec6-R448a
+
+Package: lvtuner
+Architecture: arm64
+Version: 0.1.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 464
+Depends: libc6 (>= 2.34), libcairo2 (>= 1.2.4), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2), libx11-6
+Filename: pool/main/l/lvtuner/lvtuner_0.1.0-pivuan1_arm64.deb
+Size: 236988
+MD5sum: 2fb3c9086603e1412f4c6648521521ae
+SHA1: 50ff530ee4ec47865bd7030db3a223811adfb7b4
+SHA256: 72b244754ed92a41e2b0173dd8223993984ab50e41dfa5ec64276338d632fe0b
+SHA512: a57b8820a4b8e513fcfde115457a267b0b202718b2128113bd26ab4c9ae70f379ea6a3827c8b76274725ac34fd1e4971c55148a492ad5e3c3675bfaca8993a95
+Homepage: https://github.com/rations/lvtuner
+Description: Chromatic tuner LV2 plug-in
+ A chromatic tuner as an LV2 plug-in with its own X11 interface. Load it in
+ an LV2 host such as JackDAW.
+
+Package: namix
+Architecture: arm64
+Version: 0.9.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 5516
+Depends: libc6 (>= 2.40), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libstdc++6 (>= 14), libx11-6
+Filename: pool/main/n/namix/namix_0.9.0-pivuan1_arm64.deb
+Size: 1595788
+MD5sum: c11c84d6dae2182f6183ab1f735dfbba
+SHA1: ef4acb0f1c1ccf8cb7065e38ed43c23fbd856306
+SHA256: df6bd0f6579262a823e61f05d95de9781d5d9d29dbcb824d9b4ff84208d22d42
+SHA512: 2ac6eb928c2ad4405a14bdb7b52a91108ef040c0c6a47417c2df46b86eda16dc0ca39f3ec90c89a7c9447db3df56e5b64577723d0dbe63df02db6559dc0e8b43
+Homepage: https://github.com/rations/NAMix
+Description: Neural Amp Modeler plug-in (VST3, LV2) and JACK standalone
+ Loads Neural Amp Modeler (.nam) captures. The same amp as a VST3 plug-in,
+ an LV2 plug-in and a standalone JACK program. No captures are included.
+
+Package: namp-rations
+Architecture: arm64
+Version: 0.6.0-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 25400
+Depends: libc6 (>= 2.40), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, liblilv-0-0 (>= 0.22.0~dfsg0), libstdc++6 (>= 14), libsuil-0-0 (>= 0.8.0~dfsg0), libx11-6
+Filename: pool/main/n/namp-rations/namp-rations_0.6.0-pivuan1_arm64.deb
+Size: 6817424
+MD5sum: 6138f9a6b2d6c60746db0b44608586e4
+SHA1: b81734f4b0d313a3846bc676f37a2628e86df335
+SHA256: 5c8b706f963122b9d21031d25d522f0a958de5a1a469eb33662f65cb5dd2361c
+SHA512: 4c85aaddb4d90afb9a84b12eaedab6be9409fba1e5f6a3bdd404602a48662584faa2eac2812d811ce48c8754bd5f6497c79f084f4615dc7f3dcc097bb01826c5
+Homepage: https://github.com/rations/NAMp-rations
+Description: Neural Amp Modeler amp head, plug-in rack and pedals
+ NAMp Rack, a four-channel Neural Amp Modeler amp head for JACK with a
+ VST3 and LV2 plug-in rack, and the NAMp Rations amp and Rations pedals as VST3
+ (and LV2) plug-ins. No amp captures are included.
+
+Package: namp-rations
+Architecture: arm64
+Version: 0.6.0-pivuan2
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 25400
+Depends: libc6 (>= 2.40), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, liblilv-0-0 (>= 0.22.0~dfsg0), libstdc++6 (>= 14), libsuil-0-0 (>= 0.8.0~dfsg0), libx11-6
+Filename: pool/main/n/namp-rations/namp-rations_0.6.0-pivuan2_arm64.deb
+Size: 6814888
+MD5sum: 206055327d33c8e5477ffbc11c6aa0d1
+SHA1: 0e6b504102600abca056a9170ebd5d6a5d436bd9
+SHA256: f31bd8aa0cfbe51cf0134d0e8dba18551dc4247e1c327fc489a5550aedc78432
+SHA512: 17f347360608af8b9e42fac534abd6b0af5bf8529449fd7338468e0c4eecf657d591594e12c8f068ed26bb92884b9d4cb68b89e13ce0c7230b3bc39324e2f3a3
+Homepage: https://github.com/rations/NAMp-rations
+Description: Neural Amp Modeler amp head, plug-in rack and pedals
+ NAMp Rack, a four-channel Neural Amp Modeler amp head for JACK with a
+ VST3 and LV2 plug-in rack, and the NAMp Rations amp and Rations pedals as VST3
+ (and LV2) plug-ins. No amp captures are included.
+
+Package: pivuan-config
+Architecture: all
+Version: 2026.09.30.1521+gaa85d8c
+Priority: optional
+Section: admin
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Depends: bash, jq, curl, whiptail, sudo, procps, sysvinit-utils, init-system-helpers, lsb-release, iproute2, debconf, libtext-iconv-perl, gpg, xz-utils, pv, python3-yaml, expect-dev, rsync, parted, dosfstools, e2fsprogs, btrfs-progs, f2fs-tools, ntfs-3g
+Conflicts: armbian-config
+Replaces: armbian-config
+Filename: pool/main/p/pivuan-config/pivuan-config_2026.09.30.1521+gaa85d8c_all.deb
+Size: 3679936
+MD5sum: f78b0852232fe278e3355e05cee6d9bd
+SHA1: f13d90e58409ba95992f584e797ecdd2c2a041ab
+SHA256: 45bf9109e5f64f644ced6054f3f51c4b7b416b760610619dbe96b873285d9bf0
+SHA512: d0f027304347a74242d1b7a5ca352612592b82868156016a668d5b4a083a2236ae5ffd23d9844da929cc9f097726e53aeb2a8aa5debcf3ca454a3ae2bddf2ee2
+Homepage: https://github.com/rations/configng
+Description: Pivuan configuration utility
+ armbian-config (configng) adapted for Pivuan: Devuan with sysvinit on the
+ Raspberry Pi. Run it as pivuan-config.
+
+Package: pivuan-config
+Architecture: all
+Version: 2026.09.30.2241+gfab139b
+Priority: optional
+Section: admin
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Depends: bash, jq, curl, whiptail, sudo, procps, sysvinit-utils, init-system-helpers, lsb-release, iproute2, debconf, libtext-iconv-perl, gpg, xz-utils, pv, python3-yaml, expect-dev, rsync, parted, dosfstools, e2fsprogs, btrfs-progs, f2fs-tools, ntfs-3g
+Conflicts: armbian-config
+Replaces: armbian-config
+Filename: pool/main/p/pivuan-config/pivuan-config_2026.09.30.2241+gfab139b_all.deb
+Size: 3680098
+MD5sum: d67aee934f679c54826e35f36c55a2b8
+SHA1: 6f9b36729069a9e37234e55b5184a2df45e05c29
+SHA256: d0f77abc0c555a356b082834dfdea468089e4e98fc3f1a6a49f16274ade69239
+SHA512: 56f3725140634091de7de058e239d2042473534093965a294e781087469f28ab5558bf5c119031a4ba004dc702eaaf5233efa445b0492ccfd2925f9046ba7f75
+Homepage: https://github.com/rations/configng
+Description: Pivuan configuration utility
+ armbian-config (configng) adapted for Pivuan: Devuan with sysvinit on the
+ Raspberry Pi. Run it as pivuan-config.
+
+Package: pivuan-config
+Architecture: all
+Version: 2026.10.02.2258+g09a54a1
+Priority: optional
+Section: admin
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Depends: bash, jq, curl, whiptail, sudo, procps, sysvinit-utils, init-system-helpers, lsb-release, iproute2, debconf, libtext-iconv-perl, gpg, xz-utils, pv, python3-yaml, expect-dev, rsync, parted, dosfstools, e2fsprogs, btrfs-progs, f2fs-tools, ntfs-3g
+Conflicts: armbian-config
+Replaces: armbian-config
+Filename: pool/main/p/pivuan-config/pivuan-config_2026.10.02.2258+g09a54a1_all.deb
+Size: 3680712
+MD5sum: 8efb233ce491183322672ce109c3e249
+SHA1: 4496a30853fe1864a59b0171fe496b54d29b6b5c
+SHA256: 553b081b44ba5f0784bb557ad37ed9e0cb3ef6aeba59d8a90c3da2b599c879a0
+SHA512: 17be353364e76f175c0b7eeeeafde5bfa2c20ced0f4c29369cdcef3e42f7a62cf2c5f67b261caf3856dc3424f9f6ae4fe5cdef836575940374a146efe861fed8
+Homepage: https://github.com/rations/configng
+Description: Pivuan configuration utility
+ armbian-config (configng) adapted for Pivuan: Devuan with sysvinit on the
+ Raspberry Pi. Run it as pivuan-config.
+
+Package: simple-login-gui
+Architecture: arm64
+Version: 1.0.4-pivuan1
+Priority: optional
+Section: x11
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 444
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjpeg62-turbo (>= 1.3.1), libpam0g (>= 0.99.7.1), libstdc++6 (>= 11), libx11-6, libxrandr2 (>= 2:1.2.99.3), seatd, xinit, x11-xserver-utils
+Filename: pool/main/s/simple-login-gui/simple-login-gui_1.0.4-pivuan1_arm64.deb
+Size: 146448
+MD5sum: 5ab0f61117998777a44fcd56a952234a
+SHA1: fadca5b6f28136ce6c1e3aa93a8a769738804b20
+SHA256: 96f057b90cef2d06933f078e50affa8a40633a8ea57104961592d3ee1d9df67a
+SHA512: f7ce09c3912f0124ae2a44a92aaa4e28b1f921c8303eeb16c2d0bbb8329757aad4c84e1d8aae0e49708912e5a4816f9de9b686a2ae6b60c078febff4ea269cfb
+Homepage: https://github.com/rations/simple-login-gui
+Description: Graphical login on tty1 without a display manager (xlogin)
+ Replaces the text login on tty1 with a full-screen window: authenticates
+ with PAM, registers the session with elogind when present, and runs the user's
+ ~/.xinitrc. Started from /etc/inittab through xlogin-launcher.
+
+Package: simple-login-gui
+Architecture: arm64
+Version: 1.0.5-pivuan1
+Priority: optional
+Section: x11
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 512
+Depends: libc6 (>= 2.38), libcairo2 (>= 1.7.2), libfreetype6 (>= 2.2.1), libgcc-s1 (>= 3.0), libjpeg62-turbo (>= 1.3.1), libpam0g (>= 0.99.7.1), libstdc++6 (>= 11), libx11-6, libxrandr2 (>= 2:1.2.99.3), seatd, xinit, x11-xserver-utils
+Filename: pool/main/s/simple-login-gui/simple-login-gui_1.0.5-pivuan1_arm64.deb
+Size: 151028
+MD5sum: 06c4887b395553db46815e4b3f30e6b0
+SHA1: ead82b98bf3d5c3ceaf1ff9a101bc8aa21c933e1
+SHA256: 0a53c1b09d89829bba8274c69b1ec0091e5c285698f02394fbe974bfd877ea15
+SHA512: 5db2dc35f0cdbaee99e5507134d9ab8b9a4d0dc1e88085696b3c67a4bd68e67a34f7d2872fce6d64a4d779826277135e920b6eca9ec7e67aee5415d59ff61e0e
+Homepage: https://github.com/rations/simple-login-gui
+Description: Graphical login on tty1 without a display manager (xlogin)
+ Replaces the text login on tty1 with a full-screen window: authenticates
+ with PAM, registers the session with elogind when present, and runs the user's
+ ~/.xinitrc. Started from /etc/inittab through xlogin-launcher.
+
+Package: vstbridge
+Architecture: arm64
+Version: 5.1.1+git53.5d6fa0aec-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 11128
+Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libglib2.0-0t64 (>= 2.12.0), libgtk-3-0t64 (>= 3.16.2), libstdc++6 (>= 14), libxcb1, wine-fex (>= 11.18)
+Filename: pool/main/v/vstbridge/vstbridge_5.1.1+git53.5d6fa0aec-pivuan1_arm64.deb
+Size: 1803104
+MD5sum: af6a68c653b8d531e675894e821c10a8
+SHA1: 73443c38ec60db89670abf20165c446d4612d6d9
+SHA256: 293d4e1d8c11f23fa19de5e010f42de6f5afdeb32139f2995b59bb2396f79b34
+SHA512: f772d33f7acc6aba1f7f3cfe76e20cba4dc6346145c8f00178bee47c72356ff24d3fdd1fc7342e6b8928779040fc1973c72a5e5f2a64489ba8080147d57f25c0
+Homepage: https://github.com/rations/vstbridge
+Description: Windows VST2, VST3 and CLAP plugins in Linux audio programs
+ Bridges Windows plugins into native Linux plugin hosts such as JackDAW, through wine-fex.
+ vstbridgectl (and its GUI, in the menu) sets up the plugins found in a Wine prefix.
+
+Package: vstbridge
+Architecture: arm64
+Version: 5.1.1+git54.94933dc81-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 11128
+Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libglib2.0-0t64 (>= 2.12.0), libgtk-3-0t64 (>= 3.16.2), libstdc++6 (>= 14), libxcb1, wine-fex (>= 11.18)
+Filename: pool/main/v/vstbridge/vstbridge_5.1.1+git54.94933dc81-pivuan1_arm64.deb
+Size: 1803644
+MD5sum: d69d83c8704c4f1791723bd8aad0895b
+SHA1: 751fb17bc3374bf2360614e293a49a5eee7d530a
+SHA256: 39e4a2f1b969747fa538cb73ae7b8f195f4def83d0721d60fef709f1c8e35e41
+SHA512: 8cc5098c3bd8cc2cab5f0ad593840c5f589d7f728afc222eefdc54f7564213b3bce6363f5e7ead6851df7105b335868b67c449175e6a526f71cbdff607d8f879
+Homepage: https://github.com/rations/vstbridge
+Description: Windows VST2, VST3 and CLAP plugins in Linux audio programs
+ Bridges Windows plugins into native Linux plugin hosts such as JackDAW, through wine-fex.
+ vstbridgectl (and its GUI, in the menu) sets up the plugins found in a Wine prefix.
+
+Package: vstbridge
+Architecture: arm64
+Version: 5.1.1+git55.22880aedf-pivuan1
+Priority: optional
+Section: sound
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 11128
+Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.3.1), libglib2.0-0t64 (>= 2.12.0), libgtk-3-0t64 (>= 3.16.2), libstdc++6 (>= 14), libxcb1, wine-fex (>= 11.18)
+Filename: pool/main/v/vstbridge/vstbridge_5.1.1+git55.22880aedf-pivuan1_arm64.deb
+Size: 1803676
+MD5sum: 43b726655ac560a8af6a91d3edeb05ea
+SHA1: e006ef8504d8ca7222eff3c1619c90a1ec74d5e4
+SHA256: 251b17cf6833f5752952452445eec037dce2e0d8e250447c1987fb445289a875
+SHA512: 2547e544f7e3ddb088482ee944e39b4c7ba40818ef7aceb4f55483da46568c685d5b25ac26817e46ac515fd2bedf1ebba725d1003c818d5744b3ddb862f3e8eb
+Homepage: https://github.com/rations/vstbridge
+Description: Windows VST2, VST3 and CLAP plugins in Linux audio programs
+ Bridges Windows plugins into native Linux plugin hosts such as JackDAW, through wine-fex.
+ vstbridgectl (and its GUI, in the menu) sets up the plugins found in a Wine prefix.
+
+Package: wine-fex-i386
+Architecture: arm64
+Version: 11.18+fex2609.137-pivuan1
+Priority: optional
+Section: otherosfs
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 219936
+Filename: pool/main/w/wine-fex-i386/wine-fex-i386_11.18+fex2609.137-pivuan1_arm64.deb
+Size: 29088952
+MD5sum: f384eab5be17cadecd9bb4c6eb255c79
+SHA1: 5e45738f6edb36dfa467dfa36d443f21d47437be
+SHA256: 4249a01670ad2e39e39064f82f9e2cbfff04b6bc567be44420dbba8929313b49
+SHA512: 7f10b8c62ef0aa2cb6585106a1a90565d1d02f225c89e120e0a960d3283da7ff5a91947863992850ddb17fc649e475f28c31cadfc9f2c760b94806276a94445a
+Homepage: https://github.com/rations/vstbridge
+Description: Wine for Pivuan: 32-bit Windows programs
+ The 32-bit (i386) Windows side of wine-fex. FEX runs these programs' x86 code.
+
+Package: wine-fex-mono
+Architecture: all
+Version: 11.3.0-pivuan1
+Priority: optional
+Section: otherosfs
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 87072
+Filename: pool/main/w/wine-fex-mono/wine-fex-mono_11.3.0-pivuan1_all.deb
+Size: 86896220
+MD5sum: 731a8e6c0a824008225a1192ab978300
+SHA1: 50369c95420adf777f94b7a5451fc550c582a3bd
+SHA256: f7fa2919ab55620f702df301154f3c87bc955f0a535512f9da087ab595703a23
+SHA512: 99e8973d65d75f373e4f6f5e647da1190d1b874b24c5690f17998869e75f0c76d244a4b7d927fb049da88b4e67ccc9a763ef77686ad874ff96ea9f907ab70c74
+Homepage: https://github.com/rations/vstbridge
+Description: Wine for Pivuan: .NET Framework (wine-mono)
+ The wine-mono installer for wine-fex. Wine installs it into each new prefix from here
+ instead of downloading it.
+
+Package: wine-fex
+Architecture: arm64
+Version: 11.18+fex2609.137-pivuan1
+Priority: optional
+Section: otherosfs
+Maintainer: Pivuan <https://github.com/rations/pivuan>
+Installed-Size: 784692
+Depends: libasound2t64 (>= 1.0.16), libc6 (>= 2.38), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2), libudev1 (>= 183), libx11-6, libxext6, libasound2t64, libc6, libdbus-1-3, libegl1, libfontconfig1, libfreetype6, libgcc-s1, libgl1, libgnutls30t64, libstdc++6, libudev1, libvulkan1, libx11-6, libxcomposite1, libxcursor1, libxext6, libxfixes3, libxi6, libxinerama1, libxrandr2, libxrender1, libxxf86vm1, wine-fex-i386 (= 11.18+fex2609.137-pivuan1), wine-fex-mono (= 11.3.0-pivuan1)
+Recommends: libgl1-mesa-dri
+Conflicts: wine, wine64, wine32, winehq-stable, winehq-staging, winehq-devel
+Filename: pool/main/w/wine-fex/wine-fex_11.18+fex2609.137-pivuan1_arm64.deb
+Size: 56132956
+MD5sum: 31b8611c03874dfe23c36def417c9152
+SHA1: 311fe0ba87de9fbbfa41ea233d24cc8d9871c865
+SHA256: e8a5664d810cebd89232d69c7af6c2d359dce7fb2dc4befc9e86a17e3609920d
+SHA512: b7cc07d9e09256420c40682f875095fc3c37d0c5fb23654a0624dfc978714d0124234c6361a1bf2384b6068406d84490b28084164a3a14d71e553de0cc30d81f
+Homepage: https://github.com/rations/vstbridge
+Description: Wine for Pivuan, with FEX for x86 Windows programs
+ Wine 11.18 (staging) built for ARM64EC: Wine runs natively, and FEX runs only the
+ x86 code of the Windows programs and plugins. Includes vstbridge's fix for plugin editors
+ that stop responding with Wine's Direct3D. Installed in /opt/vstbridge/wine, with wine and its
+ programs in /usr/bin and a program loader for .exe and .msi files.
+
+Package: xserver-xlibre-common
+Architecture: all
+Version: 2:25.2.2-1+pivuan1
+Multi-Arch: foreign
+Priority: optional
+Section: x11
+Source: xlibre-server
+Maintainer: NexusSfan <nexussfan@duck.com>
+Installed-Size: 152
+Provides: xserver-common (= 2:25.2.2-1+pivuan1)
+Depends: xlibre-x11-common | x11-common, xkb-data, x11-xkb-utils
+Recommends: xfonts-base, xauth
+Conflicts: xserver-common
+Replaces: xserver-xorg-core (<< 2:1.5.2)
+Filename: pool/main/x/xserver-xlibre-common/xserver-xlibre-common_2%3a25.2.2-1+pivuan1_all.deb
+Size: 32272
+MD5sum: 2f5163a306ee3abf23d471a1dec94e2c
+SHA1: e578902d045b1df0b0a61176c9c132871a718d59
+SHA256: bb81a4609470733e726912b50783df360e62525d4a492db1a35d28891877a1e7
+SHA512: 287f3b9927b8bad662bcad49ae239214d0bb097793aa70b9ce3846d02b3148c9f8178b29d533a999abd0872415e50db2f8771c974cbb3f2f76d687b9902e2769
+Homepage: https://github.com/X11Libre
+Description: common files used by various X servers
+ This package provides files necessary for all XLibre based X servers.
+
+Package: xserver-xlibre-core
+Architecture: arm64
+Version: 2:25.2.2-1+pivuan1
+Priority: optional
+Section: x11
+Source: xlibre-server
+Maintainer: NexusSfan <nexussfan@duck.com>
+Installed-Size: 4803
+Provides: xorg-input-abi-26, xorg-video-abi-25, xorg-video-abi-28, xserver-xorg-core (= 2:21.98), xserver-xorg-video-modesetting
+Depends: xserver-xlibre-common (>= 2:25.2.2-1+pivuan1), keyboard-configuration, udev (>= 149), libegl1, libaudit1 (>= 1:2.2.1), libbsd0 (>= 0.7.0), libc6 (>= 2.38), libdrm2 (>= 2.4.107-5~), libepoxy0 (>= 1.5.4), libeudev1 (>= 3.2.12), libgbm1 (>= 21.3.0~rc1), libgl1, libnettle8t64, libpciaccess0 (>= 0.12.901), libpixman-1-0 (>= 0.30.0), libseat1 (>= 0.5.0), libselinux1 (>= 3.1~), libunwind8, libxau6 (>= 1:1.0.11), libxcvt0 (>= 0.1.0), libxdmcp6, libxfont2 (>= 1:2.0.1), libxshmfence1
+Recommends: libgl1-mesa-dri (>= 7.10.2-4), default-logind | logind, xcvt
+Suggests: xfonts-100dpi | xfonts-75dpi, xfonts-scalable
+Conflicts: xserver-xorg-core, xserver-xorg-input-evtouch, xserver-xorg-video-modesetting
+Breaks: libgl1-mesa-dri (<< 18.0.5), systemd (<< 226-4~), xserver-xorg (<< 1:7.7+10~)
+Replaces: xserver-xorg (<< 1:7.7+10~), xserver-xorg-video-modesetting
+Filename: pool/main/x/xserver-xlibre-core/xserver-xlibre-core_2%3a25.2.2-1+pivuan1_arm64.deb
+Size: 1330488
+MD5sum: dbdda4577bc51f7d4e1731cc916fa814
+SHA1: 43429a2541366ee71e240033fbf5a046bd426362
+SHA256: 4640818a9d254c6fcfdb390ef862ff76151e3929df55227687bfbaa5a8e17b49
+SHA512: f173bf63bdbf8a31bc9b617c50f89803820243b96cacb63021dab4dfe6d58be56dbb606cec5845793f0192123309756a81deaaa1b2038173dece080852e7bd71
+Homepage: https://github.com/X11Libre
+Description: XLibre X server - core server
+ The XLibre X server is an X server for several architectures and operating
+ systems, which is derived from the XFree86 4.x series of X servers.
+ .
+ The XLibre server supports most modern graphics hardware from most vendors,
+ and supersedes all XFree86 X servers.
+ .
+ More information about XLibre can be found at:
+ <URL:https://github.com/X11Libre/xserver>
+ .
+ This package is built from the XLibre xserver module.
+
+Package: xserver-xlibre-input-libinput
+Architecture: arm64
+Version: 1:25.0.1-1+pivuan1
+Priority: optional
+Section: x11
+Maintainer: NexusSfan <nexussfan@duck.com>
+Installed-Size: 163
+Provides: xlibre-driver-input, xserver-xorg-input-libinput (= 1:25.0.1-1+pivuan1)
+Depends: libc6 (>= 2.38), libinput10 (>= 1.26.0), xorg-input-abi-26, xserver-xlibre-core (>= 25.1.0)
+Conflicts: xserver-xorg-input-libinput
+Filename: pool/main/x/xserver-xlibre-input-libinput/xserver-xlibre-input-libinput_1%3a25.0.1-1+pivuan1_arm64.deb
+Size: 39032
+MD5sum: e982f300bbe3e8e80185f84380497f8f
+SHA1: f7d565c9183a9911c594344045fbae0617a6f72b
+SHA256: 0e49b0eff8a2c735748ade29a1bf2e388ff98a304ca08c458913329bfd92d72a
+SHA512: c8c6ff18c55c4037d36f51431f3c7e29432dd951cf9e46f30fc1588286a233ffa333157ed7b943acf0af4fb4cec914bcd1c318114afe1d00913301c928623d1c
+Homepage: https://github.com/X11Libre
+Description: XLibre X server -- libinput input driver
+ This package provides the driver for input devices using libinput library.
+ It can handle keyboards, mice and touchpads, and essentially replaces the
+ separate -evdev and -synaptics drivers.
+ .
+ This package is built from the XLibre xf86-input-libinput driver module.
+
