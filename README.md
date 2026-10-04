@@ -114,12 +114,30 @@ It installs:
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
 - **Desktop Settings** (System in the menu): the desktop background (the Pivuan backgrounds
   or any picture), program icons on the panel (all drawn at the same size), the panel's
-  size, the icons' size and the panel's colour, and hiding the panel until the mouse reaches
-  the bottom edge. It saves to `~/.config/pivuan/desktop.conf`.
+  size, the icons' size and the panel's colour, hiding the panel until the mouse reaches
+  the bottom edge, and the on-screen keyboard. It saves to `~/.config/pivuan/desktop.conf`.
 
 The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's
 `~/.jwmrc` includes `/etc/jwm/pivuan.jwmrc`; add your own settings to
 `~/.jwmrc`. `sudo pivuan-config --cmd AUDI02` removes it and brings back the text login.
+
+#### Touchscreens
+
+Pivuan Audio works on a touchscreen with no keyboard attached. When a touchscreen is
+connected:
+
+- The **login screen** shows an on-screen keyboard under the login box, in the keyboard
+  layout chosen at first boot. **Keyboard** on the login screen, or **Hide** on the
+  keyboard, puts it away and brings it back. Options → On-screen keyboard sets it to
+  Automatic, Always or Never. With **Log in automatically** ticked, the machine starts
+  without asking for a password at all.
+- The **desktop** has a keyboard button on the panel that shows and hides **Onboard**, the
+  on-screen keyboard, docked above the panel. It is also System → On-screen Keyboard in the
+  menu. In Desktop Settings, set it to Automatic (only with a touchscreen), Always or Never.
+- A bigger panel is easier to tap: set the panel size to 48 or more in Desktop Settings.
+
+A touchscreen is an input device the kernel marks as *direct*
+(`/sys/class/input/input*/properties`). A touchpad or a mouse does not count.
 
 ### XFCE and MATE
 
