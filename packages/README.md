@@ -12,22 +12,3 @@ for; apt adds their dependencies. Packages come from the Devuan archive unless m
 | [xfce.md](xfce.md) | XFCE, minimal, mid and full (`XFCE01`, `XFCE05`, `XFCE06`) |
 | [mate.md](mate.md) | MATE, minimal, mid and full (`MATE01`, `MATE05`, `MATE06`) |
 | [apt-repository.md](apt-repository.md) | Every package in the Pivuan apt repository, its version and what uses it |
-
-## Updating the lists
-
-The lists are generated, so don't edit them by hand. After a change to the image (rations/build),
-the desktops (rations/configng) or the apt repository, run this from this repository, with
-`../build` and `../configng` checked out next to it:
-
-```sh
-packages/update-lists.py
-```
-
-The script reads:
-- the image's packages from the build's own package aggregation, for the settings of the
-  "Pivuan image build" workflow;
-- the desktops' packages from configng's `parse_desktop_yaml.py`, as `pivuan-config` reads them;
-- the apt repository's packages from its index on the `gh-pages` branch.
-
-It needs `python3-yaml`, and `apt-cache` on a Devuan excalibur or Debian trixie machine for the
-package descriptions.
