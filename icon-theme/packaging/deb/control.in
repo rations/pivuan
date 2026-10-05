@@ -1,0 +1,17 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: all
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: hicolor-icon-theme
+Recommends: numix-icon-theme | adwaita-icon-theme, gtk-update-icon-cache
+Section: graphics
+Priority: optional
+Description: Pivuan icon theme, made from the icons of Haiku (unofficial)
+ The icon theme "@THEME@": folders, devices, file types, applications and
+ preferences drawn by the artists of the Haiku operating system, converted
+ from Haiku's own vector icons. Small sizes use the simplified shapes Haiku
+ draws at those sizes. Names the theme lacks (most toolbar actions) come from
+ Numix or, without it, Adwaita.
+ .
+ Not made or endorsed by Haiku, Inc.

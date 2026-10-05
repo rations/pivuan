@@ -1,0 +1,149 @@
+# Build the Pivuan icon theme (pivuan-icon-theme, icon-theme/) and, with "publish", add it to the
+# Pivuan apt repository (this repository's gh-pages branch).
+#
+# The theme is made from the icons of the Haiku operating system: make fetches only the files it
+# needs from the Haiku commit pinned in icon-theme/config.mk, and converts them with hvif-tools
+# (the icon-theme/third_party/hvif-tools submodule). The package is for all architectures, so it
+# is built on an ordinary runner. It is then installed in a clean Debian trixie container (the
+# same libraries as Devuan excalibur) and checked.
+#
+# The apt repository scripts are shared with the image build: they are read from rations/build
+# (branch pivuan, .github/pivuan/).
+#
+# Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
+# rations/build). The push to gh-pages uses this workflow's own token.
+
+name: Pivuan icon theme
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the package to the Pivuan apt repository"
+        type: boolean
+        default: false
+      build_ref:
+        description: "rations/build branch with the shared scripts"
+        type: string
+        default: pivuan
+  # A push that changes the theme builds and checks it (never publishes).
+  push:
+    branches: [master]
+    paths:
+      - "icon-theme/**"
+      - ".github/workflows/icon-theme.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pivuan-icon-theme-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: pivuan-icon-theme
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.deb.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Host tools
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends cmake g++ make python3 dpkg-dev
+
+      - name: Build the package
+        id: deb
+        run: |
+          set -euo pipefail
+          make -C icon-theme deb
+          mkdir -p "${RUNNER_TEMP}/out"
+          cp icon-theme/build/*.deb "${RUNNER_TEMP}/out/"
+          deb="$(ls "${RUNNER_TEMP}"/out/*.deb)"
+          echo "version=$(dpkg-deb -f "${deb}" Version)" >> "${GITHUB_OUTPUT}"
+
+      - name: Install and check in a clean root
+        run: |
+          set -euo pipefail
+          cd "${RUNNER_TEMP}/out"
+          # Exactly one package: pivuan-icon-theme, for all architectures
+          debs=(*.deb)
+          [[ "${#debs[@]}" == 1 ]] || { echo "::error::expected one package, found ${#debs[@]}"; exit 1; }
+          pkg="$(dpkg-deb -f "${debs[0]}" Package)"
+          arch="$(dpkg-deb -f "${debs[0]}" Architecture)"
+          [[ "${pkg}:${arch}" == pivuan-icon-theme:all ]] \
+            || { echo "::error::${debs[0]}: ${pkg} (${arch}) is not pivuan-icon-theme (all)"; exit 1; }
+          # No path of the build machine in the package
+          mkdir root && dpkg-deb -R "${debs[0]}" root
+          if grep -rlI -e "${HOME}" -e "${GITHUB_WORKSPACE}" root; then
+            echo "::error::the package names paths of the build machine"; exit 1
+          fi
+          # Installs with its dependencies, and its postinst builds the icon cache
+          docker run --rm -v "${PWD}:/debs:ro" debian:trixie sh -euc '
+            apt-get update -q
+            apt-get install -y -q --no-install-recommends "/debs/'"${debs[0]}"'" gtk-update-icon-cache
+            grep -qx "Name=Pivuan" /usr/share/icons/Pivuan/index.theme
+            test -s /usr/share/icons/Pivuan/icon-theme.cache
+            test -f /usr/share/icons/Pivuan/scalable/places/folder.svg
+            test -f /usr/share/icons/Pivuan/48x48/places/folder.png
+            echo "icons: $(find /usr/share/icons/Pivuan \( -type f -o -type l \) -name "*.*g" | wc -l)"
+          '
+          echo "${debs[0]}: $(dpkg-deb -f "${debs[0]}" Installed-Size) KiB installed" >> "${GITHUB_STEP_SUMMARY}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: icon-theme-deb
+          path: ${{ runner.temp }}/out/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: inputs.publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: icon-theme-deb
+          path: debs
+
+      - name: Publish to the Pivuan apt repository
+        env:
+          SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
+          REPO_TOKEN: ${{ github.token }}
+          PIVUAN_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          set -euo pipefail
+          [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
+          command -v apt-ftparchive > /dev/null || sudo apt-get install -y -q apt-utils
+          export GNUPGHOME="${RUNNER_TEMP}/gnupg"
+          mkdir -m 700 "${GNUPGHOME}"
+          gpg --batch --quiet --import <<< "${SIGNING_KEY}"
+          PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
+          [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
+          export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
+          bash build-scripts/.github/pivuan/publish-pages.sh "icon-theme-${VERSION}" debs
+          {
+            echo "## Apt repository"
+            echo ""
+            echo "pivuan-icon-theme ${VERSION}"
+            echo ""
+            echo '```'
+            cat "${PIVUAN_PAGES_LIST}"
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"

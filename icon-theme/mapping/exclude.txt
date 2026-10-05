@@ -1,0 +1,54 @@
+# Icons that must never go into the theme. One glob per line, matched against
+# the icon id (artwork:Name, rdef:Name, mime:type-subtype) and against its
+# source path in the Haiku tree; "*" also matches "/". build_theme.py stops if
+# the mapping uses one.
+
+# Trademarks of Haiku, Inc. (HAIKU logo, HAIKU Leaf), see data/artwork/ReadMe
+artwork:Folder_haiku
+artwork:App_About*
+artwork:Device_Harddisk_boot
+artwork:Overlay_leaf
+artwork:HaikuDepot_Native
+artwork:Misc_HaikuBook
+artwork:Deskbar_*
+rdef:AboutSystem
+rdef:HaikuDepot.native
+rdef:icons.R_LeafLogoBitmap
+rdef:TrackerIcons.R_BeosFolderIcon
+
+# Be, Inc. logo
+artwork:*_Be
+artwork:*_Be_2
+artwork:Overlay_Be*
+artwork:Overlay_Zeta
+
+# Third-party logos and trademarks
+artwork:App_Firefox
+artwork:App_VLC
+artwork:App_LibreOffice
+artwork:App_Dropbox
+artwork:App_VirtualBox
+artwork:App_GnuPG
+artwork:App_Transmission
+artwork:Misc_Facebook
+artwork:Misc_YouTube
+artwork:Misc_FreeBSD
+artwork:Misc_nVidiaRenderer
+artwork:Misc_RadeonRenderer
+artwork:Misc_IntelRenderer
+artwork:Misc_TARDIS
+artwork:Overlay_google
+artwork:Overlay_python
+artwork:Device_Harddisk_Zeta
+data/artwork/icons/Pulse/*
+
+# The code next to these resources is not MIT (GPL or BSD); keep their icons out
+src/apps/mediaplayer/*
+src/apps/codycam/*
+src/bin/fortune.rdef
+src/add-ons/print/drivers/gutenprint/*
+
+# Not icons, or not readable by icon2icon
+artwork:*.wonderbrush
+artwork:App_NetSurf_Original
+rdef:TrackerIcons.R_PersonIcon

@@ -106,7 +106,8 @@ It installs:
   not open the interface, it is switched off and on again). While JACK
   runs, PulseAudio lets it have the sound card and plays into JACK instead ("JACK (audio
   interface)" in Volume Control); when JACK stops, it takes the card back,
-- lxterminal, pcmanfm, mousepad, Celluloid, lxrandr and lxappearance, with the Numix icons.
+- lxterminal, pcmanfm, mousepad, Celluloid, lxrandr and lxappearance, with the Pivuan icons
+  (drawn for the Haiku operating system).
   Screen settings saved in lxrandr are applied at each login, as are other programs in
   `~/.config/autostart` meant for LXDE or any desktop,
 - the folders Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3` and `.lv2`
@@ -157,6 +158,8 @@ This installs, from the Devuan archive:
 - the **LightDM** login screen (no automatic login),
 - **NetworkManager** with its tray applet (your wired and Wi-Fi settings are moved over),
 - **PulseAudio** for sound and Bluetooth audio,
+- the **Pivuan icon theme** (the icons of the Haiku operating system), to pick in Appearance;
+  the desktops keep the Numix icons,
 - **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
 
 When it finishes, the login screen appears. Log in with the user you created in the wizard.
@@ -204,7 +207,7 @@ Pivuan is a fork of the Armbian build framework that builds Devuan with sysvinit
 | [rations/build](https://github.com/rations/build) (branch `pivuan`) | Armbian build framework fork: Devuan excalibur support, sysvinit init scripts for Armbian's first-boot and board services, the image and apt-repository workflows |
 | [rations/configng](https://github.com/rations/configng) | `armbian-config` (configng) fork, packaged as `pivuan-config`: a sysvinit service backend and the Devuan desktop install |
 | [raspberrypi/linux](https://github.com/raspberrypi/linux) | The Raspberry Pi Foundation's kernel, pinned to a tested `rpi-6.18.y` commit |
-| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre and vstbridge package builds |
+| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge and Pivuan icon theme package builds |
 | [rations/vstbridge](https://github.com/rations/vstbridge) (branch `arm64`) | vstbridge, the Windows plugin bridge, and the build of its Wine with FEX ([wine-fex-info.md](wine-fex-info.md)) |
 
 Images are built by GitHub Actions in `rations/build`, from Devuan packages checked against
@@ -222,16 +225,21 @@ Pivuan exists because of the work of two projects:
   of keeping Debian usable without systemd. Please support them: <https://www.devuan.org/os/donate>
 
 Also thanks to the [Raspberry Pi Foundation](https://www.raspberrypi.com/) for the kernel and
-firmware, and to [Debian](https://www.debian.org/), which Devuan is based on.
+firmware, to [Debian](https://www.debian.org/), which Devuan is based on, and to the
+[Haiku](https://www.haiku-os.org/) project, whose icons make up the Pivuan icon theme.
 
 Pivuan is an independent personal project. It is not affiliated with or endorsed by Armbian,
-Devuan, Debian or Raspberry Pi Ltd.
+Devuan, Debian, Raspberry Pi Ltd or Haiku, Inc.
 
 ## License
 
 The contents of this repository are licensed under the
 [GNU General Public License, version 2](LICENSE), the license of the Armbian build framework
-Pivuan is built with, **except the Pivuan artwork**.
+Pivuan is built with, **except the Pivuan artwork** and the Pivuan icon theme.
+
+**Pivuan icon theme.** The icons in [icon-theme/](icon-theme/) were drawn by the artists of
+the Haiku project and, with the scripts that build the theme, are under the MIT license (its
+`LICENSE` and `CREDITS.md`). "HAIKU" and the HAIKU logo are trademarks of Haiku, Inc.
 
 **Pivuan artwork.** The Pivuan logo and backgrounds (`pivuan-logo.png`,
 `backgrounds/background-*.png`, and the copies of them in Pivuan images and in

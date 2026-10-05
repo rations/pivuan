@@ -1,0 +1,3 @@
+[submodule "icon-theme/third_party/hvif-tools"]
+	path = icon-theme/third_party/hvif-tools
+	url = https://github.com/threedeyes/hvif-tools
