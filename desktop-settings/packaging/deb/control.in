@@ -1,0 +1,16 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: all
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: python3, python3-gi, gir1.2-gtk-3.0
+Recommends: jwm
+Section: x11
+Priority: optional
+Description: Desktop Settings for Pivuan Audio (JWM)
+ A small window for the Pivuan Audio desktop: the desktop background (the
+ Pivuan backgrounds or any picture), program icons on the panel, the panel's
+ size, color and icon size, hiding the panel, and the on-screen keyboard
+ button. It saves ~/.config/pivuan/desktop.conf and restarts JWM, which reads
+ it through /usr/lib/pivuan/jwm-desktop (set up by Pivuan Audio in
+ pivuan-config).

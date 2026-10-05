@@ -1,0 +1,575 @@
+#!/usr/bin/python3
+#
+# Pivuan Audio: Desktop Settings for JWM. The desktop background, program icons on the panel,
+# the panel's size and color, the icons' size, hiding the panel, and the on-screen keyboard.
+# Package pivuan-desktop-settings (rations/pivuan, desktop-settings/), installed as
+# /usr/bin/pivuan-desktop-settings (System > Desktop Settings in the Pivuan menu).
+#
+# Writes ~/.config/pivuan/desktop.conf and the panel's icons (~/.config/pivuan/panel-icons),
+# and restarts JWM (open windows stay); JWM gets the panel and background from
+# /usr/lib/pivuan/jwm-desktop (Pivuan Audio, rations/configng), which reads them. The defaults
+# here are jwm-desktop's: keep them the same.
+#
+#   pivuan-desktop-settings                 the window
+#   pivuan-desktop-settings --check         load the settings and GTK without a window (tests)
+#   pivuan-desktop-settings --render-icons  make the panel's icons from the saved settings
+#
+import copy
+import os
+import subprocess
+import sys
+
+import gi
+
+gi.require_version("Gtk", "3.0")
+gi.require_version("Gdk", "3.0")
+gi.require_version("GdkPixbuf", "2.0")
+gi.require_version("Pango", "1.0")
+from gi.repository import Gdk, GdkPixbuf, Gio, GLib, Gtk, Pango  # noqa: E402
+
+BACKGROUNDS = "/usr/share/backgrounds/pivuan"
+DEFAULT_BACKGROUND = os.path.join(BACKGROUNDS, "background-black.png")
+CONFIG = os.path.join(GLib.get_user_config_dir(), "pivuan", "desktop.conf")
+PANEL_ICONS = os.path.join(GLib.get_user_config_dir(), "pivuan", "panel-icons")
+THUMB_WIDTH, THUMB_HEIGHT = 128, 72
+ICON_SIZE = 32
+# The panel (as /usr/lib/pivuan/jwm-desktop reads them). JWM draws a panel icon 8 pixels
+# smaller than the panel, so the icons can be at most panel size - 8.
+PANEL_SIZE_DEFAULT, PANEL_SIZE_MIN, PANEL_SIZE_MAX = 30, 20, 96
+ICON_SIZE_DEFAULT, ICON_SIZE_MIN = 22, 12
+ICON_MARGIN = 8
+PANEL_COLOUR_DEFAULT = "#959597"  # the grey of the Pivuan logo
+SPEAKER_ICON = "audio-speakers"  # the Volume Control button, always on the panel
+KEYBOARD_ICON = "input-keyboard"  # the on-screen keyboard button, when it is on
+# The on-screen keyboard (Onboard): automatic (with a touchscreen), always or never, as
+# jwm-desktop reads keyboard= in desktop.conf.
+KEYBOARD_CHOICES = (("auto", "Automatic (when a touchscreen is attached)"),
+                    ("yes", "Always"), ("no", "Never"))
+
+
+def is_colour(value):
+    return (len(value) == 7 and value[0] == "#"
+            and all(c in "0123456789abcdefABCDEF" for c in value[1:]))
+
+
+def fix_sizes(settings):
+    """Keep the sizes in range: the panel 20-96, the icons 12 to panel size - 8."""
+    settings["panel_size"] = min(max(settings["panel_size"], PANEL_SIZE_MIN), PANEL_SIZE_MAX)
+    settings["icon_size"] = min(max(settings["icon_size"], ICON_SIZE_MIN),
+                                settings["panel_size"] - ICON_MARGIN)
+
+
+def load_settings():
+    """The settings in desktop.conf, or the defaults."""
+    settings = {"background": DEFAULT_BACKGROUND, "autohide": False, "launchers": [],
+                "panel_size": PANEL_SIZE_DEFAULT, "icon_size": ICON_SIZE_DEFAULT,
+                "panel_colour": PANEL_COLOUR_DEFAULT, "keyboard": "auto"}
+    try:
+        with open(CONFIG, encoding="utf-8") as f:
+            for line in f:
+                key, _, value = line.rstrip("\n").partition("=")
+                if key == "background" and value:
+                    settings["background"] = value
+                elif key == "autohide":
+                    settings["autohide"] = value == "yes"
+                elif key == "launcher" and value.endswith(".desktop") and "/" not in value:
+                    settings["launchers"].append(value)
+                elif key in ("panel_size", "icon_size") and value.isdigit():
+                    settings[key] = int(value)
+                elif key == "panel_colour" and is_colour(value):
+                    settings["panel_colour"] = value.upper()
+                elif key == "keyboard" and value in dict(KEYBOARD_CHOICES):
+                    settings["keyboard"] = value
+    except OSError:
+        pass
+    fix_sizes(settings)
+    return settings
+
+
+def save_settings(settings):
+    """Write desktop.conf in one go (a new file moved over the old one)."""
+    os.makedirs(os.path.dirname(CONFIG), exist_ok=True)
+    lines = [
+        "# Pivuan desktop settings, written by Desktop Settings (pivuan-desktop-settings).",
+        "background=" + settings["background"],
+        "autohide=" + ("yes" if settings["autohide"] else "no"),
+        "panel_size=%d" % settings["panel_size"],
+        "icon_size=%d" % settings["icon_size"],
+        "panel_colour=" + settings["panel_colour"],
+        "keyboard=" + settings["keyboard"],
+    ]
+    lines += ["launcher=" + app_id for app_id in settings["launchers"]]
+    tmp = CONFIG + ".new"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    os.replace(tmp, CONFIG)
+
+
+def icon_theme():
+    """The user's icon theme: GTK's own in the desktop, else the one GTK 3 is set to use
+    (~/.config/gtk-3.0/settings.ini), for --render-icons without a display."""
+    if Gdk.Screen.get_default() is not None:
+        return Gtk.IconTheme.get_default()
+    theme = Gtk.IconTheme.new()
+    ini = GLib.KeyFile()
+    try:
+        ini.load_from_file(os.path.join(GLib.get_user_config_dir(), "gtk-3.0", "settings.ini"),
+                           GLib.KeyFileFlags.NONE)
+        theme.set_custom_theme(ini.get_string("Settings", "gtk-icon-theme-name"))
+    except GLib.Error:
+        pass
+    return theme
+
+
+def icon_pixbuf(theme, gicon, size):
+    """The icon at size x size pixels at most, or the generic program icon."""
+    flags = Gtk.IconLookupFlags.FORCE_SIZE
+    candidates = [gicon] if gicon is not None else []
+    candidates += [Gio.ThemedIcon.new("application-x-executable"),
+                   Gio.ThemedIcon.new("image-missing")]
+    for candidate in candidates:
+        try:
+            info = theme.lookup_by_gicon(candidate, size, flags)
+            pixbuf = info.load_icon() if info else None
+        except GLib.Error:
+            pixbuf = None
+        if pixbuf is None:
+            continue
+        width, height = pixbuf.get_width(), pixbuf.get_height()
+        if width > size or height > size:
+            scale = size / max(width, height)
+            pixbuf = pixbuf.scale_simple(max(1, round(width * scale)),
+                                         max(1, round(height * scale)),
+                                         GdkPixbuf.InterpType.BILINEAR)
+        return pixbuf
+    return None
+
+
+def render_icons(settings):
+    """Make the panel's icons: each a square PNG as big as JWM draws a panel icon (panel size
+    - 8), with the icon at icon_size in the middle, so all are the same size. Returns the files
+    made."""
+    os.makedirs(PANEL_ICONS, exist_ok=True)
+    theme = icon_theme()
+    area = settings["panel_size"] - ICON_MARGIN
+    wanted = {SPEAKER_ICON: Gio.ThemedIcon.new(SPEAKER_ICON),
+              KEYBOARD_ICON: Gio.ThemedIcon.new(KEYBOARD_ICON)}
+    for app_id in settings["launchers"]:
+        info = app_info(app_id)
+        wanted[app_id[:-len(".desktop")]] = info.get_icon() if info else None
+    made = []
+    for name, gicon in wanted.items():
+        canvas = GdkPixbuf.Pixbuf.new(GdkPixbuf.Colorspace.RGB, True, 8, area, area)
+        canvas.fill(0)
+        pixbuf = icon_pixbuf(theme, gicon, settings["icon_size"])
+        if pixbuf is not None:
+            width, height = pixbuf.get_width(), pixbuf.get_height()
+            pixbuf.copy_area(0, 0, width, height, canvas, (area - width) // 2,
+                             (area - height) // 2)
+        path = os.path.join(PANEL_ICONS, name + ".png")
+        canvas.savev(path + ".new", "png", [], [])
+        os.replace(path + ".new", path)
+        made.append(path)
+    # Icons of programs no longer on the panel.
+    for old in os.listdir(PANEL_ICONS):
+        path = os.path.join(PANEL_ICONS, old)
+        if old.endswith(".png") and path not in made:
+            os.remove(path)
+    return made
+
+
+def app_info(app_id):
+    try:
+        return Gio.DesktopAppInfo.new(app_id)
+    except TypeError:
+        return None
+
+
+def app_icon(info):
+    icon = info.get_icon() if info else None
+    if icon is None:
+        return Gtk.Image.new_from_icon_name("application-x-executable", Gtk.IconSize.DND)
+    image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.DND)
+    image.set_pixel_size(ICON_SIZE)
+    return image
+
+
+def thumbnail(path):
+    try:
+        return GdkPixbuf.Pixbuf.new_from_file_at_scale(path, THUMB_WIDTH, THUMB_HEIGHT, False)
+    except GLib.Error:
+        return None
+
+
+def colour_name(path):
+    """background-dark-gray.png -> Dark Gray; other pictures: their file name."""
+    name = os.path.basename(path)
+    if name.startswith("background-") and name.endswith(".png"):
+        return name[len("background-"):-len(".png")].replace("-", " ").title()
+    return name
+
+
+class AddProgramDialog(Gtk.Dialog):
+    """The installed programs, with a search box; returns the chosen one's .desktop name."""
+
+    def __init__(self, parent, exclude):
+        super().__init__(title="Add a program to the panel", transient_for=parent, modal=True)
+        self.add_buttons("Cancel", Gtk.ResponseType.CANCEL, "Add", Gtk.ResponseType.OK)
+        self.set_default_size(420, 480)
+        self.set_default_response(Gtk.ResponseType.OK)
+        box = self.get_content_area()
+        box.set_spacing(6)
+        box.set_border_width(8)
+
+        self.search = Gtk.SearchEntry(placeholder_text="Search")
+        self.search.connect("search-changed", lambda *_: self.list.invalidate_filter())
+        box.pack_start(self.search, False, False, 0)
+
+        self.list = Gtk.ListBox()
+        self.list.set_filter_func(self.matches)
+        self.list.connect("row-activated", lambda *_: self.response(Gtk.ResponseType.OK))
+        apps = [a for a in Gio.AppInfo.get_all() if a.should_show() and a.get_id() not in exclude]
+        for app in sorted(apps, key=lambda a: a.get_display_name().lower()):
+            row = Gtk.ListBoxRow()
+            row.app_id = app.get_id()
+            row.label = app.get_display_name()
+            line = Gtk.Box(spacing=8, border_width=4)
+            line.pack_start(app_icon(app), False, False, 0)
+            line.pack_start(Gtk.Label(label=row.label, xalign=0), True, True, 0)
+            row.add(line)
+            self.list.add(row)
+        scrolled = Gtk.ScrolledWindow(vexpand=True)
+        scrolled.add(self.list)
+        box.pack_start(scrolled, True, True, 0)
+        self.show_all()
+
+    def matches(self, row):
+        text = self.search.get_text().strip().lower()
+        return not text or text in row.label.lower()
+
+    def chosen(self):
+        row = self.list.get_selected_row()
+        return row.app_id if row else None
+
+
+class DesktopSettings(Gtk.Window):
+    def __init__(self):
+        super().__init__(title="Desktop Settings")
+        self.set_default_size(640, 600)
+        self.set_icon_name("preferences-desktop-personal")
+        self.settings = load_settings()
+        # What is saved; Apply is highlighted only while the window shows something else.
+        self.saved = copy.deepcopy(self.settings)
+        self.apply_button = Gtk.Button(label="Apply", sensitive=False)
+
+        outer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, border_width=12)
+        self.add(outer)
+
+        # Background: the Pivuan backgrounds, and any other picture.
+        outer.pack_start(self.heading("Background"), False, False, 0)
+        self.pictures = Gtk.FlowBox(selection_mode=Gtk.SelectionMode.SINGLE,
+                                    min_children_per_line=4, max_children_per_line=4,
+                                    homogeneous=True, column_spacing=6, row_spacing=6)
+        self.pictures.connect("selected-children-changed", self.picture_chosen)
+        outer.pack_start(self.pictures, False, False, 0)
+        other = Gtk.Button(label="Other picture…", halign=Gtk.Align.START)
+        other.connect("clicked", self.other_picture)
+        outer.pack_start(other, False, False, 0)
+        self.fill_pictures()
+
+        # Panel: hide it, and the program icons on it.
+        outer.pack_start(self.heading("Panel"), False, False, 0)
+        self.autohide = Gtk.CheckButton(label="Hide the panel when not in use "
+                                              "(move the mouse to the bottom edge to show it)")
+        self.autohide.set_active(self.settings["autohide"])
+        outer.pack_start(self.autohide, False, False, 0)
+        # Sizes (type a number, or - and +) and the color.
+        look = Gtk.Box(spacing=8)
+        self.panel_size = Gtk.SpinButton.new_with_range(PANEL_SIZE_MIN, PANEL_SIZE_MAX, 1)
+        self.panel_size.set_value(self.settings["panel_size"])
+        self.icon_size = Gtk.SpinButton.new_with_range(ICON_SIZE_MIN,
+                                                       PANEL_SIZE_MAX - ICON_MARGIN, 1)
+        self.icon_size.set_value(self.settings["icon_size"])
+        self.panel_size.connect("value-changed", self.panel_size_changed)
+        self.panel_size_changed(self.panel_size)
+        self.colour = Gtk.ColorButton(title="Panel color")
+        self.colour.set_rgba(self.rgba(self.settings["panel_colour"]))
+        default_colour = Gtk.Button(label="Default")
+        default_colour.set_tooltip_text("The grey of the Pivuan logo")
+        default_colour.connect("clicked", self.default_colour)
+        for widget in (Gtk.Label(label="Panel size"), self.panel_size,
+                       Gtk.Label(label="Icon size"), self.icon_size,
+                       Gtk.Label(label="Panel color"), self.colour, default_colour):
+            look.pack_start(widget, False, False, 0)
+        outer.pack_start(look, False, False, 0)
+        # The on-screen keyboard: a panel button that shows and hides it.
+        keyboard = Gtk.Box(spacing=8)
+        self.keyboard = Gtk.ComboBoxText()
+        for value, label in KEYBOARD_CHOICES:
+            self.keyboard.append(value, label)
+        self.keyboard.set_active_id(self.settings["keyboard"])
+        keyboard.pack_start(Gtk.Label(label="On-screen keyboard"), False, False, 0)
+        keyboard.pack_start(self.keyboard, False, False, 0)
+        outer.pack_start(keyboard, False, False, 0)
+        hint = Gtk.Label(xalign=0, wrap=True)
+        hint.set_markup("<small>On a touchscreen, a panel size of 48 or more makes the panel "
+                        "easier to tap.</small>")
+        outer.pack_start(hint, False, False, 0)
+        outer.pack_start(Gtk.Label(label="Program icons on the panel, from left to right:",
+                                   xalign=0), False, False, 0)
+        lists = Gtk.Box(spacing=6)
+        self.launchers = Gtk.ListBox()
+        scrolled = Gtk.ScrolledWindow(vexpand=True, shadow_type=Gtk.ShadowType.IN,
+                                      min_content_height=120)
+        scrolled.add(self.launchers)
+        lists.pack_start(scrolled, True, True, 0)
+        buttons = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        for label, action in (("Add…", self.add_launcher), ("Remove", self.remove_launcher),
+                              ("Move left", lambda *_: self.move_launcher(-1)),
+                              ("Move right", lambda *_: self.move_launcher(1))):
+            button = Gtk.Button(label=label)
+            button.connect("clicked", action)
+            buttons.pack_start(button, False, False, 0)
+        lists.pack_start(buttons, False, False, 0)
+        outer.pack_start(lists, True, True, 0)
+        self.fill_launchers()
+
+        # Close and Apply.
+        actions = Gtk.Box(spacing=6, halign=Gtk.Align.END)
+        close = Gtk.Button(label="Close")
+        close.connect("clicked", lambda *_: self.destroy())
+        self.apply_button.connect("clicked", self.apply)
+        actions.pack_start(close, False, False, 0)
+        actions.pack_start(self.apply_button, False, False, 0)
+        outer.pack_start(actions, False, False, 0)
+        self.connect("destroy", Gtk.main_quit)
+
+        # Any change shows on the Apply button (the pictures and the program icons call
+        # self.changed themselves). A typed size counts before Enter.
+        self.autohide.connect("toggled", self.changed)
+        for spin in (self.panel_size, self.icon_size):
+            spin.connect("value-changed", self.changed)
+            spin.connect("changed", self.changed)
+        self.colour.connect("color-set", self.changed)
+        self.keyboard.connect("changed", self.changed)
+        self.ready = True
+        self.changed()
+
+    @staticmethod
+    def rgba(colour):
+        rgba = Gdk.RGBA()
+        rgba.parse(colour)
+        return rgba
+
+    @staticmethod
+    def hex_colour(rgba):
+        return "#%02X%02X%02X" % tuple(round(c * 255) for c in (rgba.red, rgba.green, rgba.blue))
+
+    @staticmethod
+    def spin_value(spin):
+        """The number in a size box, typed or not yet confirmed with Enter, kept in range."""
+        low, high = spin.get_range()
+        try:
+            return int(min(max(int(spin.get_text().strip()), low), high))
+        except ValueError:
+            return spin.get_value_as_int()
+
+    def current(self):
+        """The settings as the window shows them."""
+        settings = copy.deepcopy(self.settings)
+        settings["autohide"] = self.autohide.get_active()
+        settings["panel_size"] = self.spin_value(self.panel_size)
+        settings["icon_size"] = self.spin_value(self.icon_size)
+        settings["panel_colour"] = self.hex_colour(self.colour.get_rgba())
+        settings["keyboard"] = self.keyboard.get_active_id() or "auto"
+        fix_sizes(settings)
+        return settings
+
+    def changed(self, *_):
+        """Apply is blue and can be clicked only when something differs from what is saved."""
+        if not getattr(self, "ready", False):
+            return  # still building the window
+        differs = self.current() != self.saved
+        self.apply_button.set_sensitive(differs)
+        style = self.apply_button.get_style_context()
+        if differs:
+            style.add_class("suggested-action")
+        else:
+            style.remove_class("suggested-action")
+
+    def default_colour(self, _button):
+        self.colour.set_rgba(self.rgba(PANEL_COLOUR_DEFAULT))
+        self.changed()
+
+    def panel_size_changed(self, spin):
+        """The icons fit in the panel: at most panel size - 8."""
+        top = spin.get_value_as_int() - ICON_MARGIN
+        self.icon_size.set_range(ICON_SIZE_MIN, top)
+        if self.icon_size.get_value_as_int() > top:
+            self.icon_size.set_value(top)
+
+    @staticmethod
+    def heading(text):
+        label = Gtk.Label(xalign=0)
+        label.set_markup("<b>" + GLib.markup_escape_text(text) + "</b>")
+        return label
+
+    def fill_pictures(self):
+        self.current_picture = None
+        for child in self.pictures.get_children():
+            self.pictures.remove(child)
+        try:
+            paths = sorted(os.path.join(BACKGROUNDS, n) for n in os.listdir(BACKGROUNDS)
+                           if n.startswith("background-") and n.endswith(".png"))
+        except OSError:
+            paths = []
+        current = self.settings["background"]
+        if current not in paths and os.path.isfile(current):
+            paths.append(current)
+        for path in paths:
+            pixbuf = thumbnail(path)
+            if pixbuf is None:
+                continue
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2, border_width=4)
+            box.pack_start(Gtk.Image.new_from_pixbuf(pixbuf), False, False, 0)
+            box.pack_start(Gtk.Label(label=colour_name(path), ellipsize=Pango.EllipsizeMode.END,
+                                     max_width_chars=18), False, False, 0)
+            child = Gtk.FlowBoxChild()
+            child.path = path
+            child.set_tooltip_text(path)
+            child.add(box)
+            self.pictures.add(child)
+            if path == current:
+                self.current_picture = child
+        self.pictures.show_all()
+        self.show_current_picture()
+
+    def show_current_picture(self):
+        """Select the saved background, and give it the keyboard focus (in a FlowBox, the
+        focus selects: left elsewhere, it would select the first picture)."""
+        if self.current_picture is not None:
+            self.pictures.select_child(self.current_picture)
+            self.current_picture.grab_focus()
+        else:
+            self.pictures.unselect_all()
+
+    def picture_chosen(self, flowbox):
+        chosen = flowbox.get_selected_children()
+        if chosen:
+            self.settings["background"] = chosen[0].path
+            self.changed()
+
+    def other_picture(self, _button):
+        dialog = Gtk.FileChooserDialog(title="Choose a picture", transient_for=self,
+                                       action=Gtk.FileChooserAction.OPEN)
+        dialog.add_buttons("Cancel", Gtk.ResponseType.CANCEL, "Open", Gtk.ResponseType.OK)
+        images = Gtk.FileFilter()
+        images.set_name("Pictures")
+        images.add_pixbuf_formats()
+        dialog.add_filter(images)
+        pictures = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_PICTURES)
+        dialog.set_current_folder(pictures or GLib.get_home_dir())
+        if dialog.run() == Gtk.ResponseType.OK and dialog.get_filename():
+            self.settings["background"] = dialog.get_filename()
+            self.fill_pictures()
+            self.changed()
+        dialog.destroy()
+
+    def fill_launchers(self, selected=None):
+        for row in self.launchers.get_children():
+            self.launchers.remove(row)
+        for app_id in self.settings["launchers"]:
+            info = app_info(app_id)
+            row = Gtk.ListBoxRow()
+            row.app_id = app_id
+            line = Gtk.Box(spacing=8, border_width=4)
+            line.pack_start(app_icon(info), False, False, 0)
+            name = info.get_display_name() if info else app_id + " (not installed)"
+            line.pack_start(Gtk.Label(label=name, xalign=0), True, True, 0)
+            row.add(line)
+            self.launchers.add(row)
+            if app_id == selected:
+                self.launchers.select_row(row)
+        self.launchers.show_all()
+        self.changed()
+
+    def add_launcher(self, _button):
+        dialog = AddProgramDialog(self, self.settings["launchers"])
+        if dialog.run() == Gtk.ResponseType.OK and dialog.chosen():
+            self.settings["launchers"].append(dialog.chosen())
+            self.fill_launchers(selected=dialog.chosen())
+        dialog.destroy()
+
+    def remove_launcher(self, _button):
+        row = self.launchers.get_selected_row()
+        if row:
+            self.settings["launchers"].remove(row.app_id)
+            self.fill_launchers()
+
+    def move_launcher(self, step):
+        row = self.launchers.get_selected_row()
+        if not row:
+            return
+        items = self.settings["launchers"]
+        i = items.index(row.app_id)
+        j = i + step
+        if 0 <= j < len(items):
+            items[i], items[j] = items[j], items[i]
+            self.fill_launchers(selected=row.app_id)
+
+    def apply(self, _button):
+        # Typed values count even without Enter.
+        self.panel_size.update()
+        self.icon_size.update()
+        self.settings = self.current()
+        try:
+            save_settings(self.settings)
+            render_icons(self.settings)
+        except (OSError, GLib.Error) as e:
+            dialog = Gtk.MessageDialog(transient_for=self, modal=True,
+                                       message_type=Gtk.MessageType.ERROR,
+                                       buttons=Gtk.ButtonsType.CLOSE,
+                                       text="The settings could not be saved")
+            dialog.format_secondary_text(str(e))
+            dialog.run()
+            dialog.destroy()
+            return
+        self.saved = copy.deepcopy(self.settings)
+        self.changed()
+        # JWM reads its configuration again; the windows stay open.
+        try:
+            subprocess.run(["jwm", "-restart"], stdout=subprocess.DEVNULL,
+                           stderr=subprocess.DEVNULL, check=False)
+        except OSError:
+            pass  # no JWM here
+
+
+def main():
+    if sys.argv[1:] == ["--check"]:
+        settings = load_settings()
+        print("settings:", CONFIG)
+        print("background:", settings["background"])
+        print("autohide:", "yes" if settings["autohide"] else "no")
+        print("launchers:", " ".join(settings["launchers"]) or "none")
+        print("panel size:", settings["panel_size"])
+        print("icon size:", settings["icon_size"])
+        print("panel color:", settings["panel_colour"])
+        print("keyboard:", settings["keyboard"])
+        return 0
+    if sys.argv[1:] == ["--render-icons"]:
+        for path in render_icons(load_settings()):
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file(path)
+            print("%s %dx%d" % (path, pixbuf.get_width(), pixbuf.get_height()))
+        return 0
+    if len(sys.argv) > 1:
+        print("usage: pivuan-desktop-settings [--check | --render-icons]", file=sys.stderr)
+        return 2
+    window = DesktopSettings()
+    window.show_all()
+    window.show_current_picture()
+    Gtk.main()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

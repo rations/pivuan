@@ -121,10 +121,12 @@ It installs:
 - the folders Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3` and `.lv2`
   in each home, bookmarked in pcmanfm,
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
-- **Desktop Settings** (System in the menu): the desktop background (the Pivuan backgrounds
-  or any picture), program icons on the panel (all drawn at the same size), the panel's
-  size, the icons' size and the panel's colour, hiding the panel until the mouse reaches
-  the bottom edge, and the on-screen keyboard. It saves to `~/.config/pivuan/desktop.conf`.
+- **Desktop Settings** (System in the menu): the desktop background (the Pivuan backgrounds,
+  black by default, or any picture), program icons on the panel (all drawn at the same
+  size), the panel's size, the icons' size and the panel's color (by default the grey of the
+  Pivuan logo), hiding the panel until the mouse reaches the bottom edge, and the on-screen
+  keyboard. **Apply** lights up when there is a change to apply. It saves to
+  `~/.config/pivuan/desktop.conf`.
 
 The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's
 `~/.jwmrc` includes `/etc/jwm/pivuan.jwmrc`; add your own settings to
@@ -160,7 +162,7 @@ sudo pivuan-config --cmd MATE01    # MATE
 This installs, from the Devuan archive:
 
 - **XFCE** with `xfce4-terminal` and the Pivuan menu icon, or **MATE** with `mate-terminal`,
-  both with the Pivuan background,
+  both with the black Pivuan background,
 - the **XLibre** X server from the Pivuan apt repository (as on Pivuan Audio), with the
   **picom** compositor for smooth window moves,
 - the **LightDM** login screen (no automatic login),
@@ -215,7 +217,7 @@ Pivuan is a fork of the Armbian build framework that builds Devuan with sysvinit
 | [rations/build](https://github.com/rations/build) (branch `pivuan`) | Armbian build framework fork: Devuan excalibur support, sysvinit init scripts for Armbian's first-boot and board services, the image and apt-repository workflows |
 | [rations/configng](https://github.com/rations/configng) | `armbian-config` (configng) fork, packaged as `pivuan-config`: a sysvinit service backend and the Devuan desktop install |
 | [raspberrypi/linux](https://github.com/raspberrypi/linux) | The Raspberry Pi Foundation's kernel, pinned to a tested `rpi-6.18.y` commit |
-| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge, Pivuan icon theme and boot splash package builds |
+| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge, Pivuan icon theme, boot splash and Desktop Settings package builds |
 | [rations/vstbridge](https://github.com/rations/vstbridge) (branch `arm64`) | vstbridge, the Windows plugin bridge, and the build of its Wine with FEX ([wine-fex-info.md](wine-fex-info.md)) |
 
 Images are built by GitHub Actions in `rations/build`, from Devuan packages checked against

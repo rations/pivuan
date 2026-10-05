@@ -1,0 +1,14 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Pivuan Desktop Settings
+Upstream-Contact: @MAINTAINER@
+Source: https://github.com/rations/pivuan (desktop-settings/)
+
+Files: *
+Copyright: 2026 rations
+License: GPL-3
+ This program is free software: you can redistribute it and/or modify it
+ under the terms of the GNU General Public License, version 3, as published
+ by the Free Software Foundation.
+ .
+ On Debian and Devuan systems, the complete text of the GNU General Public
+ License version 3 is in /usr/share/common-licenses/GPL-3.
