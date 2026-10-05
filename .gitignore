@@ -1,1 +1,26 @@
+# Notes for Claude Code on this machine (not part of the project)
 CLAUDE.md
+
+# Build output: icon-theme/ and plymouth-theme/ build in their build/ (make), and the
+# Python tools leave caches
+build/
+__pycache__/
+*.pyc
+
+# Packages and images made or downloaded by hand. Published packages live on the gh-pages
+# branch (the workflows clone it separately); images are GitHub Releases.
+*.deb
+*.img
+*.img.xz
+
+# Leftovers of patches that did not apply (icon-theme/patches/)
+*.orig
+*.rej
+
+# Editors and desktops
+.vscode/
+.idea/
+*.swp
+*~
+.directory
+.DS_Store
