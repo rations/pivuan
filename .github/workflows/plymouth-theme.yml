@@ -93,6 +93,8 @@ jobs:
           mkdir shots
           cp "${GITHUB_WORKSPACE}/plymouth-theme/test-x11.sh" .
           docker run --rm -v "${PWD}:/debs" debian:trixie bash -euc '
+            # The screenshots and logs are written as root: readable, so they can be uploaded
+            trap "chmod -R a+rX /debs/shots" EXIT
             export DEBIAN_FRONTEND=noninteractive
             apt-get update -q
             # A kernel, so there is an initramfs to put the theme in
