@@ -53,9 +53,13 @@ until xdpyinfo > /dev/null 2>&1; do
 done
 
 # No udev in a container or chroot: plymouth.ignore-udev makes plymouthd use its fallback
-# renderers, of which x11 comes first.
+# renderers, of which x11 comes first. plymouth.ignore-serial-consoles (as on the Pi): a
+# container sees the host's consoles (/sys/class/tty/console/active), and with a serial one
+# among them (GitHub's runners have ttyS0) plymouthd uses only those consoles, which do not
+# exist here, and never tries the fallback renderers.
 plymouthd --no-daemon --debug --debug-file="${out}/plymouthd.log" --mode="${mode}" \
-	--kernel-command-line="splash plymouth.ignore-udev" > "${out}/plymouthd.out" 2>&1 &
+	--kernel-command-line="splash plymouth.ignore-udev plymouth.ignore-serial-consoles" \
+	> "${out}/plymouthd.out" 2>&1 &
 plymouthd=$!
 tries=0
 until plymouth --ping; do
