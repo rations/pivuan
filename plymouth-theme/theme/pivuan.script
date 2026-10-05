@@ -1,0 +1,411 @@
+# Pivuan boot splash (plymouth "script" module).
+#
+# Black screen; a band of light sweeps over the logo from left to right and leaves it dim, the
+# logo brightens to full, then sparks of electricity run along the three circuit traces to their
+# rings, over and over until the boot is done. There is no spinner and no progress bar.
+#
+# The images are made by make-assets.sh. Every logo image (logo, sweep, trace-*) is a "canvas":
+# the 1774x887 logo with BORDER empty pixels around it. The trace corners below are in logo
+# pixels; they must match the logo and make-assets.sh.
+
+#----------------------------------------- Settings --------------------------------
+
+LOGO_W = 1774;              # the logo (pivuan-logo.png), in its own pixels
+LOGO_H = 887;
+BORDER = 60;                # empty border of the canvas images (make-assets.sh)
+SIZE = 0.42;                # canvas width, as a part of the screen width
+FPS = 50;                   # plymouth refreshes the script 50 times a second
+
+SWEEP_TIME = 1.0;           # seconds for the light to cross the logo
+SWEEP_BAND = 0.14;          # width of the band of light, as a part of the canvas width
+SWEEP_SLICES = 9;           # the band is drawn as slices of rising and falling brightness
+DIM = 0.35;                 # brightness of the logo the light leaves behind
+BRIGHTEN_TIME = 0.8;        # seconds for the logo to go from dim to full
+
+SPEED = 1300;               # spark speed, logo pixels a second
+TRAIL = 5;                  # fading copies behind each spark
+TRAIL_GAP = 16;             # logo pixels between them
+CYCLE = 2.6;                # seconds from one round of sparks to the next
+FLASH_TIME = 0.7;           # seconds a trace and its ring glow after the spark arrives
+TRACE_GLOW = 0.15;          # glow of a trace while a spark runs along it
+
+#----------------------------------------- Screen and canvas --------------------------------
+
+Window.SetBackgroundTopColor(0, 0, 0);
+Window.SetBackgroundBottomColor(0, 0, 0);
+
+screen_x = Window.GetX();
+screen_y = Window.GetY();
+screen_w = Window.GetWidth();
+screen_h = Window.GetHeight();
+
+canvas_src_w = LOGO_W + 2 * BORDER;
+canvas_src_h = LOGO_H + 2 * BORDER;
+canvas_w = screen_w * SIZE;
+# Narrow (portrait) screens: keep the logo inside 60% of the height
+if (canvas_w * canvas_src_h / canvas_src_w > screen_h * 0.6)
+  canvas_w = screen_h * 0.6 * canvas_src_w / canvas_src_h;
+canvas_w = Math.Int(canvas_w);
+canvas_h = Math.Int(canvas_w * canvas_src_h / canvas_src_w);
+scale = canvas_w / canvas_src_w;            # logo pixels -> screen pixels
+canvas_x = screen_x + Math.Int((screen_w - canvas_w) / 2);
+canvas_y = screen_y + Math.Int((screen_h - canvas_h) / 2);
+
+# Screen position of a point of the logo
+fun at_x(x) { return canvas_x + (x + BORDER) * scale; }
+fun at_y(y) { return canvas_y + (y + BORDER) * scale; }
+
+# A canvas image scaled to the screen, or a sprite image scaled like the canvas
+fun canvas_image(file) { return Image(file).Scale(canvas_w, canvas_h); }
+asset_scale = canvas_w / Image("logo.png").GetWidth();
+fun sprite_image(file)
+  {
+    local.image = Image(file);
+    return image.Scale(Math.Int(image.GetWidth() * asset_scale + 0.5), Math.Int(image.GetHeight() * asset_scale + 0.5));
+  }
+
+#----------------------------------------- Logo and sweep --------------------------------
+
+logo.image = canvas_image("logo.png");
+logo.sprite = Sprite(logo.image);
+logo.sprite.SetPosition(canvas_x, canvas_y, 10);
+logo.sprite.SetOpacity(0);
+
+sweep.image = canvas_image("sweep.png");
+# The dim logo behind the band (a growing crop of the logo)
+sweep.dim = Sprite();
+sweep.dim.SetPosition(canvas_x, canvas_y, 10);
+sweep.dim.SetOpacity(DIM);
+sweep.band_w = canvas_w * SWEEP_BAND;
+sweep.slice_w = Math.Int(sweep.band_w / SWEEP_SLICES) + 1;
+for (i = 0; i < SWEEP_SLICES; i++)
+  {
+    sweep.slice[i] = Sprite();
+    sweep.slice[i].SetZ(11);
+    # Brightest in the middle of the band
+    sweep.slice_opacity[i] = 1 - Math.Abs(i - (SWEEP_SLICES - 1) / 2) / (SWEEP_SLICES / 2);
+  }
+
+# Draw the sweep with the band's middle at canvas x <edge>
+fun sweep_draw(edge)
+  {
+    local.cut = Math.Clamp(Math.Int(edge), 0, canvas_w);
+    if (cut > 0)
+      sweep.dim.SetImage(logo.image.Crop(0, 0, cut, canvas_h));
+    for (local.i = 0; i < SWEEP_SLICES; i++)
+      {
+        local.x0 = Math.Int(edge - sweep.band_w / 2 + i * sweep.slice_w);
+        local.x1 = Math.Min(x0 + sweep.slice_w, canvas_w);
+        x0 = Math.Max(x0, 0);
+        if (x1 > x0)
+          {
+            sweep.slice[i].SetImage(sweep.image.Crop(x0, 0, x1 - x0, canvas_h));
+            sweep.slice[i].SetX(canvas_x + x0);
+            sweep.slice[i].SetY(canvas_y);
+            sweep.slice[i].SetOpacity(sweep.slice_opacity[i]);
+          }
+        else
+          sweep.slice[i].SetOpacity(0);
+      }
+  }
+
+fun sweep_hide()
+  {
+    sweep.dim.SetOpacity(0);
+    for (local.i = 0; i < SWEEP_SLICES; i++)
+      sweep.slice[i].SetOpacity(0);
+  }
+
+#----------------------------------------- Traces --------------------------------
+
+# Corners of each trace's center line, in logo pixels, from where the electricity starts to the
+# edge of its ring; and the ring's center.
+trace[0].name = "top";      # grey, grows out of the "v"
+trace[0].x[0] =  690; trace[0].y[0] = 700;
+trace[0].x[1] =  792; trace[0].y[1] = 477;
+trace[0].x[2] =  951; trace[0].y[2] = 318;
+trace[0].x[3] = 1054; trace[0].y[3] = 318;
+trace[0].x[4] = 1204; trace[0].y[4] = 169;
+trace[0].x[5] = 1310; trace[0].y[5] = 169;
+trace[0].n = 6;
+trace[0].ring_x = 1364; trace[0].ring_y = 161;
+trace[0].red = 0;
+trace[0].delay = 0.25;      # seconds after the start of a round
+
+trace[1].name = "mid";      # red
+trace[1].x[0] =  893; trace[1].y[0] = 458;
+trace[1].x[1] =  970; trace[1].y[1] = 383;
+trace[1].x[2] = 1091; trace[1].y[2] = 383;
+trace[1].x[3] = 1212; trace[1].y[3] = 262;
+trace[1].x[4] = 1414; trace[1].y[4] = 262;
+trace[1].n = 5;
+trace[1].ring_x = 1470; trace[1].ring_y = 260;
+trace[1].red = 1;
+trace[1].delay = 0;
+
+trace[2].name = "bot";      # grey
+trace[2].x[0] =  978; trace[2].y[0] = 447;
+trace[2].x[1] = 1123; trace[2].y[1] = 447;
+trace[2].x[2] = 1212; trace[2].y[2] = 357;
+trace[2].x[3] = 1316; trace[2].y[3] = 357;
+trace[2].n = 4;
+trace[2].ring_x = 1371; trace[2].ring_y = 362;
+trace[2].red = 0;
+trace[2].delay = 0.5;
+
+spark_image[0] = sprite_image("spark.png");
+spark_image[1] = sprite_image("spark-red.png");
+flash_image[0] = sprite_image("flash.png");
+flash_image[1] = sprite_image("flash-red.png");
+
+for (t = 0; t < 3; t++)
+  {
+    # Length along the line to each corner
+    trace[t].at[0] = 0;
+    for (k = 1; k < trace[t].n; k++)
+      {
+        dx = trace[t].x[k] - trace[t].x[k - 1];
+        dy = trace[t].y[k] - trace[t].y[k - 1];
+        trace[t].at[k] = trace[t].at[k - 1] + Math.Sqrt(dx * dx + dy * dy);
+      }
+    trace[t].length = trace[t].at[trace[t].n - 1];
+
+    trace[t].lit = Sprite(canvas_image("trace-" + trace[t].name + ".png"));
+    trace[t].lit.SetPosition(canvas_x, canvas_y, 20);
+    trace[t].lit.SetOpacity(0);
+
+    image = flash_image[trace[t].red];
+    trace[t].flash = Sprite(image);
+    trace[t].flash.SetPosition(at_x(trace[t].ring_x) - image.GetWidth() / 2,
+                               at_y(trace[t].ring_y) - image.GetHeight() / 2, 21);
+    trace[t].flash.SetOpacity(0);
+
+    for (j = 0; j <= TRAIL; j++)
+      {
+        trail_opacity[j] = 1 - j / (TRAIL + 1);
+        trail_opacity[j] = trail_opacity[j] * trail_opacity[j];
+        trace[t].spark[j] = Sprite(spark_image[trace[t].red]);
+        trace[t].spark[j].SetZ(30 - j);
+        trace[t].spark[j].SetOpacity(0);
+      }
+  }
+
+# Put spark <j> of trace <t> at <distance> logo pixels along the trace
+fun spark_place(t, j, distance, opacity)
+  {
+    local.k = 1;
+    while (k < trace[t].n - 1 && trace[t].at[k] < distance)
+      k++;
+    local.part = (distance - trace[t].at[k - 1]) / (trace[t].at[k] - trace[t].at[k - 1]);
+    local.x = trace[t].x[k - 1] + (trace[t].x[k] - trace[t].x[k - 1]) * part;
+    local.y = trace[t].y[k - 1] + (trace[t].y[k] - trace[t].y[k - 1]) * part;
+    local.image = spark_image[trace[t].red];
+    trace[t].spark[j].SetX(Math.Int(at_x(x) - image.GetWidth() / 2));
+    trace[t].spark[j].SetY(Math.Int(at_y(y) - image.GetHeight() / 2));
+    trace[t].spark[j].SetOpacity(opacity);
+  }
+
+# Draw trace <t> at <time> seconds into a round of sparks
+fun trace_draw(t, time)
+  {
+    local.run = time - trace[t].delay;          # seconds since this trace's spark started
+    local.head = run * SPEED;                   # how far it has come
+    local.glow = 0;
+    local.flash = 0;
+    for (local.j = 0; j <= TRAIL; j++)
+      {
+        local.d = head - j * TRAIL_GAP;
+        if (run >= 0 && d >= 0 && d <= trace[t].length)
+          spark_place(t, j, d, trail_opacity[j]);
+        else
+          trace[t].spark[j].SetOpacity(0);
+      }
+    if (run >= 0 && head <= trace[t].length)
+      glow = TRACE_GLOW;
+    local.after = run - trace[t].length / SPEED; # seconds since it reached the ring
+    if (after >= 0 && after < FLASH_TIME)
+      {
+        flash = 1 - after / FLASH_TIME;
+        flash = flash * flash;
+        glow = Math.Max(glow, flash);
+      }
+    trace[t].lit.SetOpacity(glow);
+    trace[t].flash.SetOpacity(flash);
+  }
+
+fun traces_hide()
+  {
+    for (local.t = 0; t < 3; t++)
+      {
+        trace[t].lit.SetOpacity(0);
+        trace[t].flash.SetOpacity(0);
+        for (local.j = 0; j <= TRAIL; j++)
+          trace[t].spark[j].SetOpacity(0);
+      }
+  }
+
+#----------------------------------------- Animation --------------------------------
+
+# At boot the logo is swept in; at shutdown and reboot it is just there (the timeline starts
+# after the sweep and the brightening).
+mode = Plymouth.GetMode();
+if (mode == "boot" || mode == "resume")
+  {
+    sweep_start = 0;
+  }
+else
+  {
+    sweep_start = SWEEP_TIME + BRIGHTEN_TIME;
+  }
+frame = 0;
+quitting = 0;
+
+fun refresh_callback()
+  {
+    local.time = frame / FPS + sweep_start;     # seconds since the sweep started
+    global.frame++;
+    if (quitting)
+      {
+        # Nothing moves after quit; the logo stays (plymouth quit --retain-splash)
+      }
+    else if (time < SWEEP_TIME)
+      {
+        local.p = Math.Clamp(time / SWEEP_TIME, 0, 1);
+        p = p * p * (3 - 2 * p);                # ease in and out
+        sweep_draw(-sweep.band_w / 2 + p * (canvas_w + sweep.band_w));
+      }
+    else if (time < SWEEP_TIME + BRIGHTEN_TIME)
+      {
+        if (!sweep_done)
+          {
+            sweep_hide();
+            global.sweep_done = 1;
+          }
+        logo.sprite.SetOpacity(DIM + (1 - DIM) * (time - SWEEP_TIME) / BRIGHTEN_TIME);
+      }
+    else
+      {
+        if (!sweep_done)
+          {
+            sweep_hide();
+            global.sweep_done = 1;
+          }
+        logo.sprite.SetOpacity(1);
+        time -= SWEEP_TIME + BRIGHTEN_TIME;
+        local.round = time - Math.Int(time / CYCLE) * CYCLE;
+        for (local.t = 0; t < 3; t++)
+          trace_draw(t, round);
+      }
+  }
+
+Plymouth.SetRefreshFunction(refresh_callback);
+
+fun quit_callback()
+  {
+    global.quitting = 1;
+    sweep_hide();
+    traces_hide();
+    logo.sprite.SetOpacity(1);
+  }
+
+Plymouth.SetQuitFunction(quit_callback);
+
+#----------------------------------------- Messages --------------------------------
+
+# Text needs plymouth's label plugin (package plymouth-label); without it there is no text.
+
+text_scale = screen_h / 1080;
+text_y = canvas_y + canvas_h * 0.92;
+
+message.sprite = Sprite();
+message.sprite.SetZ(40);
+
+fun display_message_callback(text)
+  {
+    local.image = Image.Text(text, 0.75, 0.75, 0.75);
+    message.sprite.SetImage(image);
+    message.sprite.SetX(screen_x + Math.Int((screen_w - image.GetWidth()) / 2));
+    message.sprite.SetY(Math.Int(text_y));
+    message.sprite.SetOpacity(1);
+  }
+
+fun hide_message_callback(text)
+  {
+    message.sprite.SetOpacity(0);
+  }
+
+Plymouth.SetDisplayMessageFunction(display_message_callback);
+Plymouth.SetHideMessageFunction(hide_message_callback);
+
+#----------------------------------------- Password and questions --------------------------------
+
+entry.image = Image("entry.png");
+entry.image = entry.image.Scale(Math.Int(entry.image.GetWidth() * text_scale), Math.Int(entry.image.GetHeight() * text_scale));
+entry.x = screen_x + Math.Int((screen_w - entry.image.GetWidth()) / 2);
+entry.y = Math.Int(text_y + 40 * text_scale);
+entry.sprite = Sprite(entry.image);
+entry.sprite.SetPosition(entry.x, entry.y, 40);
+entry.sprite.SetOpacity(0);
+bullet.image = Image("bullet.png");
+bullet.image = bullet.image.Scale(Math.Int(bullet.image.GetWidth() * text_scale), Math.Int(bullet.image.GetHeight() * text_scale));
+prompt.sprite = Sprite();
+prompt.sprite.SetZ(40);
+answer.sprite = Sprite();
+answer.sprite.SetZ(41);
+
+fun show_prompt(text)
+  {
+    local.image = Image.Text(text, 0.75, 0.75, 0.75);
+    prompt.sprite.SetImage(image);
+    prompt.sprite.SetX(screen_x + Math.Int((screen_w - image.GetWidth()) / 2));
+    prompt.sprite.SetY(Math.Int(text_y));
+    prompt.sprite.SetOpacity(1);
+    entry.sprite.SetOpacity(1);
+    message.sprite.SetOpacity(0);
+  }
+
+fun display_password_callback(prompt_text, bullets)
+  {
+    show_prompt(prompt_text);
+    answer.sprite.SetOpacity(0);
+    local.gap = bullet.image.GetWidth() * 1.6;
+    for (local.i = 0; bullet.sprite[i] || i < bullets; i++)
+      {
+        if (!bullet.sprite[i])
+          {
+            bullet.sprite[i] = Sprite(bullet.image);
+            bullet.sprite[i].SetPosition(Math.Int(entry.x + 12 * text_scale + i * gap),
+                                         Math.Int(entry.y + (entry.image.GetHeight() - bullet.image.GetHeight()) / 2), 41);
+          }
+        # Bullets that would run past the box are not shown
+        if (i < bullets && (i + 1) * gap < entry.image.GetWidth() - 20 * text_scale)
+          bullet.sprite[i].SetOpacity(1);
+        else
+          bullet.sprite[i].SetOpacity(0);
+      }
+  }
+
+fun display_question_callback(prompt_text, entry_text)
+  {
+    show_prompt(prompt_text);
+    for (local.i = 0; bullet.sprite[i]; i++)
+      bullet.sprite[i].SetOpacity(0);
+    local.image = Image.Text(entry_text, 1, 1, 1);
+    answer.sprite.SetImage(image);
+    answer.sprite.SetPosition(Math.Int(entry.x + 12 * text_scale),
+                              Math.Int(entry.y + (entry.image.GetHeight() - image.GetHeight()) / 2), 41);
+    answer.sprite.SetOpacity(1);
+  }
+
+fun display_normal_callback()
+  {
+    prompt.sprite.SetOpacity(0);
+    entry.sprite.SetOpacity(0);
+    answer.sprite.SetOpacity(0);
+    for (local.i = 0; bullet.sprite[i]; i++)
+      bullet.sprite[i].SetOpacity(0);
+  }
+
+Plymouth.SetDisplayPasswordFunction(display_password_callback);
+Plymouth.SetDisplayQuestionFunction(display_question_callback);
+Plymouth.SetDisplayNormalFunction(display_normal_callback);

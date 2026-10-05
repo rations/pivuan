@@ -1,0 +1,24 @@
+#!/bin/sh
+# Make the Pivuan boot splash plymouth's theme, turn the splash on in the Raspberry Pi's
+# kernel command line, and rebuild the initramfs (plymouth starts from it, early in the boot).
+set -e
+
+CMDLINE=/boot/firmware/cmdline.txt
+# splash: show the theme. plymouth.ignore-serial-consoles: draw it on the screen even though
+# the command line also has a serial console (console=serial0).
+OPTIONS="splash plymouth.ignore-serial-consoles"
+
+if [ "$1" = configure ]; then
+	plymouth-set-default-theme @THEME@
+
+	# Each option is added once; nothing is added if the splash was turned off with "nosplash".
+	if [ -f "$CMDLINE" ] && ! grep -qw nosplash "$CMDLINE"; then
+		for option in $OPTIONS; do
+			grep -qE "(^| )$option( |\$)" "$CMDLINE" || sed -i "1s/\$/ $option/" "$CMDLINE"
+		done
+	fi
+
+	if command -v update-initramfs > /dev/null 2>&1; then
+		update-initramfs -u
+	fi
+fi

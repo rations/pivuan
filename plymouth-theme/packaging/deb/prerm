@@ -1,0 +1,9 @@
+#!/bin/sh
+# Going away: give plymouth back its default theme, if this one is still chosen.
+set -e
+
+if [ "$1" = remove ] && command -v plymouth-set-default-theme > /dev/null 2>&1; then
+	if [ "$(plymouth-set-default-theme 2> /dev/null)" = @THEME@ ]; then
+		plymouth-set-default-theme -r
+	fi
+fi

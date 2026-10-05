@@ -1,0 +1,190 @@
+# Build the Pivuan boot splash (pivuan-plymouth-theme, plymouth-theme/) and, with "publish", add
+# it to the Pivuan apt repository (this repository's gh-pages branch).
+#
+# The images are made from pivuan-logo.png with ImageMagick (plymouth-theme/make-assets.sh). The
+# package is for all architectures, so it is built on an ordinary runner, with the ImageMagick 6
+# of Ubuntu 24.04 like the image build (rations/build extensions/pivuan-plymouth.sh). It is then
+# checked in a clean Debian trixie container (the same libraries as Devuan excalibur):
+# installing it chooses the theme, adds the splash options to a Raspberry Pi cmdline.txt once,
+# and puts the theme in the initramfs; real plymouth runs it on a virtual X screen (the
+# screenshots are kept with the run); removing it undoes the rest.
+#
+# The apt repository scripts are shared with the image build: they are read from rations/build
+# (branch pivuan, .github/pivuan/).
+#
+# Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
+# rations/build). The push to gh-pages uses this workflow's own token.
+
+name: Pivuan boot splash
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the package to the Pivuan apt repository"
+        type: boolean
+        default: false
+      build_ref:
+        description: "rations/build branch with the shared scripts"
+        type: string
+        default: pivuan
+  # A push that changes the theme builds and checks it (never publishes).
+  push:
+    branches: [master]
+    paths:
+      - "plymouth-theme/**"
+      - "pivuan-logo.png"
+      - ".github/workflows/plymouth-theme.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pivuan-plymouth-theme-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: pivuan-plymouth-theme
+    runs-on: ubuntu-24.04
+    outputs:
+      version: ${{ steps.deb.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Host tools
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends imagemagick make dpkg-dev
+
+      - name: Build the package
+        id: deb
+        run: |
+          set -euo pipefail
+          make -C plymouth-theme deb
+          # The red images came out red (color drawn on a grey mask can stay grey)
+          for f in sweep trace-mid flash-red spark-red; do
+            rg="$(convert "plymouth-theme/build/theme/pivuan/${f}.png" -format '%[fx:mean.r] %[fx:mean.g]' info:)"
+            echo "${f}.png: red, green ${rg}"
+            awk -v rg="${rg}" 'BEGIN { split(rg, c, " "); exit !(c[1] > 1.5 * c[2]) }' \
+              || { echo "::error::${f}.png is not red"; exit 1; }
+          done
+          mkdir -p "${RUNNER_TEMP}/out"
+          cp plymouth-theme/build/*.deb "${RUNNER_TEMP}/out/"
+          deb="$(ls "${RUNNER_TEMP}"/out/*.deb)"
+          echo "version=$(dpkg-deb -f "${deb}" Version)" >> "${GITHUB_OUTPUT}"
+
+      - name: Install and check in a clean root
+        run: |
+          set -euo pipefail
+          cd "${RUNNER_TEMP}/out"
+          # Exactly one package: pivuan-plymouth-theme, for all architectures
+          debs=(*.deb)
+          [[ "${#debs[@]}" == 1 ]] || { echo "::error::expected one package, found ${#debs[@]}"; exit 1; }
+          pkg="$(dpkg-deb -f "${debs[0]}" Package)"
+          arch="$(dpkg-deb -f "${debs[0]}" Architecture)"
+          [[ "${pkg}:${arch}" == pivuan-plymouth-theme:all ]] \
+            || { echo "::error::${debs[0]}: ${pkg} (${arch}) is not pivuan-plymouth-theme (all)"; exit 1; }
+          # No path of the build machine in the package
+          mkdir root && dpkg-deb -R "${debs[0]}" root
+          if grep -rlI -e "${HOME}" -e "${GITHUB_WORKSPACE}" root; then
+            echo "::error::the package names paths of the build machine"; exit 1
+          fi
+          mkdir shots
+          cp "${GITHUB_WORKSPACE}/plymouth-theme/test-x11.sh" .
+          docker run --rm -v "${PWD}:/debs" debian:trixie bash -euc '
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -q
+            # A kernel, so there is an initramfs to put the theme in
+            apt-get install -y -q --no-install-recommends linux-image-amd64 initramfs-tools \
+              plymouth plymouth-x11 xvfb x11-utils imagemagick bc
+            # A Raspberry Pi command line like the image writes, with the serial console
+            mkdir -p /boot/firmware
+            echo "console=serial0,115200 console=tty1 loglevel=1 root=LABEL=armbi_root rootwait" > /boot/firmware/cmdline.txt
+
+            apt-get install -y -q --no-install-recommends "/debs/'"${debs[0]}"'"
+            test "$(plymouth-set-default-theme)" = pivuan
+            cat /boot/firmware/cmdline.txt
+            grep -q " splash plymouth.ignore-serial-consoles$" /boot/firmware/cmdline.txt
+            lsinitramfs /boot/initrd.img-* | grep -q "usr/share/plymouth/themes/pivuan/pivuan.script$"
+            lsinitramfs /boot/initrd.img-* | grep -q "usr/share/plymouth/themes/pivuan/logo.png$"
+            echo "initramfs: $(du -h /boot/initrd.img-* | cut -f1)"
+
+            # Installing again adds nothing
+            apt-get install -y -q --reinstall "/debs/'"${debs[0]}"'"
+            test "$(grep -ow splash /boot/firmware/cmdline.txt | wc -l)" = 1
+            test "$(grep -o plymouth.ignore-serial-consoles /boot/firmware/cmdline.txt | wc -l)" = 1
+
+            # Real plymouth draws the theme, at boot and at shutdown
+            sh /debs/test-x11.sh /debs/shots/boot boot
+            sh /debs/test-x11.sh /debs/shots/shutdown shutdown
+
+            # Removing it gives back the default theme and the command line
+            apt-get remove -y -q pivuan-plymouth-theme
+            test "$(plymouth-set-default-theme)" != pivuan
+            cat /boot/firmware/cmdline.txt
+            test "$(cat /boot/firmware/cmdline.txt)" = "console=serial0,115200 console=tty1 loglevel=1 root=LABEL=armbi_root rootwait"
+          '
+          echo "${debs[0]}: $(dpkg-deb -f "${debs[0]}" Installed-Size) KiB installed" >> "${GITHUB_STEP_SUMMARY}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plymouth-theme-deb
+          path: ${{ runner.temp }}/out/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: plymouth-theme-screenshots
+          path: ${{ runner.temp }}/out/shots
+          if-no-files-found: warn
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: inputs.publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plymouth-theme-deb
+          path: debs
+
+      - name: Publish to the Pivuan apt repository
+        env:
+          SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
+          REPO_TOKEN: ${{ github.token }}
+          PIVUAN_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          set -euo pipefail
+          [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
+          command -v apt-ftparchive > /dev/null || sudo apt-get install -y -q apt-utils
+          export GNUPGHOME="${RUNNER_TEMP}/gnupg"
+          mkdir -m 700 "${GNUPGHOME}"
+          gpg --batch --quiet --import <<< "${SIGNING_KEY}"
+          PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
+          [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
+          export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
+          bash build-scripts/.github/pivuan/publish-pages.sh "plymouth-theme-${VERSION}" debs
+          {
+            echo "## Apt repository"
+            echo ""
+            echo "pivuan-plymouth-theme ${VERSION}"
+            echo ""
+            echo '```'
+            cat "${PIVUAN_PAGES_LIST}"
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"

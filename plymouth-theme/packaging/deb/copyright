@@ -1,0 +1,23 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Pivuan boot splash
+Upstream-Contact: @MAINTAINER@
+Source: https://github.com/rations/pivuan (plymouth-theme/)
+
+Files: *
+Copyright: 2026 rations
+License: GPL-2
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License, version 2, as published
+ by the Free Software Foundation.
+ .
+ On Debian and Devuan systems, the complete text of the GNU General Public
+ License version 2 is in /usr/share/common-licenses/GPL-2.
+
+Files: usr/share/plymouth/themes/@THEME@/*.png
+Copyright: 2026 rations
+License: Pivuan-artwork
+ The Pivuan logo, and the images made from it, are part of the Pivuan
+ artwork: all rights reserved. They are not covered by the GPL or any other
+ license. They are distributed in this package, as part of Pivuan, with the
+ permission of their owner. Any other use needs permission: please ask by
+ opening an issue at https://github.com/rations/pivuan/issues.

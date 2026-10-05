@@ -1,0 +1,18 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: all
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: plymouth, initramfs-tools
+Recommends: plymouth-label
+Section: misc
+Priority: optional
+Description: Pivuan boot splash (plymouth theme)
+ The Pivuan logo on a black screen while the system starts and shuts down.
+ At boot a band of light sweeps over the logo and it brightens, then sparks
+ of electricity run along the logo's three circuit traces to their rings
+ until the boot is done. There is no spinner or progress bar.
+ .
+ Installing it makes it plymouth's theme, adds "splash" to the Raspberry
+ Pi's kernel command line (/boot/firmware/cmdline.txt) and rebuilds the
+ initramfs. plymouth-label shows messages such as "Restarting system...".

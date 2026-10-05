@@ -1,0 +1,20 @@
+#!/bin/sh
+# Removed: take the splash options the postinst added out of the Raspberry Pi's kernel command
+# line, and rebuild the initramfs without the theme.
+set -e
+
+CMDLINE=/boot/firmware/cmdline.txt
+OPTIONS="splash plymouth.ignore-serial-consoles"
+
+if [ "$1" = remove ]; then
+	if [ -f "$CMDLINE" ]; then
+		for option in $OPTIONS; do
+			sed -i -E "1s/(^| )$option( |\$)/\\2/" "$CMDLINE"
+		done
+		sed -i -E "1s/^ +//" "$CMDLINE"
+	fi
+
+	if command -v update-initramfs > /dev/null 2>&1; then
+		update-initramfs -u
+	fi
+fi

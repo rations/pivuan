@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Pivuan
+Description=The Pivuan logo on black, swept in by a band of light, with electricity running along its circuit traces
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/pivuan
+ScriptFile=/usr/share/plymouth/themes/pivuan/pivuan.script

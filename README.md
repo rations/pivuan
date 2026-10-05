@@ -68,6 +68,17 @@ Without a screen, connect Ethernet, find the Pi's address on your router and log
 `ssh root@<address>` using the password **`1234`**; the same wizard then starts and makes you
 change it.
 
+## Boot splash
+
+While Pivuan starts, the screen shows the Pivuan logo: a band of light sweeps it in, then
+electricity runs along its circuit traces until the login appears. It also shows at shutdown
+and restart. This is plymouth with the Pivuan theme (`pivuan-plymouth-theme`), which is on the
+image and is installed with each desktop.
+
+- Press **Esc** during the boot to see the boot messages instead.
+- To turn the splash off, add `nosplash` to the line in `/boot/firmware/cmdline.txt` and
+  restart. Remove it again to bring the splash back.
+
 ## Desktop
 
 The image is minimal on purpose. To add a desktop, log in and install **Pivuan Audio**,
@@ -204,7 +215,7 @@ Pivuan is a fork of the Armbian build framework that builds Devuan with sysvinit
 | [rations/build](https://github.com/rations/build) (branch `pivuan`) | Armbian build framework fork: Devuan excalibur support, sysvinit init scripts for Armbian's first-boot and board services, the image and apt-repository workflows |
 | [rations/configng](https://github.com/rations/configng) | `armbian-config` (configng) fork, packaged as `pivuan-config`: a sysvinit service backend and the Devuan desktop install |
 | [raspberrypi/linux](https://github.com/raspberrypi/linux) | The Raspberry Pi Foundation's kernel, pinned to a tested `rpi-6.18.y` commit |
-| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge and Pivuan icon theme package builds |
+| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge, Pivuan icon theme and boot splash package builds |
 | [rations/vstbridge](https://github.com/rations/vstbridge) (branch `arm64`) | vstbridge, the Windows plugin bridge, and the build of its Wine with FEX ([wine-fex-info.md](wine-fex-info.md)) |
 
 Images are built by GitHub Actions in `rations/build`, from Devuan packages checked against
