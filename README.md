@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="pivuan-logo.png">
-    <img src="pivuan-background.png" alt="Pivuan" width="520">
-  </picture>
+  <img src="pivuan-logo.gif" alt="Pivuan" width="520">
 </p>
 
 <p align="center"><b>Devuan with sysvinit for the Raspberry Pi.</b></p>
@@ -241,8 +238,9 @@ Pivuan is built with, **except the Pivuan artwork** and the Pivuan icon theme.
 the Haiku project and, with the scripts that build the theme, are under the MIT license (its
 `LICENSE` and `CREDITS.md`). "HAIKU" and the HAIKU logo are trademarks of Haiku, Inc.
 
-**Pivuan artwork.** The Pivuan logo and backgrounds (`pivuan-logo.png`,
-`backgrounds/background-*.png`, and the copies of them in Pivuan images and in
+**Pivuan artwork.** The Pivuan logo and backgrounds (`pivuan-logo.png`, the animated
+`pivuan-logo.gif` and `pivuan-splash.gif`, `backgrounds/background-*.png`, and the copies of
+them in Pivuan images and in
 [rations/configng](https://github.com/rations/configng)) are © 2026 rations, all rights
 reserved. They are not covered by the GPL or any other license in these repositories, and may
 only be used with permission. Please ask by
