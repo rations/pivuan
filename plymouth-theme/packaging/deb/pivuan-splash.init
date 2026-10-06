@@ -1,0 +1,46 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          pivuan-splash
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:
+# Should-Start:      $network $syslog $time armbian-resize-filesystem armbian-firstrun
+# X-Start-Before:    plymouth
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: End the boot splash and give the screen back to the console
+### END INIT INFO
+
+# Devuan's /etc/init.d/plymouth ends the splash with "plymouth quit --retain-splash", which leaves
+# the screen in graphics mode for a display manager to take over. Without one (the minimal image,
+# a console login, Pivuan Audio's xlogin on tty1) nothing ever draws on the screen again: it keeps
+# the splash or the text from before it, while the system waits on tty1. So, just before it, end
+# the splash here and give the screen back to the console, unless a display manager (LightDM on
+# XFCE and MATE) starts in this runlevel; then the splash stays until it takes over, as before.
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+test -x /usr/bin/plymouth || exit 0
+
+# Is the display manager in /etc/X11/default-display-manager started in this runlevel?
+display_manager() {
+	dm="$(basename "$(cat /etc/X11/default-display-manager 2> /dev/null)" 2> /dev/null)"
+	[ -n "${dm}" ] || return 1
+	level="${RUNLEVEL:-$(runlevel 2> /dev/null | cut -d " " -f 2)}"
+	ls /etc/rc"${level}".d/S??"${dm}" > /dev/null 2>&1
+}
+
+case "$1" in
+	start)
+		if plymouth --ping && ! display_manager; then
+			plymouth quit
+		fi
+		;;
+	stop | restart | force-reload | status)
+		;;
+	*)
+		echo "Usage: $0 start" >&2
+		exit 3
+		;;
+esac
+
+exit 0

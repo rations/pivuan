@@ -43,6 +43,14 @@ plymouth's theme, adds `splash plymouth.ignore-serial-consoles` to the Raspberry
 `/boot/firmware/cmdline.txt` (not if `nosplash` is there) and rebuilds the initramfs. Removing
 it gives plymouth back its default theme and takes the two options out again.
 
+It also has an init script, `/etc/init.d/pivuan-splash`, which ends the splash at the end of the
+boot. Devuan's own `/etc/init.d/plymouth` ends it with `--retain-splash`, leaving the screen in
+graphics mode for a display manager to take over; without one (the minimal image, a console
+login, Pivuan Audio's xlogin) the screen would never change again and the login on tty1 would
+not be seen. The script ends it plainly, unless the display manager in
+`/etc/X11/default-display-manager` (LightDM on XFCE and MATE) starts in that runlevel.
+[test-quit.sh](test-quit.sh) checks this with real plymouth.
+
 Pivuan images have it from the start (rations/build `extensions/pivuan-plymouth.sh` builds it
 from this directory), and the Pivuan desktops install it from the apt repository.
 

@@ -8,7 +8,8 @@
 # a kernel and plymouth installed first, like the minimal image:
 # installing it chooses the theme, adds the splash options to a Raspberry Pi cmdline.txt once,
 # and puts the theme in the initramfs; real plymouth runs it on a virtual X screen (the
-# screenshots are kept with the run); removing it undoes the rest.
+# screenshots are kept with the run); its init script ends the splash at the end of the boot
+# unless a display manager takes over; removing it undoes the rest.
 #
 # The apt repository scripts are shared with the image build: they are read from rations/build
 # (branch pivuan, .github/pivuan/).
@@ -92,7 +93,7 @@ jobs:
             echo "::error::the package names paths of the build machine"; exit 1
           fi
           mkdir shots
-          cp "${GITHUB_WORKSPACE}/plymouth-theme/test-x11.sh" .
+          cp "${GITHUB_WORKSPACE}/plymouth-theme/test-x11.sh" "${GITHUB_WORKSPACE}/plymouth-theme/test-quit.sh" .
           docker run --rm -v "${PWD}:/debs" debian:trixie bash -euc '
             # The screenshots and logs are written as root: readable, so they can be uploaded
             trap "chmod -R a+rX /debs/shots" EXIT
@@ -122,12 +123,17 @@ jobs:
             apt-get install -y -q --no-install-recommends plymouth-x11 xvfb x11-utils imagemagick bc
             sh /debs/test-x11.sh /debs/shots/boot boot
             sh /debs/test-x11.sh /debs/shots/shutdown shutdown
+            # At the end of the boot the console gets the screen back (no display manager)
+            sh /debs/test-quit.sh
 
             # Removing it gives back the default theme and the command line
             apt-get remove -y -q pivuan-plymouth-theme
             test "$(plymouth-set-default-theme)" != pivuan
             cat /boot/firmware/cmdline.txt
             test "$(cat /boot/firmware/cmdline.txt)" = "console=serial0,115200 console=tty1 loglevel=1 root=LABEL=armbi_root rootwait"
+            # Purging it takes its init script out of the boot
+            apt-get purge -y -q pivuan-plymouth-theme
+            if ls /etc/rc2.d/*pivuan-splash 2> /dev/null; then exit 1; fi
           '
           echo "${debs[0]}: $(dpkg-deb -f "${debs[0]}" Installed-Size) KiB installed" >> "${GITHUB_STEP_SUMMARY}"
 

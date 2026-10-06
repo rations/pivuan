@@ -18,3 +18,8 @@ if [ "$1" = remove ]; then
 		update-initramfs -u
 	fi
 fi
+
+# Purged: the init script is gone too
+if [ "$1" = purge ]; then
+	update-rc.d pivuan-splash remove > /dev/null
+fi

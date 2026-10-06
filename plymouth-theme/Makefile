@@ -41,6 +41,9 @@ deb: theme
 	rm -rf $(BUILD)/deb
 	$(MAKE) --no-print-directory install DESTDIR=$(DEB_ROOT) PREFIX=/usr
 	mkdir -p $(DEB_ROOT)/DEBIAN $(DEB_ROOT)/usr/share/doc/$(DEB_PACKAGE)
+	# The init script that gives the screen back to the console after the splash (see it)
+	install -D -m 0755 packaging/deb/pivuan-splash.init $(DEB_ROOT)/etc/init.d/pivuan-splash
+	echo /etc/init.d/pivuan-splash > $(DEB_ROOT)/DEBIAN/conffiles
 	set -e; \
 	size=$$(du -sk --apparent-size $(DEB_ROOT)/usr | cut -f1); \
 	subst() { sed -e 's|@PACKAGE@|$(DEB_PACKAGE)|g' -e 's|@VERSION@|$(DEB_VERSION)|g' \
