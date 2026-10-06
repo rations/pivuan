@@ -3,8 +3,7 @@ Version: @VERSION@
 Architecture: all
 Maintainer: @MAINTAINER@
 Installed-Size: @SIZE@
-Depends: plymouth, initramfs-tools
-Recommends: plymouth-label
+Depends: plymouth, plymouth-label, initramfs-tools
 Section: misc
 Priority: optional
 Description: Pivuan boot splash (plymouth theme)
@@ -15,4 +14,6 @@ Description: Pivuan boot splash (plymouth theme)
  .
  Installing it makes it plymouth's theme, adds "splash" to the Raspberry
  Pi's kernel command line (/boot/firmware/cmdline.txt) and rebuilds the
- initramfs. plymouth-label shows messages such as "Restarting system...".
+ initramfs. plymouth-label shows messages such as "Restarting system...",
+ and brings the fonts plymouth's initramfs hook copies for any graphical
+ theme.

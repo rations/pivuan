@@ -20,5 +20,5 @@ PREFIX ?= /usr
 # published version can never be reused, so bump one of them for every release)
 DEB_PACKAGE ?= pivuan-plymouth-theme
 VERSION ?= 1.0.0
-DEB_REVISION ?= 1
+DEB_REVISION ?= 2
 MAINTAINER ?= Pivuan <https://github.com/rations/pivuan>

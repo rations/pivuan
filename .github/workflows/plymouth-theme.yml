@@ -4,7 +4,8 @@
 # The images are made from pivuan-logo.png with ImageMagick (plymouth-theme/make-assets.sh). The
 # package is for all architectures, so it is built on an ordinary runner, with the ImageMagick 6
 # of Ubuntu 24.04 like the image build (rations/build extensions/pivuan-plymouth.sh). It is then
-# checked in a clean Debian trixie container (the same libraries as Devuan excalibur):
+# checked in a clean Debian trixie container (the same libraries as Devuan excalibur), with only
+# a kernel and plymouth installed first, like the minimal image:
 # installing it chooses the theme, adds the splash options to a Raspberry Pi cmdline.txt once,
 # and puts the theme in the initramfs; real plymouth runs it on a virtual X screen (the
 # screenshots are kept with the run); removing it undoes the rest.
@@ -97,9 +98,9 @@ jobs:
             trap "chmod -R a+rX /debs/shots" EXIT
             export DEBIAN_FRONTEND=noninteractive
             apt-get update -q
-            # A kernel, so there is an initramfs to put the theme in
-            apt-get install -y -q --no-install-recommends linux-image-amd64 initramfs-tools \
-              plymouth plymouth-x11 xvfb x11-utils imagemagick bc
+            # A kernel, so there is an initramfs to put the theme in; nothing else yet, like the
+            # minimal image (the test tools below bring fontconfig, which plymouth needs)
+            apt-get install -y -q --no-install-recommends linux-image-amd64 initramfs-tools plymouth
             # A Raspberry Pi command line like the image writes, with the serial console
             mkdir -p /boot/firmware
             echo "console=serial0,115200 console=tty1 loglevel=1 root=LABEL=armbi_root rootwait" > /boot/firmware/cmdline.txt
@@ -118,6 +119,7 @@ jobs:
             test "$(grep -o plymouth.ignore-serial-consoles /boot/firmware/cmdline.txt | wc -l)" = 1
 
             # Real plymouth draws the theme, at boot and at shutdown
+            apt-get install -y -q --no-install-recommends plymouth-x11 xvfb x11-utils imagemagick bc
             sh /debs/test-x11.sh /debs/shots/boot boot
             sh /debs/test-x11.sh /debs/shots/shutdown shutdown
 
