@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 #
-# Pivuan Audio: Desktop Settings for JWM. The desktop background, icons on the desktop, program
-# icons on the panel, the panel's size and color, the icons' size, hiding the panel, and the
-# on-screen keyboard.
+# Pivuan Audio: Desktop Settings for JWM. The desktop background, icons on the desktop, turning
+# the screen off when not in use, program icons on the panel, the panel's size and color, the
+# icons' size, hiding the panel, and the on-screen keyboard.
 # Package pivuan-desktop-settings (rations/pivuan, desktop-settings/), installed as
 # /usr/bin/pivuan-desktop-settings (System > Desktop Settings in the Pivuan menu).
 #
@@ -10,8 +10,9 @@
 # and restarts JWM (open windows stay); JWM gets the panel and background from
 # /usr/lib/pivuan/jwm-desktop (Pivuan Audio, rations/configng), which reads them. The desktop
 # icons are pcmanfm's desktop, started and stopped by /usr/lib/pivuan/desktop-icons (also
-# Pivuan Audio's), which reads the background and desktop_icons from the same file. The
-# defaults here are jwm-desktop's: keep them the same.
+# Pivuan Audio's), which reads the background and desktop_icons from the same file. jwm-desktop
+# also sets the screen's blanking (screen_off) each time JWM starts or restarts. The defaults
+# here are jwm-desktop's: keep them the same.
 #
 #   pivuan-desktop-settings                 the window
 #   pivuan-desktop-settings --check         load the settings and GTK without a window (tests)
@@ -50,6 +51,8 @@ KEYBOARD_CHOICES = (("auto", "Automatic (when a touchscreen is attached)"),
                     ("yes", "Always"), ("no", "Never"))
 # Icons on the desktop (pcmanfm's desktop), started and stopped by this script.
 DESKTOP_ICONS = "/usr/lib/pivuan/desktop-icons"
+# Turning the screen off: after this long without use, when screen_off is on (X's own default).
+SCREEN_OFF_MINUTES = 10
 
 
 def is_colour(value):
@@ -69,7 +72,7 @@ def load_settings():
     settings = {"background": DEFAULT_BACKGROUND, "autohide": False, "launchers": [],
                 "panel_size": PANEL_SIZE_DEFAULT, "icon_size": ICON_SIZE_DEFAULT,
                 "panel_colour": PANEL_COLOUR_DEFAULT, "keyboard": "auto",
-                "desktop_icons": True}
+                "desktop_icons": True, "screen_off": False}
     try:
         with open(CONFIG, encoding="utf-8") as f:
             for line in f:
@@ -86,8 +89,8 @@ def load_settings():
                     settings["panel_colour"] = value.upper()
                 elif key == "keyboard" and value in dict(KEYBOARD_CHOICES):
                     settings["keyboard"] = value
-                elif key == "desktop_icons" and value in ("yes", "no"):
-                    settings["desktop_icons"] = value == "yes"
+                elif key in ("desktop_icons", "screen_off") and value in ("yes", "no"):
+                    settings[key] = value == "yes"
     except OSError:
         pass
     fix_sizes(settings)
@@ -106,6 +109,7 @@ def save_settings(settings):
         "panel_colour=" + settings["panel_colour"],
         "keyboard=" + settings["keyboard"],
         "desktop_icons=" + ("yes" if settings["desktop_icons"] else "no"),
+        "screen_off=" + ("yes" if settings["screen_off"] else "no"),
     ]
     lines += ["launcher=" + app_id for app_id in settings["launchers"]]
     tmp = CONFIG + ".new"
@@ -292,6 +296,13 @@ class DesktopSettings(Gtk.Window):
         self.desktop_icons.set_active(self.settings["desktop_icons"])
         outer.pack_start(self.desktop_icons, False, False, 0)
 
+        # Screen: by default it stays on (a studio computer is often watched, not touched).
+        outer.pack_start(self.heading("Screen"), False, False, 0)
+        self.screen_off = Gtk.CheckButton(label="Turn the screen off after %d minutes without use"
+                                                % SCREEN_OFF_MINUTES)
+        self.screen_off.set_active(self.settings["screen_off"])
+        outer.pack_start(self.screen_off, False, False, 0)
+
         # Panel: hide it, and the program icons on it.
         outer.pack_start(self.heading("Panel"), False, False, 0)
         self.autohide = Gtk.CheckButton(label="Hide the panel when not in use "
@@ -363,6 +374,7 @@ class DesktopSettings(Gtk.Window):
         # self.changed themselves). A typed size counts before Enter.
         self.autohide.connect("toggled", self.changed)
         self.desktop_icons.connect("toggled", self.changed)
+        self.screen_off.connect("toggled", self.changed)
         for spin in (self.panel_size, self.icon_size):
             spin.connect("value-changed", self.changed)
             spin.connect("changed", self.changed)
@@ -395,6 +407,7 @@ class DesktopSettings(Gtk.Window):
         settings = copy.deepcopy(self.settings)
         settings["autohide"] = self.autohide.get_active()
         settings["desktop_icons"] = self.desktop_icons.get_active()
+        settings["screen_off"] = self.screen_off.get_active()
         settings["panel_size"] = self.spin_value(self.panel_size)
         settings["icon_size"] = self.spin_value(self.icon_size)
         settings["panel_colour"] = self.hex_colour(self.colour.get_rgba())
@@ -554,7 +567,8 @@ class DesktopSettings(Gtk.Window):
             return
         self.saved = copy.deepcopy(self.settings)
         self.changed()
-        # JWM reads its configuration again; the windows stay open.
+        # JWM reads its configuration again (and jwm-desktop sets the screen's blanking); the
+        # windows stay open.
         try:
             subprocess.run(["jwm", "-restart"], stdout=subprocess.DEVNULL,
                            stderr=subprocess.DEVNULL, check=False)
@@ -583,6 +597,7 @@ def main():
         print("panel color:", settings["panel_colour"])
         print("keyboard:", settings["keyboard"])
         print("desktop icons:", "yes" if settings["desktop_icons"] else "no")
+        print("screen off:", "yes" if settings["screen_off"] else "no")
         return 0
     if sys.argv[1:] == ["--render-icons"]:
         for path in render_icons(load_settings()):

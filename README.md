@@ -130,7 +130,8 @@ It installs:
   black by default, or any picture), program icons on the panel (all drawn at the same
   size), the panel's size, the icons' size and the panel's color (by default the grey of the
   Pivuan logo), hiding the panel until the mouse reaches the bottom edge, icons on the desktop
-  (on by default) and the on-screen keyboard. **Apply** lights up when there is a change to apply. It saves to
+  (on by default), turning the screen off after 10 minutes without use (off by default: the
+  screen stays on) and the on-screen keyboard. **Apply** lights up when there is a change to apply. It saves to
   `~/.config/pivuan/desktop.conf`.
 
 The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's

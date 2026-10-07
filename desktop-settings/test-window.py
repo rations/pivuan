@@ -52,6 +52,7 @@ check("default background is black",
       ds.DEFAULT_BACKGROUND.endswith("/background-black.png"))
 check("default panel color is #959597", ds.PANEL_COLOUR_DEFAULT == "#959597")
 check("desktop icons are on by default", ds.load_settings()["desktop_icons"] is True)
+check("the screen stays on by default", ds.load_settings()["screen_off"] is False)
 
 window = ds.DesktopSettings()
 check("Apply is plain when the window opens", plain(window))
@@ -82,6 +83,11 @@ check("turning the desktop icons off highlights Apply", highlighted(window))
 window.desktop_icons.set_active(True)
 check("turning them on again makes Apply plain again", plain(window))
 
+window.screen_off.set_active(True)
+check("turning the screen off after a while highlights Apply", highlighted(window))
+window.screen_off.set_active(False)
+check("leaving the screen on again makes Apply plain again", plain(window))
+
 window.settings["launchers"].append("example.desktop")
 window.fill_launchers()
 check("adding a program icon highlights Apply", highlighted(window))
@@ -99,6 +105,11 @@ window.apply(window.apply_button)
 check("the desktop icons setting was saved", ds.load_settings()["desktop_icons"] is False)
 check("Apply restarted the desktop icons",
       any(args and args[0] == [ds.DESKTOP_ICONS, "restart"] for args in restarts))
+
+# Turning the screen off after a while is saved (jwm-desktop sets it when JWM restarts).
+window.screen_off.set_active(True)
+window.apply(window.apply_button)
+check("the screen setting was saved", ds.load_settings()["screen_off"] is True)
 
 # A window opened on the saved settings starts plain too.
 again = ds.DesktopSettings()
