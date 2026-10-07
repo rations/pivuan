@@ -104,8 +104,13 @@ It installs:
   CPU Power,
 - **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridge"
   in the Audio menu), with **Wine** and **FEX** for Windows programs, such as plugin
-  installers and licence managers: they open from a right-click in pcmanfm ("Wine Windows
-  Program Loader"). Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
+  installers and license managers (iLok works): they open from a right-click in pcmanfm
+  ("Wine Windows Program Loader"). Installed Windows programs are in the **Wine** menu, which
+  updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
+  installers put on the desktop show as desktop icons. When a Windows program installs a
+  service that starts with Windows, such as iLok's PACE License Services, Wine starts at login
+  and runs until logout, so the service is ready before a program or plugin needs it.
+  Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
   [wine-fex-info.md](wine-fex-info.md),
 - **PulseAudio** for everything else: HDMI, Bluetooth speakers and headphones, the browser and
   media player. The speaker in the tray opens Volume Control (pavucontrol); its scroll wheel
@@ -118,14 +123,14 @@ It installs:
   (drawn for the Haiku operating system).
   Screen settings saved in lxrandr are applied at each login, as are other programs in
   `~/.config/autostart` meant for LXDE or any desktop,
-- the folders Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3` and `.lv2`
-  in each home, bookmarked in pcmanfm,
+- the folders Desktop, Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3`
+  and `.lv2` in each home, bookmarked in pcmanfm (the files in Desktop show on the desktop),
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
 - **Desktop Settings** (System in the menu): the desktop background (the Pivuan backgrounds,
   black by default, or any picture), program icons on the panel (all drawn at the same
   size), the panel's size, the icons' size and the panel's color (by default the grey of the
-  Pivuan logo), hiding the panel until the mouse reaches the bottom edge, and the on-screen
-  keyboard. **Apply** lights up when there is a change to apply. It saves to
+  Pivuan logo), hiding the panel until the mouse reaches the bottom edge, icons on the desktop
+  (on by default) and the on-screen keyboard. **Apply** lights up when there is a change to apply. It saves to
   `~/.config/pivuan/desktop.conf`.
 
 The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's

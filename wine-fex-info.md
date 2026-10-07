@@ -35,12 +35,24 @@ DXVK requires, such as BC texture compression and 64-bit shader integers.
 
 ## What's different from upstream Wine
 
-Two patches, both in
+Six patches, all in
 [vstbridge's `aarch64/wine/patches`](https://github.com/rations/vstbridge/tree/arm64/aarch64/wine/patches):
 
 1. `IDXGIOutput::WaitForVBlank()` waits for a refresh interval (the fix above).
 2. New Wine prefixes use FEX for x86_64 and 32-bit x86 programs, as Proton's Wine does. Upstream
    Wine points these at stubs that don't run anything.
+3. A shortcut an installer puts on your desktop shows once, as its launcher. Wine's Desktop folder
+   is the Linux desktop, so the Windows shortcut file would otherwise show next to it. The file
+   moves to Wine's Public Desktop, where Windows programs still find it.
+4. Windows' service manager reports a service's failure actions. Installers that set them, such as
+   iLok's, read them first and stopped when Wine couldn't answer.
+5. Wine's installer programs (`msiexec`, and `rundll32` for .NET installer steps) say they support
+   Windows 10, as Windows' own do. Without that, installers checking for Windows 10 saw Windows 8.
+6. Windows programs are told the computer has the x86-64 processor FEX emulates. Installers that
+   find an ARM processor install ARM files, which the x86-64 programs and plugins run here can't
+   load. iLok's did.
+
+Patches 4 to 6 are what iLok (PACE License Support) needs to install.
 
 ## Packages
 
