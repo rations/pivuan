@@ -51,6 +51,7 @@ def plain(window):
 check("default background is black",
       ds.DEFAULT_BACKGROUND.endswith("/background-black.png"))
 check("default panel color is #959597", ds.PANEL_COLOUR_DEFAULT == "#959597")
+check("desktop icons are on by default", ds.load_settings()["desktop_icons"] is True)
 
 window = ds.DesktopSettings()
 check("Apply is plain when the window opens", plain(window))
@@ -76,6 +77,11 @@ window.keyboard.set_active_id("yes")
 check("the on-screen keyboard setting highlights Apply", highlighted(window))
 window.keyboard.set_active_id("auto")
 
+window.desktop_icons.set_active(False)
+check("turning the desktop icons off highlights Apply", highlighted(window))
+window.desktop_icons.set_active(True)
+check("turning them on again makes Apply plain again", plain(window))
+
 window.settings["launchers"].append("example.desktop")
 window.fill_launchers()
 check("adding a program icon highlights Apply", highlighted(window))
@@ -86,6 +92,13 @@ check("Apply is plain after applying", plain(window))
 check("Apply restarted JWM", len(restarts) == 1)
 saved = ds.load_settings()
 check("the program icon was saved", saved["launchers"] == ["example.desktop"])
+
+# Turning the desktop icons off saves it and restarts them (pcmanfm's desktop goes away).
+window.desktop_icons.set_active(False)
+window.apply(window.apply_button)
+check("the desktop icons setting was saved", ds.load_settings()["desktop_icons"] is False)
+check("Apply restarted the desktop icons",
+      any(args and args[0] == [ds.DESKTOP_ICONS, "restart"] for args in restarts))
 
 # A window opened on the saved settings starts plain too.
 again = ds.DesktopSettings()

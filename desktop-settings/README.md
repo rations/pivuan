@@ -7,7 +7,9 @@ Pivuan menu. It sets:
 - program icons on the panel, in order, all drawn at the same size;
 - the panel's size and color (by default the grey of the Pivuan logo, #959597), the icons'
   size, and hiding the panel until the mouse reaches the bottom edge;
-- the on-screen keyboard button: automatic (with a touchscreen), always or never.
+- the on-screen keyboard button: automatic (with a touchscreen), always or never;
+- icons on the desktop (on by default): the program shortcuts Windows installers make and the
+  files in the Desktop folder, drawn by pcmanfm through `/usr/lib/pivuan/desktop-icons`.
 
 **Apply** is highlighted only when something differs from what is saved, and goes back to
 normal once it is applied. Applying saves `~/.config/pivuan/desktop.conf` and the panel's
@@ -16,7 +18,7 @@ icons (`~/.config/pivuan/panel-icons/`) and restarts JWM; open windows stay.
 JWM reads the settings through `/usr/lib/pivuan/jwm-desktop`, part of Pivuan Audio in
 [rations/configng](https://github.com/rations/configng) (`tools/modules/desktops/branding/jwm/`),
 which installs this package. The settings file's format and the defaults (black background,
-panel #959597 and 30 pixels, icons 22) are in both: change them together.
+panel #959597 and 30 pixels, icons 22, desktop icons on) are in both: change them together.
 
 ## Build
 
