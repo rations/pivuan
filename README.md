@@ -102,14 +102,13 @@ It installs:
 - **JACK** with realtime scheduling for the `audio` group, and the Pivuan audio applications
   from the Pivuan apt repository: Jack Graph, JackDAW, NAMp, NAMix, lvtuner, DRUMix and
   CPU Power,
-- **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridge"
+- **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridgectl"
   in the Audio menu), with **Wine** and **FEX** for Windows programs, such as plugin
-  installers and license managers (iLok works): they open from a right-click in pcmanfm
+  installers and license managers: they open from a right-click in pcmanfm
   ("Wine Windows Program Loader"). Installed Windows programs are in the **Wine** menu, which
   updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
-  installers put on the desktop show as desktop icons. When a Windows program installs a
-  service that starts with Windows, such as iLok's PACE License Services, Wine starts at login
-  and runs until logout, so the service is ready before a program or plugin needs it.
+  installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE) do
+  not run on Arm yet, so Wine is not kept running for iLok's service at login for now.
   Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
   [wine-fex-info.md](wine-fex-info.md),
 - **PulseAudio** for everything else: HDMI, Bluetooth speakers and headphones, the browser and
@@ -120,13 +119,16 @@ It installs:
   runs, PulseAudio lets it have the sound card and plays into JACK instead ("JACK (audio
   interface)" in Volume Control); when JACK stops, it takes the card back,
 - lxterminal, pcmanfm, mousepad, Celluloid, lxrandr and lxappearance, with the Pivuan icons
-  (drawn for the Haiku operating system).
+  (drawn for the Haiku operating system). In pcmanfm and on the desktop, a right click on a
+  zip or tar archive (.zip, .tar, .tar.gz, .tar.xz, .tar.bz2, .tar.zst) has **Extract Here**:
+  it unpacks next to the archive, into a folder named after it when it holds several files,
+  and never overwrites anything.
   Screen settings saved in lxrandr are applied at each login, as are other programs in
   `~/.config/autostart` meant for LXDE or any desktop,
 - the folders Desktop, Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3`
   and `.lv2` in each home, bookmarked in pcmanfm (the files in Desktop show on the desktop),
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
-- **Desktop Settings** (System in the menu): the desktop background (the Pivuan backgrounds,
+- **Desktop Settings** (Settings in the menu): the desktop background (the Pivuan backgrounds,
   black by default, or any picture), program icons on the panel (all drawn at the same
   size), the panel's size, the icons' size and the panel's color (by default the grey of the
   Pivuan logo), hiding the panel until the mouse reaches the bottom edge, icons on the desktop
@@ -134,7 +136,12 @@ It installs:
   screen stays on) and the on-screen keyboard. **Apply** lights up when there is a change to apply. It saves to
   `~/.config/pivuan/desktop.conf`.
 
-The menu is on the Pivuan button in the tray, and on a click on the desktop. Each user's
+The **Pivuan menu** (jgmenu) is on the Pivuan button in the tray, on a right click on the
+desktop, and on Alt+F1. It has Terminal, Home and Web Browser, then the programs by category
+(Accessories, Audio, Video, Internet, Settings, System and so on, from the programs' own menu
+entries, so a program you install shows up in its category by itself), the Windows programs
+installed in Wine, and Log Out, Reboot and Shut Down, which ask first. Its look is in
+`/etc/pivuan/jgmenurc`; settings in `~/.config/jgmenu/jgmenurc` override it. Each user's
 `~/.jwmrc` includes `/etc/jwm/pivuan.jwmrc`; add your own settings to
 `~/.jwmrc`. `sudo pivuan-config --cmd AUDI02` removes it and brings back the text login.
 
@@ -149,7 +156,7 @@ connected:
   Automatic, Always or Never. With **Log in automatically** ticked, the machine starts
   without asking for a password at all.
 - The **desktop** has a keyboard button on the panel that shows and hides **Onboard**, the
-  on-screen keyboard, docked above the panel. It is also System → On-screen Keyboard in the
+  on-screen keyboard, docked above the panel. It is also Settings → On-screen Keyboard in the
   menu. In Desktop Settings, set it to Automatic (only with a touchscreen), Always or Never.
 - A bigger panel is easier to tap: set the panel size to 48 or more in Desktop Settings.
 
