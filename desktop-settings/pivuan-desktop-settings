@@ -4,7 +4,8 @@
 # the screen off when not in use, program icons on the panel, the panel's size and color, the
 # icons' size, hiding the panel, and the on-screen keyboard.
 # Package pivuan-desktop-settings (rations/pivuan, desktop-settings/), installed as
-# /usr/bin/pivuan-desktop-settings (System > Desktop Settings in the Pivuan menu).
+# /usr/bin/pivuan-desktop-settings (Settings > Desktop Settings in the Pivuan menu, from
+# /usr/share/applications/pivuan-desktop-settings.desktop).
 #
 # Writes ~/.config/pivuan/desktop.conf and the panel's icons (~/.config/pivuan/panel-icons),
 # and restarts JWM (open windows stay); JWM gets the panel and background from

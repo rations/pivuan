@@ -5,6 +5,7 @@ include config.mk
 PROGRAM   := pivuan-desktop-settings
 BUILD     := build
 BINDIR    := $(DESTDIR)$(PREFIX)/bin
+APPSDIR   := $(DESTDIR)$(PREFIX)/share/applications
 DEB_VERSION := $(VERSION)-pivuan$(DEB_REVISION)
 DEB_ROOT  := $(BUILD)/deb/root
 DEB_FILE  := $(BUILD)/$(DEB_PACKAGE)_$(DEB_VERSION)_all.deb
@@ -23,9 +24,10 @@ test: check
 
 install: check
 	install -Dm 0755 $(PROGRAM) $(BINDIR)/$(PROGRAM)
+	install -Dm 0644 $(PROGRAM).desktop $(APPSDIR)/$(PROGRAM).desktop
 
 uninstall:
-	rm -f $(BINDIR)/$(PROGRAM)
+	rm -f $(BINDIR)/$(PROGRAM) $(APPSDIR)/$(PROGRAM).desktop
 
 # Architecture-independent package for Debian/Devuan (and the Pivuan apt repository)
 deb: check

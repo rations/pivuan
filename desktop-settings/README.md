@@ -1,6 +1,6 @@
 # Desktop Settings (Pivuan Audio)
 
-The settings window of the Pivuan Audio desktop (JWM), System → Desktop Settings in the
+The settings window of the Pivuan Audio desktop (JWM), Settings → Desktop Settings in the
 Pivuan menu. It sets:
 
 - the desktop background: one of the Pivuan backgrounds (black by default) or any picture;

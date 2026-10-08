@@ -1,0 +1,11 @@
+[Desktop Entry]
+# Desktop Settings for Pivuan Audio, in the Pivuan menu's Settings. Installed as
+# /usr/share/applications/pivuan-desktop-settings.desktop by the pivuan-desktop-settings package.
+Type=Application
+Name=Desktop Settings
+Comment=Background, panel and its program icons, desktop icons, screen and on-screen keyboard
+Exec=pivuan-desktop-settings
+Icon=preferences-desktop-personal
+Terminal=false
+Categories=GTK;Settings;DesktopSettings;
+OnlyShowIn=JWM;
