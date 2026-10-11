@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 #
-# Pivuan Audio: Desktop Settings for JWM. The desktop background, icons on the desktop, turning
-# the screen off when not in use, program icons on the panel, the panel's size and color, the
-# icons' size, hiding the panel, and the on-screen keyboard.
+# Pivuan Audio: Desktop Settings for JWM. The desktop background, icons on the desktop, the
+# screen's brightness and turning it off when not in use, program icons on the panel, the
+# panel's size and color, the icons' size, hiding the panel, the on-screen keyboard, and long
+# press for right click on a touchscreen.
 # Package pivuan-desktop-settings (rations/pivuan, desktop-settings/), installed as
 # /usr/bin/pivuan-desktop-settings (Settings > Desktop Settings in the Pivuan menu, from
 # /usr/share/applications/pivuan-desktop-settings.desktop).
@@ -16,6 +17,10 @@
 # here are jwm-desktop's: keep them the same.
 #
 #   pivuan-desktop-settings                 the window
+#   pivuan-desktop-settings --brightness    a small window with only the brightness (the
+#                                           panel's brightness button)
+#   pivuan-desktop-settings --volume        a small window with the volume (the panel's
+#                                           volume button)
 #   pivuan-desktop-settings --check         load the settings and GTK without a window (tests)
 #   pivuan-desktop-settings --render-icons  make the panel's icons from the saved settings
 #
@@ -42,10 +47,16 @@ ICON_SIZE = 32
 # smaller than the panel, so the icons can be at most panel size - 8.
 PANEL_SIZE_DEFAULT, PANEL_SIZE_MIN, PANEL_SIZE_MAX = 30, 20, 96
 ICON_SIZE_DEFAULT, ICON_SIZE_MIN = 22, 12
+# With a touchscreen the panel is bigger by default, so its buttons are easy to tap.
+PANEL_SIZE_TOUCH, ICON_SIZE_TOUCH = 48, 32
 ICON_MARGIN = 8
 PANEL_COLOUR_DEFAULT = "#959597"  # the grey of the Pivuan logo
 SPEAKER_ICON = "audio-speakers"  # the Volume Control button, always on the panel
 KEYBOARD_ICON = "input-keyboard"  # the on-screen keyboard button, when it is on
+BRIGHTNESS_ICON = "display-brightness"  # the brightness button, when it is on
+# The brightness icon's names in the themes Pivuan Audio has (Numix has only these two).
+BRIGHTNESS_ICON_NAMES = (BRIGHTNESS_ICON, "notification-display-brightness",
+                         "display-brightness-symbolic")
 # The on-screen keyboard (Onboard): automatic (with a touchscreen), always or never, as
 # jwm-desktop reads keyboard= in desktop.conf.
 KEYBOARD_CHOICES = (("auto", "Automatic (when a touchscreen is attached)"),
@@ -54,6 +65,102 @@ KEYBOARD_CHOICES = (("auto", "Automatic (when a touchscreen is attached)"),
 DESKTOP_ICONS = "/usr/lib/pivuan/desktop-icons"
 # Turning the screen off: after this long without use, when screen_off is on (X's own default).
 SCREEN_OFF_MINUTES = 10
+# The screen's brightness, in percent (Pivuan Audio's /usr/lib/pivuan/brightness: the backlight,
+# else the screen's own setting over HDMI (DDC/CI), else software dimming). Not saved until
+# changed: until then the screen keeps its own brightness.
+BRIGHTNESS = "/usr/lib/pivuan/brightness"
+BRIGHTNESS_MIN, BRIGHTNESS_MAX = 10, 100
+BRIGHTNESS_METHODS = {
+    "backlight": "Set with the screen's backlight.",
+    "ddc": "Set on the screen itself, over its video cable (DDC/CI).",
+    "software": "This screen's own brightness cannot be set from here, so the picture is "
+                "dimmed instead.",
+}
+# Long press for right click on a touchscreen (Pivuan Audio's /usr/lib/pivuan/long-press, which
+# reads long_press= in desktop.conf).
+LONG_PRESS = "/usr/lib/pivuan/long-press"
+
+
+def touchscreen():
+    """True if a touchscreen is attached: an input device with INPUT_PROP_DIRECT (property 1,
+    bit 0x2 of the hex bitmap in sysfs), the same test as /usr/lib/pivuan/keyboard touch."""
+    base = "/sys/class/input"
+    try:
+        names = os.listdir(base)
+    except OSError:
+        return False
+    for name in names:
+        try:
+            with open(os.path.join(base, name, "properties"), encoding="ascii") as f:
+                last = f.read().split()[-1]
+            if int(last, 16) & 2:
+                return True
+        except (OSError, ValueError, IndexError):
+            continue
+    return False
+
+
+def brightness_command(*args):
+    """Run /usr/lib/pivuan/brightness; its output, or None if it failed or is not there."""
+    try:
+        done = subprocess.run([BRIGHTNESS] + list(args), stdout=subprocess.PIPE,
+                              stderr=subprocess.DEVNULL, timeout=20, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    if done.returncode != 0:
+        return None
+    return done.stdout.decode("utf-8", "replace").strip()
+
+
+class Brightness:
+    """Sets the screen's brightness while a slider moves: at most one change at a time (over
+    HDMI each takes a moment), and the last value always reaches the screen. Volume uses it
+    too, with its own command."""
+
+    def __init__(self, command=lambda percent: [BRIGHTNESS, "set", str(percent)]):
+        self.command = command
+        self.running = False
+        self.wanted = None
+
+    def set(self, percent):
+        self.wanted = int(percent)
+        if not self.running:
+            self.next()
+
+    def next(self):
+        if self.wanted is None:
+            return
+        percent, self.wanted = self.wanted, None
+        try:
+            child = subprocess.Popen(self.command(percent),
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except OSError:
+            return
+        self.running = True
+        GLib.child_watch_add(GLib.PRIORITY_DEFAULT, child.pid, self.done, child)
+
+    def done(self, _pid, _status, child):
+        child.wait()
+        self.running = False
+        self.next()
+
+
+def brightness_slider(value):
+    scale = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, BRIGHTNESS_MIN,
+                                     BRIGHTNESS_MAX, 5)
+    scale.set_digits(0)
+    scale.set_value_pos(Gtk.PositionType.RIGHT)
+    scale.set_hexpand(True)
+    scale.set_value(value)
+    return scale
+
+
+def current_brightness(settings):
+    """The brightness to show: the saved one, else the screen's own, else 100."""
+    if settings["brightness"] is not None:
+        return settings["brightness"]
+    value = brightness_command("get")
+    return int(value) if value and value.isdigit() else BRIGHTNESS_MAX
 
 
 def is_colour(value):
@@ -70,10 +177,13 @@ def fix_sizes(settings):
 
 def load_settings():
     """The settings in desktop.conf, or the defaults."""
+    touch = touchscreen()
     settings = {"background": DEFAULT_BACKGROUND, "autohide": False, "launchers": [],
-                "panel_size": PANEL_SIZE_DEFAULT, "icon_size": ICON_SIZE_DEFAULT,
+                "panel_size": PANEL_SIZE_TOUCH if touch else PANEL_SIZE_DEFAULT,
+                "icon_size": ICON_SIZE_TOUCH if touch else ICON_SIZE_DEFAULT,
                 "panel_colour": PANEL_COLOUR_DEFAULT, "keyboard": "auto",
-                "desktop_icons": True, "screen_off": False}
+                "desktop_icons": True, "screen_off": False, "brightness": None,
+                "brightness_button": True, "long_press": True}
     try:
         with open(CONFIG, encoding="utf-8") as f:
             for line in f:
@@ -90,8 +200,12 @@ def load_settings():
                     settings["panel_colour"] = value.upper()
                 elif key == "keyboard" and value in dict(KEYBOARD_CHOICES):
                     settings["keyboard"] = value
-                elif key in ("desktop_icons", "screen_off") and value in ("yes", "no"):
+                elif key in ("desktop_icons", "screen_off", "brightness_button",
+                             "long_press") and value in ("yes", "no"):
                     settings[key] = value == "yes"
+                elif (key == "brightness" and value.isdigit()
+                      and BRIGHTNESS_MIN <= int(value) <= BRIGHTNESS_MAX):
+                    settings["brightness"] = int(value)
     except OSError:
         pass
     fix_sizes(settings)
@@ -111,7 +225,11 @@ def save_settings(settings):
         "keyboard=" + settings["keyboard"],
         "desktop_icons=" + ("yes" if settings["desktop_icons"] else "no"),
         "screen_off=" + ("yes" if settings["screen_off"] else "no"),
+        "brightness_button=" + ("yes" if settings["brightness_button"] else "no"),
+        "long_press=" + ("yes" if settings["long_press"] else "no"),
     ]
+    if settings["brightness"] is not None:
+        lines.append("brightness=%d" % settings["brightness"])
     lines += ["launcher=" + app_id for app_id in settings["launchers"]]
     tmp = CONFIG + ".new"
     with open(tmp, "w", encoding="utf-8") as f:
@@ -167,7 +285,8 @@ def render_icons(settings):
     theme = icon_theme()
     area = settings["panel_size"] - ICON_MARGIN
     wanted = {SPEAKER_ICON: Gio.ThemedIcon.new(SPEAKER_ICON),
-              KEYBOARD_ICON: Gio.ThemedIcon.new(KEYBOARD_ICON)}
+              KEYBOARD_ICON: Gio.ThemedIcon.new(KEYBOARD_ICON),
+              BRIGHTNESS_ICON: Gio.ThemedIcon.new_from_names(BRIGHTNESS_ICON_NAMES)}
     for app_id in settings["launchers"]:
         info = app_info(app_id)
         wanted[app_id[:-len(".desktop")]] = info.get_icon() if info else None
@@ -223,13 +342,25 @@ def colour_name(path):
     return name
 
 
+def fit_to_screen(window, width, height):
+    """The window's first size: width x height, or smaller on a small screen (a 7" screen has
+    800x480), inside the screen less the panel and the window's title bar."""
+    display = Gdk.Display.get_default()
+    monitor = display.get_primary_monitor() or display.get_monitor(0) if display else None
+    if monitor is not None:
+        area = monitor.get_workarea()
+        width = min(width, area.width - 16)
+        height = min(height, area.height - 48)
+    window.set_default_size(max(width, 200), max(height, 200))
+
+
 class AddProgramDialog(Gtk.Dialog):
     """The installed programs, with a search box; returns the chosen one's .desktop name."""
 
     def __init__(self, parent, exclude):
         super().__init__(title="Add a program to the panel", transient_for=parent, modal=True)
         self.add_buttons("Cancel", Gtk.ResponseType.CANCEL, "Add", Gtk.ResponseType.OK)
-        self.set_default_size(420, 480)
+        fit_to_screen(self, 420, 480)
         self.set_default_response(Gtk.ResponseType.OK)
         box = self.get_content_area()
         box.set_spacing(6)
@@ -253,6 +384,7 @@ class AddProgramDialog(Gtk.Dialog):
             row.add(line)
             self.list.add(row)
         scrolled = Gtk.ScrolledWindow(vexpand=True)
+        scrolled.set_overlay_scrolling(False)
         scrolled.add(self.list)
         box.pack_start(scrolled, True, True, 0)
         self.show_all()
@@ -269,20 +401,25 @@ class AddProgramDialog(Gtk.Dialog):
 class DesktopSettings(Gtk.Window):
     def __init__(self):
         super().__init__(title="Desktop Settings")
-        self.set_default_size(640, 600)
+        fit_to_screen(self, 640, 560)
         self.set_icon_name("preferences-desktop-personal")
         self.settings = load_settings()
         # What is saved; Apply is highlighted only while the window shows something else.
         self.saved = copy.deepcopy(self.settings)
         self.apply_button = Gtk.Button(label="Apply", sensitive=False)
+        self.touch = touchscreen()
 
-        outer = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, border_width=12)
-        self.add(outer)
+        # Tabs, so each page is short enough for a small screen; a page that is still too tall
+        # scrolls. Close and Apply are below the tabs, always in reach.
+        window_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.add(window_box)
+        self.pages = Gtk.Notebook(vexpand=True)
+        window_box.pack_start(self.pages, True, True, 0)
 
         # Background: the Pivuan backgrounds, and any other picture.
-        outer.pack_start(self.heading("Background"), False, False, 0)
+        outer = self.page("Background")
         self.pictures = Gtk.FlowBox(selection_mode=Gtk.SelectionMode.SINGLE,
-                                    min_children_per_line=4, max_children_per_line=4,
+                                    min_children_per_line=2, max_children_per_line=4,
                                     homogeneous=True, column_spacing=6, row_spacing=6)
         self.pictures.connect("selected-children-changed", self.picture_chosen)
         outer.pack_start(self.pictures, False, False, 0)
@@ -292,26 +429,55 @@ class DesktopSettings(Gtk.Window):
         self.fill_pictures()
         # Icons on the desktop: the files in the Desktop folder, such as the shortcuts Windows
         # installers make when asked for a desktop icon.
-        self.desktop_icons = Gtk.CheckButton(label="Show icons on the desktop (program shortcuts "
-                                                   "and the files in the Desktop folder)")
+        self.desktop_icons = self.check_button("Show icons on the desktop (program shortcuts "
+                                               "and the files in the Desktop folder)")
         self.desktop_icons.set_active(self.settings["desktop_icons"])
         outer.pack_start(self.desktop_icons, False, False, 0)
 
-        # Screen: by default it stays on (a studio computer is often watched, not touched).
-        outer.pack_start(self.heading("Screen"), False, False, 0)
-        self.screen_off = Gtk.CheckButton(label="Turn the screen off after %d minutes without use"
-                                                % SCREEN_OFF_MINUTES)
+        # Screen: brightness, and by default it stays on (a studio computer is often watched,
+        # not touched).
+        outer = self.page("Screen")
+        # The brightness changes on the screen while the slider moves; Apply keeps it, and
+        # closing without Apply puts the saved one back.
+        self.brightness = None
+        method = brightness_command("method") if os.access(BRIGHTNESS, os.X_OK) else None
+        if method in BRIGHTNESS_METHODS:
+            self.brightness_control = Brightness()
+            self.brightness_shown = current_brightness(self.settings)
+            row = Gtk.Box(spacing=8)
+            row.pack_start(Gtk.Label(label="Brightness"), False, False, 0)
+            self.brightness = brightness_slider(self.brightness_shown)
+            self.brightness.connect("value-changed", self.brightness_moved)
+            row.pack_start(self.brightness, True, True, 0)
+            outer.pack_start(row, False, False, 0)
+            outer.pack_start(self.small_print(BRIGHTNESS_METHODS[method]), False, False, 0)
+        self.brightness_button = self.check_button("Brightness button on the panel")
+        self.brightness_button.set_active(self.settings["brightness_button"])
+        if self.brightness is not None:
+            outer.pack_start(self.brightness_button, False, False, 0)
+        self.screen_off = self.check_button("Turn the screen off after %d minutes without use"
+                                            % SCREEN_OFF_MINUTES)
         self.screen_off.set_active(self.settings["screen_off"])
         outer.pack_start(self.screen_off, False, False, 0)
+        # Long press for right click: only with a touchscreen, and when Pivuan Audio has it.
+        self.long_press = self.check_button("Long press for right click (hold a finger still "
+                                            "on the screen)")
+        self.long_press.set_active(self.settings["long_press"])
+        if self.touch and os.access(LONG_PRESS, os.X_OK):
+            outer.pack_start(self.long_press, False, False, 0)
+            outer.pack_start(self.small_print(
+                "With it, programs see the touchscreen as a mouse: the web browser's two-finger "
+                "zoom and finger scrolling need it off."), False, False, 0)
 
-        # Panel: hide it, and the program icons on it.
-        outer.pack_start(self.heading("Panel"), False, False, 0)
-        self.autohide = Gtk.CheckButton(label="Hide the panel when not in use "
-                                              "(move the mouse to the bottom edge to show it)")
+        # Panel: hide it, its size and color, and the keyboard button.
+        outer = self.page("Panel")
+        self.autohide = self.check_button("Hide the panel when not in use (it comes back when "
+                                          "the pointer reaches the bottom edge, which is hard "
+                                          "to do on a touchscreen)")
         self.autohide.set_active(self.settings["autohide"])
         outer.pack_start(self.autohide, False, False, 0)
-        # Sizes (type a number, or - and +) and the color.
-        look = Gtk.Box(spacing=8)
+        # Sizes (type a number, or - and +), and the color.
+        sizes = Gtk.Box(spacing=8)
         self.panel_size = Gtk.SpinButton.new_with_range(PANEL_SIZE_MIN, PANEL_SIZE_MAX, 1)
         self.panel_size.set_value(self.settings["panel_size"])
         self.icon_size = Gtk.SpinButton.new_with_range(ICON_SIZE_MIN,
@@ -319,35 +485,45 @@ class DesktopSettings(Gtk.Window):
         self.icon_size.set_value(self.settings["icon_size"])
         self.panel_size.connect("value-changed", self.panel_size_changed)
         self.panel_size_changed(self.panel_size)
+        for widget in (Gtk.Label(label="Panel size"), self.panel_size,
+                       Gtk.Label(label="Icon size"), self.icon_size):
+            sizes.pack_start(widget, False, False, 0)
+        outer.pack_start(sizes, False, False, 0)
+        look = Gtk.Box(spacing=8)
         self.colour = Gtk.ColorButton(title="Panel color")
         self.colour.set_rgba(self.rgba(self.settings["panel_colour"]))
         default_colour = Gtk.Button(label="Default")
         default_colour.set_tooltip_text("The grey of the Pivuan logo")
         default_colour.connect("clicked", self.default_colour)
-        for widget in (Gtk.Label(label="Panel size"), self.panel_size,
-                       Gtk.Label(label="Icon size"), self.icon_size,
-                       Gtk.Label(label="Panel color"), self.colour, default_colour):
+        for widget in (Gtk.Label(label="Panel color"), self.colour, default_colour):
             look.pack_start(widget, False, False, 0)
         outer.pack_start(look, False, False, 0)
-        # The on-screen keyboard: a panel button that shows and hides it.
-        keyboard = Gtk.Box(spacing=8)
-        self.keyboard = Gtk.ComboBoxText()
+        if not self.touch:
+            outer.pack_start(self.small_print("On a touchscreen, a panel size of 48 or more "
+                                              "makes the panel easier to tap."),
+                             False, False, 0)
+        # The on-screen keyboard: a panel button that shows and hides it. Buttons rather than
+        # a drop-down list, which a touchscreen cannot always open.
+        outer.pack_start(Gtk.Label(label="On-screen keyboard button on the panel:", xalign=0),
+                         False, False, 0)
+        self.keyboard = {}
+        group = None
         for value, label in KEYBOARD_CHOICES:
-            self.keyboard.append(value, label)
-        self.keyboard.set_active_id(self.settings["keyboard"])
-        keyboard.pack_start(Gtk.Label(label="On-screen keyboard"), False, False, 0)
-        keyboard.pack_start(self.keyboard, False, False, 0)
-        outer.pack_start(keyboard, False, False, 0)
-        hint = Gtk.Label(xalign=0, wrap=True)
-        hint.set_markup("<small>On a touchscreen, a panel size of 48 or more makes the panel "
-                        "easier to tap.</small>")
-        outer.pack_start(hint, False, False, 0)
+            button = Gtk.RadioButton.new_with_label_from_widget(group, label)
+            group = group or button
+            button.set_margin_start(12)
+            self.keyboard[value] = button
+            outer.pack_start(button, False, False, 0)
+        self.keyboard[self.settings["keyboard"]].set_active(True)
+        # The program icons on the panel.
+        outer = self.page("Panel Icons", scroll=False)
         outer.pack_start(Gtk.Label(label="Program icons on the panel, from left to right:",
                                    xalign=0), False, False, 0)
         lists = Gtk.Box(spacing=6)
         self.launchers = Gtk.ListBox()
         scrolled = Gtk.ScrolledWindow(vexpand=True, shadow_type=Gtk.ShadowType.IN,
                                       min_content_height=120)
+        scrolled.set_overlay_scrolling(False)
         scrolled.add(self.launchers)
         lists.pack_start(scrolled, True, True, 0)
         buttons = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
@@ -361,28 +537,77 @@ class DesktopSettings(Gtk.Window):
         outer.pack_start(lists, True, True, 0)
         self.fill_launchers()
 
-        # Close and Apply.
-        actions = Gtk.Box(spacing=6, halign=Gtk.Align.END)
+        # Close and Apply, below the tabs.
+        actions = Gtk.Box(spacing=6, halign=Gtk.Align.END, border_width=8)
         close = Gtk.Button(label="Close")
         close.connect("clicked", lambda *_: self.destroy())
         self.apply_button.connect("clicked", self.apply)
         actions.pack_start(close, False, False, 0)
         actions.pack_start(self.apply_button, False, False, 0)
-        outer.pack_start(actions, False, False, 0)
-        self.connect("destroy", Gtk.main_quit)
+        window_box.pack_start(actions, False, False, 0)
+        self.connect("destroy", self.closing)
 
-        # Any change shows on the Apply button (the pictures and the program icons call
-        # self.changed themselves). A typed size counts before Enter.
-        self.autohide.connect("toggled", self.changed)
-        self.desktop_icons.connect("toggled", self.changed)
-        self.screen_off.connect("toggled", self.changed)
+        # Any change shows on the Apply button (the pictures, the program icons and the
+        # brightness call self.changed themselves). A typed size counts before Enter.
+        for button in (self.autohide, self.desktop_icons, self.screen_off,
+                       self.brightness_button, self.long_press):
+            button.connect("toggled", self.changed)
         for spin in (self.panel_size, self.icon_size):
             spin.connect("value-changed", self.changed)
             spin.connect("changed", self.changed)
         self.colour.connect("color-set", self.changed)
-        self.keyboard.connect("changed", self.changed)
+        for button in self.keyboard.values():
+            button.connect("toggled", self.changed)
         self.ready = True
         self.changed()
+
+    def page(self, title, scroll=True):
+        """A tab, and the box its settings go in. The page scrolls if it is taller than the
+        window, with a full scroll bar (not GTK's thin one), which a finger can drag."""
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12, border_width=12)
+        if scroll:
+            scrolled = Gtk.ScrolledWindow(hscrollbar_policy=Gtk.PolicyType.NEVER,
+                                          vscrollbar_policy=Gtk.PolicyType.AUTOMATIC)
+            scrolled.set_overlay_scrolling(False)
+            scrolled.add(box)
+            content = scrolled
+        else:
+            content = box
+        label = Gtk.Label(label=title)
+        label.set_margin_start(8)
+        label.set_margin_end(8)
+        label.set_margin_top(4)
+        label.set_margin_bottom(4)
+        self.pages.append_page(content, label)
+        return box
+
+    @staticmethod
+    def check_button(text):
+        """A check box whose text wraps, so the window can be narrow."""
+        button = Gtk.CheckButton()
+        label = Gtk.Label(label=text, xalign=0, wrap=True)
+        button.add(label)
+        return button
+
+    @staticmethod
+    def small_print(text):
+        label = Gtk.Label(xalign=0, wrap=True)
+        label.set_markup("<small>" + GLib.markup_escape_text(text) + "</small>")
+        return label
+
+    def brightness_moved(self, scale):
+        self.brightness_control.set(scale.get_value())
+        self.changed()
+
+    def closing(self, _window):
+        """Closed without Apply: the screen goes back to the saved brightness."""
+        if self.brightness is not None:
+            shown = int(self.brightness.get_value())
+            saved = self.saved["brightness"]
+            back = saved if saved is not None else self.brightness_shown
+            if shown != back:
+                brightness_command("set", str(back))
+        Gtk.main_quit()
 
     @staticmethod
     def rgba(colour):
@@ -412,7 +637,15 @@ class DesktopSettings(Gtk.Window):
         settings["panel_size"] = self.spin_value(self.panel_size)
         settings["icon_size"] = self.spin_value(self.icon_size)
         settings["panel_colour"] = self.hex_colour(self.colour.get_rgba())
-        settings["keyboard"] = self.keyboard.get_active_id() or "auto"
+        settings["keyboard"] = next((value for value, button in self.keyboard.items()
+                                     if button.get_active()), "auto")
+        settings["brightness_button"] = self.brightness_button.get_active()
+        settings["long_press"] = self.long_press.get_active()
+        # The brightness counts once it has been moved (until then the screen keeps its own).
+        if self.brightness is not None and (settings["brightness"] is not None
+                                            or int(self.brightness.get_value())
+                                            != self.brightness_shown):
+            settings["brightness"] = int(self.brightness.get_value())
         fix_sizes(settings)
         return settings
 
@@ -438,12 +671,6 @@ class DesktopSettings(Gtk.Window):
         self.icon_size.set_range(ICON_SIZE_MIN, top)
         if self.icon_size.get_value_as_int() > top:
             self.icon_size.set_value(top)
-
-    @staticmethod
-    def heading(text):
-        label = Gtk.Label(xalign=0)
-        label.set_markup("<b>" + GLib.markup_escape_text(text) + "</b>")
-        return label
 
     def fill_pictures(self):
         self.current_picture = None
@@ -575,6 +802,14 @@ class DesktopSettings(Gtk.Window):
                            stderr=subprocess.DEVNULL, check=False)
         except OSError:
             pass  # no JWM here
+        # Long press for right click, started or stopped as set.
+        if self.settings["long_press"] != before["long_press"] and os.access(LONG_PRESS,
+                                                                             os.X_OK):
+            try:
+                subprocess.run([LONG_PRESS, "restart"], stdout=subprocess.DEVNULL,
+                               stderr=subprocess.DEVNULL, check=False)
+            except OSError:
+                pass
         # The desktop icons: on, off, or drawn again over the new background.
         if (self.settings["desktop_icons"] != before["desktop_icons"]
                 or (self.settings["desktop_icons"]
@@ -586,7 +821,154 @@ class DesktopSettings(Gtk.Window):
                 pass  # not Pivuan Audio
 
 
+class PanelPopup(Gtk.Application):
+    """A small window opened by a panel button, at the bottom right above the panel. The same
+    button closes it again (a second start of the same popup closes the first), and so does
+    its Close button."""
+
+    title = ""
+    icon = ""
+
+    def __init__(self, application_id):
+        super().__init__(application_id=application_id)
+        self.window = None
+
+    def do_activate(self):
+        if self.window is not None:
+            self.window.destroy()
+            return
+        self.window = Gtk.ApplicationWindow(application=self, title=self.title)
+        self.window.set_icon_name(self.icon)
+        self.window.set_type_hint(Gdk.WindowTypeHint.DIALOG)
+        self.window.set_keep_above(True)
+        self.window.set_default_size(420, -1)
+        # The slider on a row of its own, as wide as the window; the buttons below it.
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10, border_width=12)
+        self.window.add(box)
+        buttons = Gtk.Box(spacing=8)
+        self.fill(box, buttons)
+        close = Gtk.Button(label="Close")
+        close.connect("clicked", lambda *_: self.window.destroy())
+        buttons.pack_end(close, False, False, 0)
+        box.pack_start(buttons, False, False, 0)
+        self.window.connect("destroy", self.closing)
+        self.window.show_all()
+        display = Gdk.Display.get_default()
+        monitor = display.get_primary_monitor() or display.get_monitor(0)
+        area = monitor.get_workarea()
+        width, height = self.window.get_size()
+        self.window.move(area.x + area.width - width - 8, area.y + area.height - height - 40)
+
+    def fill(self, box, buttons):
+        pass
+
+    def closing(self, _window):
+        self.window = None
+
+
+class BrightnessPopup(PanelPopup):
+    """The panel's brightness button: only the slider. Each change is saved at once."""
+
+    title = "Brightness"
+    icon = BRIGHTNESS_ICON
+
+    def __init__(self):
+        super().__init__("org.pivuan.DesktopSettings.Brightness")
+        self.control = Brightness()
+        self.save_later = 0
+        self.scale = None
+
+    def fill(self, box, buttons):
+        self.scale = brightness_slider(current_brightness(load_settings()))
+        self.scale.connect("value-changed", self.moved)
+        box.pack_start(self.scale, False, False, 0)
+
+    def moved(self, scale):
+        self.control.set(scale.get_value())
+        if self.save_later:
+            GLib.source_remove(self.save_later)
+        self.save_later = GLib.timeout_add(500, self.save)
+
+    def save(self):
+        self.save_later = 0
+        settings = load_settings()
+        settings["brightness"] = int(self.scale.get_value())
+        try:
+            save_settings(settings)
+        except OSError:
+            pass
+        return False
+
+    def closing(self, window):
+        if self.save_later:
+            GLib.source_remove(self.save_later)
+            self.save()
+        super().closing(window)
+
+
+def pactl(*args):
+    """Run pactl (PulseAudio, which plays into JACK while JACK runs); its output, or None."""
+    try:
+        done = subprocess.run(["pactl"] + list(args), stdout=subprocess.PIPE,
+                              stderr=subprocess.DEVNULL, timeout=5, check=False)
+    except (OSError, subprocess.SubprocessError):
+        return None
+    return done.stdout.decode("utf-8", "replace") if done.returncode == 0 else None
+
+
+class VolumePopup(PanelPopup):
+    """The panel's volume button: the volume of the current output, mute, and Volume Control
+    (pavucontrol) for everything else."""
+
+    title = "Volume"
+    icon = SPEAKER_ICON
+
+    def __init__(self):
+        super().__init__("org.pivuan.DesktopSettings.Volume")
+        self.control = Brightness(
+            lambda percent: ["pactl", "set-sink-volume", "@DEFAULT_SINK@", "%d%%" % percent])
+
+    def fill(self, box, buttons):
+        # "Volume: front-left: 42597 /  65% / ...": the first percentage.
+        volume = pactl("get-sink-volume", "@DEFAULT_SINK@") or ""
+        percent = next((int(word[:-1]) for word in volume.split()
+                        if word.endswith("%") and word[:-1].isdigit()), 100)
+        self.mute = Gtk.ToggleButton(label="Mute")
+        self.mute.set_active("yes" in (pactl("get-sink-mute", "@DEFAULT_SINK@") or ""))
+        self.mute.connect("toggled", self.muted)
+        buttons.pack_start(self.mute, False, False, 0)
+        scale = Gtk.Scale.new_with_range(Gtk.Orientation.HORIZONTAL, 0, 100, 5)
+        scale.set_digits(0)
+        scale.set_value_pos(Gtk.PositionType.RIGHT)
+        scale.set_hexpand(True)
+        scale.set_value(min(percent, 100))
+        scale.connect("value-changed", lambda s: self.control.set(s.get_value()))
+        box.pack_start(scale, False, False, 0)
+        more = Gtk.Button(label="Volume Control…")
+        more.set_tooltip_text("Each program's volume, and the outputs and inputs")
+        more.connect("clicked", self.volume_control)
+        buttons.pack_start(more, False, False, 0)
+
+    @staticmethod
+    def muted(button):
+        pactl("set-sink-mute", "@DEFAULT_SINK@", "1" if button.get_active() else "0")
+
+    def volume_control(self, _button):
+        try:
+            subprocess.Popen(["pavucontrol"])
+        except OSError:
+            pass
+        self.window.destroy()
+
+
 def main():
+    if sys.argv[1:] == ["--brightness"]:
+        if not os.access(BRIGHTNESS, os.X_OK):
+            print("pivuan-desktop-settings: %s is not installed" % BRIGHTNESS, file=sys.stderr)
+            return 1
+        return BrightnessPopup().run([sys.argv[0]])
+    if sys.argv[1:] == ["--volume"]:
+        return VolumePopup().run([sys.argv[0]])
     if sys.argv[1:] == ["--check"]:
         settings = load_settings()
         print("settings:", CONFIG)
@@ -599,6 +981,11 @@ def main():
         print("keyboard:", settings["keyboard"])
         print("desktop icons:", "yes" if settings["desktop_icons"] else "no")
         print("screen off:", "yes" if settings["screen_off"] else "no")
+        print("brightness:", "not set" if settings["brightness"] is None
+              else "%d%%" % settings["brightness"])
+        print("brightness button:", "yes" if settings["brightness_button"] else "no")
+        print("long press:", "yes" if settings["long_press"] else "no")
+        print("touchscreen:", "yes" if touchscreen() else "no")
         return 0
     if sys.argv[1:] == ["--render-icons"]:
         for path in render_icons(load_settings()):
@@ -606,7 +993,8 @@ def main():
             print("%s %dx%d" % (path, pixbuf.get_width(), pixbuf.get_height()))
         return 0
     if len(sys.argv) > 1:
-        print("usage: pivuan-desktop-settings [--check | --render-icons]", file=sys.stderr)
+        print("usage: pivuan-desktop-settings [--brightness | --volume | --check | "
+              "--render-icons]", file=sys.stderr)
         return 2
     window = DesktopSettings()
     window.show_all()

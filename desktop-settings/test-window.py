@@ -25,6 +25,7 @@ loader.exec_module(ds)
 
 # Apply restarts JWM: not here.
 restarts = []
+real_run = ds.subprocess.run
 ds.subprocess.run = lambda *args, **kwargs: restarts.append(args)
 
 failures = []
@@ -53,6 +54,12 @@ check("default background is black",
 check("default panel color is #959597", ds.PANEL_COLOUR_DEFAULT == "#959597")
 check("desktop icons are on by default", ds.load_settings()["desktop_icons"] is True)
 check("the screen stays on by default", ds.load_settings()["screen_off"] is False)
+check("the brightness is not set by default", ds.load_settings()["brightness"] is None)
+check("the brightness button is on by default", ds.load_settings()["brightness_button"] is True)
+check("long press is on by default", ds.load_settings()["long_press"] is True)
+touch = ds.touchscreen()
+check("the default panel size suits the screen (%s)" % ("touch" if touch else "mouse"),
+      ds.load_settings()["panel_size"] == (48 if touch else 30))
 
 window = ds.DesktopSettings()
 check("Apply is plain when the window opens", plain(window))
@@ -65,7 +72,7 @@ check("changing it back makes Apply plain again", plain(window))
 
 window.panel_size.set_text("48")
 check("typing a panel size (no Enter) highlights Apply", highlighted(window))
-window.panel_size.set_text("30")
+window.panel_size.set_text(str(ds.load_settings()["panel_size"]))
 check("typing the saved size makes Apply plain again", plain(window))
 
 window.colour.set_rgba(window.rgba("#E8E4D8"))
@@ -74,9 +81,19 @@ check("choosing a panel color highlights Apply", highlighted(window))
 window.default_colour(None)
 check("Default makes Apply plain again", plain(window))
 
-window.keyboard.set_active_id("yes")
+window.keyboard["yes"].set_active(True)
 check("the on-screen keyboard setting highlights Apply", highlighted(window))
-window.keyboard.set_active_id("auto")
+window.keyboard["auto"].set_active(True)
+check("setting it back makes Apply plain again", plain(window))
+
+window.brightness_button.set_active(False)
+check("turning the brightness button off highlights Apply", highlighted(window))
+window.brightness_button.set_active(True)
+
+window.long_press.set_active(False)
+check("turning long press off highlights Apply", highlighted(window))
+window.long_press.set_active(True)
+check("turning it on again makes Apply plain again", plain(window))
 
 window.desktop_icons.set_active(False)
 check("turning the desktop icons off highlights Apply", highlighted(window))
@@ -110,6 +127,28 @@ check("Apply restarted the desktop icons",
 window.screen_off.set_active(True)
 window.apply(window.apply_button)
 check("the screen setting was saved", ds.load_settings()["screen_off"] is True)
+
+# The brightness: a fake /usr/lib/pivuan/brightness (DDC/CI, the screen at 70), as the window
+# would find it; the slider shows the screen's own, and counts only once moved.
+fake = os.path.join(config_home, "brightness")
+with open(fake, "w") as f:
+    f.write("#!/bin/sh\ncase \"$1\" in method) echo ddc ;; get) echo 70 ;; esac\n")
+os.chmod(fake, 0o755)
+ds.BRIGHTNESS = fake
+ds.subprocess.run = real_run
+lit = ds.DesktopSettings()
+check("the brightness slider is shown", lit.brightness is not None)
+check("it shows the screen's own brightness", int(lit.brightness.get_value()) == 70)
+check("Apply is plain before the brightness is moved", plain(lit))
+lit.brightness.set_value(40)
+check("moving the brightness highlights Apply", highlighted(lit))
+lit.brightness.set_value(70)
+check("moving it back makes Apply plain again", plain(lit))
+lit.brightness.set_value(55)
+ds.subprocess.run = lambda *args, **kwargs: restarts.append(args)
+lit.apply(lit.apply_button)
+check("the brightness was saved", ds.load_settings()["brightness"] == 55)
+ds.subprocess.run = real_run
 
 # A window opened on the saved settings starts plain too.
 again = ds.DesktopSettings()

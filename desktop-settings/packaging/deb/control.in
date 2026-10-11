@@ -10,7 +10,9 @@ Priority: optional
 Description: Desktop Settings for Pivuan Audio (JWM)
  A small window for the Pivuan Audio desktop: the desktop background (the
  Pivuan backgrounds or any picture), program icons on the panel, the panel's
- size, color and icon size, hiding the panel, and the on-screen keyboard
- button. It saves ~/.config/pivuan/desktop.conf and restarts JWM, which reads
+ size, color and icon size, hiding the panel, the on-screen keyboard
+ button, the screen's brightness and long press for right click on a
+ touchscreen. It also has the brightness and volume sliders of the panel's
+ buttons. It saves ~/.config/pivuan/desktop.conf and restarts JWM, which reads
  it through /usr/lib/pivuan/jwm-desktop (set up by Pivuan Audio in
  pivuan-config).
