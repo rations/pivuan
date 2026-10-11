@@ -1,0 +1,15 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: @ARCH@
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: libc6, procps
+Recommends: jwm
+Section: x11
+Priority: optional
+Description: Long press for right click on a touchscreen (Pivuan Audio)
+ X's touchscreen drivers have no long press. This program takes the
+ touchscreen and gives X a pointer instead: a tap is a left click, a moving
+ finger drags with the left button, and a finger held still is a right click.
+ Pivuan Audio starts it at login when a touchscreen is attached
+ (/usr/lib/pivuan/long-press); Desktop Settings can turn it off.

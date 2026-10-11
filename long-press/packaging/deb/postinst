@@ -1,0 +1,16 @@
+#!/bin/sh
+# pivuan-long-press: /dev/uinput for the input group now (70-pivuan-uinput.rules), not only
+# after the next boot.
+set -e
+if [ "$1" = configure ]; then
+	modprobe uinput 2> /dev/null || true
+	if command -v udevadm > /dev/null 2>&1; then
+		udevadm control --reload-rules 2> /dev/null || true
+		udevadm trigger --name-match=uinput 2> /dev/null || true
+	fi
+	if [ -c /dev/uinput ]; then
+		chgrp input /dev/uinput 2> /dev/null || true
+		chmod 0660 /dev/uinput 2> /dev/null || true
+	fi
+fi
+exit 0

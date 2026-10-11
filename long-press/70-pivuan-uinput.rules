@@ -1,0 +1,4 @@
+# pivuan-long-press: the input group (Pivuan's first user is in it) may make input devices, so
+# long press for right click can give X its own pointer for the touchscreen. The input group can
+# already read every keyboard and mouse. Installed in /usr/lib/udev/rules.d.
+KERNEL=="uinput", SUBSYSTEM=="misc", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"

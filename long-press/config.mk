@@ -1,0 +1,15 @@
+# Settings for the Makefile; override any of them on the command line
+# (make PREFIX=/usr/local install).
+
+# make install puts the program in $(DESTDIR)$(PREFIX)/bin
+PREFIX ?= /usr
+CC ?= cc
+CFLAGS ?= -O2 -g
+WARNINGS := -std=c11 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion
+
+# Debian package (make deb): name, version (<VERSION>-pivuan<DEB_REVISION>; a
+# published version can never be reused, so bump one of them for every release)
+DEB_PACKAGE ?= pivuan-long-press
+VERSION ?= 1.0.0
+DEB_REVISION ?= 1
+MAINTAINER ?= Pivuan <https://github.com/rations/pivuan>

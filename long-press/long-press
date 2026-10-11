@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# Pivuan Audio: long press for right click on a touchscreen, with the session. Installed as
+# /usr/lib/pivuan/long-press by the pivuan-long-press package (rations/pivuan, long-press/).
+#
+#   long-press start     start pivuan-long-press, if a touchscreen is attached and Desktop
+#                        Settings has it on (long_press= in ~/.config/pivuan/desktop.conf,
+#                        yes by default); JWM runs this at login (/usr/lib/pivuan/jwm-desktop)
+#   long-press stop      stop it: the touchscreen is a touchscreen again
+#   long-press restart   stop, then start (Desktop Settings, when the setting changes)
+#
+# It ends by itself with the window manager, so the login screen gets the touchscreen back.
+#
+config="${XDG_CONFIG_HOME:-${HOME}/.config}/pivuan/desktop.conf"
+pidfile="${XDG_RUNTIME_DIR:-/tmp}/pivuan-long-press-$(id -u).pid"
+
+# True if the pid file names a pivuan-long-press that is running.
+running() {
+	[ -r "${pidfile}" ] || return 1
+	read -r pid < "${pidfile}" || return 1
+	case "${pid}" in "" | *[!0-9]*) return 1 ;; esac
+	# The kernel keeps 15 characters of a program's name.
+	[ "$(cat "/proc/${pid}/comm" 2> /dev/null)" = pivuan-long-pre ]
+}
+
+start() {
+	command -v pivuan-long-press > /dev/null 2>&1 || return 0
+	if [ -r "${config}" ] && grep -qx 'long_press=no' "${config}"; then
+		return 0
+	fi
+	[ -x /usr/lib/pivuan/keyboard ] && /usr/lib/pivuan/keyboard touch || return 0
+	running && return 0
+	# The window manager of this session: when it ends (logging out), so does the long press.
+	session="$(pgrep -n -u "$(id -u)" -x jwm)"
+	if [ -n "${session}" ]; then
+		pivuan-long-press --session-pid "${session}" > /dev/null 2>&1 &
+	else
+		pivuan-long-press > /dev/null 2>&1 &
+	fi
+	echo $! > "${pidfile}"
+}
+
+stop() {
+	if running; then
+		read -r pid < "${pidfile}"
+		kill "${pid}" 2> /dev/null
+	fi
+	rm -f "${pidfile}"
+}
+
+case "$1" in
+	start) start ;;
+	stop) stop ;;
+	restart)
+		stop
+		sleep 0.2
+		start
+		;;
+	*)
+		echo "usage: $0 start | stop | restart" >&2
+		exit 2
+		;;
+esac
