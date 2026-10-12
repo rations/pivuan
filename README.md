@@ -101,7 +101,8 @@ It installs:
   install finishes; tty2 to tty6 keep their text login),
 - **JACK** with realtime scheduling for the `audio` group, and the Pivuan audio applications
   from the Pivuan apt repository: Jack Graph, JackDAW, NAMp, NAMix, lvtuner, DRUMix and
-  CPU Power,
+  CPU Power, and **TONE3000** (its amp and effects plug-in as VST3 and LV2, and the standalone
+  program, for every user; tones download from tone3000.com),
 - **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridgectl"
   in the Audio menu), with **Wine** and **FEX** for Windows programs, such as plugin
   installers and license managers: they open from a right-click in pcmanfm
@@ -112,7 +113,8 @@ It installs:
   Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
   [wine-fex-info.md](wine-fex-info.md),
 - **PulseAudio** for everything else: HDMI, Bluetooth speakers and headphones, the browser and
-  media player. The speaker in the tray opens Volume Control (pavucontrol); its scroll wheel
+  media player. The speaker in the tray opens a volume slider with Mute and a button for
+  Volume Control (pavucontrol); a right click opens Volume Control, and its scroll wheel
   changes the volume. A USB audio interface is an output as soon as it is plugged in (if
   PulseAudio leaves it at the profile Off, it is given its best output profile; if it could
   not open the interface, it is switched off and on again). While JACK
@@ -128,13 +130,16 @@ It installs:
 - the folders Desktop, Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3`
   and `.lv2` in each home, bookmarked in pcmanfm (the files in Desktop show on the desktop),
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
-- **Desktop Settings** (Settings in the menu): the desktop background (the Pivuan backgrounds,
-  black by default, or any picture), program icons on the panel (all drawn at the same
-  size), the panel's size, the icons' size and the panel's color (by default the grey of the
-  Pivuan logo), hiding the panel until the mouse reaches the bottom edge, icons on the desktop
-  (on by default), turning the screen off after 10 minutes without use (off by default: the
-  screen stays on) and the on-screen keyboard. **Apply** lights up when there is a change to apply. It saves to
-  `~/.config/pivuan/desktop.conf`.
+- **Desktop Settings** (Settings in the menu), in four tabs that fit small screens:
+  **Background** (the Pivuan backgrounds, black by default, or any picture, and icons on the
+  desktop, on by default), **Screen** (the **brightness**, turning the screen off after 10
+  minutes without use, off by default, and long press on a touchscreen), **Panel** (its size,
+  color, by default the grey of the Pivuan logo, hiding it until the mouse reaches the bottom
+  edge, and the on-screen keyboard) and **Panel Icons** (program icons on the panel, all drawn
+  at the same size). **Apply** lights up when there is a change to apply. It saves to
+  `~/.config/pivuan/desktop.conf`. Brightness uses the screen's backlight, or the monitor's
+  own setting over HDMI (DDC/CI), or else dims the picture; the sun button on the panel opens
+  just the brightness slider.
 
 The **Pivuan menu** (jgmenu) is on the Pivuan button in the tray, on a right click on the
 desktop, and on Alt+F1. It has Terminal, Home and Web Browser, then the programs by category
@@ -158,7 +163,21 @@ connected:
 - The **desktop** has a keyboard button on the panel that shows and hides **Onboard**, the
   on-screen keyboard, docked above the panel. It is also Settings → On-screen Keyboard in the
   menu. In Desktop Settings, set it to Automatic (only with a touchscreen), Always or Never.
-- A bigger panel is easier to tap: set the panel size to 48 or more in Desktop Settings.
+- **Long press for right click:** hold a finger still for a moment and lift it, for the
+  menus a right click opens (JackDAW's track and record menus, disconnecting in jack-graph,
+  pcmanfm and the desktop). A tap is a click, and a moving finger drags: dials, selections,
+  and window borders and corners to resize them. Two-finger gestures (zooming and finger
+  scrolling in the web browser) are off while it runs; Desktop Settings → Screen turns it
+  off.
+- **Onboard comes up by itself** when you tap a text box in GTK and Qt programs, and goes away
+  afterwards; the panel button is for the rest.
+- The panel is 48 pixels and its icons 32, window borders and title bars are bigger, and
+  tooltips are off (a tap would leave them standing). Desktop Settings changes the panel.
+- In GTK 3 programs (JackDAW, Desktop Settings, pcmanfm) a tap is a mouse click, so their
+  drop-down lists stay open and dragging works; scroll their lists with the scroll bars.
+- If the screen is powered from the Pi's USB, an audio interface on the same USB can be too
+  much for it: the Pi 5 gives USB 600 mA in all unless its supply is the 5 A one. Power the
+  screen separately, or plug the interface in before starting.
 
 A touchscreen is an input device the kernel marks as *direct*
 (`/sys/class/input/input*/properties`). A touchpad or a mouse does not count.
@@ -230,7 +249,7 @@ Pivuan is a fork of the Armbian build framework that builds Devuan with sysvinit
 | [rations/build](https://github.com/rations/build) (branch `pivuan`) | Armbian build framework fork: Devuan excalibur support, sysvinit init scripts for Armbian's first-boot and board services, the image and apt-repository workflows |
 | [rations/configng](https://github.com/rations/configng) | `armbian-config` (configng) fork, packaged as `pivuan-config`: a sysvinit service backend and the Devuan desktop install |
 | [raspberrypi/linux](https://github.com/raspberrypi/linux) | The Raspberry Pi Foundation's kernel, pinned to a tested `rpi-6.18.y` commit |
-| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge, Pivuan icon theme, boot splash and Desktop Settings package builds |
+| [rations/pivuan](https://github.com/rations/pivuan) (this repository) | Project page, releases (images), the apt repository (`gh-pages` branch), and the XLibre, vstbridge, Pivuan icon theme, boot splash, Desktop Settings and long press package builds |
 | [rations/vstbridge](https://github.com/rations/vstbridge) (branch `arm64`) | vstbridge, the Windows plugin bridge, and the build of its Wine with FEX ([wine-fex-info.md](wine-fex-info.md)) |
 
 Images are built by GitHub Actions in `rations/build`, from Devuan packages checked against
@@ -278,5 +297,8 @@ system). Source code: the build framework in [rations/build](https://github.com/
 (GPL-2.0), `pivuan-config` in [rations/configng](https://github.com/rations/configng)
 (GPL-3.0), the kernel in [raspberrypi/linux](https://github.com/raspberrypi/linux), vstbridge
 (GPL-3.0) and the build of its Wine (LGPL-2.1-or-later) and FEX (MIT) in
-[rations/vstbridge](https://github.com/rations/vstbridge), and every Devuan package from Devuan's
+[rations/vstbridge](https://github.com/rations/vstbridge), TONE3000 (MIT, built with the JUCE
+framework under the AGPL-3.0) in
+[tone-3000/tone3000-plugin](https://github.com/tone-3000/tone3000-plugin) at the release that
+rations/build's `.github/pivuan/apps/apps.conf` names, and every Devuan package from Devuan's
 source archive (`apt source <package>`).
