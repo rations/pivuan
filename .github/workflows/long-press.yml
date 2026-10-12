@@ -1,0 +1,153 @@
+# Build long press for right click on a touchscreen (pivuan-long-press, long-press/) for arm64
+# and, with "publish", add it to the Pivuan apt repository (this repository's gh-pages branch).
+#
+# It is a small C program, so it is built natively on GitHub's arm64 runner in a Debian trixie
+# container (the same libraries as Devuan excalibur), and only the package leaves the container:
+# the compiler stays on the runner. The package is then installed in a clean trixie container,
+# where its program has to start and its control script has to be valid. A touchscreen and
+# /dev/uinput are not there, so the long press itself is checked on a Pi.
+#
+# The apt repository scripts are shared with the image build: they are read from rations/build
+# (branch pivuan, .github/pivuan/).
+#
+# Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
+# rations/build). The push to gh-pages uses this workflow's own token.
+
+name: Pivuan long press
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the package to the Pivuan apt repository"
+        type: boolean
+        default: false
+      build_ref:
+        description: "rations/build branch with the shared scripts"
+        type: string
+        default: pivuan
+  # A push that changes the program builds and checks it (never publishes).
+  push:
+    branches: [master]
+    paths:
+      - "long-press/**"
+      - ".github/workflows/long-press.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pivuan-long-press-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: pivuan-long-press (arm64)
+    runs-on: ubuntu-24.04-arm
+    outputs:
+      version: ${{ steps.deb.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the package (trixie, arm64)
+        id: deb
+        run: |
+          set -euo pipefail
+          docker run --rm -v "${PWD}/long-press:/src" -w /src debian:trixie bash -euc '
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -q
+            apt-get install -y -q --no-install-recommends build-essential make dpkg-dev
+            make deb
+            chown -R '"$(id -u):$(id -g)"' build
+          '
+          mkdir -p "${RUNNER_TEMP}/out"
+          cp long-press/build/*.deb "${RUNNER_TEMP}/out/"
+          deb="$(ls "${RUNNER_TEMP}"/out/*.deb)"
+          echo "version=$(dpkg-deb -f "${deb}" Version)" >> "${GITHUB_OUTPUT}"
+
+      - name: Install and check in a clean root
+        run: |
+          set -euo pipefail
+          cd "${RUNNER_TEMP}/out"
+          # Exactly one package: pivuan-long-press, for arm64
+          debs=(*.deb)
+          [[ "${#debs[@]}" == 1 ]] || { echo "::error::expected one package, found ${#debs[@]}"; exit 1; }
+          pkg="$(dpkg-deb -f "${debs[0]}" Package)"
+          arch="$(dpkg-deb -f "${debs[0]}" Architecture)"
+          [[ "${pkg}:${arch}" == pivuan-long-press:arm64 ]] \
+            || { echo "::error::${debs[0]}: ${pkg} (${arch}) is not pivuan-long-press (arm64)"; exit 1; }
+          # No path of the build machine in the package
+          mkdir root && dpkg-deb -R "${debs[0]}" root
+          if grep -rlI -e "${HOME}" -e "${GITHUB_WORKSPACE}" root; then
+            echo "::error::the package names paths of the build machine"; exit 1
+          fi
+          docker run --rm -v "${PWD}:/debs" debian:trixie bash -euc '
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -q
+            apt-get install -y -q --no-install-recommends "/debs/'"${debs[0]}"'"
+            # No compiler came with it
+            if command -v cc; then echo "::error::installing it brought a compiler"; exit 1; fi
+            ldd /usr/bin/pivuan-long-press
+            pivuan-long-press --help 2>&1 | grep -q "^usage: pivuan-long-press"
+            sh -n /usr/lib/pivuan/long-press
+            test -f /usr/lib/udev/rules.d/70-pivuan-uinput.rules
+            grep -qx uinput /usr/lib/modules-load.d/pivuan-uinput.conf
+            # Without a touchscreen, starting it does nothing and succeeds
+            useradd -m tester
+            su tester -c "/usr/lib/pivuan/long-press start"
+          '
+          echo "${debs[0]}: $(dpkg-deb -f "${debs[0]}" Installed-Size) KiB installed" >> "${GITHUB_STEP_SUMMARY}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: long-press-deb
+          path: ${{ runner.temp }}/out/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: inputs.publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: long-press-deb
+          path: debs
+
+      - name: Publish to the Pivuan apt repository
+        env:
+          SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
+          REPO_TOKEN: ${{ github.token }}
+          PIVUAN_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          set -euo pipefail
+          [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
+          command -v apt-ftparchive > /dev/null || sudo apt-get install -y -q apt-utils
+          export GNUPGHOME="${RUNNER_TEMP}/gnupg"
+          mkdir -m 700 "${GNUPGHOME}"
+          gpg --batch --quiet --import <<< "${SIGNING_KEY}"
+          PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
+          [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
+          export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
+          bash build-scripts/.github/pivuan/publish-pages.sh "long-press-${VERSION}" debs
+          {
+            echo "## Apt repository"
+            echo ""
+            echo "pivuan-long-press ${VERSION}"
+            echo ""
+            echo '```'
+            cat "${PIVUAN_PAGES_LIST}"
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"
