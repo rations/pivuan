@@ -108,8 +108,12 @@ It installs:
   installers and license managers: they open from a right-click in pcmanfm
   ("Wine Windows Program Loader"). Installed Windows programs are in the **Wine** menu, which
   updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
-  installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE) do
-  not run on Arm yet, so Wine is not kept running for iLok's service at login for now.
+  installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE),
+  such as Neural DSP's, run with a license activated to the computer in iLok License Manager
+  (USB iLok keys don't work in Wine). Once iLok is installed, Wine starts at login and keeps
+  iLok's service running for them (it uses 1 to 1.6 GB of memory). Give it half a minute
+  after login before opening a DAW: a plugin that loads before the service is ready says it
+  has no license. If JackDAW skipped such a plugin, Options > Plugins… > Scan tries it again.
   Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
   [wine-fex-info.md](wine-fex-info.md),
 - **PulseAudio** for everything else: HDMI, Bluetooth speakers and headphones, the browser and

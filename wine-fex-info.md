@@ -6,9 +6,9 @@ build: the `wine-fex` packages.
 
 ## What it is
 
-- **Wine**: wine-staging 11.18, built natively for 64-bit ARM with ARM64EC support.
+- **Wine**: wine-staging 11.19, built natively for 64-bit ARM with ARM64EC support.
 - **FEX**: `libarm64ecfex.dll` and `libwow64fex.dll` from [FEX](https://github.com/FEX-Emu/FEX)
-  (FEX-2609), which translate x86 code to ARM.
+  (FEX-2609, with two patches), which translate x86 code to ARM.
 
 Wine itself runs as native ARM code. FEX translates only the Windows program's own x86 code, inside
 the same process. The other approach, running a whole x86 Wine under an emulator such as box64, also
@@ -33,9 +33,9 @@ draw through Wine's own Direct3D on the Pi 5's OpenGL driver, with nothing else 
 That matters because DXVK can't run on the Pi 5 at all: its Vulkan driver (Mesa v3dv) lacks features
 DXVK requires, such as BC texture compression and 64-bit shader integers.
 
-## What's different from upstream Wine
+## What's different from upstream Wine and FEX
 
-Six patches, all in
+Seven Wine patches, all in
 [vstbridge's `aarch64/wine/patches`](https://github.com/rations/vstbridge/tree/arm64/aarch64/wine/patches):
 
 1. `IDXGIOutput::WaitForVBlank()` waits for a refresh interval (the fix above).
@@ -52,7 +52,20 @@ Six patches, all in
    find an ARM processor install ARM files, which the x86-64 programs and plugins run here can't
    load. iLok's did.
 
-Patches 4 to 6 are what iLok (PACE License Support) needs to install.
+7. Windows programs can use the x86 debug registers. Wine's ARM64 support dropped them, and it now
+   passes them to FEX (below).
+
+Patches 4 to 6 are what iLok (PACE License Support) needs to install. Patch 7 and the FEX patches
+are what plugins protected by iLok, such as Neural DSP's, need to run.
+
+Two FEX patches, in
+[vstbridge's `aarch64/fex/patches`](https://github.com/rations/vstbridge/tree/arm64/aarch64/fex/patches):
+
+1. FEX can keep up to 512 MB of translated code instead of 128 MB. PACE License Services, the
+   iLok service, is so large that with 128 MB FEX kept throwing its translated code away and
+   translating it again, and plugins waited minutes for their license.
+2. FEX emulates the x86 debug registers' execute breakpoints. iLok-protected plugins set them as
+   part of their copy protection, and stop with an error when they don't trigger.
 
 ## Packages
 
