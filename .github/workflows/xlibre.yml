@@ -16,6 +16,7 @@
 
 name: XLibre for Pivuan
 
+# Started by hand only, to save Actions minutes: no push, pull request or schedule triggers.
 on:
   workflow_dispatch:
     inputs:
@@ -27,13 +28,6 @@ on:
         description: "rations/build branch with the shared scripts"
         type: string
         default: pivuan
-  # A push to the xlibre branch builds and checks (never publishes). Starting the workflow
-  # by hand (and so publishing) needs it on the default branch.
-  push:
-    branches: [xlibre]
-    paths:
-      - "xlibre/**"
-      - ".github/workflows/xlibre.yml"
 
 permissions:
   contents: read

@@ -19,6 +19,7 @@
 
 name: Pivuan boot splash
 
+# Started by hand only, to save Actions minutes: no push, pull request or schedule triggers.
 on:
   workflow_dispatch:
     inputs:
@@ -30,13 +31,6 @@ on:
         description: "rations/build branch with the shared scripts"
         type: string
         default: pivuan
-  # A push that changes the theme builds and checks it (never publishes).
-  push:
-    branches: [master]
-    paths:
-      - "plymouth-theme/**"
-      - "pivuan-logo.png"
-      - ".github/workflows/plymouth-theme.yml"
 
 permissions:
   contents: read
