@@ -1,0 +1,18 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: arm64
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: python3, python3-gi, gir1.2-gtk-3.0, wine-fex
+Recommends: jwm
+Section: sound
+Priority: optional
+Description: Plugin Licenses: start the license service of Windows plugins (Pivuan Audio)
+ Windows plugins protected by iLok, and others with a license service, need
+ that service running before they load, or they say they have no license.
+ Windows starts it at boot; Wine only with its first program, and under FEX
+ iLok's service needs about half a minute to answer. Plugin Licenses (Audio >
+ Plugin Licenses in the Pivuan menu) starts the services Windows programs
+ installed and says when they answer, so that the DAW can be opened then.
+ They stop by themselves when the DAW closes, so their memory (about 1 GB for
+ iLok's) is only used while plugins need it.

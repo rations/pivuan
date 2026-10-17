@@ -1,0 +1,269 @@
+#!/usr/bin/python3
+#
+# Pivuan Audio: Plugin Licenses. Starts the license services of Windows plugins, such as iLok's
+# PACE License Services, and says when they answer, so that plugins find their licenses.
+# Package pivuan-plugin-licenses (rations/pivuan, plugin-licenses/), installed as
+# /usr/bin/pivuan-plugin-licenses (Audio > Plugin Licenses in the Pivuan menu, from
+# /usr/share/applications/pivuan-plugin-licenses.desktop).
+#
+# Windows starts these services at boot. Wine starts them only with its first program, and
+# under FEX PACE's service needs about half a minute before it answers; a plugin loaded before
+# then says it has no license. Keeping them running all the time would cost about 1 GB of
+# memory, so they run only when wanted: this window runs plugin-license-wait.exe in Wine
+# (/usr/lib/pivuan/plugin-licenses/), which starts them, reports when they answer and keeps Wine
+# running while the window is open. Once the DAW has loaded its plugins the window can close:
+# Wine stops the services by itself when its last program, the DAW's plugin host, exits.
+#
+#   pivuan-plugin-licenses           the window
+#   pivuan-plugin-licenses --check   load GTK and look for the services without a window (tests)
+#
+# PIVUAN_PLUGIN_LICENSES_COMMAND replaces "wine plugin-license-wait.exe" (tests), and the
+# check for installed services is skipped then.
+
+import os
+import shlex
+import subprocess
+import sys
+
+import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import GLib, Gtk  # noqa: E402
+
+HELPER = "/usr/lib/pivuan/plugin-licenses/plugin-license-wait.exe"
+TITLE = "Plugin Licenses"
+ICON = "dialog-password"
+
+
+def wine_prefix():
+    return os.environ.get("WINEPREFIX") or os.path.join(os.path.expanduser("~"), ".wine")
+
+
+def installed_services(prefix):
+    """Names of the services of Windows programs that start automatically, from Wine's registry
+    file (system.reg): the ones not in the Windows folder (Wine's own). The same check as the
+    helper's, without starting Wine."""
+    services = {}
+    head = "[system\\\\controlset001\\\\services\\\\"
+    name = None
+    try:
+        with open(os.path.join(prefix, "system.reg"), encoding="utf-8", errors="replace") as f:
+            for line in f:
+                line = line.rstrip("\n")
+                if line.startswith("["):
+                    key = line.lower()
+                    name = None
+                    if key.startswith(head):
+                        rest = line[len(head):]
+                        rest = rest[:rest.find("]")] if "]" in rest else rest
+                        if rest and "\\" not in rest:
+                            name = rest
+                            services[name] = {"start": False, "image": ""}
+                elif name is not None:
+                    if line == '"Start"=dword:00000002':
+                        services[name]["start"] = True
+                    elif line.lower().startswith('"imagepath"='):
+                        # "ImagePath"=str(2):"\"C:\\Program Files\\...\" -args", maybe with \??\
+                        image = line.split("=", 1)[1]
+                        if image.startswith("str("):
+                            image = image[image.find(":") + 1:]
+                        if len(image) >= 2 and image[0] == image[-1] == '"':
+                            image = image[1:-1]
+                        image = image.replace('\\"', '"').replace("\\\\", "\\").strip().lstrip('"')
+                        if image.startswith(("\\??\\", "\\\\?\\")):
+                            image = image[4:]
+                        services[name]["image"] = image.lower()
+    except OSError:
+        return []
+    return [n for n, s in services.items()
+            if s["start"] and s["image"]
+            and not s["image"].startswith(("c:\\windows\\", "%systemroot%", "\\systemroot", "system32\\"))]
+
+
+class Window(Gtk.ApplicationWindow):
+    def __init__(self, app):
+        super().__init__(application=app, title=TITLE)
+        self.set_icon_name(ICON)
+        self.set_default_size(460, -1)
+        self.set_resizable(False)
+        self.set_border_width(18)
+        self.process = None
+        self.rows = {}
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
+        self.add(box)
+
+        top = Gtk.Box(spacing=12)
+        self.spinner = Gtk.Spinner()
+        self.spinner.set_size_request(24, 24)
+        top.pack_start(self.spinner, False, False, 0)
+        self.heading = Gtk.Label(xalign=0)
+        top.pack_start(self.heading, True, True, 0)
+        box.pack_start(top, False, False, 0)
+
+        self.body = Gtk.Label(xalign=0, wrap=True, max_width_chars=52)
+        box.pack_start(self.body, False, False, 0)
+
+        self.list = Gtk.Grid(column_spacing=12, row_spacing=6, margin_start=36)
+        box.pack_start(self.list, False, False, 0)
+
+        buttons = Gtk.ButtonBox(layout_style=Gtk.ButtonBoxStyle.END, spacing=6)
+        self.again = Gtk.Button(label="Try Again")
+        self.again.connect("clicked", lambda _b: self.start())
+        buttons.add(self.again)
+        close = Gtk.Button(label="Close")
+        close.connect("clicked", lambda _b: self.close())
+        buttons.add(close)
+        box.pack_start(buttons, False, False, 0)
+
+        self.connect("destroy", lambda _w: self.stop())
+        self.show_all()
+        self.start()
+
+    def say(self, heading, body, busy=False, again=False):
+        self.heading.set_markup("<b>%s</b>" % GLib.markup_escape_text(heading))
+        self.body.set_text(body)
+        if busy:
+            self.spinner.start()
+        else:
+            self.spinner.stop()
+        self.again.set_visible(again)
+
+    def start(self):
+        self.stop()
+        for child in self.list.get_children():
+            self.list.remove(child)
+        self.rows = {}
+        self.ready = False
+        self.failed = None
+
+        command = os.environ.get("PIVUAN_PLUGIN_LICENSES_COMMAND")
+        if command:
+            argv = shlex.split(command)
+        else:
+            if not GLib.find_program_in_path("wine"):
+                self.say("Wine is not installed", "Plugin Licenses needs Wine (the wine-fex package), "
+                         "which runs Windows programs and plugins.")
+                return
+            if not installed_services(wine_prefix()):
+                self.say("No license service is installed",
+                         "None of your Windows programs has installed a license service. Plugins "
+                         "protected by iLok need iLok License Manager: open its installer from the "
+                         "file manager (right click, Wine Windows Program Loader), then come back here.")
+                return
+            argv = ["wine", HELPER]
+
+        env = dict(os.environ, WINEDEBUG="-all")
+        try:
+            self.process = subprocess.Popen(argv, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                            stderr=subprocess.DEVNULL, env=env)
+        except OSError as e:
+            self.say("Plugin Licenses could not start", str(e), again=True)
+            return
+        self.say("Starting the license service…",
+                 "Windows plugins, such as those protected by iLok, need it to find their "
+                 "licenses. This takes about half a minute.", busy=True)
+        self.output = b""
+        channel = GLib.IOChannel.unix_new(self.process.stdout.fileno())
+        GLib.io_add_watch(channel, GLib.PRIORITY_DEFAULT, GLib.IOCondition.IN | GLib.IOCondition.HUP,
+                          self.on_output, self.process)
+        GLib.child_watch_add(GLib.PRIORITY_DEFAULT, self.process.pid, self.on_exit, self.process)
+
+    def stop(self):
+        """Close the helper's input: it exits, and Wine stops the services once no Windows
+        program is left."""
+        if self.process:
+            try:
+                self.process.stdin.close()
+            except OSError:
+                pass
+            self.process = None
+
+    def add_row(self, name):
+        if name in self.rows:
+            return
+        mark = Gtk.Label(label="…", width_chars=2, valign=Gtk.Align.BASELINE)
+        label = Gtk.Label(label=name, xalign=0, valign=Gtk.Align.BASELINE)
+        row = len(self.rows)
+        self.list.attach(mark, 0, row, 1, 1)
+        self.list.attach(label, 1, row, 1, 1)
+        self.rows[name] = mark
+        self.list.show_all()
+
+    def on_output(self, channel, condition, process):
+        if process is not self.process:
+            return False
+        try:
+            data = os.read(process.stdout.fileno(), 4096)
+        except OSError:
+            data = b""
+        if not data:
+            return False
+        # Unbuffered, so that no line waits in a buffer that GLib doesn't see
+        self.output += data
+        *lines, self.output = self.output.split(b"\n")
+        for line in lines:
+            line = line.decode("utf-8", "replace").rstrip("\r")
+            if line:
+                self.event(*(line.split("\t", 1) + [""])[:2])
+        return True
+
+    def event(self, kind, name):
+        if kind == "service":
+            self.add_row(name)
+        elif kind == "ready":
+            self.add_row(name)
+            self.rows[name].set_text("✓")
+        elif kind == "ready-all":
+            self.ready = True
+            self.say("Ready: open your DAW",
+                     "Load your plugins now. Keep this window open until they have loaded, then "
+                     "you can close it: the license service stops by itself when you close your "
+                     "DAW.")
+        elif kind == "none":
+            self.failed = ("No license service is installed",
+                           "None of your Windows programs has installed a license service.")
+        elif kind in ("timeout", "stopped"):
+            if name in self.rows:
+                self.rows[name].set_text("✗")
+            self.failed = ("The license service did not start",
+                           "%s %s. Try again; if it keeps failing, restart the computer."
+                           % (name, "did not answer within three minutes" if kind == "timeout"
+                              else "stopped while starting"))
+
+    def on_exit(self, pid, status, process):
+        if process is not self.process:
+            return
+        self.process = None
+        if self.failed:
+            self.say(*self.failed, again=True)
+        elif self.ready:
+            self.say("The license service stopped",
+                     "Plugins loaded from now on won't find their licenses. Start it again "
+                     "before loading them.", again=True)
+        else:
+            self.say("The license service did not start",
+                     "Wine ended before the service answered. Try again; if it keeps failing, "
+                     "restart the computer.", again=True)
+
+
+class App(Gtk.Application):
+    def __init__(self):
+        super().__init__(application_id="org.pivuan.PluginLicenses")
+        self.window = None
+
+    def do_activate(self):
+        if not self.window:
+            self.window = Window(self)
+        self.window.present()
+
+
+def main():
+    if "--check" in sys.argv[1:]:
+        print("services:", ", ".join(installed_services(wine_prefix())) or "none")
+        return 0
+    return App().run([sys.argv[0]])
+
+
+if __name__ == "__main__":
+    sys.exit(main())

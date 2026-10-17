@@ -1,0 +1,10 @@
+[Desktop Entry]
+# Plugin Licenses for Pivuan Audio, in the Pivuan menu's Audio. Installed as
+# /usr/share/applications/pivuan-plugin-licenses.desktop by the pivuan-plugin-licenses package.
+Type=Application
+Name=Plugin Licenses
+Comment=Start the license service your Windows plugins need, such as iLok, before opening your DAW
+Exec=pivuan-plugin-licenses
+Icon=dialog-password
+Terminal=false
+Categories=AudioVideo;Audio;

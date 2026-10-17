@@ -1,0 +1,148 @@
+# Build Plugin Licenses (pivuan-plugin-licenses, plugin-licenses/) for arm64 and, with "publish",
+# add it to the Pivuan apt repository (this repository's gh-pages branch).
+#
+# The window is Python and the helper a small Windows program, built with Debian's mingw-w64 on
+# GitHub's arm64 runner in a Debian trixie container; only the package leaves the container.
+# There the window is tested under Xvfb with stand-in helpers (make test), and the package's
+# files and its window's --check are checked in a clean trixie container. wine-fex, which the
+# package depends on, is only in the Pivuan repository, so the package isn't installed there;
+# the services themselves are checked on a Pi.
+#
+# The apt repository scripts are shared with the image build: they are read from rations/build
+# (branch pivuan, .github/pivuan/).
+#
+# Publishing needs the secret PIVUAN_APT_SIGNING_KEY in this repository (the same key as in
+# rations/build). The push to gh-pages uses this workflow's own token.
+
+name: Pivuan Plugin Licenses
+
+# Started by hand only, to save Actions minutes: no push, pull request or schedule triggers.
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the package to the Pivuan apt repository"
+        type: boolean
+        default: false
+      build_ref:
+        description: "rations/build branch with the shared scripts"
+        type: string
+        default: pivuan
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pivuan-plugin-licenses-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: pivuan-plugin-licenses (arm64)
+    runs-on: ubuntu-24.04-arm
+    outputs:
+      version: ${{ steps.deb.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build and test the package (trixie, arm64)
+        id: deb
+        run: |
+          set -euo pipefail
+          docker run --rm -v "${PWD}/plugin-licenses:/src" -w /src debian:trixie bash -euc '
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -q
+            apt-get install -y -q --no-install-recommends make dpkg-dev gcc-mingw-w64-x86-64 \
+              python3 python3-gi gir1.2-gtk-3.0 desktop-file-utils xvfb xauth
+            make deb
+            xvfb-run -a make test
+            chown -R '"$(id -u):$(id -g)"' build
+          '
+          mkdir -p "${RUNNER_TEMP}/out"
+          cp plugin-licenses/build/*.deb "${RUNNER_TEMP}/out/"
+          deb="$(ls "${RUNNER_TEMP}"/out/*.deb)"
+          echo "version=$(dpkg-deb -f "${deb}" Version)" >> "${GITHUB_OUTPUT}"
+
+      - name: Check the package in a clean root
+        run: |
+          set -euo pipefail
+          cd "${RUNNER_TEMP}/out"
+          # Exactly one package: pivuan-plugin-licenses, for arm64
+          debs=(*.deb)
+          [[ "${#debs[@]}" == 1 ]] || { echo "::error::expected one package, found ${#debs[@]}"; exit 1; }
+          pkg="$(dpkg-deb -f "${debs[0]}" Package)"
+          arch="$(dpkg-deb -f "${debs[0]}" Architecture)"
+          [[ "${pkg}:${arch}" == pivuan-plugin-licenses:arm64 ]] \
+            || { echo "::error::${debs[0]}: ${pkg} (${arch}) is not pivuan-plugin-licenses (arm64)"; exit 1; }
+          # No path of the build machine in the package
+          mkdir root && dpkg-deb -R "${debs[0]}" root
+          if grep -rlI -e "${HOME}" -e "${GITHUB_WORKSPACE}" root; then
+            echo "::error::the package names paths of the build machine"; exit 1
+          fi
+          docker run --rm -v "${PWD}:/debs" debian:trixie bash -euc '
+            export DEBIAN_FRONTEND=noninteractive
+            apt-get update -q
+            apt-get install -y -q --no-install-recommends python3 python3-gi gir1.2-gtk-3.0 file
+            # wine-fex is only in the Pivuan repository: unpack instead of installing
+            dpkg-deb -x "/debs/'"${debs[0]}"'" /
+            file /usr/lib/pivuan/plugin-licenses/plugin-license-wait.exe | grep -q "PE32+ executable.*x86-64"
+            test -f /usr/share/applications/pivuan-plugin-licenses.desktop
+            # Without a Wine prefix it finds no service
+            useradd -m tester
+            su tester -c "pivuan-plugin-licenses --check" | grep -qx "services: none"
+          '
+          echo "${debs[0]}: $(dpkg-deb -f "${debs[0]}" Installed-Size) KiB installed" >> "${GITHUB_STEP_SUMMARY}"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plugin-licenses-deb
+          path: ${{ runner.temp }}/out/*.deb
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: build
+    if: inputs.publish
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Shared scripts from rations/build
+        uses: actions/checkout@v4
+        with:
+          repository: rations/build
+          ref: ${{ inputs.build_ref || 'pivuan' }}
+          path: build-scripts
+          sparse-checkout: .github/pivuan
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: plugin-licenses-deb
+          path: debs
+
+      - name: Publish to the Pivuan apt repository
+        env:
+          SIGNING_KEY: ${{ secrets.PIVUAN_APT_SIGNING_KEY }}
+          REPO_TOKEN: ${{ github.token }}
+          PIVUAN_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.build.outputs.version }}
+        run: |
+          set -euo pipefail
+          [[ -n "${SIGNING_KEY}" ]] || { echo "::error::publishing needs the PIVUAN_APT_SIGNING_KEY secret in this repository"; exit 1; }
+          command -v apt-ftparchive > /dev/null || sudo apt-get install -y -q apt-utils
+          export GNUPGHOME="${RUNNER_TEMP}/gnupg"
+          mkdir -m 700 "${GNUPGHOME}"
+          gpg --batch --quiet --import <<< "${SIGNING_KEY}"
+          PIVUAN_APT_SIGNING_KEY_ID="$(gpg --batch --with-colons --list-secret-keys | awk -F: '$1 == "fpr" { print $10; exit }')"
+          [[ -n "${PIVUAN_APT_SIGNING_KEY_ID}" ]] || { echo "::error::PIVUAN_APT_SIGNING_KEY holds no private key"; exit 1; }
+          export PIVUAN_APT_SIGNING_KEY_ID PIVUAN_APT_ACCEPT_ALL=1 PIVUAN_PAGES_LIST="${RUNNER_TEMP}/published.txt"
+          bash build-scripts/.github/pivuan/publish-pages.sh "plugin-licenses-${VERSION}" debs
+          {
+            echo "## Apt repository"
+            echo ""
+            echo "pivuan-plugin-licenses ${VERSION}"
+            echo ""
+            echo '```'
+            cat "${PIVUAN_PAGES_LIST}"
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"
