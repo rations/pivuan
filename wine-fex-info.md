@@ -35,7 +35,7 @@ DXVK requires, such as BC texture compression and 64-bit shader integers.
 
 ## What's different from upstream Wine and FEX
 
-Seven Wine patches, all in
+Eight Wine patches, all in
 [vstbridge's `aarch64/wine/patches`](https://github.com/rations/vstbridge/tree/arm64/aarch64/wine/patches):
 
 1. `IDXGIOutput::WaitForVBlank()` waits for a refresh interval (the fix above).
@@ -54,6 +54,8 @@ Seven Wine patches, all in
 
 7. Windows programs can use the x86 debug registers. Wine's ARM64 support dropped them, and it now
    passes them to FEX (below).
+8. Wine reads the Pi's OpenGL features the way its graphics driver needs. Without this, Wine 11.19
+   hung as soon as a Windows program opened a window.
 
 Patches 4 to 6 are what iLok (PACE License Support) needs to install. Patch 7 and the FEX patches
 are what plugins protected by iLok, such as Neural DSP's, need to run.
