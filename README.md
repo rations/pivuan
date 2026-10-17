@@ -110,10 +110,11 @@ It installs:
   updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
   installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE),
   such as Neural DSP's, run with a license activated to the computer in iLok License Manager
-  (USB iLok keys don't work in Wine). They need iLok's service running before they load: open
-  **Plugin Licenses** in the Audio menu, wait for "Ready" (about half a minute), then open
-  your DAW. Once the plugins have loaded you can close the window; the service (about 1 GB of
-  memory) stops by itself when you close the DAW. A plugin that loads without it says it has
+  (USB iLok keys don't work in Wine). They, and iLok License Manager, need iLok's service
+  running before they open: open **Plugin Licenses** in the Audio menu, wait for "Ready" (about
+  half a minute), then open your DAW or iLok License Manager. Once the plugins have loaded you
+  can close the window; the service (about 1 GB of memory) stops by itself when you close the
+  DAW. A plugin that loads without it says it has
   no license; if JackDAW then skipped it, Options > Plugins… > Scan tries it again.
   Everything uses the Wine prefix `~/.wine`. How this works without DXVK:
   [wine-fex-info.md](wine-fex-info.md),

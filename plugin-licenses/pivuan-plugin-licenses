@@ -216,10 +216,10 @@ class Window(Gtk.ApplicationWindow):
             self.rows[name].set_text("✓")
         elif kind == "ready-all":
             self.ready = True
-            self.say("Ready: open your DAW",
-                     "Load your plugins now. Keep this window open until they have loaded, then "
-                     "you can close it: the license service stops by itself when you close your "
-                     "DAW.")
+            self.say("Ready: open your DAW or iLok License Manager",
+                     "Load your plugins now, or activate them in iLok License Manager. Keep this "
+                     "window open until they have loaded, then you can close it: the license "
+                     "service stops by itself when you close your DAW.")
         elif kind == "none":
             self.failed = ("No license service is installed",
                            "None of your Windows programs has installed a license service.")

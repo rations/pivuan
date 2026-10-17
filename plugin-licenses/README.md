@@ -10,9 +10,10 @@ program, which is then the plugin itself, and under FEX the service needs about 
 before it answers, so that plugin always asks too early. Keeping it running all the time would
 cost about 1 GB of memory, so it runs only when wanted:
 
-1. Open **Plugin Licenses**. It starts the services and shows "Ready: open your DAW" once they
-   answer (about half a minute).
-2. Open the DAW and load the plugins.
+1. Open **Plugin Licenses**. It starts the services and shows "Ready: open your DAW or iLok
+   License Manager" once they answer (about half a minute).
+2. Open the DAW and load the plugins. iLok License Manager, to activate or deactivate them,
+   needs the service too: it says "Unable to open pipe" when it opens too early.
 3. Close the window once they have loaded. The services stop by themselves when the DAW closes:
    Wine stops them once its last Windows program, the DAW's plugin host, has exited.
 

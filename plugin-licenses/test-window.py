@@ -75,8 +75,8 @@ ready = helper("ready.sh",
                'printf "ready\\tTest Service\\nready-all\\n"\n'
                'cat > /dev/null; touch "%s"\n' % closed)
 rows = {}
-heading = run(ready, "Ready: open your DAW", then=lambda w: rows.update(w.rows))
-check("ready: heading %r" % heading, heading == "Ready: open your DAW")
+heading = run(ready, "Ready: open your DAW or iLok License Manager", then=lambda w: rows.update(w.rows))
+check("ready: heading %r" % heading, heading == "Ready: open your DAW or iLok License Manager")
 check("ready: the service is listed with a check mark",
       "Test Service" in rows and rows["Test Service"].get_text() == "✓")
 for _ in range(50):
