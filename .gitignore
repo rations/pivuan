@@ -25,3 +25,7 @@ __pycache__/
 .directory
 .DS_Store
 test-tools
+
+# Working notes for the pedalboard PCB (branch pcb), not part of the project
+pcb/pre-plan.md
+pcb/plan.md
