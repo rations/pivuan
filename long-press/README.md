@@ -9,10 +9,14 @@ pointer of its own (`/dev/uinput`, an absolute pointer like a virtual machine's 
 - a finger that **moves** drags with the left button from where it touched: a dial, a
   selection, a window border or corner (resize);
 - a finger **held still and then lifted** after 0.6 seconds is a **right click**: the menus
-  of JackDAW, jack-graph (disconnect a cable), pcmanfm and the desktop.
+  of JackDAW, jack-graph (disconnect a cable), pcmanfm and the desktop;
+- **two fingers that move** turn the mouse wheel, so the page or list under the first finger
+  follows them, up and down or sideways (whichever way they first moved farther): it
+  scrolls wherever the mouse wheel does (the web browser, GTK and Qt lists). The wheel has
+  high-resolution steps, so programs that can scroll smoothly do.
 
-Programs then see a mouse, not a touchscreen, so two-finger gestures (zoom and finger
-scrolling in the web browser) are gone while it runs.
+Programs then see a mouse, not a touchscreen, so pinch to zoom in the web browser is gone
+while it runs.
 
 `/usr/lib/pivuan/long-press start | stop | restart` starts and stops it with the session:
 `/usr/lib/pivuan/jwm-desktop` (Pivuan Audio in
@@ -22,7 +26,8 @@ Desktop Settings turns it off (Screen tab, "Long press for right click": `long_p
 `~/.config/pivuan/desktop.conf`).
 
 ```
-pivuan-long-press [--delay MS] [--distance PERCENT] [--session-pid PID] [--device PATH]
+pivuan-long-press [--delay MS] [--distance PERCENT] [--scroll PERCENT] [--session-pid PID]
+                  [--device PATH]
 ```
 
 ## Two details that were measured

@@ -172,15 +172,18 @@ connected:
 - **Long press for right click:** hold a finger still for a moment and lift it, for the
   menus a right click opens (JackDAW's track and record menus, disconnecting in jack-graph,
   pcmanfm and the desktop). A tap is a click, and a moving finger drags: dials, selections,
-  and window borders and corners to resize them. Two-finger gestures (zooming and finger
-  scrolling in the web browser) are off while it runs; Desktop Settings → Screen turns it
-  off.
-- **Onboard comes up by itself** when you tap a text box in GTK and Qt programs, and goes away
-  afterwards; the panel button is for the rest.
+  and window borders and corners to resize them. Pinch to zoom in the web browser is off
+  while it runs; Desktop Settings → Screen turns it off.
+- **Two fingers scroll:** move two fingers up and down (or sideways) and the page or list
+  under them follows, wherever the mouse wheel scrolls (it turns the wheel).
+- **Onboard comes up by itself** when you tap a text box in GTK and Qt programs and in the
+  web browser, and goes away afterwards; the panel button is for the rest. It stays down
+  while a USB or Bluetooth keyboard is plugged in.
 - The panel is 48 pixels and its icons 32, window borders and title bars are bigger, and
   tooltips are off (a tap would leave them standing). Desktop Settings changes the panel.
 - In GTK 3 programs (JackDAW, Desktop Settings, pcmanfm) a tap is a mouse click, so their
-  drop-down lists stay open and dragging works; scroll their lists with the scroll bars.
+  drop-down lists stay open and dragging works; scroll their lists with two fingers or
+  the scroll bars.
 - If the screen is powered from the Pi's USB, an audio interface on the same USB can be too
   much for it: the Pi 5 gives USB 600 mA in all unless its supply is the 5 A one. Power the
   screen separately, or plug the interface in before starting.
