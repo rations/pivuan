@@ -39,6 +39,7 @@
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting front back)
+		(aux_axis_origin 30 120)
 		(pcbplotparams
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
@@ -333,6 +334,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cf38679a-ad24-44f2-9303-15396595ca3c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2fdffeef-675e-40ef-ba83-1a00ab93b477")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cc8ac1d7-4280-414c-bd45-0e9ca5f530b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "416a1b23-d65d-419e-92e3-2bcb50cf4ddd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -797,6 +834,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ad1ee33-482c-489c-b9bd-a0e1ffc53371")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "50c9b9da-8d95-4b8e-827f-e027228f51df")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd8131d0-24cc-4246-90f7-c1a502d95964")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/686b2d53-9532-5ef8-be22-5752967c989a")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -986,6 +1059,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "da8a12ff-5e4d-47ec-9fdd-f2dbbb42fa11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d0ef9f5-bbc1-48c4-bc97-dfff1bbdfa23")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0106f29c-1faf-4129-996a-fdab60812a84")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32203572-bf36-4a0b-9630-9e6ffaf6cf96")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1189,6 +1298,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8dba95be-a72f-4b31-af39-18c268a98f80")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b707a95-a84c-4073-a008-a2614c4b20e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b098b3f5-0cbc-478b-b690-64cf3b223cb5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/69876ebf-01f0-5aee-b1c0-e0176357254e")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -1378,6 +1523,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "52a9e31b-a6bd-4647-911d-9f753da7de11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "911a0571-7a15-4f13-a4f1-8290e166169a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "981f52f9-1bbf-4a04-a83c-709553edba6a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "596d9024-0afd-4965-8efd-4b22c8af4dfe")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1581,6 +1762,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf59557d-093a-4946-8206-e80f311a20e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7885f88-2fc1-4e47-842e-c84bcb063d46")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f1bcb5d-892d-4b47-9fb7-ce3032cf5e22")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/513aa569-e09d-5217-b409-42cd80f146fc")
 		(sheetname "/Pi header and connectors/")
 		(attr smd)
@@ -1777,6 +1994,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4914906b-47ea-4e0b-b89a-24c0c2ed6113")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1603T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5887f1d-5c68-4766-a07b-ee148c19e388")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22813"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca99c3dc-2cda-4c9e-940a-f0130acbc994")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/874679d6-509c-5e17-8839-a9008a15e7b6")
 		(sheetname "/Power/")
 		(attr smd)
@@ -1965,6 +2218,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6535e6e-a694-433a-a3bb-ce810bccd4eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f9733b5-8c3f-4d4b-8e47-0d6c690934f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PCM1863DBTR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "494a26ba-deea-4448-9a9d-467674d51715")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C529569"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "94583166-ce7f-4af2-a4e1-e39bfde241df")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2514,6 +2803,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04cd311b-05d8-4f9d-afcc-e8894a587d18")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71c8267d-f33f-4080-89ca-1b3b17de007e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0eba9d60-8250-487c-8696-40e2a2dd853f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/b1974231-3c41-518a-8ae6-832f32016342")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -2808,6 +3133,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "817b6c10-28b2-45d0-90dd-b7ecdf6860b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9e29aa2-0b4c-4347-b013-5bb4d99b0354")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8631d114-a859-468d-b579-ba1c1cc08789")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/fae5f1fe-88d8-54eb-934f-3528235e2047")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -2997,6 +3358,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d97ff60f-851a-4dd9-95d2-1db60ecac61b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a328653-8d73-4954-a129-4ae7f8640ee5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "LQH32PN100MN0L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0dd16ae4-52f2-4299-a29f-488ad7b45176")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C98020"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24b70900-7fbb-4d46-a428-4cd8b0dbe4a0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3200,6 +3597,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd56c7be-aada-4b9a-b9fe-16e33b3851e5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ae38c729-6190-400b-aa32-15b3ef56845c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "230f3b7e-0d52-4cd3-92f0-601166bdadc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/a73174b7-553d-5087-a86b-827f38f41ffa")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -3389,6 +3822,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8eeef086-06cb-4a9a-8dbc-eaac02a66a63")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e475fa47-bb6e-4e4f-8f44-deea2452f4f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF330JT5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bc4ecadf-bee3-4781-a3d5-5a6fe30d4528")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "07db1a74-5b72-4ac4-959c-ab65aa6290c2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3592,6 +4061,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "40988281-e7cb-4863-813d-37385b53fd8c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RS-03K5232FT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a4c48c1e-9378-416e-8bd5-bbfc5a1e75b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C304764"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24118036-20b3-448d-a165-87d9d8aa3076")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/a2d5a156-f950-59c9-9770-73e2bbdd1085")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -3781,6 +4286,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c39ab9dd-5c59-400b-8a7a-26543dafd4e0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e647ea0-1a18-488d-8bef-c2d0407ab6c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfac1332-1c69-4461-b94a-3aa8e855e6d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b74c0d51-19bb-4ea6-925f-370ae86cf59c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4077,6 +4618,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6471bbe5-4bc0-4f3d-a56a-82e26eaef5e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f94b073-e132-4b2d-b9ac-26d7d2e2df08")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d84bd0e-f4c2-4835-ba71-c9ac3d668261")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8b44bf5-c7d7-4a0c-b627-ae2159778ab4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4480,6 +5057,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f784954-8132-43cd-9297-fd40bc9065d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d4fb1c0-feaa-4b8d-85de-c11523930f04")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f2648f55-c4fb-4b86-9524-5b2ea9ddd474")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/40b7443d-15e5-5ddf-b79a-3300353768c0")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -4675,6 +5288,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Kyocera"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f28718b6-90ec-45e1-8c50-ab48bbfbc522")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "KC3225K22.5792C1GE00"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "afca0cb7-bbec-4019-bbf8-66bbc1bff228")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "168c6066-a29b-431f-813c-37e0389ff823")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/2010bede-42e0-5787-a315-c2776eb3f69c")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -4834,6 +5483,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "26f759c5-4a6f-4fb4-95a9-43f99e706175")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "47358b5a-1692-4268-be9a-fef4024e5852")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "94298b09-1d1f-4a73-8505-6d2da0a199ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b04336b-8c35-451f-8d1c-457c5b2e37d1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5030,6 +5715,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "07423bf1-9432-4844-a003-763a4c63d9fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5cde27d-f4ca-458c-916d-3707df4574d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RC1210FR-0733RL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8f7c7b5-9bb1-4928-8e87-3c5ed389bc21")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C723447"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "666b96b6-72dc-4484-bef3-9a8c4dffea4a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5333,6 +6054,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "be57cca1-0e0d-4bb2-a760-cc3adcdb7a49")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1784T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "482873ba-cc39-4231-93d5-849c6be6e6c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C59295"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45e28774-aee0-431d-a584-de29f613791e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/ddb44bef-e514-51d5-adef-8dd1b5af7c80")
 		(sheetname "/Power/")
 		(attr smd)
@@ -5522,6 +6279,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "707a7db0-c6a9-407a-8434-10a46b96d6de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2972976d-a813-453c-8ede-cd0e7f48b53b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603JRNPO9BN222"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "01441bf1-0be3-4f7f-9884-d6bb0e147553")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C107043"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0cad9df-f513-4cb3-8aaa-3430b611eec1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5725,6 +6518,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00de1df8-97c9-434d-b19e-e0f9a50c0c08")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF330JT5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "19e8c44a-92aa-442f-a7cd-66b16ba1278f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7d94e754-09ef-4bcf-a3ca-b7eea2592c6a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/794d7916-d0d3-5ae5-ad8c-2f71e924264a")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -5915,6 +6744,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9bd1817d-d9dc-4c29-9757-2d72609a85d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Alps Alpine"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ca944bf-303d-40ca-b31b-7c9f60f323d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RK09L12B0A4S"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "336c7a09-80af-4c30-9fcf-1d5117213ff1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "46fd3d7e-dd90-4537-a755-85a5ff69b7d5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6307,6 +7172,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "969817e9-8300-42e5-b3a1-acf25ee1e0f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "04060e43-5a04-431a-979f-fcfd9e8222ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c8521ebd-da0d-49d9-9703-caff806a456b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61fb1dab-b42c-4279-a6cb-80dec8c10460")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6772,6 +7673,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Alps Alpine"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b450ac5-5383-454d-8906-58c26812e507")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RK09L12B0A4S"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7e0cb98-fe89-4f36-b85e-eadd2b3f9070")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "01695934-16e6-42c3-a891-6a48d5ce37ee")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/996b3664-4f3d-5461-84e8-5de13d9da39c")
 		(sheetname "/Guitar input/")
 		(attr through_hole)
@@ -7156,6 +8093,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c6df84cf-6095-4dce-b95d-63e9e8cb3fd1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7856c662-0d38-4146-b295-f073114181d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e56bce66-de42-4a35-90ad-67a046cf621d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd615eb5-67eb-451b-b5c6-5d7cc3227310")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7620,6 +8593,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1570eba8-b0e8-48b2-b67d-1dc038845352")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "32e2dcaf-f587-4832-acb5-2ed5aba3e892")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "603d4ec8-b876-4820-8d31-fc981112810c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/416e293b-4d54-5b2d-8809-9a1939a42369")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -7808,6 +8817,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6c0a1dd6-c7d9-4934-91d0-fb9933324cc0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05574259-1761-40e5-b3d4-0753a6929289")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SRV05-4"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a19e9e69-dff1-4f13-ba84-75895c5c3005")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C384887"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fa071813-3bfd-4d2a-b9c8-70670884b5c3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8158,6 +9203,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5e18adef-d0f4-4b3b-8a3f-036e4d81eef1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00c21350-0612-4fd2-8ddc-d115ad5ea0bb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1C101M0605"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ffd96716-ee14-4102-ab82-e8fef2547ad7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72475"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24fa474f-f000-440f-a016-3d97a83862d9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8690,6 +9771,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e073f4d7-9b52-4c83-bb24-be9aa1e91786")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "AC0603FR-07909KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8344de14-2dc8-431a-a5c3-e69ceccd8e05")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C138276"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78ae6b84-3ecb-4731-b716-3bc264541470")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/b41b297c-c9ec-5a69-9a21-64963cca1c8c")
 		(sheetname "/Power/")
 		(attr smd)
@@ -8886,6 +10003,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "26081916-ee10-45fb-b2cb-1533d3cc9d98")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3dc89233-2574-409c-b317-faffb3f120cc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05c51429-30f7-43ef-a930-46a6dd5c1a45")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/28fc709c-0d17-5246-af4b-addda6aacf55")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -9075,6 +10228,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1f2629a8-b0a1-4224-ad9e-7310c469da2d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfbe0c6e-4c35-4953-9e7a-25599aa6c2c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10C220JB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11d19301-1fe0-4e26-b2e0-aab13aa14387")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C1653"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "daa9333b-0c40-4bbb-b758-e2663e09ad21")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9378,6 +10567,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e645aa0e-df21-40b3-9087-6524affb33f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF100JT5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "741dd28f-14c7-4c0e-9b5c-b3fd89acbd68")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22859"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa958f7c-71b6-4470-8534-1961337a9e11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/9873c1d0-8f86-5062-9dba-068411a62160")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -9567,6 +10792,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f6497ead-6d15-4b4b-ae4d-8f141fe31890")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ee132491-e367-4f87-abc4-3bfe64304429")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3ae39db0-0b91-4488-94a9-925c5c545ca2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71872be0-bdb4-43ca-b719-0f6ee4d3eb5b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9970,6 +11231,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7bf64328-1734-438a-9627-c3944d69a03d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL32B475KBUYNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e8491cbd-9417-49e0-b6a3-b48bf3d9c492")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C170099"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9ac20fab-c75b-4b78-baab-a797d9e5a406")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/1ef8ce0e-b601-5b19-a74f-a3db4a4936fe")
 		(sheetname "/Power/")
 		(attr smd)
@@ -10159,6 +11456,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fcd6e32c-1abd-433b-94be-4a75c742cde4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d91392ce-d9cc-405c-b03d-66ea97a701ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4702T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08676cf4-2e9f-494a-9928-30a30d4e8351")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25819"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5c2c6316-7520-4949-ae15-10c6a9c43752")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10460,6 +11793,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f7fbcde6-f638-4c8c-a772-5fe98588944d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7edac722-929f-4d5d-b78d-a18576b11f39")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7360a991-97c5-4991-afb3-c1f4f91fad4e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/424b517c-2f75-5554-8d7b-d896e6b3c1ef")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -10649,6 +12018,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "deab159b-6688-4164-a63e-edc78d42e1fc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e3511c02-e663-4e0e-8a5f-30371c1b9d38")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "680d77e9-528d-4db9-82e2-769c75cc63ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e34b2c30-61c7-4943-be60-77843de574be")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10852,6 +12257,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "90347126-b524-41a1-9c92-8df85f0bbe23")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b37b2b6-6d23-45ba-8455-d5d66790e142")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b34bcab0-3424-46f3-b5e8-2c2e724b2ff8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/90606db1-2b44-57dc-a136-d8e8221b3edf")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -11040,6 +12481,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "524ac1e4-66b8-425b-b6a1-2c7a78d782d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a55fdebd-5e0e-4830-97fc-7dc57fad42ee")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "BC857C,215"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5d82fb0c-ad82-408e-a263-24a46784ed3c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C8666"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f13292ac-1adc-4f6b-be67-9d4a5038602f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11366,6 +12843,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4a4cb215-091f-4028-b591-c079a95f5a7c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "913ce71b-626e-4351-a335-5670517d7bfe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1V4R7M0405"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da3b0169-3163-4888-a87d-62460a6bae45")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72511"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3fb106b1-6ed5-428f-b726-7902053934aa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11800,6 +13313,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ec22f07c-7955-4551-88d9-5525aea5399c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58bbdda8-3510-426b-896d-f4cb48187f83")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a72feaea-7652-47e6-a1f1-75f225901fbc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/c8c8cea8-af7e-5faa-9db5-49a06c03d583")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -11988,6 +13537,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d2c9999c-4033-47d4-baca-b1c88f65da48")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0dc08364-3681-4419-86dd-80fc21a9d510")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TLV75733PDBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9ea7b15-7bee-497f-8e76-fede81cac494")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C485517"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8406a41d-9d3f-41d7-bb51-84b959ccd758")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12337,6 +13922,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c35feba-0277-4a84-86d2-d3d3cd911fc4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98e2a25c-ada8-434b-b5f3-2e1c928aed38")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e906f8b1-2484-4d24-a5e0-be42aae496f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/c490b35c-50c2-583b-a6fc-d61552522014")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -12633,6 +14254,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "037acde2-c1dc-4d9c-950a-61b419171f03")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8c6b6632-8e82-4541-b561-b69510a0330d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e08c36d0-b191-41cf-a880-b564cbccaffb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/80956126-d107-5250-800a-6a16b7794bce")
 		(sheetname "/Power/")
 		(attr smd)
@@ -12822,6 +14479,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3fffd332-b762-45b5-98ad-33e0b6ae8187")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d9586e6-1ab2-43ea-96d3-96c8eeea4842")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd309b40-e027-412a-99fb-be23bb3f8599")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "17a595a7-145d-446b-8ae9-7241a11500ca")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13025,6 +14718,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "289d5147-1028-46e8-b754-d6eff832555e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "991bb198-53c3-4be8-ba26-88164e00a48b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "59f00af2-ebc1-4abc-914e-e74605627b2f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/09ce72fa-0ce4-5f65-8a1f-e6fc6669fcb8")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -13221,6 +14950,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "748af24b-6d5c-484e-a60f-8d6f88de31d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "286b2ba1-5163-434b-848b-dfda95d5055f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "804d7233-fdcd-40eb-9838-b5291f6d01cd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/0145ec88-8b36-5917-90b9-78b7cdaf9780")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -13409,6 +15174,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "422ce5d4-83c7-42d4-9a98-04b7005b454b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed227328-163d-4e62-96a1-78f9771ce521")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SRV05-4"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3feec502-f082-41c4-9a19-4316959075d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C384887"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "013c0c0c-734e-4e14-8383-281f505a2e20")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13766,6 +15567,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4368a9d2-b533-458c-9310-a7426bad6008")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00403fb9-9405-4612-bc8f-346d293c24a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1199d742-16f9-4103-b907-dd3fdfd2ad9a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/be0da975-8b75-597b-8f33-c2a4975775f8")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -14062,6 +15899,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e94fcf71-fbe3-4451-a481-4cfcea1db9e4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b42fc8c-363a-432d-aa3f-4267033e8c30")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ab9cffde-6ed3-4d15-8df2-4f46123ad9e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/91c75b77-28a5-5fa6-9969-c9f68751f5b4")
 		(sheetname "/Power/")
 		(attr smd)
@@ -14258,6 +16131,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df86da86-445c-4aad-8e7b-1dfc99aa1d1a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ef55d401-1276-49e5-b17e-a8a2f403fbe7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0e11877f-c18d-4837-af54-cd8d3506497c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/6b0a1bd7-4645-5860-8bfe-877ea99d6f55")
 		(sheetname "/Power/")
 		(attr smd)
@@ -14446,6 +16355,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "40cda317-e14b-44e8-a2e7-d85448f9a833")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7bd1ae5c-563e-489a-804c-940c0342863d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TPS7A4901DGNR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1d9ab73a-6cac-4614-b645-3c34553b3b3a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C16430"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2584221-3305-4a57-84e0-65570ace4488")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14857,6 +16802,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "C&K"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e2a0304c-b8ed-4eac-8c8c-4bf0cf28f8ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PTS645VL83-2 LFS"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa7722ac-023a-4bcb-b9b0-39157482edb3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fc749f69-d60a-4120-8e75-6b21978ff8b5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/f95f75d0-ffb7-56f5-ac81-8cbc5874b2c3")
 		(sheetname "/Pi header and connectors/")
 		(attr through_hole)
@@ -15251,6 +17232,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e037a5b6-0163-4063-9f39-b454ee015c10")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF3901T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ea7706f-89d0-46f6-af07-82d70f43b061")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23018"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "52d884c5-493a-439b-9979-39989c9fe4ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/e7a317c2-5206-5b6a-ba97-b09a53c50e47")
 		(sheetname "/Pi header and connectors/")
 		(attr smd)
@@ -15440,6 +17457,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2f139df2-db84-4271-9154-18b9dc928265")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cd303ddf-7b64-475f-9185-0e9fdeaddf7b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "30ef7652-403e-41da-b883-df6930947b28")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "de0e5d34-e925-4192-82cb-f7ef26f3dee6")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15643,6 +17696,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "145b7ee8-a629-4057-ad9a-0e9dd93a55d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c93c056b-d311-4aca-9225-747446fd6296")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7cbabd49-dbb1-4c05-ac3c-5d2490e80d3b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/320ddb2d-245f-5072-8cc4-1535c54db20f")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -15832,6 +17921,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d2b74664-a5bc-4ec3-abee-97d57c94406e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f66bcced-8fe0-41d4-a183-70c0f07e4c29")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF3901T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "83183086-c969-448b-a091-b0d30f41ea60")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23018"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58d83cab-fff2-4639-ba80-7d388c9dbd22")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16035,6 +18160,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a322665b-12a7-4700-89fb-d1ffff4dd76e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb29e2d0-330b-47c7-988d-555f7ef69e2c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f45e71c3-0ffd-4178-a689-e1e5119175fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/1b443117-0560-5519-9592-61914dd633de")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -16224,6 +18385,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8725d86e-1ed0-49b0-a3a0-1db8453d2eef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f00d0012-1340-4d6d-9b1d-dd424f0e2621")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7dc43008-1a56-41b2-9648-f35c98acef77")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a7e7e7e-2d83-494a-a02b-01d09baf3f71")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16427,6 +18624,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d7fd000-a709-439f-b17e-6f2a76ce7b6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4fd43db2-03c8-4246-a92d-6f4d7bb8fe6e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4d66f3b6-0a22-4944-aca2-e61250f7a0d7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/ec48d130-7ab3-59e1-9b90-d0d875e1641c")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -16616,6 +18849,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "75b399ac-eabc-4227-b157-12e066be314a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ac1bf8bd-e1e3-49d7-8c34-33b9384f3690")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "edb7dda7-f679-4cea-98a6-01e00c9fc933")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a5dad8e2-905b-45d9-a904-22c894f5064e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16819,6 +19088,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "babd8946-376b-4a58-864a-ee4dda9033f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b016b9f6-94ae-4066-9100-5900d0ad4419")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "565e6d33-9c9f-4ed5-9519-f3dfe89d73f2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/7c546e7c-a491-52bc-b59f-4d8da6419d86")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -17008,6 +19313,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "251e49e4-2485-4635-86e4-5bf11c568590")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "177063f0-37ca-4fee-a4c0-7c06663450f9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49c640c7-c111-4cbd-bc61-65f4672f0c06")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7cc37dc7-532c-45a9-88e9-becdab187ad5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17211,6 +19552,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0a3a2bf-f6db-4b1c-ab90-b07959c423c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3bc1b9f4-d4f0-47aa-82a6-6e1a4ba9ee2b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b3efa36-fcf8-4e74-842c-3d158bbbdc45")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/fdcb3cdf-a503-5881-8da4-347650d24ad7")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -17400,6 +19777,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "f919c289-621a-4734-acc1-ff36edfeca6c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b2aa52b5-259d-4e9b-ba78-85079518d332")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1004T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1faee07a-db1c-4008-b9b8-fcaa0b48ab56")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d3bc2def-a954-4c94-bebe-3e9f2402f31d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17603,6 +20016,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "648b9276-9de7-4798-abd9-50361427ba69")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a4749f6-bf20-4180-aae6-43bba43c9213")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "555f260c-e667-45dc-805c-8a4fd713c7d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/a76f296b-0934-5333-af67-9b2db0ea7394")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -17792,6 +20241,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "417c4517-ba86-408a-b854-193b35e5d2a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bed3cfba-f1d1-4847-8525-41f8991d9fd3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "AT0603BRD0744K2L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87c4501f-bf97-4caf-ae61-da18d7e0778d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C855860"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0357cef2-f16a-47e7-8525-41c89ddd1d70")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17995,6 +20480,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38eaf332-837b-4c98-84c0-ed0d59418016")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f6e9c08-b132-4003-86fd-47eb4c97bed6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13ec0578-fbbb-4f83-95c7-082722a02bec")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/c9fc7331-bca3-57c1-8f9e-1b4646860d2e")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -18184,6 +20705,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1a9b734c-6ab7-49e0-91e7-9fbfac5c8b5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e54c759e-77a1-43f1-8ce0-2d648cb7cefb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6eb52805-99ac-4320-a74d-349a78f21a4a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6d703a08-e4ee-4770-a053-1a3a74022951")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18387,6 +20944,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "facc5b59-ef25-461e-8c18-68662582adca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3206ac36-d6d7-41f2-b4ed-a7bf030734e9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c71a6ad-5dc1-43fe-a429-e36eaab7737d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/be880ccb-5ba7-54a7-bf33-3c125cce4012")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -18576,6 +21169,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b207b75e-e89b-45b1-a82e-9426a4127bc9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3cde91e8-3658-45d5-b189-6e5496383369")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca25b88c-00fa-45cb-b3ed-23cb00362555")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "15bd5eae-0fb2-4c13-9db2-ef667eafffb1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18779,6 +21408,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "089b101f-4ecf-4de4-8753-d96a18f06485")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a11941d-b515-4665-84d5-aceb43f70cab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11bf1eee-3b24-406c-8a24-314914345dab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/0abb6109-57bd-5dbb-be8a-be625337fdfb")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -18975,6 +21640,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fcb003da-898e-4b9f-a02b-2900de37872d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF330JT5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f32afffb-cdcc-4359-a055-6ccbe8a7c128")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38c7e9a0-b4e2-4311-a31d-6d847db501f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/cc29b5ad-3d49-5b8a-8dee-a5c9c5114646")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -19163,6 +21864,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ff5da8ab-7071-4c5a-9914-05f4dabb3e94")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "83e132a2-a86b-44ed-8012-7668a72bd72c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfec5594-74d7-48c8-b4a1-fdc1bbd05bc9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cfb8a9fc-8b50-4ebf-a063-e38cae4f18d0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19940,6 +22677,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f5816911-22ed-40e3-af4d-a17efd95ee66")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A226KAHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31f4809a-d3e2-4da2-854c-cc6270cde5c5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C12891"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6db655be-0f95-492a-9c38-8ade36825a26")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/28fb7f8b-9f30-544a-8290-52f3ff9c8675")
 		(sheetname "/Power/")
 		(attr smd)
@@ -20129,6 +22902,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8b77cd3f-49fc-4f72-abbc-2d8d8268e36b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7d2d0ff1-f092-497e-a171-0d75e92857ea")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1V4R7M0405"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "18b3d309-480b-40bc-a2ee-644b0b5b5df9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72511"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "048eef85-3b43-4b54-8b03-12e1b12ebfb7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20563,6 +23372,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "df64d849-6820-4d10-b8e2-ab0b90c2c79a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7776dd39-7e36-4e3b-a084-d8601ea9ab72")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "03a9cb30-a0f7-4a1b-a5de-3e8b647629ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/a559347a-0230-5929-b583-bc3daf2d51b9")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -20759,6 +23604,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3bd77ece-23e1-4dd8-b5d5-96c9a0eacd65")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d298492d-b0c0-428d-8085-af4ea1e8109e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a887e213-1b74-4b71-b8b8-f4eb6e3bf446")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/50a351a9-f48f-5b20-8c31-4c5fd3902d82")
 		(sheetname "/Pi header and connectors/")
 		(attr smd)
@@ -20947,6 +23828,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "48e5f419-acc3-47e8-9108-b407f3f6e843")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d231472-f541-4ff0-bf79-fd478776b4a3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-PH-K-S(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c1736077-88c0-4412-bc04-e76371317ad8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C131334"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8798d04-9ab7-4741-9609-732300cf4047")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21501,6 +24418,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "484c5e25-2f57-4a23-82ae-7065ae411da0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "GRM31C5C1H104JA01L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d3c1f564-8c64-4416-bd3c-720fd047e431")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C97946"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c1e6768-e1da-4db1-833d-9ed58b9176ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/85ad217c-f1c2-5b38-bed8-27a2e9dfb731")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -21690,6 +24643,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "227c691a-5335-45a8-85d1-6a8857cc7d6c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f6a88c8-58b2-4b6b-8aa2-1cd9185473cb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "657ba7bd-c070-47dc-be10-c72690cfb208")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "79390427-27a8-4a65-9a88-7bd44a80558a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21893,6 +24882,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f99b0433-c88d-441c-8cce-1133f2941d55")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603JRNPO9BN222"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9077e117-6d48-4b05-ab4a-48251e355295")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C107043"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aac8a253-fd7c-4c0f-9490-9629769b8122")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/b3bc74be-2b00-527d-9c72-926eacff2d66")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -22082,6 +25107,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4de80647-3592-4a00-8136-ad6c781e05c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20ed9073-95c3-42ed-a2ad-1aafb6a14274")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ae63e93-fae0-4d4a-a053-9723dfb48645")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0271b868-af95-4a61-bf9b-8046a58f96e9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22284,6 +25345,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Same Sky"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1de958e2-b28b-45d4-b4b7-9260a5492c4c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SJ1-3543"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6bb8d861-4953-40b4-b74b-33c74ab87fbc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6e17711-28e9-47ce-b6e4-347909d46943")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/d7a011f9-460c-56d3-96e9-46249d648e20")
 		(sheetname "/Footswitch controller/")
 		(attr through_hole)
@@ -22459,6 +25556,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "74cf98b5-17b5-40ec-8782-63db16c65924")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27929ba7-f47f-46be-8dcf-905decce28db")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SRV05-4"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a21b8a2c-c588-4cce-9613-ce1710f8c51c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C384887"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "56907dab-f821-471d-b44d-506495eb9314")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22816,6 +25949,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "81423410-1240-461a-91fd-d16dafebaf49")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5bd758e-a697-4b05-b2c5-67a26797eff2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "536eb95a-87f5-4c05-bca7-7b221d04b86a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/2a9ca8bf-ee8f-5c02-bbcb-e659ddd3bf7b")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -23005,6 +26174,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "98689123-2888-44d2-ba3c-aa320c9c63c6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ab5afeca-789b-4ece-8db4-7f24a6837bce")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d6a15bd-c326-4d46-aa0e-fce2bfc9182c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38c759d6-d20b-47e9-9a6e-81503c59bd5c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23208,6 +26413,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "06d7de5a-5865-4cd2-8a84-16e1c9950d30")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7fa2e52a-21af-439e-ac5d-2b3abb2b752b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c7838537-e68f-4d42-b760-a6c4cfa24427")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/591551b6-17bf-53d8-8e17-767f82f50248")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -23399,6 +26640,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8cef1924-cb20-429e-a579-6422de3773f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "onsemi"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "52dad6b4-9dec-46c1-92a0-208c23d382b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MBR0530T1G"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c9c7c7f-8e1c-46f1-b327-0b9d59fd07a7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C82046"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d489f415-8bc8-48cb-9a23-d44ef63ba201")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23682,6 +26959,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b1394e4-e0a2-4081-b8a6-cff100f499bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55d63fc0-1097-4a87-8e13-87c1cc2d1c76")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d058868d-3a5b-4be5-8a90-fb03a1a413d2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/a0a9dd7a-8f96-5133-a9fc-ab300a039788")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -23871,6 +27184,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "58ea859f-40fc-4b19-b85c-19fc9272829e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20ce95b5-80c7-45e3-b957-1b05589719e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1V100M0505"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3ec4936-07c8-44aa-bb5f-5548ac17677f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72486"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "53dd2a51-3acb-434e-b073-dd53d6237a82")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24305,6 +27654,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "60c54617-2070-4548-a455-d433af369c0e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "05a47eff-9145-4b61-8f9f-9cdc300212ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b2baa70a-bca0-419c-9f1f-bcad5646e3c3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/70adc323-3cce-571d-bd59-490cab4ab4fd")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -24494,6 +27879,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fe8df061-82b2-4e33-956e-fe6eec49502b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3c7a215c-4ff8-41b6-982e-4cc84f774a3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e91e51db-d5e3-4042-a67a-0306b9c649ba")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cb4d7b9-7f22-41b2-a83f-621a99148353")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24697,6 +28118,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a08c1fe-30c0-473c-a40b-a3507072ea6b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1004T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2b7a5d33-63de-408c-9f11-1e8de7c3a60e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9ff9421-b893-4989-b47f-8a03906a9eca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/00067da8-d84c-5545-b75c-dd8003af97c4")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -24893,6 +28350,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38472fc0-114d-4f2e-950e-17a41b5f99b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0ce4a1b-4570-417b-ac4c-b4dbe9ab7450")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9a3bfc4a-2765-4598-9c11-177f17c09aef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/b13c1ef1-6eb0-50b5-ba76-55cb8d30b590")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -25081,6 +28574,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2f444825-ea87-4da8-9cc4-fbd3a136dcd8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "374542d5-16d7-4dc2-8fc9-221b123c634b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TPS61040DBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c622f66e-5d6b-4892-bd24-9f57bd19ccb3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C7722"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "343acaa8-7d47-475b-ad9e-4edc5bb3a6a2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25430,6 +28959,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b081afe-cb06-4ee2-9883-d6401720e8dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "811a64ef-118b-45a6-a30c-acefb67e7e1c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31df1f42-c281-42aa-96b9-73f742083467")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/d0344211-1092-542a-9dab-4dc9674173d0")
 		(sheetname "/Power/")
 		(attr smd)
@@ -25726,6 +29291,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "369bbe7f-b2f5-4b3e-bdab-877a685788fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e783bc79-c27b-4f89-8e3e-c9868dcdc94b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "08f685cf-f802-4d07-bd26-036038d2aab8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/10e1e90b-88aa-5c76-b93d-296e406c9266")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -25915,6 +29516,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "76b721a0-6185-430e-b0f9-bfbdd15ed47c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9e8ca50-7bc1-4861-aaae-8609f102b88c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb92a91d-8c8e-438e-95bf-5b01e7acd420")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7835ee05-0644-46b4-9715-b99560c7175d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26118,6 +29755,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38ee6164-6b53-4db7-9f35-5737446119db")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "13337c31-8165-4b5d-9c17-10e405a6d773")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8e4a780-9902-4022-bd44-19baf8def5aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/7aabf3e7-7ddd-52eb-a291-74687409ee0a")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -26307,6 +29980,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c118aaef-a6af-4228-8fef-46bb35e469e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73d7bdb2-745b-4656-b678-cc1ea0d3bd9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A225KO8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c30799bc-5625-4e80-aaa4-e70d6aaecd2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23630"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65f42328-7816-4b25-965a-eabaef039bfd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26510,6 +30219,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "faf52879-c1e0-4b91-a1e0-b0aa4f47c684")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7dfa9355-4a9d-4d33-9cb0-c8127cc468ff")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d358e16d-eaf7-4d73-82d5-64f35cff8d14")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/cc88cc7d-df9b-57a3-a231-007f79a4a4c4")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -26699,6 +30444,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c4767388-f1ff-47bf-a241-0b0ae48656de")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b204ad7-9df5-4336-9e41-da7607db5ed5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c6837e28-72bc-4433-803e-40d3e59dc0cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3a75356c-a836-4709-a9f8-8130f7e87890")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27000,6 +30781,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7fa96644-ed9f-4965-b552-ae05a525d218")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5dae24e3-2c0a-4612-810d-34f21eb5382d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "27f22443-3de0-4fef-a760-4825c8bdea39")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/dec3ebee-0180-5239-9c51-023a0ec9d402")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -27189,6 +31006,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "369dd417-213f-48d9-9f56-390adc1ec42e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "14c94ee5-021f-4152-a156-522de8bf869d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF2002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b3ccc7a-bf5c-4ed8-8f65-52607c39179d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C4184"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7052345d-dcac-4637-baa1-d38fdfc3be5a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27392,6 +31245,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b7e3c98f-ff7c-4438-b41e-e6960af9687d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea288894-8529-4c5e-aa8e-8a65cad8f5c8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1d9ba1a6-0576-458d-be3b-7e7032160852")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/e963d73e-682e-5073-9f28-51a1ff44cb88")
 		(sheetname "/Power/")
 		(attr smd)
@@ -27580,6 +31469,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6794bbd9-1ed6-417d-9696-e94fce2a2e8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7243b46a-590c-4a01-8834-5a73c3b24dba")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "LM393BIDR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8d1ef8ad-e2d4-4f2b-9bdd-abe98ca41cb9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "574e19b7-cf44-4fd7-b9db-bd44a8bc296e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27953,6 +31878,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dfe9b8fe-90aa-4479-8d22-23677a00f642")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c3487a23-22cb-45ce-a77a-668a37735c3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0d791cad-b9fd-4eac-8915-dff310e9d4fd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/2e9f039c-c7ef-50b5-bc71-c25b9004f6ce")
 		(sheetname "/Power/")
 		(attr smd)
@@ -28142,6 +32103,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7225c154-22ed-4107-8f73-de8175f419d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7302f18f-876b-4dc0-8a1e-d08940b074ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "31fe57a1-5633-4e4d-8492-71d9eb234593")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "dbee9d1c-d595-49b9-97e1-aa1aac1d75b4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28443,6 +32440,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3742c71c-34b4-46f7-bdf8-3de004a3d271")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cb663b4-9754-4bc2-ba15-8e5ead68807a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6462569a-567d-4f0a-b44a-cca8355ed74d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/5bc5fcc7-9a4c-5a25-a930-df9618778370")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -28632,6 +32665,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4b6274c0-7d35-4ac0-a28b-82ec9497dc90")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80589b7d-a973-4e01-b810-ce9f9c36dd9d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85d1e472-1279-4f9a-82a1-1da1d6db1dd8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b81c454c-a311-49de-9002-763695f8d04c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28835,6 +32904,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a7ce238-3843-4ca1-96c4-7ffacef54d46")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0c045d3c-612b-4d9a-a0c2-a72a0545109b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5503fe15-934c-440c-9c88-c04381104926")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/4d0d5c99-6c85-5b82-a82d-12a4db8373b5")
 		(sheetname "/Power/")
 		(attr smd)
@@ -29023,6 +33128,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d55c4a97-84f8-4895-ac34-04e31a9a9f49")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Everlight"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db35a6d0-ee59-4f39-8d36-761b84a1d573")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "204-10SURD/S530-A3-L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "58a8ee13-94c3-4069-b67b-1f3e60849498")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C99771"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bc4a5957-4a72-437b-9dc9-a7480275d215")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29803,6 +33944,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c6c1be17-996a-4fb3-a379-f077d7e0ceb6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RT0603BRD0724K3L"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b82be88-1206-46a3-83b7-dc74116becfd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C136968"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d92ad1b5-1c7a-4338-a685-9198201627d3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/3d803711-e2b6-5d05-ab6a-5cbda259aaef")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -29991,6 +34168,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a6dab44a-9686-48a5-b62e-2b8e02b094be")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "onsemi"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0be2163-4621-471c-b23e-856609e1ddca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CAT24C32WI-GT3"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a36c8452-cf46-4997-8203-f960701ebbaa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C81193"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5fcc18b-9319-4d06-a7ca-bc6b4d90f693")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30356,6 +34569,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bd7c4123-0547-4965-a6d4-880d085b2297")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91fc7c66-71fa-4d3d-9cae-655f97c917ce")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf93c2c0-8d6d-47ba-b45d-1566b35c584b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49912074-029b-4078-aea2-5a385b9cc68b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30821,6 +35070,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Neutrik"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb0cc42f-7192-442a-86c6-7133d4351ab2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b757fd46-069f-4134-8ae3-b13d68643798")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C368502"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da998d5b-cd1f-4247-a7e3-407351408c4b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/16799a33-2b3a-562f-94b0-d5b3516ac67f")
 		(sheetname "/Guitar input/")
 		(attr through_hole)
@@ -31275,6 +35560,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b8b539f0-c401-447f-a6bf-342612c7380a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8a2fe61c-1f50-441c-bb48-00d45bc3fd64")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c40f5f3c-0d7b-4613-95a8-2a9f239732aa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/51781c19-d01d-5cbe-9620-6d095dff965b")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -31471,6 +35792,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a6f0137a-9416-470c-9570-86ef0b1eb8d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "39c0ecb6-405f-41d9-9c1b-a4813e46f939")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a905b4cd-38ae-44aa-89a7-20084f0445b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/239da669-c7a0-5dfd-96c3-55b108c960f1")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -31659,6 +36016,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "924a404a-532a-48b8-a133-a34664853c40")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f36eaf8-4fdd-47ba-81ec-c99a473ff937")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88283612-5025-4153-bce9-5210b1015509")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f8f3657-2528-4978-b849-b397cd270497")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32124,6 +36517,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Neutrik"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c76d4d08-7f82-42c2-98b4-41f840aa2e59")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6770b1fb-5708-4712-9f4b-3fa37b97a301")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C368502"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "11cbb561-889f-4285-b762-5c793811fb57")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/21e1e20e-10df-56ae-a480-47c7377ac9a5")
 		(sheetname "/Outputs/")
 		(attr through_hole)
@@ -32578,6 +37007,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8c689f9-c5ec-4cc3-afc7-c6163a12993c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "GRM2195C1H103FA01D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ad55547-5dfc-4e4a-983c-8e22fc61652e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C441760"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0f10bf4a-b4b5-4a20-b9f5-8915ae6412ab")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/fdc34b53-e447-5d9e-816e-0dd356e8a21f")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -32767,6 +37232,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "04cd1c30-e759-4e2a-b602-d3cfd09a21f6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88a0f7d0-f708-4334-bf42-28455a79d603")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "44368146-a164-448f-b4bc-25d959acdb95")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fdbc6425-b1cc-4ca6-9927-add61682dd34")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32970,6 +37471,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "810ed84c-0f8c-48a7-aebc-1cf0142b6f6c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e79f6859-174b-4fe0-9d3a-93a8e3d77181")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d4c9b96a-0d20-42e1-8d4b-7207a22465eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/cb262929-3ce0-5624-b172-56f1a1e67e3a")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -33166,6 +37703,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2811717f-9823-4740-b2b2-d34a5d536903")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "GCM1885C2A221JA16D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84eeebe6-8b0e-4f8c-95bd-1c80df02af1d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C388907"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1258af7d-2c42-4149-83d3-37a04b7e4e8b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/f5ac4bef-c21e-565d-99b5-d590094d9439")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -33355,6 +37928,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a030c984-a707-406d-bc6d-7b784e454cfa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c10361fb-2329-4e00-af31-da676e67072e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1E470M0605"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e83c9456-7dad-421f-99ab-b77270c44cf5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72521"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f2027ef-80a6-4f37-b7f9-072c5b92d269")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33789,6 +38398,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d2a7c835-c494-4a1e-be4c-6a2f9e062eae")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2aca1b7f-7e55-4d2a-a96d-136a100ebfe7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3f62d4dc-fa79-4dea-8323-fc357ed1bbd7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/72bbc66e-b3dd-54b8-9160-b77776812f63")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -33978,6 +38623,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "dfe91f94-2ece-4b9a-a3a9-1e6afb1b0031")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4a1f982e-6270-43dd-bbf5-45bc3998886a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0376f53-0021-4209-8728-69750a930217")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c5c666b9-e654-47ea-87e4-67033ab58459")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34181,6 +38862,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9525f42a-9e19-44f5-a659-19f3330e9fa4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "824d1ed6-f18b-4a9f-a934-df8108d487b8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ba73a3b5-34f2-4e84-9fcf-a05e7f1d2d07")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/de844170-9eec-580e-a0cb-c2f78997a173")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -34369,6 +39086,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "990e0029-bdd2-49db-88f6-7e78f35e0aa1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b35daf4-0d32-4988-b560-f826e8755044")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TPA6130A2RTJR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "87a7ad82-b05f-4254-8eeb-362029ff87c1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C130046"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cdbb2276-c268-455e-bbd0-cce97b1ed67e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34957,6 +39710,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b98f8dba-ed5b-4357-b72a-5ab0c1e07cb7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "418c387a-169f-40b7-891b-fc0a784259a6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00044173-cb64-4973-aebe-70a60c5fc466")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/517c95cf-1153-5a62-a8e8-6825adf0f6ee")
 		(sheetname "/Power/")
 		(attr smd)
@@ -35146,6 +39935,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "850a0683-7823-4371-a5db-d22d079a7fd3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "56312551-99c1-4cea-b3b9-7eb48dac4002")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "91b666ce-00c9-437e-86f3-5cf38ddcf7b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "69ac9078-7234-44dc-be1d-8eb41af4f5e5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35349,6 +40174,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "82a94d58-64f2-40a1-b36e-d6877f1bf440")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A225KO8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9cfc8da7-e69b-4366-ba59-3a1904d6f0c2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23630"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "604efb7e-433f-4f0f-ba29-d76ab5b6875c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/9c4a1788-c10a-58b4-ac56-969734c9c892")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -35537,6 +40398,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "22f4195c-1d86-463e-ae66-f4a79dfe0ec9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c9a48f1-f8ef-4de6-b14b-5657c104fb22")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "BLM18KG601SN1D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49a76620-9440-4119-a1c9-4dc102557d83")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C85833"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1687cac5-c240-4e13-8fcc-74446d0822c7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35840,6 +40737,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d97071e-87e1-4148-9468-72c325ddc04a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "174f8374-c4ab-4dcd-87be-d16b2034f846")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b4c990f-0ec9-4555-815c-0a760dfe2f11")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/f635f99d-4376-510f-957d-d564a011a775")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -36036,6 +40969,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d5af2ee3-db39-41d6-9e19-6f138d082cef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f71b9d2-427d-4600-a0f3-bd3d9bd6799b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fef39f73-07ba-4450-ac42-fbcc67cbe168")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/0fdb2867-d3e0-5a40-9423-2f7caa0587e1")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -36225,6 +41194,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2416e45d-d24b-4318-9895-986251d6ce97")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Lite-On"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "de2d96aa-e8f7-4e54-9644-40869bdc8424")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "LTST-C191GKT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "898ebf27-74b1-412e-b586-2278ede5ebe0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C99289"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5af9e946-674d-45d7-a096-7a17000bb7c8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36448,6 +41453,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8fd8a2eb-55b7-4fdb-be82-e494900df8ec")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF2204T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7683b150-738e-4d2f-862a-865f2145481e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22938"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "78e59fba-cfcc-480e-b4f5-e8294d3c0a15")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/60e7fa25-ca6d-5b6a-a150-fc2e03c92115")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -36636,6 +41677,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "2d7cba5b-6d4d-4de6-8a0e-92c64c90753a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4388b2dc-3c6c-48f2-911e-f7b72a3d0b5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "OPA1642AIDR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e25153d-0e23-4614-ab78-4d58a3535b67")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C67640"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da24855e-4e0f-4a1f-829b-1c690fac29e8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37001,6 +42078,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "c1a9d328-a32e-4bdb-8e5b-0452118e8359")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8cee1185-e32b-46ad-b20f-723c207b0714")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0b104a32-3d91-4b48-9aad-cf9904c98b06")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f73baecb-9bd6-4589-841b-363f49fa0302")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37457,6 +42570,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ade8cafc-678d-48b0-bdd6-a7a438ba78b3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ea9d386a-9f05-45dd-9316-ba17da1a3469")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B4B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0f34960c-6a59-4050-9d71-f503677c4fc3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C144395"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b9e54551-a017-45cc-a803-34d7b1786997")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37921,6 +43070,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "405d96f3-316c-425e-a81c-7650d1cd6236")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f26c90b-2973-4f87-8540-1ad0960d8e73")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8959dd46-dbe2-4d57-86b2-f227755fa45d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/2035ac41-5d60-5b97-b8ab-99c98e7c72cf")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -38109,6 +43294,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "8ca817ee-3d9c-400d-9376-a159c2f80bc1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "68c81ac8-2f3b-4477-aff3-bcc7cd3560e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SRV05-4"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8525d12d-14c5-4aeb-bcbc-c29c14ef8af2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C384887"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cc12766c-e7a9-45c5-8790-472b5381d9db")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38466,6 +43687,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0bad492f-4f2d-4001-8a13-27681f38150c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF0000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7deac0c7-d4dd-48f3-8abc-3694f4b30231")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21189"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b6f2d020-af3f-42dd-9af3-56f77406f956")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/0ccba99e-a976-5e9e-af68-3c92f11920d0")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -38762,6 +44019,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd6c759b-b917-46c6-a47c-95e73773b4d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A475KAQNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "326f3974-7289-423e-9ac6-95da2a0ae5d6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C1779"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e51c84a4-4278-47fc-9ecd-10b3a846d42d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/026cc9b8-488e-576e-8f2d-286d8ea877c2")
 		(sheetname "/Power/")
 		(attr smd)
@@ -38951,6 +44244,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "df829857-4ffb-445d-a382-bb4142864ae7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f735beb1-e086-48fd-b0f3-a67f347f98b2")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4702T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "55574e1f-459d-4708-9f58-1d78a79d881c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25819"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d326223-4062-4e5b-85fd-3b628b24dcc9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39148,6 +44477,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cdf3cba4-08cb-41d2-bb71-cc8141f3d185")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7d20aff7-10f1-4d67-b92a-71307648301f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "80400e02-3119-41c6-9749-b8a3a0569c5a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C368502"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1ba5dd6-0e69-42bb-ba7a-40b5fc2f9c04")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39609,6 +44974,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "529d1f3c-b950-4bcf-a87a-43bf38c6242c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2c0bdf05-a6f9-44c4-a84f-bfaffc81900f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a234359d-f21e-4fe9-a737-a8689f6972bc")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/b5a8b3e0-e62b-52f6-b300-b6785e4ac79e")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -39798,6 +45199,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1d90f476-13a3-4bcd-ab0d-df0987376f8b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Lite-On"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "24f3fbc5-5589-4594-a701-351daa398cbd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "LTST-C191GKT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "917a4360-5db5-4877-9cb7-02306631e275")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C99289"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f5a29013-a4d0-42f5-8257-2d7f43f0d61d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40013,6 +45450,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "16b2aa87-1dba-4a18-95e1-9857bb53a3bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98bb1402-e27e-434b-afdb-524af691f4b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PCM5122PWR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b5b8aaee-cf38-481b-8b08-4d91c2ad9b3e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C962071"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4c6addad-d7ef-49be-83ce-f89f77469667")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40586,6 +46059,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2ff08f2b-b810-405f-aec4-71b5340ab236")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1004T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6f6c6c81-5c67-43de-a99e-c1216390bf63")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22935"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6c8b4710-1e8c-4ea3-acd0-40247cc7d278")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/7a5718e7-b02d-52ab-8d41-8334bad802d7")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -40777,6 +46286,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cc5d170a-add0-482b-bdc6-28b4f8a1224f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Raspberry Pi"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b706cf4-6ce3-4fc3-ab38-87b755b9308a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "Pico H"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5a11c6ca-9b52-4cb9-8dc2-1243bbab3431")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7c0aa30-9782-45e1-8358-d4ca341d11cf")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42303,6 +47848,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "XFCN"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "413e563d-a609-43a4-85ef-f4604ee29655")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "PZ254V-11-02P"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1924a660-ebbd-455a-9a6d-882c4c607841")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C492401"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e154ab1e-4edd-480e-9e74-da1ba38a9d0d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/32b40fb3-c94c-5adb-8302-caa9eefe1b84")
 		(sheetname "/Pi header and connectors/")
 		(attr through_hole)
@@ -42544,6 +48125,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1aed974f-3be9-4972-9143-4ab12984c9d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bcdbb66b-ecf3-4e68-9b29-e176c2c8e424")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0cf378c9-dded-44e9-a2db-98fc805e86b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c963a3b-355d-4eb0-ba08-0eca952bb8dd")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42845,6 +48462,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7ec0af55-1512-40e6-a370-35814f4f086b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0805W8F3301T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aa317945-c301-4465-8870-399db272c21d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C26010"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "96ff7d2f-9c9f-4b13-9880-cfbcd97446d8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/481e504d-cc43-5481-bf80-310fcac4eaaa")
 		(sheetname "/Power/")
 		(attr smd)
@@ -43034,6 +48687,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ad018eca-e82b-42d0-a5cc-8b9c1d0ae200")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61e7e95d-fb27-4afa-8e4a-d67c0e22af79")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb901ca4-b7db-416b-8561-ce8bb553ad9b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "67193ea3-7c0a-4654-9113-967cbd8ce49c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43237,6 +48926,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "48642d02-a114-45d7-a89c-2ecffc82eba3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "07a6bccb-be9e-46f1-bae4-5517ef579f1a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0ffd1b2a-5d36-40e7-8d2f-e981525b7fd5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/42ee6f61-f960-561b-b382-c28609d558bd")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -43426,6 +49151,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5d186d26-f567-49ca-b2f9-f1bb184a751d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b6702f9-8369-475b-8c9f-141ae57e6b89")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5f2cb667-36bb-4fed-9396-76d397e3d813")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a7210b0b-19e2-4320-b545-86ad446aab27")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43629,6 +49390,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d7db3f87-a526-40dd-8aa1-0f177a904d7e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1005T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a466de8b-3217-4ecf-be67-d0bf91e3167c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C7250"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da3a62da-eb2c-4037-8566-771da028d7b7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/51a32433-29c0-547a-b0fd-813f5d06b0f9")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -43818,6 +49615,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "409fcbdf-eabb-445a-a7e0-ba94ac72d02e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9ab311d-d101-4f2d-b1d2-31794d14a698")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6caf256e-bb60-41c1-ba6c-fb1babcf9b1f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1a71167-7ffb-4451-b337-aae00f7d9063")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44021,6 +49854,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d77a2473-5cd4-4ea8-9237-702bc7094428")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "646c283b-029c-463b-9c26-f7b427ea9caf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1423aa7-4a5a-4dab-8625-2db269fb37dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/91564380-5ecb-5d3f-a01e-f69161db7fe2")
 		(sheetname "/Power/")
 		(attr smd)
@@ -44211,6 +50080,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5516fd45-274b-4f02-a0e9-ea78c97dfe05")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Alps Alpine"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "553b0d24-4e05-4eec-a634-2fe9eaa74706")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RK09L12B0A4S"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bd7d4f40-4aa7-49e7-ac36-54aa3fe27e02")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0730832-cd6b-4716-af65-a8911fb9f243")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44610,6 +50515,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4f9f599d-208b-4f31-a71b-0496f2f6851b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF330JT5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1cd67723-2534-4322-b4c8-8503620dd0e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23140"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9677d145-1a65-4963-b82d-8b0ff18f47b5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/8b77474c-ca92-5e61-a208-53bd24ae0d2a")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -44906,6 +50847,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "76764760-a956-476d-9b8c-bf3a4d7fd6e5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RC0603FR-07140KL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b1a87421-e0de-4b3c-a441-5d7f13ea2c04")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C185372"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d20b231f-9a86-4bca-937d-39370997869e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/cf8e6249-16c2-5458-8ffc-feea7cada965")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -45095,6 +51072,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7033923d-71d4-4985-b766-5fea9b37f497")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b95ba602-bb03-4ed9-9524-db038b28739a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cea33095-4b14-4944-b735-646bd7c49c26")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C25803"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9df9a46b-0aa3-48ce-93e9-773f18b64fd2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45298,6 +51311,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84bd84ca-5b11-4480-b37b-ec2c5f10f845")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "802be012-bd2a-490f-90a2-ad14eb840b51")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ca140dd5-f3e2-4091-86a9-a73b7840a704")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/250241d4-875d-5199-9f12-7fd0c6b1f9d8")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -45487,6 +51536,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b84b77a4-35b4-4c50-b22b-b1fe4566e606")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "adf9dcd4-e872-4255-ad56-0f7d87f15048")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "effed7cb-2abf-4c6f-95c4-aff3a72d6da5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b99faaf8-ba65-4ec1-9e2e-157a9e1c2be2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45690,6 +51775,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9fdcd55a-8b9d-4c18-b024-e67810827c97")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A226KAHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd6f629f-cbc8-4be0-93ff-da635fe9bae4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C12891"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bfd563ed-1ed3-49d3-b65e-702f991b21db")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/970e548e-a8b6-513b-a384-9b515eb14f77")
 		(sheetname "/Pi header and connectors/")
 		(attr smd)
@@ -45878,6 +51999,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "bf2861e3-0743-4c72-a320-34fba04844f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f2557c7-b3c3-437b-833e-a03f06e95371")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SN74LVC1G32DBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3b2de22b-3cd3-4e80-badb-96d32cc32da7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C10096"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "17d043d8-05ce-4f15-a890-ab7da46bcce0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46326,6 +52483,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b3ebd24f-2f84-43fa-90de-3c2c5144f143")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "TPS7A2033PDBVR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c4176ca4-4526-405f-824b-f2dfd9d1137d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f0e1170b-7b35-45ad-b320-97ef9a4d08a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/398f2740-3e92-530d-8ca9-50b40842b13a")
 		(sheetname "/Power/")
 		(attr smd)
@@ -46668,6 +52861,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0c2fb1b-8a47-4b28-96bc-776fb8f56d55")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7e8af33c-8457-4803-a00a-da66510ddefb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "88cd8be5-47a8-43d4-a01a-5b4114fb2fe8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/a1be90c8-ebdc-54d4-a0e7-24fff83c4f3b")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -46857,6 +53086,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "7a67aabc-d948-43fb-a9ac-fbbbd2f561fb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b08eec8d-d231-4ebe-8ab8-d13d39022e25")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "60969e72-8849-4306-9ab3-ebeee03fea25")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e68962c2-c93b-4bfd-8799-1642baef20e5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47060,6 +53325,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cf61c977-fde4-4b16-9eae-81450fa1454a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cb6b193a-2835-4390-ae12-3c6e1911d5f5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13585"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d73fb5a6-05cf-459a-b791-bcf8830d2d21")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/d0bc200b-5d11-54e1-928f-67000facb20d")
 		(sheetname "/Power/")
 		(attr smd)
@@ -47256,6 +53557,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "458be36c-a701-4b14-bd60-dcad041a1940")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e5a7c01-7f89-45b6-a210-6cf211b005e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1e759a11-33b0-401b-9683-8aad68f1804c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/f50236ef-ec5c-57ed-b20c-771c4c07c82a")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -47445,6 +53782,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "049b4e8b-6f60-414b-b8b1-7a1ea24819f4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "540a0471-dec0-4810-9d68-bf858bb5f2cf")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1E470M0605"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8e5d40f8-f27f-4cc4-891b-245b5d349dd8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72521"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "96fdc612-6ebe-4c9e-94e3-27c893262e05")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47873,6 +54246,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "082a2c08-472f-4ea0-8455-df59a24d684e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "242fd837-bf13-4745-8030-058d379c0705")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7d928755-fd52-489c-a504-eddb3a6b3ba6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C368502"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bf05c2dd-e419-4e9d-b809-04052e0b1af5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48333,6 +54742,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "66839086-e345-44b7-b971-31420e74a9cb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "OPA1642AIDR"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7281c0be-4e4d-4183-bbc9-2550a304cfb5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C67640"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e48fc936-e6c5-469e-a4bf-3d0f9cca067c")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/f7920205-27b8-5ba9-ada0-25d88cd46820")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -48699,6 +55144,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1748f925-14ae-4468-9dc0-2ad4d6118fc1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10C220JB8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "81995fe0-392a-4107-9f18-4d9651ee0219")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C1653"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "38740ea4-e15c-4eb2-9fa6-526fb82850b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/21162098-e9a3-5727-b02c-839341ff4360/a60f74b1-6bce-58a9-afd1-c84d4b621769")
 		(sheetname "/Power/")
 		(attr smd)
@@ -48888,6 +55369,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "e1b6c99d-7fb0-4efe-a3ac-5b31ce7d9e33")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0931f38e-a45d-4af8-a769-26a377d3b684")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "caad1c2e-4245-44e1-9818-a9580405b411")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "820422c9-d1e0-4c43-bd68-5e3a5080c601")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49091,6 +55608,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "db106e32-71d7-487c-8a75-44cc68914f2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e0d5a61e-3a14-4117-ba4f-5a818ee9991a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C15850"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2607efa4-d6e4-43e9-8737-1e2d5f6f750a")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/3d7b4a27-0bd3-57d6-8ef4-a6563f62ac66")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -49280,6 +55833,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "94024c38-0e09-4a77-876e-9aa31d41bf58")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "FH"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d8383000-51de-43a8-905f-85bd1e5ccbb3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603B103K500NT"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cded4226-65b9-4e28-9316-9f8786fd3765")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C57112"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2b9ab1e-19f4-4807-ad3f-53d44a43300d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49483,6 +56072,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9cc02cc9-a345-423f-8ff5-8828d5740882")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "141f648b-6519-4154-b447-3e42f2e1eec0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e98578f9-4b47-4770-b2ca-d56631df6d95")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/26e2ef77-af50-5321-a5d5-6ec573933bd1")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -49671,6 +56296,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fe602098-d905-4044-9e76-7e18aa36f442")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Nexperia"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3fefdc96-466b-4ddc-b062-1f1f03e82141")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "BAV99,215"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7f9033a1-11d2-43e0-9bc4-f4d973652211")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C2500"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3d2b152d-b199-42ec-ae7a-46c7ab57f6ba")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49996,6 +56657,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0f97e760-c181-4729-b1e1-74d6f6a2f996")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Leiditech"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "84c2f868-a870-45df-ae87-fbbf407f3cb8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "SRV05-4"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "45024744-b116-4c2a-92df-cccec9454a6e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C384887"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "65fe2b5a-c7f6-4d77-a3c5-49348617ac0c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50353,6 +57050,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "267d1295-fe05-444f-b053-c01df97cdc47")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d90efb9d-46db-4ff9-aad4-7f6d81f99d15")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7c7b5d0e-af73-4db0-ab0b-e6abbe5c8a4f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/8ff0baac-a065-5f00-84e0-96bc1f2716de")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -50541,6 +57274,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "d23152e5-8fa6-4b4a-85bd-f7601dbf4980")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "JST"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "61752e45-f17b-4752-bcb2-65fde2e442ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "B2B-XH-A(LF)(SN)"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6a184cbf-7a77-47ff-8705-71ec761b79b6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C158012"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b850750c-64ea-4e16-ae84-86827a237b91")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50987,6 +57756,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "73ec667a-5ede-4af5-8594-0345eb1a710d")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a187b80-4d18-4646-92bd-b36a91ee07be")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "aefb434b-aae6-4298-8d1b-da3d4c3f2594")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/60f9c8d3-dbf3-57da-8487-3fec067c2515/118cce69-dfd8-57a4-b75c-12ee8c555d4a")
 		(sheetname "/Footswitch controller/")
 		(attr smd)
@@ -51176,6 +57981,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fa44d68e-76a2-4083-9295-6a0083827f95")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "09786d5e-44eb-4456-92a4-8c67501a2988")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL10A225KO8NNNC"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4073fc5d-30cb-443a-a908-b0aec3732218")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23630"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b253a048-85b7-4d07-8cd0-d1794751d20c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51379,6 +58220,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c014067e-036e-4a35-a185-60097a935ade")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4701T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d705cd31-35f8-4303-9a58-b1b6f1fbf607")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23162"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0a12488-163d-4f49-bcaa-c8e173495c42")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/faa04d20-a529-52c9-9da8-8b3c6c5aa481")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -51574,6 +58451,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Kyocera"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "54c59da6-574e-4bfa-aed9-682c1e34c7b9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "KC3225K24.5760C1GE00"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f9e1ce71-77a0-4d87-b0fc-19dc6dba84af")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "854afe45-a429-4435-849e-718a6d9b4643")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/645b8126-d6c3-570d-acce-bc1a8e923e83")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -51733,6 +58646,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "afe88888-efcc-4706-900c-78fb89207980")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fbf139f8-2e76-4b86-80ea-9970f8304a6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF1001T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "97881fb8-08ec-44eb-be73-5f2332a5e3b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "821824e1-06ab-49cd-9df2-926f89cc439d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51936,6 +58885,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1c2e46ef-7b5d-4eba-bf22-c41827579ae1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cab11e06-6369-4e21-abfd-5373a3a47a98")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1a11e6cd-5daa-477d-af1b-2998baa6d6b1")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/d24cab4e-5991-5642-b0f7-b1336c83e910")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -52124,6 +59109,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3348fbae-f454-4619-9f5c-6a7c548c0c12")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Bourns"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1b59fa94-bdd7-43f5-b036-e6e7ab03ff2b")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "MF-MSMF150-2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3238f0de-0623-49e8-a5cd-9a6cc2f33809")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C89648"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6b34db66-4a63-46b1-8ed5-e9d358477ea3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52327,6 +59348,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4552a0e9-0078-43a1-89e0-6bd9470e1a8e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "b2073c37-3738-493f-9d8f-50b6055cf732")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "63f7cd21-4ce9-40a5-82d3-7402c2adb9fb")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/e1f2af61-e6bb-5dbe-aa0c-fa1e075206d0")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -52516,6 +59573,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "17b253ef-74ab-4192-840b-9c1a8519e8fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f51340ff-3bb1-4c9b-ba36-bf35b62c4982")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a9ae1121-f1d8-404d-ada2-2cc532735745")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e13c541-822e-476e-a953-68880cabaf6e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52719,6 +59812,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "502027dc-08a0-4096-be5c-7a5a88a933af")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF2201T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5493c36a-a2ec-4d30-bc0e-d956033b74c7")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C4190"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "cac518f8-ff0e-4ac7-b812-02facdc551e6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/2111669a-f1e7-5f68-8c26-965fb3f70a64")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -52908,6 +60037,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "4a99a52b-6a4b-454e-a87a-24505f584c05")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "ROQANG"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6bb28241-0125-488a-9a53-09135d155603")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "RVT1C470M0505"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "744d2951-45e5-4ab5-9f35-1e1a6aecea3f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C72515"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9e547b8f-adab-4e89-a150-8d9d1d729221")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53342,6 +60507,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "00711cbb-94dc-4ce9-985a-09c19a8252b4")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "64328a36-7087-4bf8-bb84-647086e29fb5")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "a0307189-4b21-4442-98bc-1d29dae8467f")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/edc60ebd-4804-5f7b-acb9-002c57a502b1/f7925f49-c309-5b52-ad2c-8875211b63e4")
 		(sheetname "/Outputs/")
 		(attr smd)
@@ -53538,6 +60739,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ed1accd8-3211-4a60-88c1-b9457e3afef6")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "856111d0-9cd1-459d-a00c-09de4db9ae35")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "689a0e4e-e05e-4686-96b2-c227322a15ef")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/030c60f0-405d-5166-aff6-94134c4ca6bc/093cca53-cf73-5d1c-8771-8a4efd73f766")
 		(sheetname "/Audio converters and clocks/")
 		(attr smd)
@@ -53698,7 +60935,7 @@
 				)
 			)
 		)
-		(property "Value" "220R@100MHz 3A"
+		(property "Value" "220R@100MHz 2A"
 			(at 0 1.55 90)
 			(layer "F.Fab")
 			(uuid "5180af0e-f02d-45ea-81b3-75a1c31adc59")
@@ -53726,6 +60963,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fce8bdb4-ecad-4da0-a96a-cbc517512d28")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Murata"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fd06c6ef-4fb2-4811-8b7e-ff110280ec03")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "BLM21PG221SN1D"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e1d47a1c-197e-4e7d-b388-d3a5495458e8")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C85840"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2482e8c2-7a92-4328-9599-6ebd1ff5b29c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53929,6 +61202,42 @@
 				)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ee67f8cf-ec5c-42a0-885e-ee44de6e6add")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4420T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5b585626-bf64-486e-b2ca-d020b2091340")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23057"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fb6f5ded-93a9-466c-832b-eccafcdde9be")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
 		(path "/a252458c-4225-5deb-9e63-f4b312302cce/d5b8a8aa-1e82-5955-8490-5bd755225641")
 		(sheetname "/Guitar input/")
 		(attr smd)
@@ -54118,6 +61427,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "ba075696-48e7-4ebf-a25b-87e49ea781e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "ad206858-b05d-4802-886d-3efb747b04c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "0603WAF4700T5E"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "70ec45e4-bfbf-43ea-ba8a-ce8e48fab759")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C23179"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "924df7f9-4883-4250-a928-db69f12bb4fc")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54315,6 +61660,42 @@
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fb3f0c6d-cec1-4101-8895-f38c0030eb17")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1add1a72-0423-45cc-99c9-4eaaf529ee46")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "da69f6f3-2bcc-4fa9-9e89-0ec812932851")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C368502"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "847b351f-18cb-4ec8-941e-77da8f3f3645")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54777,6 +62158,42 @@
 					(thickness 0.15)
 				)
 				(justify mirror)
+			)
+		)
+		(property "Manufacturer" "CONNFLY"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "fcacdb4f-17a4-4ba8-bea0-5504e0acef64")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "DS1023-2*20SF11"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c2e73f22-2ab4-4e4b-a726-cd8625c1042e")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C132132"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f38b89d6-7fe4-4c60-a9fa-3479ccca9798")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
 			)
 		)
 		(path "/4a38c89a-acb2-5a77-abb9-da1360a5de05/72420916-ade8-5c16-a662-f621e8e65715")

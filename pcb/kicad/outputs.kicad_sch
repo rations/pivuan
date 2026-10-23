@@ -2109,7 +2109,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
+		(property "Manufacturer" "Alps Alpine"
 			(at 54.61 80.01 0)
 			(effects
 				(font
@@ -2118,7 +2118,25 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "Alps RK09L12B0A4S"
+		(property "MPN" "RK09L12B0A4S"
+			(at 54.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 54.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
 			(at 54.61 80.01 0)
 			(effects
 				(font
@@ -2327,7 +2345,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
+		(property "Manufacturer" "Alps Alpine"
 			(at 54.61 124.46 0)
 			(effects
 				(font
@@ -2336,7 +2354,25 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "Alps RK09L12B0A4S"
+		(property "MPN" "RK09L12B0A4S"
+			(at 54.61 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 54.61 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
 			(at 54.61 124.46 0)
 			(effects
 				(font
@@ -2547,6 +2583,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "ROQANG"
+			(at 85.09 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RVT1V4R7M0405"
+			(at 85.09 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72511"
+			(at 85.09 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "+ toward the buffer (biased at 5 V); the wiper side is at 0 V. With 100k: -3 dB at 0.3 Hz"
 			(at 85.09 80.01 0)
 			(effects
@@ -2657,6 +2720,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 100.33 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 100.33 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 100.33 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 100.33 97.79 0)
 			(effects
 				(font
@@ -2789,6 +2879,33 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 124.46 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 124.46 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "OPA1642AIDR"
+			(at 124.46 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C67640"
 			(at 124.46 80.01 0)
 			(effects
 				(font
@@ -2941,6 +3058,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "ROQANG"
+			(at 154.94 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RVT1E470M0605"
+			(at 154.94 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72521"
+			(at 154.94 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "+ toward the buffer (5 V). 47 uF: -3 dB at 4 Hz into 600 ohm (10 uF gave 20 Hz, simulation A6)"
 			(at 154.94 80.01 0)
 			(effects
@@ -3051,6 +3195,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 170.18 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 170.18 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 170.18 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 170.18 97.79 0)
 			(effects
 				(font
@@ -3232,6 +3403,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 185.42 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 185.42 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 185.42 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "Hot leg"
 			(at 185.42 80.01 0)
 			(effects
@@ -3342,6 +3540,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 199.39 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 199.39 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 199.39 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
 			(at 199.39 97.79 0)
 			(effects
 				(font
@@ -3517,6 +3742,33 @@
 			)
 		)
 		(property "Description" "1/4 inch stereo jack, switched (tip, ring and sleeve shunts), chrome ferrule, PCB pins"
+			(at 224.79 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 224.79 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 224.79 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C368502"
 			(at 224.79 80.01 0)
 			(effects
 				(font
@@ -3736,6 +3988,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "ROQANG"
+			(at 85.09 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RVT1V4R7M0405"
+			(at 85.09 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72511"
+			(at 85.09 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "+ toward the buffer (biased at 5 V); the wiper side is at 0 V. With 100k: -3 dB at 0.3 Hz"
 			(at 85.09 124.46 0)
 			(effects
@@ -3846,6 +4125,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 100.33 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 100.33 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 100.33 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 100.33 143.51 0)
 			(effects
 				(font
@@ -3978,6 +4284,33 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "OPA1642AIDR"
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C67640"
 			(at 124.46 124.46 0)
 			(effects
 				(font
@@ -4130,6 +4463,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "ROQANG"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RVT1E470M0605"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C72521"
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "+ toward the buffer (5 V). 47 uF: -3 dB at 4 Hz into 600 ohm (10 uF gave 20 Hz, simulation A6)"
 			(at 154.94 124.46 0)
 			(effects
@@ -4240,6 +4600,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 170.18 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 170.18 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1003T5E"
+			(at 170.18 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25803"
 			(at 170.18 143.51 0)
 			(effects
 				(font
@@ -4421,6 +4808,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 185.42 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 185.42 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
+			(at 185.42 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "Hot leg"
 			(at 185.42 124.46 0)
 			(effects
@@ -4531,6 +4945,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 199.39 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 199.39 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1000T5E"
+			(at 199.39 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22775"
 			(at 199.39 143.51 0)
 			(effects
 				(font
@@ -4706,6 +5147,33 @@
 			)
 		)
 		(property "Description" "1/4 inch stereo jack, switched (tip, ring and sleeve shunts), chrome ferrule, PCB pins"
+			(at 224.79 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 224.79 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 224.79 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C368502"
 			(at 224.79 124.46 0)
 			(effects
 				(font
@@ -4917,6 +5385,33 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 124.46 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 124.46 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "OPA1642AIDR"
+			(at 124.46 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C67640"
 			(at 124.46 160.02 0)
 			(effects
 				(font
@@ -5155,6 +5650,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "YAGEO"
+			(at 139.7 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0603KRX7R9BB104"
+			(at 139.7 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C14663"
+			(at 139.7 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "At pin 8"
 			(at 139.7 160.02 0)
 			(effects
@@ -5377,6 +5899,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 152.4 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 152.4 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL31A106KBHNNNE"
+			(at 152.4 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13585"
 			(at 152.4 160.02 0)
 			(effects
 				(font
@@ -5626,6 +6175,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 30.48 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 30.48 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 30.48 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "With the 10k pot: at most 1.05 Vrms (1.5 V peak) into the amp"
 			(at 30.48 214.63 0)
 			(effects
@@ -5748,6 +6324,33 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 30.48 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 30.48 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 30.48 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
 			(at 30.48 245.11 0)
 			(effects
 				(font
@@ -5886,7 +6489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
+		(property "Manufacturer" "Alps Alpine"
 			(at 59.69 214.63 0)
 			(effects
 				(font
@@ -5895,7 +6498,25 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "Alps RK09L12B0A4S"
+		(property "MPN" "RK09L12B0A4S"
+			(at 59.69 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 59.69 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
 			(at 59.69 214.63 0)
 			(effects
 				(font
@@ -6092,7 +6713,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
+		(property "Manufacturer" "Alps Alpine"
 			(at 59.69 245.11 0)
 			(effects
 				(font
@@ -6101,7 +6722,25 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "Alps RK09L12B0A4S"
+		(property "MPN" "RK09L12B0A4S"
+			(at 59.69 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 59.69 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
 			(at 59.69 245.11 0)
 			(effects
 				(font
@@ -6300,6 +6939,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 100.33 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 100.33 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 100.33 199.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "Input DC block: 0.47 uF gives -3 dB under 20 Hz at every gain (datasheet 9.2.2.1)"
 			(at 100.33 199.39 0)
 			(effects
@@ -6412,6 +7078,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 100.33 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 100.33 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 100.33 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13967"
 			(at 100.33 219.71 0)
 			(effects
 				(font
@@ -6595,6 +7288,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 100.33 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 100.33 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13967"
+			(at 100.33 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "Input DC block"
 			(at 100.33 245.11 0)
 			(effects
@@ -6707,6 +7427,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 100.33 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 100.33 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL21B474KBFNNNE"
+			(at 100.33 265.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C13967"
 			(at 100.33 265.43 0)
 			(effects
 				(font
@@ -6882,6 +7629,33 @@
 			)
 		)
 		(property "Description" "Stereo DirectPath headphone amplifier with I2C volume (address 0x60), WQFN-20"
+			(at 160.02 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Texas Instruments"
+			(at 160.02 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "TPA6130A2RTJR"
+			(at 160.02 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C130046"
 			(at 160.02 234.95 0)
 			(effects
 				(font
@@ -7874,6 +8648,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "UNI-ROYAL"
+			(at 124.46 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "0603WAF1002T5E"
+			(at 124.46 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25804"
+			(at 124.46 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "SD high = on, whenever the codecs' 3.3 V is on"
 			(at 124.46 270.51 0)
 			(effects
@@ -8041,6 +8842,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 204.47 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 204.47 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 204.47 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 204.47 204.47 0)
 			(effects
 				(font
@@ -8279,6 +9107,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 217.17 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 217.17 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 217.17 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "CPVDD pin 20 to CPGND pin 19, at the pins"
 			(at 217.17 204.47 0)
 			(effects
@@ -8501,6 +9356,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 228.6 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 228.6 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL21A106KAYNNNE"
+			(at 228.6 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 228.6 204.47 0)
 			(effects
 				(font
@@ -8739,6 +9621,33 @@
 				(hide yes)
 			)
 		)
+		(property "Manufacturer" "Samsung"
+			(at 204.47 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 204.47 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
+			(at 204.47 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(property "Note" "Charge pump flying capacitor, low ESR"
 			(at 204.47 234.95 0)
 			(effects
@@ -8851,6 +9760,33 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
+			(at 217.17 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Samsung"
+			(at 217.17 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CL10A105KB8NNNC"
+			(at 217.17 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15849"
 			(at 217.17 234.95 0)
 			(effects
 				(font
@@ -9026,6 +9962,33 @@
 			)
 		)
 		(property "Description" "1/4 inch stereo jack, switched (tip, ring and sleeve shunts), chrome ferrule, PCB pins"
+			(at 250.19 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "Neutrik"
+			(at 250.19 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "NMJ6HCD2"
+			(at 250.19 229.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C368502"
 			(at 250.19 229.87 0)
 			(effects
 				(font
