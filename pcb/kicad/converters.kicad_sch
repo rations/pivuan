@@ -6916,7 +6916,7 @@
 	(wire
 		(pts
 			(xy 200.66 66.04)
-			(xy 198.12 66.04)
+			(xy 193.04 66.04)
 		)
 		(stroke
 			(width 0)
@@ -6926,7 +6926,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 198.12 66.04 0)
+		(at 193.04 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -6934,7 +6934,7 @@
 		(dnp no)
 		(uuid "584085d0-417d-51e2-a15f-2f6c4cac7b9e")
 		(property "Reference" "#PWR023"
-			(at 198.12 72.39 0)
+			(at 193.04 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6943,7 +6943,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 198.12 69.85 0)
+			(at 193.04 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6951,7 +6951,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 198.12 66.04 0)
+			(at 193.04 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6960,7 +6960,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 66.04 0)
+			(at 193.04 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6969,7 +6969,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 198.12 66.04 0)
+			(at 193.04 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6992,7 +6992,7 @@
 	(wire
 		(pts
 			(xy 208.28 66.04)
-			(xy 210.82 66.04)
+			(xy 215.9 66.04)
 		)
 		(stroke
 			(width 0)
@@ -7001,7 +7001,7 @@
 		(uuid "b33b2ee3-6cea-5dad-8d96-4cae82d5a178")
 	)
 	(label "DAC_LED_A"
-		(at 210.82 66.04 0)
+		(at 215.9 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12921,7 +12921,7 @@
 	(wire
 		(pts
 			(xy 200.66 218.44)
-			(xy 198.12 218.44)
+			(xy 193.04 218.44)
 		)
 		(stroke
 			(width 0)
@@ -12931,7 +12931,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 198.12 218.44 0)
+		(at 193.04 218.44 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -12939,7 +12939,7 @@
 		(dnp no)
 		(uuid "5be64937-7d10-5562-8f35-e130abd5ad71")
 		(property "Reference" "#PWR061"
-			(at 198.12 224.79 0)
+			(at 193.04 224.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12948,7 +12948,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 198.12 222.25 0)
+			(at 193.04 222.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12956,7 +12956,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 198.12 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12965,7 +12965,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12974,7 +12974,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 198.12 218.44 0)
+			(at 193.04 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12997,7 +12997,7 @@
 	(wire
 		(pts
 			(xy 208.28 218.44)
-			(xy 210.82 218.44)
+			(xy 215.9 218.44)
 		)
 		(stroke
 			(width 0)
@@ -13006,7 +13006,7 @@
 		(uuid "6ea03342-80cb-59db-bb96-c51a529d14c9")
 	)
 	(label "ADC_LED_A"
-		(at 210.82 218.44 0)
+		(at 215.9 218.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)

@@ -133,6 +133,88 @@
 			)
 		)
 	)
+	(sheet
+		(at 30 105)
+		(size 50 12)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a252458c-4225-5deb-9e63-f4b312302cce")
+		(property "Sheetname" "Guitar input"
+			(at 30 104.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "guitar.kicad_sch"
+			(at 30 117.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30 130)
+		(size 50 12)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "edc60ebd-4804-5f7b-acb9-002c57a502b1")
+		(property "Sheetname" "Outputs"
+			(at 30 129.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "outputs.kicad_sch"
+			(at 30 142.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8"
+					(page "6")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
