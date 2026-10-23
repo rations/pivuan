@@ -215,6 +215,47 @@
 			)
 		)
 	)
+	(sheet
+		(at 30 155)
+		(size 50 12)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "60f9c8d3-dbf3-57da-8487-3fec067c2515")
+		(property "Sheetname" "Footswitch controller"
+			(at 30 154.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pico.kicad_sch"
+			(at 30 167.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8"
+					(page "7")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
