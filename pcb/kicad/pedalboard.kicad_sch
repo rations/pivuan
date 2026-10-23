@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "411c5051-cc08-4299-b424-2e3c8bc5a0e5")
+	(uuid "3bcc4b79-1880-583a-b0ae-d715fcf404f8")
 	(paper "A4")
 	(title_block
 		(title "Pivuan pedalboard")
@@ -24,7 +24,7 @@
 		(fill
 			(color 0 0 0 0)
 		)
-		(uuid "c8cdb0c2-c4af-4a22-bc7d-bb09346f0354")
+		(uuid "21162098-e9a3-5727-b02c-839341ff4360")
 		(property "Sheetname" "Power"
 			(at 30 29.3 0)
 			(effects
@@ -45,8 +45,49 @@
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 30 55)
+		(size 50 12)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "4a38c89a-acb2-5a77-abb9-da1360a5de05")
+		(property "Sheetname" "Pi header and connectors"
+			(at 30 54.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "header.kicad_sch"
+			(at 30 67.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8"
+					(page "3")
 				)
 			)
 		)

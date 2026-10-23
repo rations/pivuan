@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "fea56e0e-0880-43f4-ab0f-f1bc47fc46f9")
+	(uuid "b48e95b9-807a-5cd9-9ffe-335ea66b2c42")
 	(paper "A3")
 	(title_block
 		(title "Power")
@@ -2615,7 +2615,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8ae8892e-7827-4031-85cd-cda14b9d20be")
+		(uuid "dc4fefcd-570c-51bc-a57f-431145dc098c")
 	)
 	(text "5 V from the Pi (4.3)"
 		(exclude_from_sim no)
@@ -2626,7 +2626,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "91116310-0e11-417f-8b51-285d2af6a008")
+		(uuid "7a24fa98-85ac-5838-9396-56d42c88e2ee")
 	)
 	(symbol
 		(lib_id "Device:Polyfuse")
@@ -2636,7 +2636,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1da7785c-11c8-461d-b003-6be4c7370d45")
+		(uuid "3839adaf-fd03-5467-863c-84e14f118bb1")
 		(property "Reference" "F1"
 			(at 27.94 59.69 90)
 			(effects
@@ -2690,14 +2690,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9b269038-bbff-4f31-8652-ba3891421aa0")
+			(uuid "198349c9-99b3-5ae1-8ab5-8237b1c6c435")
 		)
 		(pin "2"
-			(uuid "44b633d8-344a-493d-bc8b-d3e54ad563be")
+			(uuid "20622062-efee-5962-b4fd-d7c5e44220bf")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "F1")
 					(unit 1)
 				)
@@ -2713,7 +2713,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "36f00934-fab3-4d57-af7e-f2c5b17a1371")
+		(uuid "883e7ca5-adf3-5c8e-86e8-847198e41429")
 	)
 	(global_label "+5V_PI"
 		(shape bidirectional)
@@ -2725,7 +2725,7 @@
 			)
 			(justify left)
 		)
-		(uuid "32613c7a-aa3f-430e-9d41-f2665b93f08d")
+		(uuid "0d5accd1-0839-5515-88f9-ed61037b8b78")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 30.48 53.34 0)
 			(effects
@@ -2746,7 +2746,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b21937a3-c417-4d80-a364-be105ab52b38")
+		(uuid "825d7397-43d1-58f3-837c-7da0447bed07")
 	)
 	(label "5V_FUSED"
 		(at 30.48 66.04 0)
@@ -2756,7 +2756,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b83ac196-42ce-4c9d-8049-d4bb6697d529")
+		(uuid "320901b3-1d9f-5773-89c4-da49c761d2d5")
 	)
 	(symbol
 		(lib_id "Device:FerriteBead")
@@ -2766,7 +2766,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6ba3742b-af43-4f71-905d-707484b7a4ab")
+		(uuid "b2aaac9c-5f00-5f4f-8f9b-64bfc3b788a8")
 		(property "Reference" "FB1"
 			(at 48.26 58.42 90)
 			(effects
@@ -2820,14 +2820,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9ab9a392-526a-4810-9014-db3dc1850a0c")
+			(uuid "112df10a-0837-5076-8c67-df8ac5e71658")
 		)
 		(pin "2"
-			(uuid "0612d595-73db-4f86-b3a3-5461fd2f45a3")
+			(uuid "44a592a8-7d87-5770-9a5b-612ca1249096")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "FB1")
 					(unit 1)
 				)
@@ -2843,7 +2843,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c81f116e-0459-4e00-b0e1-fa944a17738a")
+		(uuid "81f48512-71eb-54b9-8059-b4a039ffbe6e")
 	)
 	(label "5V_FUSED"
 		(at 52.07 53.34 0)
@@ -2853,7 +2853,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "82320521-7df9-4849-9394-3c2e4c0cc8f3")
+		(uuid "3827dd0c-e6a9-5d87-ab95-a338025344fb")
 	)
 	(wire
 		(pts
@@ -2864,7 +2864,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fe88814f-5918-4ae6-9fe0-578df26a131b")
+		(uuid "a00af70f-e66f-52a6-b9fb-93d35f65a965")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -2874,7 +2874,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "2700ab7b-4d26-4872-95ed-005b8326b59a")
+		(uuid "f12caab5-05f1-5988-a876-1bfdad3ed18f")
 		(property "Reference" "#PWR001"
 			(at 52.07 62.23 0)
 			(effects
@@ -2920,11 +2920,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "25fadcb4-35ac-4de3-892d-44ef492301dd")
+			(uuid "03a0f76b-585a-5a09-9687-07b38bb1a7c5")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR001")
 					(unit 1)
 				)
@@ -2939,7 +2939,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b22efc17-15b9-4b28-87a8-3d868e72a97e")
+		(uuid "28fb7f8b-9f30-544a-8290-52f3ff9c8675")
 		(property "Reference" "C1"
 			(at 73.66 57.15 0)
 			(effects
@@ -2986,14 +2986,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f016fd17-0550-43a7-8006-6b6c48049752")
+			(uuid "d8bceaf8-96c6-5937-a9c7-8840c7b03c4e")
 		)
 		(pin "2"
-			(uuid "53426f62-6233-4b17-84eb-eb9c5ed26f3a")
+			(uuid "633bf8ed-4581-5a9f-80ec-6a8b41ef4a32")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C1")
 					(unit 1)
 				)
@@ -3009,7 +3009,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1b815ef1-2109-4988-bc66-314778a3de48")
+		(uuid "7f8a91c3-cce3-57a7-92ba-3749cc66ac14")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -3019,7 +3019,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "2ed0f56b-68e0-401d-86d8-74e38eab4850")
+		(uuid "d7e581c6-0190-5e42-8de1-dd9037ecd996")
 		(property "Reference" "#PWR002"
 			(at 73.66 57.15 0)
 			(effects
@@ -3065,11 +3065,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "acd375b7-5831-40f5-b1bc-c786460cc37c")
+			(uuid "cb8f79d7-2665-5a12-bfaa-dc894ef2c794")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR002")
 					(unit 1)
 				)
@@ -3085,7 +3085,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a3d1950f-a516-4a7d-b1aa-e938c4f6271d")
+		(uuid "b769df7e-7b2b-5270-b59b-40167dd51923")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3095,7 +3095,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "6dafc909-e6aa-4fbe-8424-80271e817731")
+		(uuid "22970abc-bbe4-5a12-80ac-131e3b437f46")
 		(property "Reference" "#PWR003"
 			(at 73.66 72.39 0)
 			(effects
@@ -3141,11 +3141,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "acf15403-68ef-4070-83dc-241f8e594c1b")
+			(uuid "5b291e52-4885-55c2-93e4-62672ac1b974")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR003")
 					(unit 1)
 				)
@@ -3160,7 +3160,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "468fcfcd-defc-4270-8c95-34492641ac71")
+		(uuid "91c75b77-28a5-5fa6-9969-c9f68751f5b4")
 		(property "Reference" "C2"
 			(at 91.44 57.15 0)
 			(effects
@@ -3207,14 +3207,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "1ace9120-efe3-4e32-97a4-6d0ceeed1235")
+			(uuid "0f6227fc-1c02-5e27-9669-49d60bc3c091")
 		)
 		(pin "2"
-			(uuid "12aa78c1-3feb-4343-9a91-25bd9f2e9681")
+			(uuid "f512d780-84d8-50f8-9bfb-ef586833699c")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C2")
 					(unit 1)
 				)
@@ -3230,7 +3230,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b8844f8e-2c58-4904-b04a-e8aaf2df23a1")
+		(uuid "4e8351a4-536e-5ad9-924f-8fc9b9bf0cec")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -3240,7 +3240,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "f6ed7ae1-e200-4e6e-93dc-9ae35d8c32c7")
+		(uuid "42e3bebb-a8ad-56c2-83fa-36b809b6fa77")
 		(property "Reference" "#PWR004"
 			(at 90.17 57.15 0)
 			(effects
@@ -3286,11 +3286,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "fccfec08-16dc-42cf-a175-8e8ee4d3894b")
+			(uuid "abc979fb-a73e-558f-9ec4-37500d1e6509")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR004")
 					(unit 1)
 				)
@@ -3306,7 +3306,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b787a9e0-81f6-4902-8c87-03a287e7503a")
+		(uuid "27a15487-a1f6-5951-b705-f6459a8ac82b")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3316,7 +3316,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "17c997bf-2b15-4f02-bdcf-e1291e2706d8")
+		(uuid "f05e93f0-7d5f-5ba6-81e6-81f9e492c606")
 		(property "Reference" "#PWR005"
 			(at 90.17 72.39 0)
 			(effects
@@ -3362,11 +3362,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "2064617b-421d-440a-99c9-61e8c8658074")
+			(uuid "f7aa16ea-dd88-58b8-b167-020721fb1e4c")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR005")
 					(unit 1)
 				)
@@ -3381,7 +3381,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5eb29c17-73fc-4100-a2bd-6a19601152d1")
+		(uuid "b6e2ec10-8298-54fe-978c-bc84929569fa")
 		(property "Reference" "TP1"
 			(at 104.14 52.07 0)
 			(effects
@@ -3427,11 +3427,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "5f008481-f998-41a7-8ee6-09331af0aa79")
+			(uuid "7ba98091-d4ba-5f0f-a0d3-f30fcf283540")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP1")
 					(unit 1)
 				)
@@ -3447,7 +3447,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "265d14b7-d7f2-4bf5-9ecc-8c3857d1ccd8")
+		(uuid "2c9021ab-a573-559f-ba54-341a34ee7151")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -3457,7 +3457,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "32d7b55d-d5c4-440b-abc1-2bea8ab5352c")
+		(uuid "1c7d9ac5-dc9e-504d-8344-49c66ef1f606")
 		(property "Reference" "#PWR006"
 			(at 104.14 57.15 0)
 			(effects
@@ -3503,11 +3503,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "85da5607-cd6c-44d7-80a8-fe38318518eb")
+			(uuid "605093df-3c12-5266-82bf-8873e2482930")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR006")
 					(unit 1)
 				)
@@ -3522,7 +3522,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ae80285f-ce2d-4521-86da-6f0f424110d7")
+		(uuid "b445a24e-b041-52d9-8968-17a20c7a93f1")
 		(property "Reference" "TP2"
 			(at 115.57 52.07 0)
 			(effects
@@ -3568,11 +3568,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "45ec95c7-6b07-4a06-9baf-ea39d49c0bb0")
+			(uuid "72cf7ec1-845b-5d03-8adf-1f051c963ade")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP2")
 					(unit 1)
 				)
@@ -3588,7 +3588,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c8f76a7d-16b6-4183-87ef-d42eaf0d19fb")
+		(uuid "a5262a1b-ab66-5811-b3ea-32f7fb2eeac2")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3598,7 +3598,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1231d736-2baf-49e0-a0ce-d1133166bece")
+		(uuid "9b220bec-d5fe-5295-b280-b9364094818b")
 		(property "Reference" "#PWR007"
 			(at 115.57 67.31 0)
 			(effects
@@ -3644,11 +3644,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "63896264-92a3-481f-9e24-7a124efefab8")
+			(uuid "1dc10d5c-ab86-58e9-8a17-17eea06d7efe")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR007")
 					(unit 1)
 				)
@@ -3663,7 +3663,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "b98e9d16-5c14-40b0-a49b-91e21de02b97")
+		(uuid "ca60204f-12c3-56a2-961d-597b312c4d71")
 		(property "Reference" "#FLG008"
 			(at 16.51 50.8 0)
 			(effects
@@ -3709,11 +3709,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "104341a5-6ca4-4660-b06f-fd9e49a43cb1")
+			(uuid "c7ea9caf-985e-57ab-b7fe-747c271588a6")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG008")
 					(unit 1)
 				)
@@ -3729,7 +3729,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b74163f2-4da0-4b69-a6d8-3d41406c26f0")
+		(uuid "3b2aa75f-e031-56ec-9836-c456db604e6c")
 	)
 	(global_label "+5V_PI"
 		(shape bidirectional)
@@ -3741,7 +3741,7 @@
 			)
 			(justify left)
 		)
-		(uuid "b8b14484-158d-45b1-9ab0-756ac3a02daa")
+		(uuid "2322db17-c351-58d3-81fa-0ddc4529c944")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 16.51 54.61 0)
 			(effects
@@ -3761,7 +3761,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "97783e38-8d9f-4f9b-b3f0-0d5c7c47ce95")
+		(uuid "f96d25cf-4cd3-516c-bf0a-d84a8b1b25f8")
 		(property "Reference" "#FLG009"
 			(at 128.27 53.34 0)
 			(effects
@@ -3807,11 +3807,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "9bac17e0-7861-46b0-be93-b28ab7b35536")
+			(uuid "9b484c7f-cec9-5ef6-b387-2431ee9dfa56")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG009")
 					(unit 1)
 				)
@@ -3827,7 +3827,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c26e58e5-5c37-4707-9c2b-95228fa88958")
+		(uuid "7a3bb6a8-a407-5913-b244-4c7328245f73")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -3837,7 +3837,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c573429c-c5ef-403b-997f-e1828a9176c8")
+		(uuid "784c9295-bd7a-581a-ae90-d79a51e803b8")
 		(property "Reference" "#PWR010"
 			(at 128.27 53.34 0)
 			(effects
@@ -3883,11 +3883,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f001cb2c-359e-4830-9be8-e782cdcb09c1")
+			(uuid "d4f4978e-91b5-5eb6-bcf8-992df20723ce")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR010")
 					(unit 1)
 				)
@@ -3902,7 +3902,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "bb2c7544-f090-4883-8200-6f2066d94bea")
+		(uuid "48c26b51-a1b7-584e-8859-a2e571021923")
 		(property "Reference" "#FLG011"
 			(at 139.7 68.58 0)
 			(effects
@@ -3948,11 +3948,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "201163d6-2109-4d50-943a-8d68811ad23c")
+			(uuid "29e18d19-ab34-579e-a0ec-54dfd000e055")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG011")
 					(unit 1)
 				)
@@ -3968,7 +3968,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "20f9dee1-5497-48eb-bf87-6ca040597bb1")
+		(uuid "781706a7-ed82-549b-87ce-5c41ebb46989")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -3978,7 +3978,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "cffc71f9-893d-4f45-892d-392b94b327b0")
+		(uuid "6d17734d-ab7e-5675-aa05-506d6bcaac86")
 		(property "Reference" "#PWR012"
 			(at 139.7 57.15 0)
 			(effects
@@ -4024,11 +4024,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "cf6e1fae-8a46-4886-ad6b-68fc3488f990")
+			(uuid "952c0ec1-669f-5cf7-aac7-d9404f72a130")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR012")
 					(unit 1)
 				)
@@ -4044,7 +4044,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "04015904-0ff2-4a19-992c-a34df2eb6751")
+		(uuid "c1727d5a-3a3f-532e-b742-c79bb030f0a4")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4054,7 +4054,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "edcf6f1b-0a19-4fd3-a156-f4a0d5c7584f")
+		(uuid "93ba4ff6-c430-52a4-b8ae-2e5fbb5eaf82")
 		(property "Reference" "R1"
 			(at 182.88 59.69 90)
 			(effects
@@ -4099,14 +4099,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "79b7b6f9-79ac-482e-b712-32a49045c10d")
+			(uuid "d2066b29-e2f6-5aab-a18d-8dbef2785931")
 		)
 		(pin "2"
-			(uuid "dc2f18e6-0124-4d98-81b4-26c193cf3fc8")
+			(uuid "ca142d8c-2b83-5658-9f3a-e6b0c76e068e")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R1")
 					(unit 1)
 				)
@@ -4122,7 +4122,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f8d9053d-f53a-4abd-a340-da174cb5d3d8")
+		(uuid "acc72118-4bfd-5281-bd01-558268b8d8c7")
 	)
 	(global_label "PI_3V3"
 		(shape bidirectional)
@@ -4134,7 +4134,7 @@
 			)
 			(justify left)
 		)
-		(uuid "2d1eb584-bdc7-4758-8f6f-f814fc59403d")
+		(uuid "7398b51a-400e-5854-af41-bb64eff3d291")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 180.34 53.34 0)
 			(effects
@@ -4155,7 +4155,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e78ef89f-c1fb-43ea-87da-cefaff941c5c")
+		(uuid "67c1d9d7-1447-52be-ab81-317feb46922e")
 	)
 	(label "PWR_EN"
 		(at 180.34 66.04 0)
@@ -4165,7 +4165,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "64586399-2368-463c-a2b2-153ee2f35a24")
+		(uuid "24b11a85-1734-5897-a816-3dff3987c21a")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -4175,7 +4175,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3b3af70d-1a80-40fe-819f-ea35fc582cfe")
+		(uuid "d6306d83-c02f-5366-a18b-10c034a22964")
 		(property "Reference" "R2"
 			(at 201.93 59.69 90)
 			(effects
@@ -4220,14 +4220,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "cac2316a-c4c0-46ae-a0fb-f70e16ea440d")
+			(uuid "91bb265f-904d-5fcd-a41b-dafc6eff37a0")
 		)
 		(pin "2"
-			(uuid "c4f6564f-c3fe-4677-ac30-9e1b18fa0624")
+			(uuid "0b1fd614-a6ca-5fd7-94a6-b95ddbdc49b5")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R2")
 					(unit 1)
 				)
@@ -4243,7 +4243,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "77338825-750c-4f40-89fa-09893f680aa7")
+		(uuid "9854802c-2464-55f8-aad5-c492fdc9c8ed")
 	)
 	(label "PWR_EN"
 		(at 199.39 53.34 0)
@@ -4253,7 +4253,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d12bd1df-758e-46da-8ee6-6b206f83a01a")
+		(uuid "123df189-92d4-5bae-acc3-f46cf79f4ef7")
 	)
 	(wire
 		(pts
@@ -4264,7 +4264,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "00eb46d0-7954-4823-a6df-a27874745bd6")
+		(uuid "e7a3b695-54d7-58da-b65e-df70d1122b03")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4274,7 +4274,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "31b0b78c-5464-4adb-9195-3ec15ff9125e")
+		(uuid "7396ea5f-930e-5d9d-aa1e-b1703b15b2ca")
 		(property "Reference" "#PWR013"
 			(at 199.39 72.39 0)
 			(effects
@@ -4320,11 +4320,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ce629217-7316-4f02-ab89-74a73894e775")
+			(uuid "2aebc441-0e32-5dc7-a12e-62ca9c276074")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR013")
 					(unit 1)
 				)
@@ -4339,7 +4339,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "db69af64-d827-40f3-a598-0490d4d8de81")
+		(uuid "604c4b0f-395e-5f52-9934-94f3b5eac83d")
 		(property "Reference" "TP3"
 			(at 219.71 52.07 0)
 			(effects
@@ -4385,11 +4385,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0aa576c2-5931-4154-a326-62e7e541387f")
+			(uuid "938ef71d-89a6-5505-8e0b-3f6367e5d7ac")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP3")
 					(unit 1)
 				)
@@ -4405,7 +4405,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "786e6332-1079-4391-ad76-330e4dfa8c4d")
+		(uuid "2051fd49-3c22-56bb-8032-09b3664f618d")
 	)
 	(label "PWR_EN"
 		(at 219.71 60.96 0)
@@ -4415,7 +4415,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ccb635d1-bff7-4ebf-b921-b066df9e9b59")
+		(uuid "07cd3f08-d9bf-57eb-afd8-a9ff9ee1cb07")
 	)
 	(text "3.3 V digital: codecs' DVDD/IOVDD, oscillators, EEPROM (4.4)"
 		(exclude_from_sim no)
@@ -4426,7 +4426,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "dc70df97-e695-4692-bb8c-71b9117777f5")
+		(uuid "0cdccf49-efb3-5b8b-86e2-4df3b12aeed5")
 	)
 	(symbol
 		(lib_id "Regulator_Linear:TLV75733PDBV")
@@ -4436,7 +4436,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "18930209-389a-40e1-b2a8-009764e73fc7")
+		(uuid "6f867730-b901-5a39-9ccd-a1729a6f242d")
 		(property "Reference" "U1"
 			(at 50.8 104.14 0)
 			(effects
@@ -4491,23 +4491,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "d3bd2867-0b8e-47a6-918a-4a949d55e780")
+			(uuid "c0b943cb-26fb-5bec-8ad4-b7c109a6b2cc")
 		)
 		(pin "2"
-			(uuid "4d9b6e61-8c5c-4c23-8a28-7ed495768f9a")
+			(uuid "5fd60db7-cc0e-59e0-abcc-1cd64c0c4b07")
 		)
 		(pin "3"
-			(uuid "b3722b4a-99a3-4d73-a535-9043c7dd0fe8")
+			(uuid "59e6bf07-08c0-53f1-8b58-6171ab4e247c")
 		)
 		(pin "4"
-			(uuid "df32985f-b3a4-4df0-b5a8-626891a8e78e")
+			(uuid "9a97c5ce-d0f8-52ee-8602-88837e2724a9")
 		)
 		(pin "5"
-			(uuid "d36f1a9e-cb24-4d9b-aca5-9552b75ccdbf")
+			(uuid "4be4ce63-c0bb-5217-ad00-a5306e52bae6")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "U1")
 					(unit 1)
 				)
@@ -4523,7 +4523,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "213a6e5e-22d7-4a24-a83c-7c7542334372")
+		(uuid "c2dee479-4cc5-5409-b207-10421ed3689c")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -4533,7 +4533,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "99b82d96-a9ec-4af5-b8fc-3ff64b360718")
+		(uuid "ff1cc294-f6aa-5345-806e-84acc7f164b9")
 		(property "Reference" "#PWR014"
 			(at 44.45 111.76 0)
 			(effects
@@ -4579,11 +4579,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "16bee4f1-9ff5-4d0d-9bf0-692073cf1670")
+			(uuid "88af6a81-12c3-5848-9d22-977f67e70871")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR014")
 					(unit 1)
 				)
@@ -4599,7 +4599,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "499a7739-1adc-4e99-9bbc-a68967bc8faa")
+		(uuid "19914d9b-9ea7-542d-9cc4-d39e3b84572a")
 	)
 	(label "PWR_EN"
 		(at 44.45 110.49 180)
@@ -4609,7 +4609,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2d810148-ed87-4da8-a956-fdbdf7bd7768")
+		(uuid "ce9924da-63ed-5e09-a510-8dbcfc96dc33")
 	)
 	(wire
 		(pts
@@ -4620,7 +4620,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1c0358e9-bcbd-4202-ae90-c79addfaafe4")
+		(uuid "c6e21753-0d57-56e3-950e-f4216d6cbacd")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4630,7 +4630,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "0c323e3f-08c7-43d7-81c3-7f8282b0adb0")
+		(uuid "6198fb65-2965-5325-95eb-6dcee34ea8ca")
 		(property "Reference" "#PWR015"
 			(at 54.61 127 0)
 			(effects
@@ -4676,11 +4676,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1c270a74-9426-436f-b82f-de8c35a0937b")
+			(uuid "f4a96554-5eb8-558f-9058-9b81147f9b29")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR015")
 					(unit 1)
 				)
@@ -4689,7 +4689,7 @@
 	)
 	(no_connect
 		(at 59.69 110.49)
-		(uuid "76b9374d-4bd2-4e4b-bb0e-95db32f3a200")
+		(uuid "be8e92a8-fae8-5474-b8c8-c933bd0bf0ee")
 	)
 	(wire
 		(pts
@@ -4700,7 +4700,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "384b4b71-f5bf-4d70-acc7-cf322753761a")
+		(uuid "f24737f2-17b7-5ae8-b539-5cae1df65480")
 	)
 	(label "3V3D_REG"
 		(at 64.77 107.95 0)
@@ -4710,7 +4710,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a19c253a-86d7-4f7e-8852-3247a906c1c2")
+		(uuid "345e67e4-a580-576e-881f-198990357151")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -4720,7 +4720,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "74407ef3-2caa-4830-8a50-bb1c599ad946")
+		(uuid "517c95cf-1153-5a62-a8e8-6825adf0f6ee")
 		(property "Reference" "C3"
 			(at 25.4 107.95 0)
 			(effects
@@ -4767,14 +4767,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "76c6b5c8-021b-46f8-997c-ecf49d7cd25c")
+			(uuid "9ab5317c-c917-5255-a1d9-faa06279eef1")
 		)
 		(pin "2"
-			(uuid "b4fc6109-566f-4e59-aec6-8c4497d35a5e")
+			(uuid "8d738e32-de57-5e9c-974e-11e9361a97fd")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C3")
 					(unit 1)
 				)
@@ -4790,7 +4790,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "877aa8b8-4c17-40e7-9e33-cc86064930f8")
+		(uuid "011d1cf9-37e7-5d9e-9232-584453608032")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -4800,7 +4800,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "69f28732-d57d-4112-b51a-a1be3099b887")
+		(uuid "19e352cd-81be-56b8-b770-cd05be934fba")
 		(property "Reference" "#PWR016"
 			(at 25.4 107.95 0)
 			(effects
@@ -4846,11 +4846,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "e6a35ee6-a876-40fd-9b87-86ab9682d0cf")
+			(uuid "094d3eaa-6024-58b8-9b81-b0f2f87c05bd")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR016")
 					(unit 1)
 				)
@@ -4866,7 +4866,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f24d7f50-b9ee-402c-a015-2732164fb16b")
+		(uuid "a4c8f229-fa24-50d8-8d61-e64cd80c4da1")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -4876,7 +4876,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1217a760-b24f-4ebb-b00b-8afe01676a4a")
+		(uuid "ce7d34b4-e524-5352-b237-76e508b4290b")
 		(property "Reference" "#PWR017"
 			(at 25.4 123.19 0)
 			(effects
@@ -4922,11 +4922,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "7ce80144-e903-4b51-a5af-d55129810c97")
+			(uuid "32131303-bf65-5ea2-a8c9-33e43a2c968d")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR017")
 					(unit 1)
 				)
@@ -4941,7 +4941,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "28272ac5-ba89-46e6-b6ef-092c74558dd2")
+		(uuid "e963d73e-682e-5073-9f28-51a1ff44cb88")
 		(property "Reference" "C4"
 			(at 86.36 107.95 0)
 			(effects
@@ -4988,14 +4988,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2d220db7-c2f7-40f9-add5-d4103fc515f2")
+			(uuid "b05c411a-81d2-55fa-ba24-acc0690cfd65")
 		)
 		(pin "2"
-			(uuid "4a48ddf1-2449-4b0a-aa8d-cc4e61e640bf")
+			(uuid "5657ff6c-d8b1-5ba8-bb55-2625e4cda3b9")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C4")
 					(unit 1)
 				)
@@ -5011,7 +5011,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dd63bb66-2770-47e2-86ee-3b1b3852bcbd")
+		(uuid "75d3bcc6-cad4-5618-9b60-a7222472730a")
 	)
 	(label "3V3D_REG"
 		(at 85.09 104.14 0)
@@ -5021,7 +5021,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ff6fff8f-fda4-4e0a-942f-ca607502ad70")
+		(uuid "c17acea6-1c65-5ec3-bb99-210f45b87fcd")
 	)
 	(wire
 		(pts
@@ -5032,7 +5032,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ce0d1725-d379-441a-abc3-ab48d4fbddfc")
+		(uuid "98d90a52-ed59-5dae-a197-87c454a7eaea")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5042,7 +5042,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "2cf17356-f5f1-4e6a-8d03-721d1b432533")
+		(uuid "abcb93aa-704e-502f-ad95-8a79cb9f47cb")
 		(property "Reference" "#PWR018"
 			(at 85.09 123.19 0)
 			(effects
@@ -5088,11 +5088,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "82b757d2-656f-46f2-b44e-21b415b47021")
+			(uuid "cb32694d-42f4-5aff-a1fc-db63138d76e5")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR018")
 					(unit 1)
 				)
@@ -5107,7 +5107,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f562b560-3f4e-4b83-bd5e-596195358f1b")
+		(uuid "a7be3b98-f81d-513f-be9b-e370b62d75b8")
 		(property "Reference" "R3"
 			(at 107.95 110.49 90)
 			(effects
@@ -5161,14 +5161,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "60a999e2-1fc5-4f57-9051-a6a1034f5a55")
+			(uuid "4040ecca-15f8-5ca3-889e-31b51ee83454")
 		)
 		(pin "2"
-			(uuid "0e2e8739-72d4-4670-a0d3-fda713f90517")
+			(uuid "783a76e0-8a46-599d-b444-acbf38d919e1")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R3")
 					(unit 1)
 				)
@@ -5184,7 +5184,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0b4c235a-6c0d-42fd-87cb-c5fa39479cf4")
+		(uuid "e9f5644d-007c-5578-b490-ddafd1c6cf6b")
 	)
 	(label "3V3D_REG"
 		(at 105.41 104.14 0)
@@ -5194,7 +5194,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6c85b82c-f2ec-45fe-aae4-8c7cf5fad174")
+		(uuid "4431b015-9043-53d6-84fd-99603042e293")
 	)
 	(wire
 		(pts
@@ -5205,7 +5205,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fe203557-da81-4295-b40a-e05ed354186a")
+		(uuid "c99b0a7a-5960-53f5-b846-a17e9b169705")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -5215,7 +5215,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "b3e37195-36e4-4cfb-b5f7-b76efca2f10f")
+		(uuid "776bc514-b3e7-5028-9dbf-3764ea5638c4")
 		(property "Reference" "#PWR019"
 			(at 105.41 113.03 0)
 			(effects
@@ -5261,11 +5261,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "376115da-e30e-44a9-b96a-b58d60bba5b3")
+			(uuid "dd3997fd-615a-5259-a610-740778908e82")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR019")
 					(unit 1)
 				)
@@ -5280,7 +5280,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "eba8f2cb-2629-474d-86d2-7608ee8864d5")
+		(uuid "6b0a1bd7-4645-5860-8bfe-877ea99d6f55")
 		(property "Reference" "C5"
 			(at 119.38 107.95 0)
 			(effects
@@ -5327,14 +5327,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "5b67a231-471d-4b5b-bd1d-b95b5660b2d0")
+			(uuid "d9da06ee-6a94-5ba9-9101-4acefd325912")
 		)
 		(pin "2"
-			(uuid "fc22d539-aa9d-480f-8f3f-508d5c868ed8")
+			(uuid "7d530757-265a-549b-a6aa-bbf765db9403")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C5")
 					(unit 1)
 				)
@@ -5350,7 +5350,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1fbae507-671e-48fd-8346-90a73e211fe9")
+		(uuid "727caef8-299d-534d-9e8f-ccc05a11f1c5")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -5360,7 +5360,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8789b1e0-ac5d-4a15-9024-7c3110308976")
+		(uuid "b7095db8-7e0e-5967-84cd-2517c851416b")
 		(property "Reference" "#PWR020"
 			(at 119.38 107.95 0)
 			(effects
@@ -5406,11 +5406,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "6cd55cbb-5ed1-42ab-a19e-4804334d660e")
+			(uuid "c5d91aa2-1d3d-5fac-acc5-5f1511d1ba6f")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR020")
 					(unit 1)
 				)
@@ -5426,7 +5426,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3b4d81d5-377a-4737-9bc8-6dfb9b70bfcd")
+		(uuid "611faee2-9aec-554d-a696-c53985743b4c")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5436,7 +5436,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "282454d7-cb43-4069-8a24-2a261c5f5987")
+		(uuid "3fd24ceb-9f15-528c-b71b-cddf51810da4")
 		(property "Reference" "#PWR021"
 			(at 119.38 123.19 0)
 			(effects
@@ -5482,11 +5482,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f733e4da-8111-434f-9a88-f7732db880a2")
+			(uuid "f7dd0aa1-5b66-5444-aeae-ed7fb11ac097")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR021")
 					(unit 1)
 				)
@@ -5501,7 +5501,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fe16b3d5-e2d6-44b3-969d-3a4ede218633")
+		(uuid "53397545-8f0a-556e-8374-c8824e17705c")
 		(property "Reference" "TP4"
 			(at 134.62 101.6 0)
 			(effects
@@ -5547,11 +5547,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "909f422b-b166-4e26-b6cf-2f2bff2ff8df")
+			(uuid "0efcbfe5-aac6-5b18-bbac-e3bbfa7d810e")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP4")
 					(unit 1)
 				)
@@ -5567,7 +5567,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c6ac6be8-50e2-4369-b125-0f4e60785454")
+		(uuid "787a8ddf-fdcb-5711-b6ef-afb816626584")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -5577,7 +5577,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "4d774c8f-9c14-428f-b723-9ba532c75b5d")
+		(uuid "6df607d3-4f68-5cb9-b908-5e493ffc2e2b")
 		(property "Reference" "#PWR022"
 			(at 134.62 106.68 0)
 			(effects
@@ -5623,11 +5623,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "3583c189-481d-48a8-8a64-2a26e7663660")
+			(uuid "2cf46363-690f-570b-831f-484913655d82")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR022")
 					(unit 1)
 				)
@@ -5642,7 +5642,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "6b08029f-0a24-4355-8490-32ec85b06877")
+		(uuid "2b556438-227b-5c1f-a264-f3faad1df8a4")
 		(property "Reference" "#FLG023"
 			(at 146.05 101.6 0)
 			(effects
@@ -5688,11 +5688,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "19e1c986-46d8-460b-889b-a80a63efb55f")
+			(uuid "37fe9bc9-4885-5501-a7f0-2ad046f41d01")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG023")
 					(unit 1)
 				)
@@ -5708,7 +5708,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f6d7a3be-43e9-4988-908e-eefd1ef9d644")
+		(uuid "852a7038-6d8d-5450-96ab-0a357f0d135c")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -5718,7 +5718,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "2e7c5c17-d8c4-425c-9968-aa2ec413876f")
+		(uuid "cf52c909-6d07-5686-b54f-ac5a273ee785")
 		(property "Reference" "#PWR024"
 			(at 146.05 102.87 0)
 			(effects
@@ -5764,11 +5764,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3d67378-ea04-402c-b162-4cb792306f97")
+			(uuid "fd959ac6-0b0c-5dff-930d-ada8974c05b3")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR024")
 					(unit 1)
 				)
@@ -5784,7 +5784,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f9d69ece-41a7-4504-acff-7723e8754749")
+		(uuid "86e0363f-d1f2-5fd9-b897-c9afaa197b3a")
 	)
 	(symbol
 		(lib_id "pedalboard:TPS7A2033PDBV")
@@ -5794,7 +5794,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e54bfcac-440a-43cd-a863-4581ef3249d0")
+		(uuid "398f2740-3e92-530d-8ca9-50b40842b13a")
 		(property "Reference" "U2"
 			(at 196.85 102.87 0)
 			(effects
@@ -5850,23 +5850,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "d53e8bd9-0581-4f39-9dfe-b39ef1ffda74")
+			(uuid "5ec9cdc2-d7e8-59bb-aec8-eeaf3fbeb189")
 		)
 		(pin "2"
-			(uuid "acb3c2f7-7164-4a0f-b270-940872051dcf")
+			(uuid "714ec6a4-87a6-5724-aaf5-eed28f6f3c11")
 		)
 		(pin "3"
-			(uuid "0f4d28b6-9395-4c19-ac66-7e8e4f8aa19b")
+			(uuid "1b06edb1-f444-59ce-8912-f6dadc6401b6")
 		)
 		(pin "4"
-			(uuid "26219639-5360-4f91-beff-62175e641a6a")
+			(uuid "7dce0a65-faf8-5f1d-9348-acaa79c096c9")
 		)
 		(pin "5"
-			(uuid "b9219eaf-3cc9-4dcd-9ae9-3fe837ad236c")
+			(uuid "6fb9e48d-84e4-59eb-befd-e2fbc3a82c02")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "U2")
 					(unit 1)
 				)
@@ -5882,7 +5882,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6fe19af8-82bc-43bd-807d-dbc7d29dd1f4")
+		(uuid "e1d4f766-5ff9-5e8a-a9b4-b7197b245ac8")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -5892,7 +5892,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "3b3194bc-33a6-4a06-9e4f-ddc97317db3f")
+		(uuid "ec5e447d-8bb2-5e46-8405-c348a8eeba9c")
 		(property "Reference" "#PWR025"
 			(at 191.77 113.03 0)
 			(effects
@@ -5938,11 +5938,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "a01a8e88-2457-4254-94f6-3dfdcd589419")
+			(uuid "8a8c26b5-8c19-5c34-ab58-4f3c5148e21f")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR025")
 					(unit 1)
 				)
@@ -5958,7 +5958,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7ee078fe-7d50-4c8f-bbd8-44cab91e3dd4")
+		(uuid "3b149329-9bd1-5098-92b8-a39f0f5f5a60")
 	)
 	(label "PWR_EN"
 		(at 191.77 111.76 180)
@@ -5968,7 +5968,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "88c35a7d-eb4a-4cd2-9794-5d094db156ce")
+		(uuid "9452ef2a-2b8e-551e-97ed-688a038e6d15")
 	)
 	(wire
 		(pts
@@ -5979,7 +5979,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3f857395-81ed-4a34-b6cb-0385d035be92")
+		(uuid "c50ec841-1869-5d17-aa9a-a24327fd26a5")
 	)
 	(label "3V3A_REG"
 		(at 217.17 109.22 0)
@@ -5989,11 +5989,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8ded437d-6e2a-4d37-9830-c1d2edd0c1f3")
+		(uuid "3046879c-862a-5dde-a8c9-cd5f5cdc6ab5")
 	)
 	(no_connect
 		(at 214.63 111.76)
-		(uuid "c5be884d-fd79-43cd-963d-1baa1767543c")
+		(uuid "bc9838b8-a0f6-5a12-a38b-e0b965f35ad5")
 	)
 	(wire
 		(pts
@@ -6004,7 +6004,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f63d8e86-3645-4bd4-a219-78ca063bd426")
+		(uuid "a17b21d9-00ea-59d0-9f78-bdb2ccfee913")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6014,7 +6014,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "79ba5118-5dc8-4655-8e45-1423bbdafcde")
+		(uuid "1a82e068-c13d-52dc-a51c-824b112bd80f")
 		(property "Reference" "#PWR026"
 			(at 204.47 130.81 0)
 			(effects
@@ -6060,11 +6060,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "12e9a341-3950-4011-bc8b-f376b2b89980")
+			(uuid "e7f5148c-8fb4-5936-8faf-02fd507eeaee")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR026")
 					(unit 1)
 				)
@@ -6079,7 +6079,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a92824d1-c54c-412c-9c7f-d148c0605354")
+		(uuid "0954865b-06dd-568e-81e5-5d2fc315d598")
 		(property "Reference" "C6"
 			(at 175.26 107.95 0)
 			(effects
@@ -6126,14 +6126,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "bb983379-0c8f-46a3-886c-0d09892f4f6b")
+			(uuid "5b73dba0-33c9-5e69-b43f-6dcd451eae57")
 		)
 		(pin "2"
-			(uuid "8c0e3187-9d3f-4c2d-bdfe-c9e78d4863c7")
+			(uuid "241465c1-1d49-5a94-8fc4-dcb83394fd6f")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C6")
 					(unit 1)
 				)
@@ -6149,7 +6149,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7618cea9-ea31-4c29-8934-6e4ae0e66996")
+		(uuid "f8e2657d-c4bc-5cc3-bf1f-28d7a7e26930")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -6159,7 +6159,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "229f6392-7763-4e43-ad3f-111e1869eb7a")
+		(uuid "9f064a46-ec1b-553c-b04f-489436a653cf")
 		(property "Reference" "#PWR027"
 			(at 175.26 107.95 0)
 			(effects
@@ -6205,11 +6205,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "64499ecd-78b6-4596-8006-274a6af08c0b")
+			(uuid "2bd2be46-bae0-51c8-9e2d-6b16d6e0984a")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR027")
 					(unit 1)
 				)
@@ -6225,7 +6225,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1098b9c8-f2f7-45ca-984d-12d2266ccb35")
+		(uuid "9e64bbee-4386-5a9c-82e0-90e179a2dd9b")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6235,7 +6235,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1a6acec0-64a0-4f75-9e1c-6348039fc333")
+		(uuid "3ce6098d-cf94-5cd5-b33e-d1f79d460a9b")
 		(property "Reference" "#PWR028"
 			(at 175.26 123.19 0)
 			(effects
@@ -6281,11 +6281,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "25e42d20-e168-4251-91ae-a836a162edef")
+			(uuid "3888347f-392c-5b95-972d-cb71314997e3")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR028")
 					(unit 1)
 				)
@@ -6300,7 +6300,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a6e9098a-c3f5-4bc8-b363-84ef294253c7")
+		(uuid "2e9f039c-c7ef-50b5-bc71-c25b9004f6ce")
 		(property "Reference" "C7"
 			(at 241.3 107.95 0)
 			(effects
@@ -6347,14 +6347,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9980a307-877c-4aa4-baf8-c397b0f86392")
+			(uuid "3bdcc931-e5cf-5ef3-b1e4-909f16b7edd9")
 		)
 		(pin "2"
-			(uuid "7f8fcb6e-0806-4efe-94a1-3dc7914d653f")
+			(uuid "7c205a91-604f-5633-86fb-c171bc1c7817")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C7")
 					(unit 1)
 				)
@@ -6370,7 +6370,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0d41152e-ec3d-4b8f-af00-096f19a61ff3")
+		(uuid "ff43e160-e569-5a9c-8ff7-80151b93707b")
 	)
 	(label "3V3A_REG"
 		(at 240.03 104.14 0)
@@ -6380,7 +6380,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8773c7dd-7c7a-4b0b-9182-c011e50d5590")
+		(uuid "181b0762-52b6-544d-8222-c09a6fd2a947")
 	)
 	(wire
 		(pts
@@ -6391,7 +6391,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "17456dc5-ec41-415d-b46d-3bdd1547dae0")
+		(uuid "abe041cb-2d40-5125-9641-4b9b28b0b087")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6401,7 +6401,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1cf26993-b771-4bbb-9774-20b141acfe45")
+		(uuid "1db4345e-1f53-54c0-9bfd-9e7f3bc8966e")
 		(property "Reference" "#PWR029"
 			(at 240.03 123.19 0)
 			(effects
@@ -6447,11 +6447,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "2dac23c6-c0ae-4b48-8ef1-b27e30ccd837")
+			(uuid "683681f0-a97c-5115-bde2-0ab0714e8d4e")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR029")
 					(unit 1)
 				)
@@ -6466,7 +6466,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "cf1e3bda-e2e7-47de-b15d-d14f09d8a0ad")
+		(uuid "cbff493f-52fa-59d2-9a27-989f605d2333")
 		(property "Reference" "R4"
 			(at 262.89 110.49 90)
 			(effects
@@ -6520,14 +6520,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "52f3eb92-5fba-4c4d-9d8a-435be11c9be1")
+			(uuid "cd5c3212-2246-575c-b780-cd2dca431f29")
 		)
 		(pin "2"
-			(uuid "fc496ef4-b791-40d6-b282-97b1e5c810f6")
+			(uuid "47da8420-9913-5edb-a422-764b25f0476d")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R4")
 					(unit 1)
 				)
@@ -6543,7 +6543,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "71d2e3c7-b7fa-4b8e-b205-d658a8ea39d5")
+		(uuid "dff0b63e-060a-558e-b027-52792d81aed3")
 	)
 	(label "3V3A_REG"
 		(at 260.35 104.14 0)
@@ -6553,7 +6553,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ce83c0e2-c621-4c18-9407-1e3b5d69abca")
+		(uuid "79afa909-e905-5bee-8639-f57aa2805fb0")
 	)
 	(wire
 		(pts
@@ -6564,7 +6564,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "823ab3f9-00c5-4459-aa37-4f02d39029f5")
+		(uuid "0157ab89-78c2-5113-8945-e00b9d2b5d8f")
 	)
 	(symbol
 		(lib_id "power:+3.3VA")
@@ -6574,7 +6574,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "d7dcf612-100c-4a97-9e36-e94b70d7e13e")
+		(uuid "107f6746-7bd6-51aa-a369-c935b6f53fa1")
 		(property "Reference" "#PWR030"
 			(at 260.35 113.03 0)
 			(effects
@@ -6620,11 +6620,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "268c4954-76ab-4fa1-b36e-f6f690e8cc1f")
+			(uuid "f45974b5-d2cc-577c-8629-0dfc277b4ca8")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR030")
 					(unit 1)
 				)
@@ -6639,7 +6639,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6682e57c-58e0-4672-8c78-7918964c565f")
+		(uuid "6c608811-fbb1-571b-a97f-ab05f180af12")
 		(property "Reference" "TP5"
 			(at 275.59 101.6 0)
 			(effects
@@ -6685,11 +6685,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "e8f3d5fd-c7ab-4720-9ba1-90a5508e0161")
+			(uuid "addfb150-ffc3-582a-96e4-94ccbe9ac67a")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP5")
 					(unit 1)
 				)
@@ -6705,7 +6705,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5764e180-e51c-42c6-9f36-c459ff38e085")
+		(uuid "500ed01b-9ef9-5685-a307-5f564214af9a")
 	)
 	(symbol
 		(lib_id "power:+3.3VA")
@@ -6715,7 +6715,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "950f1f80-3a8e-4dda-8db9-e498eadd557c")
+		(uuid "0eed37e4-7b79-5827-bb52-4272e5298f2f")
 		(property "Reference" "#PWR031"
 			(at 275.59 106.68 0)
 			(effects
@@ -6761,11 +6761,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "37e2b5a5-77a2-4f7a-a637-53031761ddef")
+			(uuid "c73d93f6-9acf-5365-aca4-72e21ec7620b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR031")
 					(unit 1)
 				)
@@ -6780,7 +6780,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c2159d11-2f0d-4746-9287-5bd74ddf014e")
+		(uuid "16f3c0ff-c065-583b-9ece-825b8cd0e7bc")
 		(property "Reference" "#FLG032"
 			(at 289.56 101.6 0)
 			(effects
@@ -6826,11 +6826,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ae169dc3-b3b0-497f-908c-51f2eb859172")
+			(uuid "bcb88dc9-8fde-5d0c-9a3b-2ea0422346b7")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG032")
 					(unit 1)
 				)
@@ -6846,7 +6846,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "278feb11-7f1a-4f58-a133-02f71409d5b0")
+		(uuid "12b8bb1b-8f56-5d64-a5a9-3a739e078acb")
 	)
 	(symbol
 		(lib_id "power:+3.3VA")
@@ -6856,7 +6856,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "e101cff1-5366-4361-b8d3-d0c2ad1734cb")
+		(uuid "de5b2de1-8754-5c83-be4a-f06de9b9708f")
 		(property "Reference" "#PWR033"
 			(at 289.56 102.87 0)
 			(effects
@@ -6902,11 +6902,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "22cd628b-e053-4aec-8fa5-5657ceb00273")
+			(uuid "1ee95556-c2be-5b86-b9fc-b47ba2d7f8ef")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR033")
 					(unit 1)
 				)
@@ -6922,7 +6922,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a4b1ba0b-cd1e-4667-adec-6f61c64ac6fd")
+		(uuid "bbbacb6d-07ca-5435-b7db-1995939b0b20")
 	)
 	(symbol
 		(lib_id "Regulator_Switching:TPS61040DBV")
@@ -6932,7 +6932,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a18b937d-9cdd-4a90-a690-a113ad4e2e7e")
+		(uuid "de049e69-6c96-5ce4-9872-add798dc55e9")
 		(property "Reference" "U3"
 			(at 69.85 158.75 0)
 			(effects
@@ -6979,23 +6979,23 @@
 			)
 		)
 		(pin "1"
-			(uuid "3743815d-6369-4ff4-9cd8-6842b710cbc6")
+			(uuid "9a05d0e4-3ce9-5b3a-a9c1-39e408ecf4e6")
 		)
 		(pin "2"
-			(uuid "75aa90f8-edd5-4a79-8c0b-bc65ef77908b")
+			(uuid "d1f38005-714d-58a3-bf23-55e8733d1c97")
 		)
 		(pin "3"
-			(uuid "0c6aea7a-33e7-4645-82cd-3bf1035eebf3")
+			(uuid "b5846d1d-f29c-5b32-8cc5-ba0960551c5b")
 		)
 		(pin "4"
-			(uuid "11dc4075-30a8-462a-8b03-35ef97910086")
+			(uuid "a42d004a-e8f4-5798-98cc-c5f8afb506dc")
 		)
 		(pin "5"
-			(uuid "a45eea0b-23d9-4268-9589-e8e043ed7e44")
+			(uuid "0be5ea20-fa74-5b75-9816-a0646bdbf3cd")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "U3")
 					(unit 1)
 				)
@@ -7011,7 +7011,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dbf076d7-1f14-4e0d-aa63-199aef2596ed")
+		(uuid "97fdcb08-ad43-524c-905c-f4cc53ea6b08")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -7021,7 +7021,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "b56cbf17-f347-4b5c-96fa-98202d281889")
+		(uuid "f98a14a5-ed05-59a1-8d08-55f358760ca2")
 		(property "Reference" "#PWR034"
 			(at 64.77 166.37 0)
 			(effects
@@ -7067,11 +7067,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "9f1e0450-83a1-40a4-bb81-c99f264ae8de")
+			(uuid "4d8ebdcb-d481-5f12-a994-d41424bf0960")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR034")
 					(unit 1)
 				)
@@ -7087,7 +7087,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7690303c-f966-43bd-a48c-8272cba81722")
+		(uuid "de83e999-e63c-558d-a9eb-504bc4ff50a8")
 	)
 	(label "PWR_EN"
 		(at 64.77 165.1 180)
@@ -7097,7 +7097,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6ecbb96a-2165-43fc-a8dc-0b3abafe5cec")
+		(uuid "2be8c75d-563c-5e3b-ae8d-5a84a5b6351e")
 	)
 	(wire
 		(pts
@@ -7108,7 +7108,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d739c91a-68ff-43f5-b253-507c28927f45")
+		(uuid "9166c548-236a-5d4e-9ce8-1cc79e24065a")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7118,7 +7118,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "e527c650-cea1-4c5a-a0c6-ca4febb91141")
+		(uuid "69c90b29-6678-559e-ad6e-2dfae7eccb11")
 		(property "Reference" "#PWR035"
 			(at 74.93 181.61 0)
 			(effects
@@ -7164,11 +7164,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0d2b73d5-cc15-42e2-9917-0cb90f508905")
+			(uuid "5d63e353-332c-5e26-b897-2db5b90f9e45")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR035")
 					(unit 1)
 				)
@@ -7184,7 +7184,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "92ce4bbf-dde3-41b9-8201-a8eda1b9888a")
+		(uuid "4b8d6297-0936-5723-a51a-26804dfbab82")
 	)
 	(label "BOOST_SW"
 		(at 85.09 162.56 0)
@@ -7194,7 +7194,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6d0708ff-a20a-4212-ace9-508db601a147")
+		(uuid "a2a7c873-e666-5bbf-b09c-db933303b08e")
 	)
 	(wire
 		(pts
@@ -7205,7 +7205,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "335d71bb-7ec3-468d-8c85-5db438cfa194")
+		(uuid "a04f9c40-02cf-5ade-8a5f-1655b43cfd34")
 	)
 	(label "BOOST_FB"
 		(at 85.09 165.1 0)
@@ -7215,7 +7215,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d61e79fc-ce3a-4549-85d5-ab2301e35878")
+		(uuid "282c1591-da30-5786-b4e4-c12ecd6ea85a")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -7225,7 +7225,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7e80ad3a-b9d1-4674-a3b1-1e168740c873")
+		(uuid "026cc9b8-488e-576e-8f2d-286d8ea877c2")
 		(property "Reference" "C8"
 			(at 25.4 162.56 0)
 			(effects
@@ -7272,14 +7272,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "a83ef6dc-b3c8-4be1-a5d5-4e6ee3ad426d")
+			(uuid "d2eab7af-c61c-51fa-891a-b960c722ab1d")
 		)
 		(pin "2"
-			(uuid "3ea079f5-836e-4791-ba72-7314869b6ecb")
+			(uuid "21671864-abca-5545-9722-ffc02cbcdf44")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C8")
 					(unit 1)
 				)
@@ -7295,7 +7295,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "35a70d48-abd3-409c-be92-a0d65e8e3098")
+		(uuid "eeee363e-2ecc-5c07-a334-36adb3128c1e")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -7305,7 +7305,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c9eb023e-fb80-4e8b-b3ea-d137297770f2")
+		(uuid "8a5be4d9-8514-5b25-b2fc-f580cef50183")
 		(property "Reference" "#PWR036"
 			(at 25.4 162.56 0)
 			(effects
@@ -7351,11 +7351,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "242352a3-f744-4902-b907-f2ee9115c75f")
+			(uuid "f78bf434-be92-5681-b95f-422274ca5afa")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR036")
 					(unit 1)
 				)
@@ -7371,7 +7371,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a62e4e24-095f-4fb9-ac25-6e5aa0dac3fe")
+		(uuid "cb128de0-fd56-54fa-8de4-3f0d720ebc6f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7381,7 +7381,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "5cea6e28-14aa-4956-9f2a-730c557a45f4")
+		(uuid "de71445f-1621-542d-a918-75757ebbc23b")
 		(property "Reference" "#PWR037"
 			(at 25.4 177.8 0)
 			(effects
@@ -7427,11 +7427,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "65a1c88d-c223-410b-b41d-825f34679dc8")
+			(uuid "eb4587a4-6947-5b51-92cd-7f6f67c2d57d")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR037")
 					(unit 1)
 				)
@@ -7446,7 +7446,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "76c23d4b-42f2-4d86-a3e0-0133139d6a59")
+		(uuid "95f3642b-e58b-5c6b-a14a-a878a892285a")
 		(property "Reference" "L1"
 			(at 43.18 165.1 90)
 			(effects
@@ -7500,14 +7500,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d1d0740-386f-4171-8feb-438480ccdd9b")
+			(uuid "b735514d-d583-5830-b838-d28acc4f7dd2")
 		)
 		(pin "2"
-			(uuid "b019c0d5-a5cd-4658-b6eb-8b2bf23d7ab0")
+			(uuid "7b8f587d-0456-55e9-87fd-140c0238c47b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "L1")
 					(unit 1)
 				)
@@ -7523,7 +7523,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7aec4ed4-6d8e-4c97-aa85-7483fbb98eda")
+		(uuid "ee76717a-0400-5fb6-b517-9fea5bd7b7eb")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -7533,7 +7533,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c039675a-9fab-4d45-a126-eebf5b43174e")
+		(uuid "76a9cefe-b5a1-527d-b0bf-fc10b4a66334")
 		(property "Reference" "#PWR038"
 			(at 44.45 162.56 0)
 			(effects
@@ -7579,11 +7579,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "85f4aeba-a0d9-4b01-9f70-0de7d2d58398")
+			(uuid "12322ae4-b334-507c-be10-d36f950c234b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR038")
 					(unit 1)
 				)
@@ -7599,7 +7599,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "be4ff780-6ca1-463b-98a0-ace5bc90e11e")
+		(uuid "f22cc5fc-7a45-52df-b42e-60a7a8a508c6")
 	)
 	(label "BOOST_SW"
 		(at 44.45 171.45 0)
@@ -7609,7 +7609,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f3ac618e-e612-4078-a065-13e0f0b4dbce")
+		(uuid "d01758f6-dbe0-542d-b493-eedb3529ba63")
 	)
 	(symbol
 		(lib_id "Diode:MBR0530")
@@ -7619,7 +7619,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "9ccf249e-3500-4e86-9c20-977d93c8d5eb")
+		(uuid "f5245463-ecd8-5667-b407-d281ab1da4ce")
 		(property "Reference" "D1"
 			(at 115.57 149.86 0)
 			(effects
@@ -7664,14 +7664,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "2f2c6b7d-56ca-4b4c-88a4-688cb454eebc")
+			(uuid "5c166c5f-602e-572f-9748-b112429fd739")
 		)
 		(pin "2"
-			(uuid "abc3c910-ce16-4f08-9cff-388c0087dd6a")
+			(uuid "31128bb9-8d03-5791-a40b-369802f4135c")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "D1")
 					(unit 1)
 				)
@@ -7687,7 +7687,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "edec33cb-fdd1-49f2-933e-5bb45c331a1c")
+		(uuid "dc3eb954-cf66-5ee5-af8b-5dd458238263")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -7697,7 +7697,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "83d8663b-2e09-4c92-a567-fcfefae51cf6")
+		(uuid "104e0c64-eeb2-5552-965d-5e71dc907fe6")
 		(property "Reference" "#PWR039"
 			(at 109.22 156.21 0)
 			(effects
@@ -7743,11 +7743,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0d09fcf9-0bed-491b-9e56-903888f108df")
+			(uuid "85c728ef-4012-545c-953f-62473a62a1bf")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR039")
 					(unit 1)
 				)
@@ -7763,7 +7763,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "df0526e5-5350-43db-a87d-8f57bc041385")
+		(uuid "e27cd598-34a8-52fb-988a-a3983a30bb30")
 	)
 	(label "BOOST_SW"
 		(at 121.92 152.4 0)
@@ -7773,7 +7773,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "16bfc12b-b720-480f-a4fc-b4d7f3aab487")
+		(uuid "bf3d88ac-047f-5864-b5c7-b00bcc11b0a5")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7783,7 +7783,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1278b96b-09b2-482f-bd79-7c1f6679a9ae")
+		(uuid "ddb44bef-e514-51d5-adef-8dd1b5af7c80")
 		(property "Reference" "R5"
 			(at 142.24 167.64 90)
 			(effects
@@ -7837,14 +7837,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "c4c37142-2b38-44a8-be79-984c351fd6b1")
+			(uuid "eda94f8b-0b08-5ce6-95d4-c05a10ccb5fe")
 		)
 		(pin "2"
-			(uuid "023bbddc-9b0c-4a3a-9302-e93577308019")
+			(uuid "6d7fc0bd-85d0-5e33-89ca-a46ec11ba316")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R5")
 					(unit 1)
 				)
@@ -7860,7 +7860,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9609b38b-ee41-48f9-9d6b-bf45a0449528")
+		(uuid "77744449-ffd1-5277-8cd0-910830efacbe")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -7870,7 +7870,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8c092af5-f729-4bd5-a730-ce9830d0b38d")
+		(uuid "9a6ba0ae-1ca3-5d56-948d-8a48151be1e3")
 		(property "Reference" "#PWR040"
 			(at 139.7 165.1 0)
 			(effects
@@ -7916,11 +7916,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "72382185-b3a8-4f15-875d-8458ab8feefd")
+			(uuid "e4989b70-6773-5811-8cb2-f93cef9950f0")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR040")
 					(unit 1)
 				)
@@ -7936,7 +7936,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8a49481b-60cb-4d2a-85e1-a62fd34c2c04")
+		(uuid "6b787e9d-d6a1-53c6-8fc3-33015c03ebc2")
 	)
 	(label "BOOST_FB"
 		(at 139.7 173.99 0)
@@ -7946,7 +7946,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "82f168cb-4bc0-4bdc-ba21-9dc776ba94e6")
+		(uuid "73adcca1-20a9-5668-84a4-a1daa3003d05")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7956,7 +7956,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "09a37ef4-148f-436c-82a5-d7ab70d58405")
+		(uuid "874679d6-509c-5e17-8839-a9008a15e7b6")
 		(property "Reference" "R6"
 			(at 162.56 167.64 90)
 			(effects
@@ -8010,14 +8010,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "9809d024-d890-46f8-a759-9cf1cdfc0661")
+			(uuid "835b9086-1262-53a7-888b-3f7f53ef2426")
 		)
 		(pin "2"
-			(uuid "22415def-9516-4db5-b96c-a9d23354c79d")
+			(uuid "7ce3797a-f2de-55f3-abc5-41fe377b650a")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R6")
 					(unit 1)
 				)
@@ -8033,7 +8033,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5e355a9c-9981-447e-a896-c9d78cb55275")
+		(uuid "b8b55b97-526c-596c-b8ca-05c7f2746ae0")
 	)
 	(label "BOOST_FB"
 		(at 160.02 161.29 0)
@@ -8043,7 +8043,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "43a7035f-5d81-4da4-b3e0-90a6b305a17c")
+		(uuid "e0ff5397-692f-52cf-b1bc-ad2cb001360f")
 	)
 	(wire
 		(pts
@@ -8054,7 +8054,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eb8a587b-4aad-4a92-8b71-068eed29ad21")
+		(uuid "b4e0c6b7-64e4-5344-a50a-394adb7fa221")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8064,7 +8064,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "6cd46620-f2fa-4a3e-85b9-46062b220a58")
+		(uuid "44c67db9-72d7-5a46-9d2b-4d83af05c731")
 		(property "Reference" "#PWR041"
 			(at 160.02 180.34 0)
 			(effects
@@ -8110,11 +8110,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1461ce39-5ae0-45cb-8e6a-4b5e5783cada")
+			(uuid "e41eba13-cc8b-551d-8d0a-a541b94497cc")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR041")
 					(unit 1)
 				)
@@ -8129,7 +8129,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2d059f66-0f91-4e79-aa07-51f2b219db2c")
+		(uuid "a60f74b1-6bce-58a9-afd1-c84d4b621769")
 		(property "Reference" "C9"
 			(at 180.34 165.1 0)
 			(effects
@@ -8185,14 +8185,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "d6ab2fd0-bdb0-4000-ad71-85918d25a927")
+			(uuid "9f282f74-5baf-5054-8d8e-793642433a56")
 		)
 		(pin "2"
-			(uuid "b6985ea0-ba9f-4fd7-b382-aa755adff671")
+			(uuid "6110889e-c00d-5420-b268-291ee6197ddf")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C9")
 					(unit 1)
 				)
@@ -8208,7 +8208,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "09c2a798-a06b-4c6b-9ac6-21691e204cd4")
+		(uuid "ceca3e58-485a-5311-b9be-039093bd08bb")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -8218,7 +8218,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8f8ae72e-0aa2-49b5-b196-8755c691a74a")
+		(uuid "b104d56b-7f28-5dd9-bc14-eaa931cbf907")
 		(property "Reference" "#PWR042"
 			(at 180.34 165.1 0)
 			(effects
@@ -8264,11 +8264,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "9a7ac859-1cea-474b-aec4-d1be9f6faef9")
+			(uuid "699c4dc9-5f7b-5541-ba3e-f9c25f12932b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR042")
 					(unit 1)
 				)
@@ -8284,7 +8284,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "21f75c87-a4d1-410c-8438-2bd7ed42a03c")
+		(uuid "757401de-0fec-5afc-aa39-58ff0e971fd2")
 	)
 	(label "BOOST_FB"
 		(at 180.34 173.99 0)
@@ -8294,7 +8294,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "521723b3-8d19-49a6-a34f-301d2a63f00b")
+		(uuid "1a68aa73-13ee-5f9a-8127-8a692c2e8acb")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -8304,7 +8304,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f78f7cfc-4d6f-477b-b49d-73fe318c1e1d")
+		(uuid "1ef8ce0e-b601-5b19-a74f-a3db4a4936fe")
 		(property "Reference" "C10"
 			(at 199.39 165.1 0)
 			(effects
@@ -8351,14 +8351,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "30a9eab2-ad2c-4ffe-a94e-5bb00b58308e")
+			(uuid "55f37a3f-f069-514d-a2a5-0c3d8eef10f5")
 		)
 		(pin "2"
-			(uuid "096350e8-d66a-4dbe-96da-d8ddcac35e78")
+			(uuid "74189e4e-0903-561f-bcaa-30e21ae8db2b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C10")
 					(unit 1)
 				)
@@ -8374,7 +8374,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8df2c111-b146-4758-a7ce-c3713b3261ef")
+		(uuid "18c77a51-2e67-591a-aa05-b2b58ecbdaaf")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -8384,7 +8384,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "1a1cd111-eeff-4915-b5c0-1cbada3562a6")
+		(uuid "a866f249-5f6f-5d4b-99a3-8babf60c3015")
 		(property "Reference" "#PWR043"
 			(at 199.39 165.1 0)
 			(effects
@@ -8430,11 +8430,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "5e00ca9f-3567-4eda-8528-6375bada0744")
+			(uuid "b4a9b487-13e8-54be-ad03-03c48b741d6d")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR043")
 					(unit 1)
 				)
@@ -8450,7 +8450,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c9f4c928-3069-452f-a989-679bdd3fa94c")
+		(uuid "42c01fca-ebc7-52e5-a438-1e109d015933")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8460,7 +8460,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "534e65eb-c1cf-49b7-8ee8-17d32d074ee1")
+		(uuid "8c04df50-432f-545d-88aa-dfd2905b90d5")
 		(property "Reference" "#PWR044"
 			(at 199.39 180.34 0)
 			(effects
@@ -8506,11 +8506,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "0dcb89d8-b71e-4e0b-9ca1-69673a1a1ffe")
+			(uuid "e4c65059-877e-5734-b138-edb1cf04c4cb")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR044")
 					(unit 1)
 				)
@@ -8525,7 +8525,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6c40934c-960c-4c02-9c8c-4315583c9497")
+		(uuid "481e504d-cc43-5481-bf80-310fcac4eaaa")
 		(property "Reference" "R7"
 			(at 220.98 167.64 90)
 			(effects
@@ -8579,14 +8579,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a191aed-4717-4d63-bf24-765105cb4c93")
+			(uuid "711efa02-b42a-55e0-ab46-4e64e50f16b7")
 		)
 		(pin "2"
-			(uuid "f34c7fbf-2517-40f7-87a0-151cf1964463")
+			(uuid "625f438f-1602-5a55-bebf-a10b8acf4626")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R7")
 					(unit 1)
 				)
@@ -8602,7 +8602,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "98ffbc97-d21c-4681-92e3-869cedd37169")
+		(uuid "e5436864-f64a-5181-8b02-8c656e72b030")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -8612,7 +8612,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "7b0e6c4d-6a9c-48f5-996c-36d64bf2fe54")
+		(uuid "82445556-7e77-5728-bce6-be8cf6e9e85c")
 		(property "Reference" "#PWR045"
 			(at 218.44 165.1 0)
 			(effects
@@ -8658,11 +8658,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "fcc7183f-b957-4e5e-a841-e1681becd0d0")
+			(uuid "6be1cb80-46fe-5166-a027-8eac910c6dc1")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR045")
 					(unit 1)
 				)
@@ -8678,7 +8678,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f9bdf11c-fa49-4fb6-82e3-a7b3815d4d98")
+		(uuid "3c1d0cd3-d12e-518a-b406-186ba334ae16")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8688,7 +8688,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "ff7aaa17-487c-40f6-83ae-791ce39c48c8")
+		(uuid "52d154f9-a24b-587f-aa75-75da6cbf5215")
 		(property "Reference" "#PWR046"
 			(at 218.44 180.34 0)
 			(effects
@@ -8734,11 +8734,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "12b0d144-e954-4bd7-aaf6-a4696b5b20ee")
+			(uuid "9bf87187-5f56-5875-9db0-579b6e17ef44")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR046")
 					(unit 1)
 				)
@@ -8753,7 +8753,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c3315a3a-a4aa-4e25-8890-48b7afe9ea24")
+		(uuid "00c68a9a-6967-502e-a6bb-73c3685857f0")
 		(property "Reference" "TP6"
 			(at 233.68 160.02 0)
 			(effects
@@ -8799,11 +8799,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b485992f-9829-4369-9a55-4f8c4848a2eb")
+			(uuid "04723885-282f-596b-bdb0-c7768cff4885")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP6")
 					(unit 1)
 				)
@@ -8819,7 +8819,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2339cb12-2a29-4fff-a74d-04c471fb90bd")
+		(uuid "f0137807-e7d0-5efe-855d-13bf1371668d")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -8829,7 +8829,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "7a9738ab-7492-48b8-91d2-c06ffa83b191")
+		(uuid "0c26f677-ad31-5881-bc2d-ea6a810fefeb")
 		(property "Reference" "#PWR047"
 			(at 233.68 165.1 0)
 			(effects
@@ -8875,11 +8875,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b2405aad-bc68-4e36-86ac-85dd262d7e01")
+			(uuid "1e24444a-29c7-5072-90c2-875183a4f8d5")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR047")
 					(unit 1)
 				)
@@ -8894,7 +8894,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "7874118b-8b15-4f00-8a24-1c11a8f5b516")
+		(uuid "428c335c-6216-5158-a600-4113c31be480")
 		(property "Reference" "#FLG048"
 			(at 247.65 160.02 0)
 			(effects
@@ -8940,11 +8940,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "e46255e1-ccee-41aa-8c57-009100386ba3")
+			(uuid "b69c26bb-d43e-51ba-b34d-3ff57fe90937")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG048")
 					(unit 1)
 				)
@@ -8960,7 +8960,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ce215507-43dd-4e76-a245-9298bee3568f")
+		(uuid "b1b4a99f-9d2b-5cab-8156-1a8edd8de00f")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -8970,7 +8970,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "3f3c9f50-d5eb-491d-81ca-a7b2340e92c7")
+		(uuid "643125ae-2249-5ca5-8237-5cc87757d061")
 		(property "Reference" "#PWR049"
 			(at 247.65 161.29 0)
 			(effects
@@ -9016,11 +9016,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c7bada45-77bc-4c9a-8248-0c895fdaedae")
+			(uuid "525fa19e-199d-5acc-a2c5-ca5d7f70efcd")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR049")
 					(unit 1)
 				)
@@ -9036,7 +9036,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fd7c827b-c0d7-4172-821c-1d71db22eca9")
+		(uuid "e77c62eb-0d2f-582b-8931-6a1e3d1d53ed")
 	)
 	(symbol
 		(lib_id "Device:FerriteBead")
@@ -9046,7 +9046,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6312f8b7-af6f-45a7-aea6-fd98a6678b2c")
+		(uuid "b6842556-734c-54b3-8419-bf6b47b90db3")
 		(property "Reference" "FB2"
 			(at 26.67 228.6 90)
 			(effects
@@ -9091,14 +9091,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "bd1d17bd-6701-4022-91f3-0b4d03915af1")
+			(uuid "1ce01946-127a-502b-981d-6ca3386ab603")
 		)
 		(pin "2"
-			(uuid "c8a8aaa6-6354-4ae8-b477-e1a69d807a67")
+			(uuid "15be3817-b0b8-5317-b5e1-f75588cfc8f4")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "FB2")
 					(unit 1)
 				)
@@ -9114,7 +9114,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f1978829-d536-49c9-bdef-3d948f16040f")
+		(uuid "e1595dd9-2541-56db-b980-673fcd388123")
 	)
 	(symbol
 		(lib_id "power:+15V")
@@ -9124,7 +9124,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "7fdd521d-d043-4505-a70b-ce5c03707e01")
+		(uuid "da9416a5-367c-52f5-bd56-5db40432250e")
 		(property "Reference" "#PWR050"
 			(at 30.48 226.06 0)
 			(effects
@@ -9170,11 +9170,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "c64659e9-b31d-4861-8913-b9ff068dfcb6")
+			(uuid "4517760f-b38b-5b00-87b2-d2ad935e6db5")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR050")
 					(unit 1)
 				)
@@ -9190,7 +9190,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fa6325aa-ce56-46cb-86d0-c05513f58e93")
+		(uuid "bbe3110d-5f0f-5b4f-96af-3fc9b5f31c98")
 	)
 	(label "15V_FILT"
 		(at 30.48 234.95 0)
@@ -9200,7 +9200,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "45f4cae7-e64a-400e-908f-c02e97964659")
+		(uuid "f85aa55e-787d-50b1-aa8f-6ac01f1e643f")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -9210,7 +9210,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "4e3c8997-892e-43c6-94c8-e327d786eccb")
+		(uuid "d0bc200b-5d11-54e1-928f-67000facb20d")
 		(property "Reference" "C11"
 			(at 53.34 226.06 0)
 			(effects
@@ -9257,14 +9257,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "26c3e649-24e7-412d-8747-efab49ab55a7")
+			(uuid "c56d2162-d2a6-5871-aad3-4f0e1678e580")
 		)
 		(pin "2"
-			(uuid "29fdb3cf-1252-4c5a-9da0-a957c1827f3b")
+			(uuid "718dda73-b50e-5864-99fc-85a2bb52a657")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C11")
 					(unit 1)
 				)
@@ -9280,7 +9280,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cbc08dec-e95f-45a3-ae69-ccc8f1459892")
+		(uuid "fdfafed9-c978-5d2f-8a80-e62c999942a2")
 	)
 	(label "15V_FILT"
 		(at 52.07 222.25 0)
@@ -9290,7 +9290,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "46a91835-18fc-4779-a0d4-c43ad431fb89")
+		(uuid "5f8b1519-50a8-5a4a-adca-7cef49ee4f6f")
 	)
 	(wire
 		(pts
@@ -9301,7 +9301,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b83fb100-86d2-4f8f-a511-56b48aa55395")
+		(uuid "452e22c5-f49e-5cf1-936d-1ab5d6d54216")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9311,7 +9311,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "437e4784-7a79-4180-b40b-378584dee7be")
+		(uuid "7e8cb641-9c56-5a0e-be2e-31d05a9446d9")
 		(property "Reference" "#PWR051"
 			(at 52.07 241.3 0)
 			(effects
@@ -9357,11 +9357,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "45dc6cb1-2070-432a-a371-4cf50a53e14b")
+			(uuid "a5477de9-9ec8-5ffc-9b13-a5d28e7f4371")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR051")
 					(unit 1)
 				)
@@ -9376,7 +9376,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "e098f7ab-80be-452a-863f-80c6a8b2fbae")
+		(uuid "c4d0d470-2e20-5aec-9325-d1ff2fccc480")
 		(property "Reference" "#FLG052"
 			(at 66.04 220.98 0)
 			(effects
@@ -9422,11 +9422,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1ea080b9-6751-4fec-bbb6-339c4db3d984")
+			(uuid "c8c09678-bb98-5fd5-8aba-66d8c4e4372f")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG052")
 					(unit 1)
 				)
@@ -9442,7 +9442,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7d481ce9-761a-4ca8-8e65-3ca07f025b33")
+		(uuid "57c81fbc-7123-5006-9e56-3f992ca17728")
 	)
 	(label "15V_FILT"
 		(at 66.04 224.79 0)
@@ -9452,7 +9452,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8873ccc0-dddf-4340-8c66-cd5a99d20064")
+		(uuid "df45082b-1705-5ade-b27a-2b763da9c034")
 	)
 	(symbol
 		(lib_id "pedalboard:TPS7A4901DGN")
@@ -9462,7 +9462,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6919f3d1-3a88-4275-84a1-3eb9c7cf74c7")
+		(uuid "f42ddcb6-0314-5854-a6a1-a932e2d0eb68")
 		(property "Reference" "U4"
 			(at 102.87 218.44 0)
 			(effects
@@ -9518,35 +9518,35 @@
 			)
 		)
 		(pin "1"
-			(uuid "e533895a-70da-40eb-a299-16fd483a758c")
+			(uuid "c8f5c223-3b7a-57f0-92c7-fc3326a97182")
 		)
 		(pin "2"
-			(uuid "978919a7-0328-4158-89e0-f10734ac9fab")
+			(uuid "fc4be0ee-558b-5445-a4e6-2ad9a5c6c55f")
 		)
 		(pin "3"
-			(uuid "ff619ba6-3d9e-4b81-bcca-e6ef51deab5a")
+			(uuid "89cc648d-5db9-5c58-a6a3-49b736d63d55")
 		)
 		(pin "4"
-			(uuid "621843ed-ddc0-48c5-891a-287715b4e975")
+			(uuid "6c1ce5ca-45ce-5855-9a33-f6a92c8111bf")
 		)
 		(pin "5"
-			(uuid "d4b82075-026e-4c5d-b44d-b57de730b6c6")
+			(uuid "f9630721-e8b6-56cc-953f-a266475794fa")
 		)
 		(pin "6"
-			(uuid "c83e525d-987f-44f8-b870-a299fc42eeea")
+			(uuid "83588225-a17a-5bff-a83c-4b76b8e9350d")
 		)
 		(pin "7"
-			(uuid "1d8a6e0a-7e53-4c32-b525-ce31df1d55c8")
+			(uuid "8d045b58-1ce8-5129-9789-2d2ec180045a")
 		)
 		(pin "8"
-			(uuid "8267b629-25f1-495a-85a1-f4dde8a3a2e4")
+			(uuid "c9e88755-fc8d-5999-9aed-7e7d0c7b8f6a")
 		)
 		(pin "9"
-			(uuid "7d42e82f-708d-4ebe-a14b-24dddba2252c")
+			(uuid "ab8f9c2c-6247-56d3-bc54-ae0e3036dba6")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "U4")
 					(unit 1)
 				)
@@ -9562,7 +9562,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "121326f6-6465-4acb-be06-fe350b56e8ff")
+		(uuid "30f7d6bd-ac34-5c68-a992-77d8c91d4360")
 	)
 	(label "15V_FILT"
 		(at 97.79 224.79 180)
@@ -9572,7 +9572,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "0a292f39-bb1c-47ff-9656-7abf35e26f45")
+		(uuid "427bb647-cba3-521d-8de8-ec1eeb3d88d7")
 	)
 	(wire
 		(pts
@@ -9583,7 +9583,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "52d4ddcf-f68a-48ad-8256-ba030b396125")
+		(uuid "d089008d-5bc6-5b24-8410-3f0ef52106ca")
 	)
 	(label "PWR_EN"
 		(at 97.79 227.33 180)
@@ -9593,7 +9593,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7a419dcd-3cf9-42d7-bd00-2d93f709989a")
+		(uuid "db5fcf92-0a15-5a41-8772-f6484e3a2dd7")
 	)
 	(wire
 		(pts
@@ -9604,7 +9604,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0744b4b5-e2c0-42c5-8e6a-3aa3f29e5fbe")
+		(uuid "8a44344d-b053-52d6-b1f4-ffe2e2c0965e")
 	)
 	(label "LDO12_NR"
 		(at 97.79 229.87 180)
@@ -9614,11 +9614,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "5e3fb64c-aafe-4d37-8ae8-85201f13fc53")
+		(uuid "89676388-e41a-561c-a421-1b188e9a75eb")
 	)
 	(no_connect
 		(at 100.33 232.41)
-		(uuid "9b4f9239-fabf-4d18-a081-78f7ad1b4996")
+		(uuid "a8f8c2b0-f5fa-5c9c-9cf4-4d11d02a0329")
 	)
 	(wire
 		(pts
@@ -9629,7 +9629,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b75b44eb-0f69-4ab6-a3bf-fbcdeeca583e")
+		(uuid "e3204e74-9365-5a78-89a0-fa57702a7a61")
 	)
 	(label "12VA_REG"
 		(at 123.19 224.79 0)
@@ -9639,7 +9639,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0fa2a6a5-7c77-4745-9180-cb9a7a8467d4")
+		(uuid "174af071-169f-52a8-8289-f428638c7bab")
 	)
 	(wire
 		(pts
@@ -9650,7 +9650,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "47fa8e84-247e-4fca-a13f-479518dab645")
+		(uuid "64908a50-a517-508b-ba71-996f9919b02e")
 	)
 	(label "LDO12_FB"
 		(at 123.19 227.33 0)
@@ -9660,11 +9660,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "39386579-8658-451c-b04a-5ed427d1e6ad")
+		(uuid "a633121c-d31d-5a8f-b732-7f462397c4fb")
 	)
 	(no_connect
 		(at 120.65 232.41)
-		(uuid "3a1c7d0a-abcf-4c58-820c-4d14d083e86f")
+		(uuid "dcfd5b0b-d1c9-51c6-8a58-f1e937d86714")
 	)
 	(wire
 		(pts
@@ -9675,7 +9675,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "53954af2-990d-4322-8b03-49bafb8f431d")
+		(uuid "286ed5d2-bbe7-5b68-ba3e-61e427b4e1b1")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9685,7 +9685,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "e56a5b1f-441f-47ec-889d-1fa047f7efb5")
+		(uuid "58dc2411-3c1a-5659-8d40-30e13a562501")
 		(property "Reference" "#PWR053"
 			(at 107.95 251.46 0)
 			(effects
@@ -9731,11 +9731,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "fdda4e7a-796e-4d6d-b090-cbc028451a06")
+			(uuid "94860d65-101d-51f0-9b55-70d86afda56e")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR053")
 					(unit 1)
 				)
@@ -9751,7 +9751,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ad87869b-cf9f-430f-98b9-3a97eb023896")
+		(uuid "0e46b0ec-66b9-5bc5-9f47-f88033c3e860")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9761,7 +9761,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "bcf4b0ac-1515-41eb-9a5c-8a19a0463f32")
+		(uuid "88a750a2-b02e-5894-aa42-9864757e0e4e")
 		(property "Reference" "#PWR054"
 			(at 113.03 251.46 0)
 			(effects
@@ -9807,11 +9807,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "45e6109c-3645-44cd-a6fc-f3c31e04fb95")
+			(uuid "a44e5bc2-67a8-567f-a91d-23e4028b4338")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR054")
 					(unit 1)
 				)
@@ -9826,7 +9826,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2391e7fb-b79f-46a8-babc-0533191b9ae0")
+		(uuid "87fa70aa-09d1-5dfd-8764-08a05245251d")
 		(property "Reference" "C12"
 			(at 81.28 247.65 0)
 			(effects
@@ -9873,14 +9873,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "32bb23d4-5173-447f-b497-b22e45d96dc5")
+			(uuid "6f33b4d0-0fd5-5a7b-b785-193c5354be21")
 		)
 		(pin "2"
-			(uuid "84559876-57a8-4a7c-8456-6fadf1b4d72e")
+			(uuid "9b9f250f-ae56-5fb1-bf07-7f08ec86514e")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C12")
 					(unit 1)
 				)
@@ -9896,7 +9896,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "89f0f06f-45e0-4363-baa6-43626806037f")
+		(uuid "f5aeea31-3c50-516c-8d4b-3b8838de3040")
 	)
 	(label "LDO12_NR"
 		(at 80.01 243.84 0)
@@ -9906,7 +9906,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1a768626-62d6-494f-8d36-a142482c4848")
+		(uuid "1524de73-df3d-5f05-8b09-4465847a121c")
 	)
 	(wire
 		(pts
@@ -9917,7 +9917,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2cbd0962-5ff8-46f5-9a75-cb8623691ed9")
+		(uuid "853c7503-188f-595a-a672-9e570c6cd3e2")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9927,7 +9927,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "789d3a6d-1fdc-44ea-9574-f1e86ac8077d")
+		(uuid "de39bb64-f374-5745-9431-6d39298d58dd")
 		(property "Reference" "#PWR055"
 			(at 80.01 262.89 0)
 			(effects
@@ -9973,11 +9973,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ec32c3af-54a7-4784-b7dd-9805b99ce0f0")
+			(uuid "8ab11f61-0b55-5cb0-b1b9-1de04f92e2d4")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR055")
 					(unit 1)
 				)
@@ -9992,7 +9992,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1f2cb69d-fc7d-4fd2-9a7a-01e5ab00089e")
+		(uuid "b41b297c-c9ec-5a69-9a21-64963cca1c8c")
 		(property "Reference" "R8"
 			(at 152.4 232.41 90)
 			(effects
@@ -10046,14 +10046,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "efa4b38a-cb80-40f7-b5ba-cdbb8bb30bb2")
+			(uuid "cb5755dc-1349-598b-b605-72da347b9796")
 		)
 		(pin "2"
-			(uuid "10efabbf-047a-4206-8085-43027616e4ec")
+			(uuid "2290f689-8e85-556e-9f23-b2983ef97821")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R8")
 					(unit 1)
 				)
@@ -10069,7 +10069,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fc202c18-5d36-450c-a944-24f74efa6d30")
+		(uuid "5f8d5c26-9e3f-5553-8888-21c4d58cde62")
 	)
 	(label "12VA_REG"
 		(at 149.86 226.06 0)
@@ -10079,7 +10079,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ae65af9c-78ef-4537-9f05-d4ff554fd491")
+		(uuid "d665a564-025b-5557-be0d-d84d5d848cef")
 	)
 	(wire
 		(pts
@@ -10090,7 +10090,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "df8d882c-7a38-416f-a374-88bc9a2ac02a")
+		(uuid "00b5228d-2282-567f-b076-3dfb1f68395a")
 	)
 	(label "LDO12_FB"
 		(at 149.86 238.76 0)
@@ -10100,7 +10100,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f149f03e-17c3-47cd-bce9-2523cc8910e8")
+		(uuid "1bb968b9-abdd-5269-9ae8-5aef56d59ba5")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -10110,7 +10110,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "eda0e758-a08b-4747-a3d7-dc649199f4c8")
+		(uuid "d0344211-1092-542a-9dab-4dc9674173d0")
 		(property "Reference" "R9"
 			(at 172.72 232.41 90)
 			(effects
@@ -10164,14 +10164,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "1b7a5081-c0fd-48ae-b5a5-e6a1738c9486")
+			(uuid "a6265eab-def5-5032-8d64-4849fc6ff77d")
 		)
 		(pin "2"
-			(uuid "e001333b-05ff-4527-ab07-d2513fc6a658")
+			(uuid "e8a70ee7-b8c3-532d-8693-eb2f15c8aba7")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R9")
 					(unit 1)
 				)
@@ -10187,7 +10187,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3fff54d3-009c-44a4-9adc-771353f21ce1")
+		(uuid "7865df19-a048-5017-81a5-9c92ece760e4")
 	)
 	(label "LDO12_FB"
 		(at 170.18 226.06 0)
@@ -10197,7 +10197,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7300f448-b2f6-42eb-976d-1c9a4934e6f4")
+		(uuid "a2273b63-70f4-5d55-b7ab-3b1e79b532a3")
 	)
 	(wire
 		(pts
@@ -10208,7 +10208,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ede3dd80-dc92-4737-a991-7d7607603e05")
+		(uuid "1bf34fd3-5af1-500f-9c78-919a113d302f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -10218,7 +10218,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "2578ad54-25fa-4589-a1d1-12408ccc17c8")
+		(uuid "8df5ee43-d60e-5197-930f-71b55feb76fb")
 		(property "Reference" "#PWR056"
 			(at 170.18 245.11 0)
 			(effects
@@ -10264,11 +10264,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1c746ad3-b9cb-4ac9-99c8-9874e56cf264")
+			(uuid "1fc6370f-d4fe-57d8-9d33-6cc54fe7aed8")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR056")
 					(unit 1)
 				)
@@ -10283,7 +10283,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7ba56488-bfbb-403b-a348-b78dd80a1775")
+		(uuid "80956126-d107-5250-800a-6a16b7794bce")
 		(property "Reference" "C13"
 			(at 190.5 229.87 0)
 			(effects
@@ -10339,14 +10339,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "f285f56f-f58f-4fee-8bb5-9f4892023785")
+			(uuid "48596bc1-4086-527d-b617-b870b6c853ce")
 		)
 		(pin "2"
-			(uuid "4ad9a83f-72bb-4f7f-847e-561111cb3577")
+			(uuid "5592b368-d4a8-5ef1-88ec-1e9b7b67329b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C13")
 					(unit 1)
 				)
@@ -10362,7 +10362,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "73e3bf0c-364b-46f8-8a26-9d585d16de28")
+		(uuid "a27b6a8c-56ba-5f27-9249-9bcb8160b22b")
 	)
 	(label "12VA_REG"
 		(at 190.5 226.06 0)
@@ -10372,7 +10372,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8b3cf56a-4a55-4744-8a06-0dd0722ee5dc")
+		(uuid "395c083f-e551-5b10-8405-ae368284b806")
 	)
 	(wire
 		(pts
@@ -10383,7 +10383,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5d4bfd9f-6d8d-4fbe-a20a-7ba065149a13")
+		(uuid "9dc0230a-07fe-5fa1-a7b3-463ef8487999")
 	)
 	(label "LDO12_FB"
 		(at 190.5 238.76 0)
@@ -10393,7 +10393,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "92608c6d-58de-48d2-a3f9-184b3786e2b3")
+		(uuid "be052b6a-90d7-5af9-b808-e5610e7c82b7")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -10403,7 +10403,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "49c997b4-c2fa-4525-94bc-24fd4971a3fa")
+		(uuid "91564380-5ecb-5d3f-a01e-f69161db7fe2")
 		(property "Reference" "C14"
 			(at 210.82 229.87 0)
 			(effects
@@ -10450,14 +10450,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "63b7fc4e-813a-49aa-bccc-7574615d36ba")
+			(uuid "f3daa467-337c-5193-96cf-664948eb06e1")
 		)
 		(pin "2"
-			(uuid "771b4eaa-747f-4657-8ebc-fb9bcbb831f5")
+			(uuid "e3b6d810-eca5-5fc9-9579-4a6f0d1259da")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "C14")
 					(unit 1)
 				)
@@ -10473,7 +10473,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8497a401-6597-4d12-a979-cf04d289d24e")
+		(uuid "011d5b98-07d1-5aac-bae9-cea28b2921b5")
 	)
 	(label "12VA_REG"
 		(at 209.55 226.06 0)
@@ -10483,7 +10483,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "55154a1c-edca-41b8-a614-ab505abf29f9")
+		(uuid "02269e0f-8f5f-5504-bdf4-6c3d7855962c")
 	)
 	(wire
 		(pts
@@ -10494,7 +10494,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fdea7ec9-5a34-40f0-a7cc-17e70df28888")
+		(uuid "de358e13-9c03-5412-a882-872d032a5b94")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -10504,7 +10504,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "39329eb4-2186-4dfc-a804-e61e2a7024dd")
+		(uuid "157a600b-bc94-5c7d-b3cb-22269b109cde")
 		(property "Reference" "#PWR057"
 			(at 209.55 245.11 0)
 			(effects
@@ -10550,11 +10550,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "00e1cb3c-7c7b-4b46-8ed2-36e63076b249")
+			(uuid "781edef1-f81c-5139-b323-919226144a97")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR057")
 					(unit 1)
 				)
@@ -10569,7 +10569,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "433a37be-002d-4e36-87cb-9d361e6813fa")
+		(uuid "4d0d5c99-6c85-5b82-a82d-12a4db8373b5")
 		(property "Reference" "R10"
 			(at 232.41 232.41 90)
 			(effects
@@ -10623,14 +10623,14 @@
 			)
 		)
 		(pin "1"
-			(uuid "d5c8bf0a-6dbb-42e5-824b-f3a78024c408")
+			(uuid "03dcc58b-cd5c-5ddf-a147-2edf4088f45d")
 		)
 		(pin "2"
-			(uuid "ee2091d5-42de-49be-8749-57f14d79a799")
+			(uuid "364e2f24-80ea-581c-9e25-0bc85bcdcbb3")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "R10")
 					(unit 1)
 				)
@@ -10646,7 +10646,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8c136781-4851-4be8-bed1-c73cc94593f6")
+		(uuid "59a711f5-4f26-5395-9df9-7286d8662b9c")
 	)
 	(label "12VA_REG"
 		(at 229.87 226.06 0)
@@ -10656,7 +10656,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4a36e791-7fff-427c-8867-b38804a2e02d")
+		(uuid "ac3b3f34-1c83-5bab-9a40-335eec471952")
 	)
 	(wire
 		(pts
@@ -10667,7 +10667,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3aee72a4-ef86-4a84-899b-cbd3ddb33be0")
+		(uuid "00f56a92-8be2-55b8-bc1d-561ca5ef7b9a")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -10677,7 +10677,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "07cb0724-c7fd-44a5-bbf0-0e02c92279c7")
+		(uuid "c246bf98-e02d-5c36-b0a5-06fb3e6544ad")
 		(property "Reference" "#PWR058"
 			(at 229.87 234.95 0)
 			(effects
@@ -10723,11 +10723,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "ee96e726-9daa-4d6b-a574-30797e4a253e")
+			(uuid "d7c9d207-94da-52c1-954d-92ded0c128ed")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR058")
 					(unit 1)
 				)
@@ -10742,7 +10742,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "946063de-90a0-4b41-b744-2d00a9bbb850")
+		(uuid "36a57857-f35c-59b7-b0e7-66e4bca9f069")
 		(property "Reference" "TP7"
 			(at 246.38 223.52 0)
 			(effects
@@ -10788,11 +10788,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1509940-fa77-4a57-a061-89a1cc72b845")
+			(uuid "bbe17fe2-95d8-5997-9ad5-1dacd205e9ea")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "TP7")
 					(unit 1)
 				)
@@ -10808,7 +10808,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b371238d-c7ff-4a0d-bd20-51968c364b8f")
+		(uuid "fb8b85d9-4e0d-5a7e-b2bf-8f44e688d0ad")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -10818,7 +10818,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "8788b9ff-a44f-45b1-9d13-37c5fd98a084")
+		(uuid "85d3e5b1-cce0-5f4c-a50a-773e437b104f")
 		(property "Reference" "#PWR059"
 			(at 246.38 228.6 0)
 			(effects
@@ -10864,11 +10864,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "3d8171c5-7da8-4ade-8b50-063745f5c0ba")
+			(uuid "279b396f-1a35-583e-87e9-693f4ed1027b")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR059")
 					(unit 1)
 				)
@@ -10883,7 +10883,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "03ee0089-63e2-43fb-86e8-cb75ed2451c0")
+		(uuid "f216cb6b-0fe4-57fd-9f67-8b1c703daad8")
 		(property "Reference" "#FLG060"
 			(at 260.35 223.52 0)
 			(effects
@@ -10929,11 +10929,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "f6323504-6619-4ec5-97da-57d320977b31")
+			(uuid "2a5fd54b-8f8f-5349-9090-d51954b03827")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#FLG060")
 					(unit 1)
 				)
@@ -10949,7 +10949,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ffead9fd-a561-4be2-a04d-01213d1bb3d8")
+		(uuid "d19861c6-7c83-5f0d-958e-30c066342ec3")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -10959,7 +10959,7 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "208413e6-c67e-42dd-a5d6-74fb1999372d")
+		(uuid "678ee5cf-406e-5d10-aa6d-7993be6d5f42")
 		(property "Reference" "#PWR061"
 			(at 260.35 224.79 0)
 			(effects
@@ -11005,11 +11005,11 @@
 			)
 		)
 		(pin "1"
-			(uuid "1a6aeaba-ee81-4967-ad9a-b014a9107ce6")
+			(uuid "45b342d3-2149-52cd-8055-4bd88c06b6e4")
 		)
 		(instances
 			(project "pedalboard"
-				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5/c8cdb0c2-c4af-4a22-bc7d-bb09346f0354"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/21162098-e9a3-5727-b02c-839341ff4360"
 					(reference "#PWR061")
 					(unit 1)
 				)
