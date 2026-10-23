@@ -2046,7 +2046,7 @@
 		)
 		(uuid "57c6108c-b2bf-57a4-86fc-241e22bbb806")
 	)
-	(text "Main outputs (5.5): DAC -> volume -> buffer -> 10 uF -> 100 ohm -> tip; ring -> 100 ohm -> ground"
+	(text "Main outputs (5.5): DAC -> volume -> buffer -> 47 uF -> 100 ohm -> tip; ring -> 100 ohm -> ground"
 		(exclude_from_sim no)
 		(at 20 48 0)
 		(effects
@@ -2887,7 +2887,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF 25V"
+		(property "Value" "47uF 25V"
 			(at 154.94 82.55 0)
 			(effects
 				(font
@@ -2896,7 +2896,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
 			(at 156.21 83.82 0)
 			(effects
 				(font
@@ -2923,7 +2923,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "+ toward the buffer (5 V)"
+		(property "Note" "+ toward the buffer (5 V). 47 uF: -3 dB at 4 Hz into 600 ohm (10 uF gave 20 Hz, simulation A6)"
 			(at 154.94 80.01 0)
 			(effects
 				(font
@@ -4076,7 +4076,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10uF 25V"
+		(property "Value" "47uF 25V"
 			(at 154.94 127 0)
 			(effects
 				(font
@@ -4085,7 +4085,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
 			(at 156.21 128.27 0)
 			(effects
 				(font
@@ -4112,7 +4112,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "+ toward the buffer (5 V)"
+		(property "Note" "+ toward the buffer (5 V). 47 uF: -3 dB at 4 Hz into 600 ohm (10 uF gave 20 Hz, simulation A6)"
 			(at 154.94 124.46 0)
 			(effects
 				(font
@@ -4889,7 +4889,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa134.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1642.pdf"
 			(at 124.46 160.02 0)
 			(effects
 				(font
@@ -4899,6 +4899,15 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 124.46 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Unity-gain buffer"
 			(at 124.46 160.02 0)
 			(effects
 				(font

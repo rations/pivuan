@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" font-family="sans-serif" font-size="12">
+<rect width="760" height="420" fill="white"/>
+<text x="380.0" y="22" text-anchor="middle" font-size="15">A1: input impedance at the jack</text>
+<line x1="70.0" y1="40" x2="70.0" y2="370" stroke="#ddd"/>
+<text x="70.0" y="386" text-anchor="middle">10</text>
+<line x1="120.4" y1="40" x2="120.4" y2="370" stroke="#ddd"/>
+<text x="120.4" y="386" text-anchor="middle">20</text>
+<line x1="187.1" y1="40" x2="187.1" y2="370" stroke="#ddd"/>
+<text x="187.1" y="386" text-anchor="middle">50</text>
+<line x1="237.5" y1="40" x2="237.5" y2="370" stroke="#ddd"/>
+<text x="237.5" y="386" text-anchor="middle">100</text>
+<line x1="287.9" y1="40" x2="287.9" y2="370" stroke="#ddd"/>
+<text x="287.9" y="386" text-anchor="middle">200</text>
+<line x1="354.6" y1="40" x2="354.6" y2="370" stroke="#ddd"/>
+<text x="354.6" y="386" text-anchor="middle">500</text>
+<line x1="405.0" y1="40" x2="405.0" y2="370" stroke="#ddd"/>
+<text x="405.0" y="386" text-anchor="middle">1k</text>
+<line x1="455.4" y1="40" x2="455.4" y2="370" stroke="#ddd"/>
+<text x="455.4" y="386" text-anchor="middle">2k</text>
+<line x1="522.1" y1="40" x2="522.1" y2="370" stroke="#ddd"/>
+<text x="522.1" y="386" text-anchor="middle">5k</text>
+<line x1="572.5" y1="40" x2="572.5" y2="370" stroke="#ddd"/>
+<text x="572.5" y="386" text-anchor="middle">10k</text>
+<line x1="622.9" y1="40" x2="622.9" y2="370" stroke="#ddd"/>
+<text x="622.9" y="386" text-anchor="middle">20k</text>
+<line x1="689.6" y1="40" x2="689.6" y2="370" stroke="#ddd"/>
+<text x="689.6" y="386" text-anchor="middle">50k</text>
+<line x1="740.0" y1="40" x2="740.0" y2="370" stroke="#ddd"/>
+<text x="740.0" y="386" text-anchor="middle">100k</text>
+<line x1="70" y1="298.6" x2="740" y2="298.6" stroke="#ddd"/>
+<text x="64" y="302.6" text-anchor="end">100</text>
+<line x1="70" y1="217.9" x2="740" y2="217.9" stroke="#ddd"/>
+<text x="64" y="221.9" text-anchor="end">200</text>
+<line x1="70" y1="111.2" x2="740" y2="111.2" stroke="#ddd"/>
+<text x="64" y="115.2" text-anchor="end">500</text>
+<rect x="70" y="40" width="670" height="330" fill="none" stroke="#444"/>
+<text x="405.0" y="408" text-anchor="middle">Hz</text>
+<text transform="translate(16 205.0) rotate(-90)" text-anchor="middle">kohm</text>
+<clipPath id="c"><rect x="70" y="40" width="670" height="330"/></clipPath>
+<polyline clip-path="url(#c)" fill="none" stroke="#1f77b4" stroke-width="1.6" points="70.0,40.0 78.4,40.3 86.7,40.5 95.1,40.7 103.5,40.9 111.9,41.0 120.2,41.1 128.6,41.2 137.0,41.2 145.4,41.3 153.7,41.3 162.1,41.3 170.5,41.4 178.9,41.4 187.3,41.4 195.6,41.4 204.0,41.4 212.4,41.4 220.8,41.4 229.1,41.4 237.5,41.4 245.9,41.5 254.2,41.5 262.6,41.5 271.0,41.5 279.4,41.5 287.7,41.5 296.1,41.5 304.5,41.5 312.9,41.6 321.2,41.6 329.6,41.7 338.0,41.7 346.4,41.8 354.8,41.9 363.1,42.0 371.5,42.1 379.9,42.3 388.3,42.5 396.6,42.7 405.0,43.1 413.4,43.5 421.7,44.0 430.1,44.6 438.5,45.4 446.9,46.4 455.2,47.6 463.6,49.1 472.0,51.0 480.4,53.2 488.7,55.9 497.1,59.1 505.5,62.9 513.9,67.4 522.3,72.6 530.6,78.5 539.0,85.2 547.4,92.7 555.8,100.9 564.1,109.8 572.5,119.4 580.9,129.6 589.2,140.3 597.6,151.5 606.0,163.0 614.4,174.9 622.7,187.1 631.1,199.5 639.5,212.1 647.9,224.9 656.2,237.8 664.6,250.8 673.0,263.9 681.4,277.0 689.8,290.2 698.1,303.4 706.5,316.7 714.9,330.0 723.3,343.3 731.6,356.7 740.0,370.0"/>
+<rect x="80" y="48" width="14" height="3" fill="#1f77b4"/>
+<text x="100" y="53">|Zin|</text>
+</svg>

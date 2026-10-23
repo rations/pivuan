@@ -4012,7 +4012,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100pF C0G"
+		(property "Value" "22pF C0G"
 			(at 124.46 167.64 0)
 			(effects
 				(font
@@ -4048,7 +4048,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "RF filter at the op-amp pin"
+		(property "Note" "RF filter at the op-amp pin: 7 MHz with the 1k. Small, because it adds to the guitar lead's capacitance (simulation A1); the OPA1642 rejects GHz RF itself"
 			(at 124.46 165.1 0)
 			(effects
 				(font
@@ -4372,7 +4372,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa134.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1642.pdf"
 			(at 185.42 149.86 0)
 			(effects
 				(font
@@ -4382,6 +4382,15 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 185.42 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "OPA1642 has the standard dual op-amp pinout (OPA2134 symbol)"
 			(at 185.42 149.86 0)
 			(effects
 				(font
@@ -4530,7 +4539,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/opa134.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/opa1642.pdf"
 			(at 224.79 170.18 0)
 			(effects
 				(font
@@ -4540,6 +4549,15 @@
 			)
 		)
 		(property "Description" "Dual SoundPlus High Performance Audio Operational Amplifiers, DIP-8/SOIC-8"
+			(at 224.79 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "OPA1642 has the standard dual op-amp pinout (OPA2134 symbol)"
 			(at 224.79 170.18 0)
 			(effects
 				(font
@@ -6829,7 +6847,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393"
+		(property "Value" "LM393B"
 			(at 116.84 238.76 0)
 			(effects
 				(font
@@ -6856,6 +6874,15 @@
 			)
 		)
 		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 110.49 234.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -6962,7 +6989,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393"
+		(property "Value" "LM393B"
 			(at 116.84 265.43 0)
 			(effects
 				(font
@@ -6979,7 +7006,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm393.pdf"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -6989,6 +7016,15 @@
 			)
 		)
 		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 110.49 261.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -7095,7 +7131,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393"
+		(property "Value" "LM393B"
 			(at 146.05 265.43 0)
 			(effects
 				(font
@@ -7112,7 +7148,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm393.pdf"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -7122,6 +7158,15 @@
 			)
 		)
 		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 139.7 261.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -7590,7 +7635,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Discharges the hold capacitor quickly (about 5 mA)"
+		(property "Note" "Discharges the hold capacitor quickly: 5.5 mA, inside the LM393B's 6 mA minimum sink"
 			(at 170.18 229.87 0)
 			(effects
 				(font
@@ -7673,7 +7718,7 @@
 				)
 			)
 		)
-		(property "Value" "47k"
+		(property "Value" "2.2M"
 			(at 185.42 219.71 90)
 			(effects
 				(font
@@ -7830,7 +7875,7 @@
 		(uuid "d2158a8f-4327-55fd-adc6-19771441a900")
 	)
 	(symbol
-		(lib_id "Device:C_Polarized")
+		(lib_id "Device:C")
 		(at 185.42 245.11 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7847,7 +7892,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2uF 25V"
+		(property "Value" "100nF"
 			(at 185.42 247.65 0)
 			(effects
 				(font
@@ -7856,7 +7901,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 186.69 248.92 0)
 			(effects
 				(font
@@ -7874,7 +7919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Polarized capacitor"
+		(property "Description" "Unpolarized capacitor"
 			(at 185.42 245.11 0)
 			(effects
 				(font
@@ -7883,7 +7928,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Hold: LED stays on about 100 ms after a peak (simulation A4)"
+		(property "Note" "Hold: one 1 kHz peak 0.5 dB over the threshold lights the LED for about 100 ms (simulation A4)"
 			(at 185.42 245.11 0)
 			(effects
 				(font
@@ -8021,7 +8066,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "1M"
 			(at 204.47 234.95 90)
 			(effects
 				(font
@@ -8056,7 +8101,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Base resistor"
+		(property "Note" "Base resistor: 10 uA lights the LED fully"
 			(at 204.47 234.95 0)
 			(effects
 				(font

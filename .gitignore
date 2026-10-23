@@ -37,3 +37,7 @@ pcb/kicad/*-backups/
 pcb/kicad/fp-info-cache
 pcb/kicad/*.kicad_prl
 pcb/kicad/*.lck
+# Pedalboard PCB simulations: TI's models (downloaded by get-models.sh) and ngspice's working files
+pcb/sim/models/
+pcb/sim/out/
+pcb/sim/__pycache__/
