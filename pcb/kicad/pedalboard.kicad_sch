@@ -1,0 +1,60 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "411c5051-cc08-4299-b424-2e3c8bc5a0e5")
+	(paper "A4")
+	(title_block
+		(title "Pivuan pedalboard")
+		(company "Pivuan pedalboard")
+		(comment 1 "CERN-OHL-S-2.0")
+	)
+	(lib_symbols)
+	(sheet
+		(at 30 30)
+		(size 50 12)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c8cdb0c2-c4af-4a22-bc7d-bb09346f0354")
+		(property "Sheetname" "Power"
+			(at 30 29.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 30 42.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pedalboard"
+				(path "/411c5051-cc08-4299-b424-2e3c8bc5a0e5"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

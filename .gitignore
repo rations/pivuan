@@ -29,3 +29,11 @@ test-tools
 # Working notes for the pedalboard PCB (branch pcb), not part of the project
 pcb/pre-plan.md
 pcb/plan.md
+pcb/references/
+# KiCad: generated outputs, backups and per-user files
+pcb/gen/
+pcb/kicad/out/
+pcb/kicad/*-backups/
+pcb/kicad/fp-info-cache
+pcb/kicad/*.kicad_prl
+pcb/kicad/*.lck
