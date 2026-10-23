@@ -10392,7 +10392,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
 			(at 30.48 209.55 0)
 			(effects
 				(font
@@ -10581,7 +10581,7 @@
 		(at 64.77 201.93 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "0ca96be3-b992-53e3-9533-8b409023f65e")
@@ -10723,7 +10723,7 @@
 		(at 64.77 222.25 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "310da330-5a27-5506-8f89-9b7e394e785f")
@@ -11471,7 +11471,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "pedalboard:Jack_3.5mm_SameSky_SJ1-3543_Horizontal"
 			(at 30.48 261.62 0)
 			(effects
 				(font
@@ -11507,7 +11507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Right-angle 3.5 mm TRS, M6 thread and nut. Footprint drawn at layout from its datasheet (pads named T, R, S: 2 = tip, 3 = ring, 1 = sleeve)"
+		(property "Note" "Right-angle 3.5 mm TRS, M6 thread and nut. Footprint from its datasheet (gen/mkfp.py; pads named T, R, S: 2 = tip, 3 = ring, 1 = sleeve)"
 			(at 30.48 261.62 0)
 			(effects
 				(font

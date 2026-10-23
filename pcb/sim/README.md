@@ -30,8 +30,8 @@ You need ngspice (version 44 was used) and Python 3. No Python packages are need
 | # | What | Result |
 |---|---|---|
 | A1 | Guitar input | 910 kΩ in parallel with 29 pF. The pickup's resonance moves 4.5 %, as it would with 29 cm more lead. 2 V peak at the least gain: 0.0001 % THD |
-| A2 | Gain knob | 0 to +24.2 dB. A log (A) taper gives 1–3 dB per 30° of rotation; a linear pot would put 10 dB in the first 30° |
-| A3 | Noise at full gain, 10 kΩ source | The stage adds 1.4 dB to the noise of the source and the ADC together |
+| A2 | Gain knob | 0 to +24.1 dB. Alps' log (15A) taper gives 0.6–4.1 dB per 30° of rotation; a linear pot would put 10 dB in the first 30° |
+| A3 | Noise at full gain, 10 kΩ source | The stage adds 1.0 dB to the noise of the source and the ADC together |
 | A4 | Clip LED | Lights at VREF +2.62 / −2.60 V, 1.1 dB under the ADC's full scale. One 1 kHz cycle 0.5 dB over: 2 mA for 98 ms. Off below the threshold |
 | A5 | Into the ADC | Flat within 0.07 dB from 20 Hz to 20 kHz. 0.1 % overshoot on a step, so no ringing |
 | A6 | Main outputs | Flat into 10 kΩ and 600 Ω (−3 dB at 2 Hz and 4.5 Hz). Power-on: a slow 0.4 V swell. **Power-off: a −4.8 V thump** (see below) |
@@ -50,7 +50,11 @@ You need ngspice (version 44 was used) and Python 3. No Python packages are need
   leakage: 50 nA at most at 36 V. The plain LM393 allows 1 µA over temperature, enough to make
   the LED glow.
 - **Main output capacitors: 10 µF → 47 µF.** Into a 600 Ω load, 10 µF was −3 dB at 20 Hz.
-- **Gain knob: 50 kΩ log (A) taper,** as drawn.
+- **Gain knob: log (A) taper.** First drawn as a 50 kΩ pot with 100 kΩ across it, Rg 2.2 kΩ.
+  Alps makes no 50 kΩ log single-gang RK09L as a standard part, so it is now the same 10 kΩ log
+  dual-gang pot as the volume knobs (RK09L12B0A4S, one gang used) with every resistor around it
+  a fifth of its old value (20 kΩ across it, Rg 442 Ω, 100 µF, 220 pF): the same gain, and the
+  lower resistances add less noise.
 
 ### The power-off thump (A6)
 
@@ -82,6 +86,7 @@ before the 12 V rail falls, and a simulation of its own.
   for the two together. A4 drives the detector from a source standing in for the stage's output.
 - The TPA6130A2 has no SPICE model. Its inputs are modelled as half its lowest differential
   input impedance (37 kΩ, datasheet 9.2.2.1) to ground.
+- The pots follow Alps' 15A taper chart (RK09L catalog), read off the graph by eye.
 - The guitar lead (300 pF) and the 10 µH inductor's resistance (0.3 Ω) are typical values, not
   measured ones.
 - A8 starts the rails at their working voltages: the 12 V regulator's soft start takes tens of

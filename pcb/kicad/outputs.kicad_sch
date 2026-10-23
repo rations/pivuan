@@ -2091,7 +2091,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
 			(at 54.61 80.01 0)
 			(effects
 				(font
@@ -2110,6 +2110,15 @@
 			)
 		)
 		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
+			(at 54.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
 			(at 54.61 80.01 0)
 			(effects
 				(font
@@ -2300,7 +2309,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
 			(at 54.61 124.46 0)
 			(effects
 				(font
@@ -2319,6 +2328,15 @@
 			)
 		)
 		(property "Note" "Main volume knob, 10 kohm log (A) dual gang, threaded bushing to the rear panel. The DAC drives 1 kohm or more (datasheet)"
+			(at 54.61 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
 			(at 54.61 124.46 0)
 			(effects
 				(font
@@ -3480,7 +3498,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
 			(at 224.79 80.01 0)
 			(effects
 				(font
@@ -4669,7 +4687,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
 			(at 224.79 124.46 0)
 			(effects
 				(font
@@ -5850,7 +5868,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
 			(at 59.69 214.63 0)
 			(effects
 				(font
@@ -5869,6 +5887,15 @@
 			)
 		)
 		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
+			(at 59.69 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
 			(at 59.69 214.63 0)
 			(effects
 				(font
@@ -6047,7 +6074,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
 			(at 59.69 245.11 0)
 			(effects
 				(font
@@ -6066,6 +6093,15 @@
 			)
 		)
 		(property "Note" "Headphone volume knob, 10 kohm log (A) dual gang"
+			(at 59.69 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
 			(at 59.69 245.11 0)
 			(effects
 				(font
@@ -6827,7 +6863,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.7x2.7mm"
 			(at 160.02 234.95 0)
 			(effects
 				(font
@@ -8971,7 +9007,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
 			(at 250.19 229.87 0)
 			(effects
 				(font

@@ -1335,7 +1335,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_Potentiometer"
+		(symbol "Device:R_Potentiometer_Dual_Separate"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1351,7 +1351,7 @@
 					)
 				)
 			)
-			(property "Value" "R_Potentiometer"
+			(property "Value" "R_Potentiometer_Dual_Separate"
 				(at -2.54 0 90)
 				(effects
 					(font
@@ -1377,7 +1377,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Potentiometer"
+			(property "Description" "Dual potentiometer, separate units"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1404,7 +1404,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_Potentiometer_0_1"
+			(symbol "R_Potentiometer_Dual_Separate_0_1"
 				(rectangle
 					(start 1.016 2.54)
 					(end -1.016 -2.54)
@@ -1445,7 +1445,7 @@
 					)
 				)
 			)
-			(symbol "R_Potentiometer_1_1"
+			(symbol "R_Potentiometer_Dual_Separate_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
@@ -1493,6 +1493,62 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "R_Potentiometer_Dual_Separate_2_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2983,7 +3039,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Audio:Jack_6.35mm_Neutrik_NMJ6HCD2_Horizontal"
 			(at 30.48 149.86 0)
 			(effects
 				(font
@@ -3767,7 +3823,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 105.41 182.88 0)
 			(effects
 				(font
@@ -4169,7 +4225,7 @@
 			)
 		)
 	)
-	(text "Gain stage (5.3): gain = 1 + Rf / 2.2k; Rf = 0 .. 33k (pot with 100k across it): 0 .. +24 dB"
+	(text "Gain stage (5.3): gain = 1 + Rf / 442; Rf = 0 .. 6.7k (pot with 20k across it): 0 .. +24 dB"
 		(exclude_from_sim no)
 		(at 150 48 0)
 		(effects
@@ -5185,7 +5241,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Potentiometer")
+		(lib_id "Device:R_Potentiometer_Dual_Separate")
 		(at 229.87 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5201,7 +5257,7 @@
 				)
 			)
 		)
-		(property "Value" "50k gain"
+		(property "Value" "10k log dual, gain"
 			(at 227.33 85.09 90)
 			(effects
 				(font
@@ -5209,7 +5265,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09K_Single_Horizontal"
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Double_Horizontal"
 			(at 229.87 85.09 0)
 			(effects
 				(font
@@ -5218,7 +5274,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
 			(at 229.87 85.09 0)
 			(effects
 				(font
@@ -5227,7 +5283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Potentiometer"
+		(property "Description" "Dual potentiometer, separate units"
 			(at 229.87 85.09 0)
 			(effects
 				(font
@@ -5236,7 +5292,16 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Gain knob, used as a variable resistor: more resistance (gain) clockwise. Value and taper from simulation A2; threaded bushing to the rear panel"
+		(property "Note" "Gain knob: one gang used as a variable resistor, terminals 1 to 2, which rises clockwise (Alps taper chart: travel from terminal 1 to 3). The same part as the volume knobs: Alps makes no 50k log single-gang RK09L as a standard part. Taper from simulation A2; M9 threaded bushing to the rear panel"
+			(at 229.87 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
 			(at 229.87 85.09 0)
 			(effects
 				(font
@@ -5339,6 +5404,333 @@
 		(uuid "45313514-cdc6-5bf7-a234-9779d1d1f07b")
 	)
 	(symbol
+		(lib_id "Device:R_Potentiometer_Dual_Separate")
+		(at 250.19 124.46 0)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "996b3664-4f3d-5461-84e8-5de13d9da39c")
+		(property "Reference" "RV1"
+			(at 246.38 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k log dual, gain"
+			(at 247.65 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_Alps_RK09L_Double_Horizontal"
+			(at 250.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/RK09L12B0A4S/"
+			(at 250.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual potentiometer, separate units"
+			(at 250.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Gain knob: one gang used as a variable resistor, terminals 1 to 2, which rises clockwise (Alps taper chart: travel from terminal 1 to 3). The same part as the volume knobs: Alps makes no 50k log single-gang RK09L as a standard part. Taper from simulation A2; M9 threaded bushing to the rear panel"
+			(at 250.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "Alps RK09L12B0A4S"
+			(at 250.19 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8f6ff634-1f9d-5f02-a095-1a7b003fda80")
+		)
+		(pin "5"
+			(uuid "f41cec45-57d8-5cce-a6b9-c4e6aeeafeaf")
+		)
+		(pin "6"
+			(uuid "06dcc468-9a63-5aa9-9d8a-cc676df584ed")
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
+					(reference "RV1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 250.19 120.65)
+			(xy 250.19 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd25d4b5-6288-57c4-ab06-5b91d152c94e")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 250.19 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "513100c4-d710-542c-a140-6dc5a29f7c1a")
+		(property "Reference" "#PWR016"
+			(at 250.19 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 250.19 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 250.19 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f3e1dcb1-b0d5-595a-8f2c-b11d9ca87c9a")
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 250.19 128.27)
+			(xy 250.19 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d23e1b1b-6598-5048-98c2-9f08f0335c71")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 250.19 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "c37cd146-81ef-5809-9dc5-81e64ddb04d0")
+		(property "Reference" "#PWR017"
+			(at 250.19 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 250.19 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 250.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 250.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 250.19 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "580391c4-4512-5831-88b2-beac3469db73")
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 254 124.46)
+			(xy 256.54 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6164401-c5fe-5985-85d6-cacab7d3e548")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 256.54 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "ebdc2083-3eab-51b3-8240-6160f4e434c2")
+		(property "Reference" "#PWR018"
+			(at 256.54 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 256.54 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 256.54 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2b6dd8db-89c6-5b45-8590-eea7f672ece5")
+		)
+		(instances
+			(project "pedalboard"
+				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
+					(reference "#PWR018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(text "Spare gang, grounded"
+		(exclude_from_sim no)
+		(at 243 140 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "38799104-a27e-5ed9-8a57-4da1ef1b02b1")
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 250.19 85.09 0)
 		(unit 1)
@@ -5355,7 +5747,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "20k"
 			(at 250.19 85.09 90)
 			(effects
 				(font
@@ -5390,7 +5782,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Across the pot: Rf at most 33k"
+		(property "Note" "Across the pot: Rf at most 6.7k"
 			(at 250.19 85.09 0)
 			(effects
 				(font
@@ -5423,7 +5815,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fd25d4b5-6288-57c4-ab06-5b91d152c94e")
+		(uuid "7c1cc15d-60ba-53b0-9dd0-81cf83cc4eed")
 	)
 	(global_label "ADC_DRIVE"
 		(shape bidirectional)
@@ -5435,7 +5827,7 @@
 			)
 			(justify left)
 		)
-		(uuid "d23e1b1b-6598-5048-98c2-9f08f0335c71")
+		(uuid "a38f81c1-11fd-54dd-be2a-c5ed2efbe56a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 250.19 78.74 0)
 			(effects
@@ -5456,7 +5848,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f6164401-c5fe-5985-85d6-cacab7d3e548")
+		(uuid "26def0df-5c82-5196-ab43-f33d5ebe6dfd")
 	)
 	(label "GTR_FB"
 		(at 250.19 91.44 0)
@@ -5466,7 +5858,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "38799104-a27e-5ed9-8a57-4da1ef1b02b1")
+		(uuid "e100cbe0-ca23-5269-99f6-b056dd1ab805")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -5486,7 +5878,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47pF C0G"
+		(property "Value" "220pF C0G"
 			(at 266.7 87.63 0)
 			(effects
 				(font
@@ -5555,7 +5947,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7c1cc15d-60ba-53b0-9dd0-81cf83cc4eed")
+		(uuid "53e8d212-30b4-5107-aad8-ad5e56a55127")
 	)
 	(global_label "ADC_DRIVE"
 		(shape bidirectional)
@@ -5567,7 +5959,7 @@
 			)
 			(justify left)
 		)
-		(uuid "a38f81c1-11fd-54dd-be2a-c5ed2efbe56a")
+		(uuid "d3ace600-6487-50cf-91f3-02fba7e607d4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 265.43 78.74 0)
 			(effects
@@ -5588,7 +5980,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "26def0df-5c82-5196-ab43-f33d5ebe6dfd")
+		(uuid "9e883184-a1a7-52d7-bce9-314b431db42c")
 	)
 	(label "GTR_FB"
 		(at 265.43 91.44 0)
@@ -5598,7 +5990,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e100cbe0-ca23-5269-99f6-b056dd1ab805")
+		(uuid "f98bbc52-bc16-5320-82fc-c18e71a0cd35")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5617,7 +6009,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2k"
+		(property "Value" "442"
 			(at 214.63 110.49 90)
 			(effects
 				(font
@@ -5652,7 +6044,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Rg"
+		(property "Note" "Rg. Low, so it adds little noise: 2.7 nV/rtHz against the op-amp's 5.1"
 			(at 214.63 110.49 0)
 			(effects
 				(font
@@ -5685,7 +6077,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "53e8d212-30b4-5107-aad8-ad5e56a55127")
+		(uuid "ff418093-12a6-5269-a340-fcfbe235fe6d")
 	)
 	(label "GTR_FB"
 		(at 214.63 104.14 0)
@@ -5695,7 +6087,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d3ace600-6487-50cf-91f3-02fba7e607d4")
+		(uuid "db4aeaf7-9f74-5a90-835e-8b4118b104c5")
 	)
 	(wire
 		(pts
@@ -5706,7 +6098,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9e883184-a1a7-52d7-bce9-314b431db42c")
+		(uuid "a16c59c3-cbbf-5f3d-a6ac-33dc9dbccf8b")
 	)
 	(label "GTR_RG"
 		(at 214.63 116.84 0)
@@ -5716,7 +6108,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f98bbc52-bc16-5320-82fc-c18e71a0cd35")
+		(uuid "19c44889-c600-5c54-b67c-7360bf78eef8")
 	)
 	(symbol
 		(lib_id "Device:C_Polarized")
@@ -5736,7 +6128,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF 16V"
+		(property "Value" "100uF 16V"
 			(at 215.9 130.81 0)
 			(effects
 				(font
@@ -5745,7 +6137,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_5x5.4"
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
 			(at 215.9 132.08 0)
 			(effects
 				(font
@@ -5805,7 +6197,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ff418093-12a6-5269-a340-fcfbe235fe6d")
+		(uuid "aee9c1ae-cef2-52e4-80dc-b5ad8afb10ff")
 	)
 	(label "GTR_RG"
 		(at 214.63 121.92 0)
@@ -5815,7 +6207,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "db4aeaf7-9f74-5a90-835e-8b4118b104c5")
+		(uuid "6dde4c42-1581-5334-b09d-10d79d975399")
 	)
 	(wire
 		(pts
@@ -5826,7 +6218,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a16c59c3-cbbf-5f3d-a6ac-33dc9dbccf8b")
+		(uuid "0f32cbe3-86db-5d39-b772-d376896101cd")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5836,8 +6228,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "513100c4-d710-542c-a140-6dc5a29f7c1a")
-		(property "Reference" "#PWR016"
+		(uuid "f10d365e-8cf2-553f-a969-2a8384d56333")
+		(property "Reference" "#PWR019"
 			(at 214.63 140.97 0)
 			(effects
 				(font
@@ -5882,12 +6274,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "f3e1dcb1-b0d5-595a-8f2c-b11d9ca87c9a")
+			(uuid "0a622784-9361-5509-928b-c643a5e304bc")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR016")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -5902,7 +6294,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "19c44889-c600-5c54-b67c-7360bf78eef8")
+		(uuid "f2901d26-8f05-5148-aa96-eba1432f972c")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -5989,7 +6381,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aee9c1ae-cef2-52e4-80dc-b5ad8afb10ff")
+		(uuid "f7db9aac-77cf-5982-aa68-9339db60189c")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -5999,8 +6391,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c37cd146-81ef-5809-9dc5-81e64ddb04d0")
-		(property "Reference" "#PWR017"
+		(uuid "7230736a-e77a-5319-af78-e988e177062e")
+		(property "Reference" "#PWR020"
 			(at 30.48 222.25 0)
 			(effects
 				(font
@@ -6045,12 +6437,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "580391c4-4512-5831-88b2-beac3469db73")
+			(uuid "ff81f2c5-9fc1-53a0-ae67-e04b179cbace")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR017")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -6065,7 +6457,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6dde4c42-1581-5334-b09d-10d79d975399")
+		(uuid "935567b6-afd5-5bd1-8541-2d40ff4a7a08")
 	)
 	(label "CLIP_HI"
 		(at 30.48 231.14 0)
@@ -6075,7 +6467,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0f32cbe3-86db-5d39-b772-d376896101cd")
+		(uuid "5fd94fa9-dfc5-5840-8cbc-3d37de27d199")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6162,7 +6554,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f2901d26-8f05-5148-aa96-eba1432f972c")
+		(uuid "25d6c3f7-2f3b-59f3-8b16-71ef06ae5f28")
 	)
 	(label "CLIP_HI"
 		(at 30.48 238.76 0)
@@ -6172,7 +6564,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f7db9aac-77cf-5982-aa68-9339db60189c")
+		(uuid "b8efa2ee-7ba7-5910-b940-8583ce430152")
 	)
 	(wire
 		(pts
@@ -6183,7 +6575,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "935567b6-afd5-5bd1-8541-2d40ff4a7a08")
+		(uuid "4652624b-8272-5a0a-8c36-d1b60604a4f9")
 	)
 	(label "CLIP_LO"
 		(at 30.48 251.46 0)
@@ -6193,7 +6585,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5fd94fa9-dfc5-5840-8cbc-3d37de27d199")
+		(uuid "6a15864a-1444-5628-838c-2aeb9317bdad")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -6280,7 +6672,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "25d6c3f7-2f3b-59f3-8b16-71ef06ae5f28")
+		(uuid "44a865ac-a48c-5b82-bca3-0f944be41c7c")
 	)
 	(label "CLIP_LO"
 		(at 30.48 259.08 0)
@@ -6290,7 +6682,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b8efa2ee-7ba7-5910-b940-8583ce430152")
+		(uuid "23943cee-5d17-5209-9ee4-7bb75aceab3d")
 	)
 	(wire
 		(pts
@@ -6301,7 +6693,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4652624b-8272-5a0a-8c36-d1b60604a4f9")
+		(uuid "4140b356-f4a5-54da-8e0b-b316224b5c53")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6311,8 +6703,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "ebdc2083-3eab-51b3-8240-6160f4e434c2")
-		(property "Reference" "#PWR018"
+		(uuid "168fd562-a248-575f-9cee-4d36f3f4af6c")
+		(property "Reference" "#PWR021"
 			(at 30.48 278.13 0)
 			(effects
 				(font
@@ -6357,12 +6749,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "2b6dd8db-89c6-5b45-8590-eea7f672ece5")
+			(uuid "5c2b3983-d05c-560f-aeaa-b04aa9cd4104")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR018")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -6446,7 +6838,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6a15864a-1444-5628-838c-2aeb9317bdad")
+		(uuid "a5a3a0a0-3820-5af7-b84a-324da56a7b0a")
 	)
 	(label "CLIP_HI"
 		(at 49.53 228.6 0)
@@ -6456,7 +6848,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "44a865ac-a48c-5b82-bca3-0f944be41c7c")
+		(uuid "3d71fd25-6aa7-51b4-9c6d-8fbbf1c9de34")
 	)
 	(wire
 		(pts
@@ -6467,7 +6859,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "23943cee-5d17-5209-9ee4-7bb75aceab3d")
+		(uuid "68afd03e-25b1-54be-abef-29f9ed67383f")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6477,8 +6869,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "f10d365e-8cf2-553f-a969-2a8384d56333")
-		(property "Reference" "#PWR019"
+		(uuid "ca37107b-9a38-5098-b527-6fce01b29a0a")
+		(property "Reference" "#PWR022"
 			(at 49.53 247.65 0)
 			(effects
 				(font
@@ -6523,12 +6915,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "0a622784-9361-5509-928b-c643a5e304bc")
+			(uuid "13629711-9134-5c5c-bb4e-3d57dff172a0")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR019")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -6612,7 +7004,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4140b356-f4a5-54da-8e0b-b316224b5c53")
+		(uuid "a55c662c-4ece-5a0e-89ec-61eadce5fd8b")
 	)
 	(label "CLIP_LO"
 		(at 49.53 248.92 0)
@@ -6622,7 +7014,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a5a3a0a0-3820-5af7-b84a-324da56a7b0a")
+		(uuid "57f1129e-2687-5cdc-aa4c-bb90a4935b8f")
 	)
 	(wire
 		(pts
@@ -6633,7 +7025,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3d71fd25-6aa7-51b4-9c6d-8fbbf1c9de34")
+		(uuid "7290a969-ad38-5867-a45d-133d0ea73fcf")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6643,8 +7035,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "7230736a-e77a-5319-af78-e988e177062e")
-		(property "Reference" "#PWR020"
+		(uuid "ea6e2184-786f-5820-a575-d35d8075db90")
+		(property "Reference" "#PWR023"
 			(at 49.53 267.97 0)
 			(effects
 				(font
@@ -6689,12 +7081,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ff81f2c5-9fc1-53a0-ae67-e04b179cbace")
+			(uuid "87ffe628-46ad-59c6-90ff-98ebbf37e95d")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR020")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -6785,7 +7177,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "68afd03e-25b1-54be-abef-29f9ed67383f")
+		(uuid "2a640c06-33b4-50f7-a61b-0fc21c47e59f")
 	)
 	(global_label "ADC_DRIVE"
 		(shape bidirectional)
@@ -6797,7 +7189,7 @@
 			)
 			(justify left)
 		)
-		(uuid "a55c662c-4ece-5a0e-89ec-61eadce5fd8b")
+		(uuid "45b2d5b0-a0d2-55ff-8349-58999add563b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 69.85 218.44 0)
 			(effects
@@ -6818,7 +7210,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "57f1129e-2687-5cdc-aa4c-bb90a4935b8f")
+		(uuid "e0ec1970-d283-5b98-99de-1fd1df90c15e")
 	)
 	(label "CLIP_SENSE"
 		(at 69.85 231.14 0)
@@ -6828,7 +7220,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7290a969-ad38-5867-a45d-133d0ea73fcf")
+		(uuid "2a5f3742-bfa4-5af0-97b6-b7655222e481")
 	)
 	(symbol
 		(lib_id "Comparator:LM393")
@@ -6918,7 +7310,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a640c06-33b4-50f7-a61b-0fc21c47e59f")
+		(uuid "61ecf720-6a14-5605-9933-edb6222f2343")
 	)
 	(label "CLIP_HI"
 		(at 100.33 232.41 180)
@@ -6928,7 +7320,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "45b2d5b0-a0d2-55ff-8349-58999add563b")
+		(uuid "01a9515f-5cd6-5528-8e0d-8e2ff661312f")
 	)
 	(wire
 		(pts
@@ -6939,7 +7331,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e0ec1970-d283-5b98-99de-1fd1df90c15e")
+		(uuid "3b8ee96e-6994-525c-88d5-b159c6e4ac22")
 	)
 	(label "CLIP_SENSE"
 		(at 100.33 237.49 180)
@@ -6949,7 +7341,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2a5f3742-bfa4-5af0-97b6-b7655222e481")
+		(uuid "e44201eb-f824-5f9f-9244-e4f4a85db79d")
 	)
 	(wire
 		(pts
@@ -6960,7 +7352,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "61ecf720-6a14-5605-9933-edb6222f2343")
+		(uuid "d17ab82f-f4ff-5581-956b-d9958da10989")
 	)
 	(label "CLIP_N"
 		(at 120.65 234.95 0)
@@ -6970,7 +7362,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "01a9515f-5cd6-5528-8e0d-8e2ff661312f")
+		(uuid "194cb8f4-fede-524e-9990-fe9630ddb8db")
 	)
 	(symbol
 		(lib_id "Comparator:LM393")
@@ -7060,7 +7452,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3b8ee96e-6994-525c-88d5-b159c6e4ac22")
+		(uuid "bdd8c7ca-b1d1-542f-afbe-c55084a1f0d5")
 	)
 	(label "CLIP_SENSE"
 		(at 100.33 259.08 180)
@@ -7070,7 +7462,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e44201eb-f824-5f9f-9244-e4f4a85db79d")
+		(uuid "08ae110a-81a2-5ef2-a1a1-a59bbba53f10")
 	)
 	(wire
 		(pts
@@ -7081,7 +7473,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d17ab82f-f4ff-5581-956b-d9958da10989")
+		(uuid "b48809fd-55b2-572f-8687-c59e6932093a")
 	)
 	(label "CLIP_LO"
 		(at 100.33 264.16 180)
@@ -7091,7 +7483,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "194cb8f4-fede-524e-9990-fe9630ddb8db")
+		(uuid "42057eea-b21a-5ca1-b9b3-3044c26ce555")
 	)
 	(wire
 		(pts
@@ -7102,7 +7494,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "bdd8c7ca-b1d1-542f-afbe-c55084a1f0d5")
+		(uuid "930e138b-d06d-5e2c-8974-675851cc4cba")
 	)
 	(label "CLIP_N"
 		(at 120.65 261.62 0)
@@ -7112,7 +7504,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "08ae110a-81a2-5ef2-a1a1-a59bbba53f10")
+		(uuid "a8e7e10d-9960-5ffd-8cb0-604f3db12d1e")
 	)
 	(symbol
 		(lib_id "Comparator:LM393")
@@ -7199,7 +7591,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b48809fd-55b2-572f-8687-c59e6932093a")
+		(uuid "78f40cc3-9ce7-5884-a1fe-d3651982ce0f")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -7209,8 +7601,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "168fd562-a248-575f-9cee-4d36f3f4af6c")
-		(property "Reference" "#PWR021"
+		(uuid "69545f70-9c49-5295-bbbf-e518b1b21049")
+		(property "Reference" "#PWR024"
 			(at 137.16 255.27 0)
 			(effects
 				(font
@@ -7255,12 +7647,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "5c2b3983-d05c-560f-aeaa-b04aa9cd4104")
+			(uuid "88796630-eaef-53d7-adcf-78cdaa9923dc")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR021")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -7275,7 +7667,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "42057eea-b21a-5ca1-b9b3-3044c26ce555")
+		(uuid "b5bd3958-55a1-5b9a-81c2-568f980f5dc5")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7285,8 +7677,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "ca37107b-9a38-5098-b527-6fce01b29a0a")
-		(property "Reference" "#PWR022"
+		(uuid "0ee50cb3-a5b0-5664-acaa-4e7e759363b6")
+		(property "Reference" "#PWR025"
 			(at 137.16 278.13 0)
 			(effects
 				(font
@@ -7331,12 +7723,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "13629711-9134-5c5c-bb4e-3d57dff172a0")
+			(uuid "05d6c960-3afc-59e9-82bf-bd20f25e14ed")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR022")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -7429,7 +7821,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "930e138b-d06d-5e2c-8974-675851cc4cba")
+		(uuid "ee38c22e-36f4-5198-833e-d54456da7694")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -7439,8 +7831,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "ea6e2184-786f-5820-a575-d35d8075db90")
-		(property "Reference" "#PWR023"
+		(uuid "c2e35d0f-1d5f-5bfd-ade5-a1bf7c132e2c")
+		(property "Reference" "#PWR026"
 			(at 154.94 259.08 0)
 			(effects
 				(font
@@ -7485,12 +7877,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "87ffe628-46ad-59c6-90ff-98ebbf37e95d")
+			(uuid "ea8f123d-d6e8-5eee-8c99-177ae1be2567")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR023")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -7505,7 +7897,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a8e7e10d-9960-5ffd-8cb0-604f3db12d1e")
+		(uuid "2009e566-3d3b-518c-9012-a7233c7c4bc6")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7515,8 +7907,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "69545f70-9c49-5295-bbbf-e518b1b21049")
-		(property "Reference" "#PWR024"
+		(uuid "148a0387-c330-5dc8-83df-9a25b60a15e6")
+		(property "Reference" "#PWR027"
 			(at 154.94 274.32 0)
 			(effects
 				(font
@@ -7561,12 +7953,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "88796630-eaef-53d7-adcf-78cdaa9923dc")
+			(uuid "67b3cc5e-71e0-5bdd-93db-0df0a868c263")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR024")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -7581,7 +7973,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "78f40cc3-9ce7-5884-a1fe-d3651982ce0f")
+		(uuid "6539ba47-98a4-518e-93f6-d261cc423f43")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7668,7 +8060,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b5bd3958-55a1-5b9a-81c2-568f980f5dc5")
+		(uuid "e5615ff7-6bbc-5958-912f-7e10a11063bb")
 	)
 	(label "CLIP_N"
 		(at 170.18 223.52 0)
@@ -7678,7 +8070,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ee38c22e-36f4-5198-833e-d54456da7694")
+		(uuid "6f974931-3604-5949-8fed-4942d264d785")
 	)
 	(wire
 		(pts
@@ -7689,7 +8081,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2009e566-3d3b-518c-9012-a7233c7c4bc6")
+		(uuid "d2158a8f-4327-55fd-adc6-19771441a900")
 	)
 	(label "CLIP_HOLD"
 		(at 170.18 236.22 0)
@@ -7699,7 +8091,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6539ba47-98a4-518e-93f6-d261cc423f43")
+		(uuid "29112cde-111a-50b7-aa6d-40808b47590b")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -7786,7 +8178,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e5615ff7-6bbc-5958-912f-7e10a11063bb")
+		(uuid "7ee1b67a-aff8-5c0f-95ae-f8a7bded27bd")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -7796,8 +8188,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "0ee50cb3-a5b0-5664-acaa-4e7e759363b6")
-		(property "Reference" "#PWR025"
+		(uuid "71b2378a-671b-54dd-98e7-51b667e83adb")
+		(property "Reference" "#PWR028"
 			(at 185.42 217.17 0)
 			(effects
 				(font
@@ -7842,12 +8234,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "05d6c960-3afc-59e9-82bf-bd20f25e14ed")
+			(uuid "93b737a7-d754-5da2-835e-6d7d8246b40a")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR025")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -7862,7 +8254,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6f974931-3604-5949-8fed-4942d264d785")
+		(uuid "e273a2a5-0005-5d53-a573-a3791306ac8d")
 	)
 	(label "CLIP_HOLD"
 		(at 185.42 226.06 0)
@@ -7872,7 +8264,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d2158a8f-4327-55fd-adc6-19771441a900")
+		(uuid "5d9c2a73-6919-5f52-b0d2-7aa5e82cd86a")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -7961,7 +8353,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "29112cde-111a-50b7-aa6d-40808b47590b")
+		(uuid "eb615207-decf-5056-90d4-42978eaeef95")
 	)
 	(label "CLIP_HOLD"
 		(at 185.42 238.76 0)
@@ -7971,7 +8363,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7ee1b67a-aff8-5c0f-95ae-f8a7bded27bd")
+		(uuid "9b02b702-f86a-535b-bbc0-80cca3a8446b")
 	)
 	(wire
 		(pts
@@ -7982,7 +8374,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e273a2a5-0005-5d53-a573-a3791306ac8d")
+		(uuid "e95c5b3f-6e7c-5c98-b835-dfb4677130f6")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7992,8 +8384,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "c2e35d0f-1d5f-5bfd-ade5-a1bf7c132e2c")
-		(property "Reference" "#PWR026"
+		(uuid "f64f1bd5-4412-50f4-8626-b24344b21bb4")
+		(property "Reference" "#PWR029"
 			(at 185.42 257.81 0)
 			(effects
 				(font
@@ -8038,12 +8430,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "ea8f123d-d6e8-5eee-8c99-177ae1be2567")
+			(uuid "8614d17a-a6c1-5ab2-b1e5-8ba749afba30")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR026")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -8134,7 +8526,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5d9c2a73-6919-5f52-b0d2-7aa5e82cd86a")
+		(uuid "333e4bfd-c185-5e8f-811b-4f460975fd0f")
 	)
 	(label "CLIP_HOLD"
 		(at 204.47 228.6 0)
@@ -8144,7 +8536,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eb615207-decf-5056-90d4-42978eaeef95")
+		(uuid "645bb14a-492f-5eda-9ba7-8d224bacaf3d")
 	)
 	(wire
 		(pts
@@ -8155,7 +8547,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b02b702-f86a-535b-bbc0-80cca3a8446b")
+		(uuid "99aa5b47-1abc-5a3b-8aa2-ff0ac0263d6b")
 	)
 	(label "CLIP_BASE"
 		(at 204.47 241.3 0)
@@ -8165,7 +8557,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "e95c5b3f-6e7c-5c98-b835-dfb4677130f6")
+		(uuid "543601bf-ab53-5a03-89aa-0261f959d126")
 	)
 	(symbol
 		(lib_id "Transistor_BJT:BC857")
@@ -8257,7 +8649,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "333e4bfd-c185-5e8f-811b-4f460975fd0f")
+		(uuid "dbe0626f-fd0b-5434-b215-5674fa0423e0")
 	)
 	(label "CLIP_BASE"
 		(at 217.17 234.95 180)
@@ -8267,7 +8659,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "645bb14a-492f-5eda-9ba7-8d224bacaf3d")
+		(uuid "992b6ae5-643a-5fd4-9688-9ed61c188edb")
 	)
 	(wire
 		(pts
@@ -8278,7 +8670,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "99aa5b47-1abc-5a3b-8aa2-ff0ac0263d6b")
+		(uuid "8a251ed4-e005-5ca9-94f5-580c4025dea0")
 	)
 	(label "CLIP_COL"
 		(at 227.33 227.33 0)
@@ -8288,7 +8680,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "543601bf-ab53-5a03-89aa-0261f959d126")
+		(uuid "45042181-0158-5d05-bde2-948866f88820")
 	)
 	(wire
 		(pts
@@ -8299,7 +8691,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dbe0626f-fd0b-5434-b215-5674fa0423e0")
+		(uuid "eafbc8d4-2cd7-5e69-8819-e98becf75589")
 	)
 	(symbol
 		(lib_id "power:+12VA")
@@ -8309,8 +8701,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "148a0387-c330-5dc8-83df-9a25b60a15e6")
-		(property "Reference" "#PWR027"
+		(uuid "b66089b2-b3b6-5501-8eaa-fd133f10c471")
+		(property "Reference" "#PWR030"
 			(at 227.33 238.76 0)
 			(effects
 				(font
@@ -8355,12 +8747,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "67b3cc5e-71e0-5bdd-93db-0df0a868c263")
+			(uuid "229b6dbc-51d9-5179-a410-7d90c3e302ff")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR027")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -8451,7 +8843,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "992b6ae5-643a-5fd4-9688-9ed61c188edb")
+		(uuid "470c2b0f-1769-5a02-8f14-71fb2572d47c")
 	)
 	(label "CLIP_COL"
 		(at 245.11 238.76 0)
@@ -8461,7 +8853,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8a251ed4-e005-5ca9-94f5-580c4025dea0")
+		(uuid "76e6a379-58f4-57d9-8c13-d960c6e42074")
 	)
 	(wire
 		(pts
@@ -8472,7 +8864,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "45042181-0158-5d05-bde2-948866f88820")
+		(uuid "1cb056e3-559b-5c60-b98b-3e32067a8869")
 	)
 	(label "CLIP_LED_A"
 		(at 245.11 251.46 0)
@@ -8482,7 +8874,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "eafbc8d4-2cd7-5e69-8819-e98becf75589")
+		(uuid "69e04f9d-bef4-56ce-9bda-8327b594a2ea")
 	)
 	(symbol
 		(lib_id "Device:LED")
@@ -8509,7 +8901,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z10.0mm"
+		(property "Footprint" "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z6.0mm"
 			(at 270.51 251.46 0)
 			(effects
 				(font
@@ -8569,7 +8961,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "470c2b0f-1769-5a02-8f14-71fb2572d47c")
+		(uuid "73562461-bf40-51c4-a5bf-a41b59c09d4c")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8579,8 +8971,8 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(uuid "71b2378a-671b-54dd-98e7-51b667e83adb")
-		(property "Reference" "#PWR028"
+		(uuid "66752b11-e7cb-5674-b12c-201d496242ff")
+		(property "Reference" "#PWR031"
 			(at 259.08 257.81 0)
 			(effects
 				(font
@@ -8625,12 +9017,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "93b737a7-d754-5da2-835e-6d7d8246b40a")
+			(uuid "b1de029f-7c55-50d2-827c-53d8b9982bac")
 		)
 		(instances
 			(project "pedalboard"
 				(path "/3bcc4b79-1880-583a-b0ae-d715fcf404f8/a252458c-4225-5deb-9e63-f4b312302cce"
-					(reference "#PWR028")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -8645,7 +9037,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "76e6a379-58f4-57d9-8c13-d960c6e42074")
+		(uuid "13e69b31-e04b-5e6c-acd0-9d8a3ca056c1")
 	)
 	(label "CLIP_LED_A"
 		(at 281.94 251.46 0)
@@ -8655,6 +9047,6 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1cb056e3-559b-5c60-b98b-3e32067a8869")
+		(uuid "81df364d-7050-57cc-93c9-53297a56326a")
 	)
 )

@@ -3378,7 +3378,7 @@
 		(at 104.14 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "b6e2ec10-8298-54fe-978c-bc84929569fa")
@@ -3519,7 +3519,7 @@
 		(at 115.57 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "b445a24e-b041-52d9-8968-17a20c7a93f1")
@@ -4336,7 +4336,7 @@
 		(at 219.71 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "604c4b0f-395e-5f52-9934-94f3b5eac83d")
@@ -4454,7 +4454,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
 			(at 54.61 101.6 0)
 			(effects
 				(font
@@ -5498,7 +5498,7 @@
 		(at 134.62 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "53397545-8f0a-556e-8374-c8824e17705c")
@@ -5813,7 +5813,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
 			(at 204.47 110.49 0)
 			(effects
 				(font
@@ -6636,7 +6636,7 @@
 		(at 275.59 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "6c608811-fbb1-571b-a97f-ab05f180af12")
@@ -6951,7 +6951,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
 			(at 77.47 171.45 0)
 			(effects
 				(font
@@ -8750,7 +8750,7 @@
 		(at 233.68 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "00c68a9a-6967-502e-a6bb-73c3685857f0")
@@ -9481,7 +9481,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:HVSSOP-8-1EP_3x3mm_P0.65mm_EP1.57x1.89mm"
 			(at 110.49 228.6 0)
 			(effects
 				(font
@@ -10739,7 +10739,7 @@
 		(at 246.38 229.87 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "36a57857-f35c-59b7-b0e7-66e4bca9f069")

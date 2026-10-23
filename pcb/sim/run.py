@@ -161,9 +161,9 @@ PICKUP = ["R_pu src pu1 7k", "L_pu pu1 pu2 3", "C_lead pu2 0 300p"]
 
 def guitar_deck(gain_p, source, extra=(), values=None):
     """The input stage with RV1 at fraction gain_p (0 = least gain); source drives GTR_TIP."""
-    lines = kinet.spice(PARTS, STAGE + ADC_NET, pots={"RV1": gain_p}, values=values)
+    lines = kinet.spice(PARTS, STAGE + ADC_NET, pots={"RV1.1": gain_p, "RV1.2": 0.5}, values=values)
     # ngspice's DC solution with TI's model fails for most settings of the gain knob. The feedback
-    # carries no DC current (the 47 uF blocks Rg), so 1 MH across it shorts it at DC only:
+    # carries no DC current (the 100 uF blocks Rg), so 1 MH across it shorts it at DC only:
     # 126 Mohm at 20 Hz, beside at most 33 kohm, changes nothing measured.
     aid = ["L_dcfb ADC_DRIVE GTR_FB 1meg"]
     return lines + aid + SUPPLY + ADC_LOAD + list(source) + list(extra)
@@ -241,15 +241,21 @@ def a1():
     return ok
 
 
+# Alps' 15A (log) taper, read from the RK09L catalog's chart: rotation from terminal 1 to 3 (%),
+# output across terminals 1-2 (%). Two straight stretches, not a smooth log curve.
+ALPS_15A = [(0, 0.5), (5, 0.7), (10, 1), (20, 2), (23, 2.5), (30, 6), (40, 11.5), (50, 16), (60, 21),
+            (64, 24), (68, 28), (72, 36), (76, 48), (80, 61), (84, 74), (88, 85), (90, 90), (93, 96),
+            (96, 99.5), (100, 100)]
+
+
 def pot_taper(kind, x):
-    """Fraction of the track between the start and the wiper at rotation x (0..1).
-    'B' linear; 'A' log (10 % at half rotation, an exponential fit); 'C' reverse log."""
-    a = 81.0  # (sqrt(a) - 1) / (a - 1) = 0.1: 10 % at mid rotation
+    """Fraction of the track between terminal 1 and the wiper at rotation x (0..1, clockwise).
+    'B' linear; 'A' Alps 15A (log); 'C' reverse log (15A mirrored)."""
     if kind == "B":
         return x
-    if kind == "A":
-        return (a ** x - 1) / (a - 1)
-    return 1 - (a ** (1 - x) - 1) / (a - 1)
+    if kind == "C":
+        return 1 - pot_taper("A", 1 - x)
+    return at([r / 100 for r, _ in ALPS_15A], [o / 100 for _, o in ALPS_15A], x)
 
 
 def gain_curve(rv1=None):
