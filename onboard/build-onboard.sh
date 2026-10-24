@@ -5,7 +5,8 @@
 #
 # Usage (as root, inside an excalibur root; .github/workflows/onboard.yml runs it in Docker):
 #   build-onboard.sh build <out-dir>   build onboard, onboard-common and onboard-data
-#   build-onboard.sh check <deb-dir>   install them in a clean root and check them
+#   build-onboard.sh check <deb-dir>   install them in a clean root and check them (no session:
+#                                      the change is in the files, the C module finds its libraries)
 #
 # patches/*.patch (DEP-3) are added to the end of debian/patches/series, after Debian's. The
 # build stops if Devuan has a newer onboard than the one pinned, or if a patch does not apply.
@@ -92,17 +93,22 @@ cmd_check() {
 			|| { echo "::error::${p} ${version} is not installed"; fail=1; }
 	done
 
-	# Onboard's Python package and its C module load, with Pivuan's change in them.
-	if ! python3 -c '
-import Onboard.osk
-from Onboard.AtspiStateTracker import CachedAccessible
-assert hasattr(CachedAccessible, "is_chromium_omnibox")
-'; then
-		echo "::error::Onboard does not load, or lacks the Chromium address bar change"
+	# Pivuan's change is in the installed file, which compiles. (Importing Onboard's modules
+	# here would set up its GSettings and GTK, which need a desktop session.)
+	f="$(dpkg -L onboard | grep '/Onboard/AtspiStateTracker\.py$' | head -n 1)"
+	if [[ -z "${f}" ]] || ! grep -q 'def is_chromium_omnibox' "${f}"; then
+		echo "::error::onboard lacks the Chromium address bar change (${f:-no AtspiStateTracker.py})"
+		fail=1
+	elif ! python3 -c 'import ast, sys; ast.parse(open(sys.argv[1]).read(), sys.argv[1])' "${f}"; then
+		echo "::error::${f} does not compile"
 		fail=1
 	fi
-	f="$(python3 -c 'import Onboard.osk; print(Onboard.osk.__file__)')"
-	if ldd "${f}" 2>&1 | grep -q 'not found'; then
+	# Onboard's C module finds all its libraries.
+	f="$(dpkg -L onboard | grep '/Onboard/osk[^/]*\.so$' | head -n 1)"
+	if [[ -z "${f}" ]]; then
+		echo "::error::onboard has no osk module"
+		fail=1
+	elif ldd "${f}" 2>&1 | grep -q 'not found'; then
 		echo "::error::${f}: $(ldd "${f}" | grep 'not found' | tr '\n' ' ')"
 		fail=1
 	fi

@@ -22,7 +22,7 @@ changes in how Pivuan Audio installs Onboard.
 
 ```sh
 build-onboard.sh build <out-dir>   # apt-get source onboard=<pinned>, the patches, dpkg-buildpackage
-build-onboard.sh check <deb-dir>   # install the packages in a clean root; Onboard loads, with the change
+build-onboard.sh check <deb-dir>   # install the packages in a clean root; the change is there, libraries found
 ```
 
 [onboard.conf](onboard.conf) pins Devuan's source version and the Pivuan version. The build

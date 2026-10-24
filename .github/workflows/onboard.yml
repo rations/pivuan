@@ -6,7 +6,7 @@
 # built in an excalibur arm64 root made with mmdebstrap from the Devuan archive (pinned Devuan
 # keys), natively on GitHub's arm64 runner. The build stops if Devuan (excalibur, -updates or
 # -security) has a newer onboard than the one pinned. The packages are then installed in a clean
-# excalibur root and checked: Onboard and its C module load, with Pivuan's change in them.
+# excalibur root and checked: Pivuan's change is in them, and Onboard's C module finds its libraries.
 #
 # The Devuan keyring check and the apt repository scripts are shared with the image build: they
 # are read from rations/build (branch pivuan, .github/pivuan/).
