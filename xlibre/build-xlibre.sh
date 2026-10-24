@@ -7,7 +7,8 @@
 #   build-xlibre.sh build <out-dir>   build the X server and the libinput driver into <out-dir>
 #   build-xlibre.sh check <deb-dir>   install the published set in a clean root and check it
 #
-# The source is X11Libre's release tag at the pinned commit; debian/ comes from xlibre-debian's
+# The source is X11Libre's release tag at the pinned commit, or a commit on one of its release
+# branches (release/25.2) when fixes there are not tagged yet; debian/ comes from xlibre-debian's
 # packaging at its pinned commit, adapted so that everything builds and installs with Devuan
 # excalibur alone (xlibre-debian's own packages need backports on excalibur):
 # - x11proto-dev (>= 2025.1) becomes (>= 2024.1): excalibur's headers have everything the
@@ -15,7 +16,8 @@
 # - xserver-xlibre-common accepts Devuan's x11-common instead of xlibre-x11-common;
 # - the build profiles are nosystemd (libseat and seatd instead of systemd-logind) and noudeb,
 #   and the test suite is skipped (nocheck), as in LCOS's XLibre build.
-# Versions end in +pivuan1 (xlibre.conf).
+# Pivuan's own patches, patches/<name>/*.patch (fixes upstream has not put on the pinned branch
+# yet), are added to the end of debian/patches/series. Versions end in +pivuan1 (xlibre.conf).
 #
 set -euo pipefail
 
@@ -41,10 +43,11 @@ fetch() {
 	[[ "$(git -C "$3" rev-parse HEAD)" == "$2" ]] || die "$1: got $(git -C "$3" rev-parse HEAD), expected $2"
 }
 
-# prepare <name> <work-dir>: the upstream tag with xlibre-debian's debian/, and a changelog entry
-# for the Pivuan version. Prints the source directory.
+# prepare <name> <work-dir>: the upstream tag (or branch commit) with xlibre-debian's debian/,
+# Pivuan's patches, and a changelog entry for the Pivuan version. Prints the source directory.
 prepare() {
-	local name="$1" work="$2" src tag commit pkg pkg_commit version tag_commit source maint
+	local name="$1" work="$2" src tag commit pkg pkg_commit version tag_commit source maint patch
+	local patches=()
 	src="$(conf_field "${name}" 2)"
 	tag="$(conf_field "${name}" 3)"
 	commit="$(conf_field "${name}" 4)"
@@ -53,14 +56,31 @@ prepare() {
 	version="$(conf_field "${name}" 7)"
 	[[ -n "${version}" ]] || die "${name}: incomplete line in ${conf}"
 
-	# The tag must still name the pinned commit (annotated tags: the commit it points to).
-	tag_commit="$(git ls-remote "${src}" "refs/tags/${tag}^{}" "refs/tags/${tag}" | awk 'NR == 1 || /\^\{\}$/ { c = $1 } END { print c }')"
-	[[ "${tag_commit}" == "${commit}" ]] || die "${src} ${tag} is ${tag_commit:-missing}, xlibre.conf pins ${commit}"
-
 	fetch "${src}" "${commit}" "${work}/${name}" >&2
+	if [[ "${tag}" == release/* ]]; then
+		# A release branch: the pinned commit must be on it (its history only, without files).
+		git -C "${work}/${name}" fetch -q --filter=tree:0 "${src}" "refs/heads/${tag}" >&2 \
+			|| die "${src} has no branch ${tag}"
+		git -C "${work}/${name}" merge-base --is-ancestor "${commit}" FETCH_HEAD \
+			|| die "${commit} is not on ${src} ${tag}"
+	else
+		# The tag must still name the pinned commit (annotated tags: the commit it points to).
+		tag_commit="$(git ls-remote "${src}" "refs/tags/${tag}^{}" "refs/tags/${tag}" | awk 'NR == 1 || /\^\{\}$/ { c = $1 } END { print c }')"
+		[[ "${tag_commit}" == "${commit}" ]] || die "${src} ${tag} is ${tag_commit:-missing}, xlibre.conf pins ${commit}"
+	fi
 	fetch "${pkg}" "${pkg_commit}" "${work}/${name}-packaging" >&2
 	rm -rf "${work}/${name}/debian"
 	cp -a "${work}/${name}-packaging/debian" "${work}/${name}/debian"
+
+	# Pivuan's patches, after xlibre-debian's (dpkg-source applies them all before the build).
+	for patch in "${here}/patches/${name}"/*.patch; do
+		[[ -f "${patch}" ]] || continue
+		(cd "${work}/${name}" && patch -p1 --dry-run -s -f < "${patch}" > /dev/null) \
+			|| die "${patch##*/} does not apply to ${tag} (${commit}): drop it if upstream has the fix"
+		install -Dm 0644 "${patch}" "${work}/${name}/debian/patches/${patch##*/}"
+		echo "${patch##*/}" >> "${work}/${name}/debian/patches/series"
+		patches+=("${patch##*/}")
+	done
 
 	source="$(dpkg-parsechangelog -l "${work}/${name}/debian/changelog" -S Source)"
 	maint="Pivuan <pivuan@users.noreply.github.com>"
@@ -68,7 +88,11 @@ prepare() {
 		printf '%s (%s) excalibur; urgency=medium\n\n' "${source}" "${version}"
 		printf '  * Rebuilt for Pivuan (Devuan excalibur, arm64) without backports.\n'
 		printf '  * Source: %s %s (%s).\n' "${src}" "${tag}" "${commit}"
-		printf '  * Packaging: %s (%s).\n\n' "${pkg}" "${pkg_commit}"
+		printf '  * Packaging: %s (%s).\n' "${pkg}" "${pkg_commit}"
+		for patch in "${patches[@]}"; do
+			printf '  * Pivuan patch: %s.\n' "${patch}"
+		done
+		printf '\n'
 		printf ' -- %s  %s\n\n' "${maint}" "$(date -R)"
 		cat "${work}/${name}/debian/changelog"
 	} > "${work}/changelog.new"
