@@ -1,0 +1,46 @@
+Description: Keep the keyboard up when Chromium's address bar shows suggestions
+ When Brave's (Chromium's, Chrome's) address bar opens its list of
+ suggestions, it reports losing the focus, then the first suggestion reports
+ gaining it, while the keyboard focus stays in the address bar (the
+ suggestion is only highlighted) and the bar keeps its FOCUSED state. Onboard
+ then forgot the address bar and hid itself after a couple of letters.
+ Onboard has the same workaround for Firefox's URL bar (is_urlbar); this one
+ recognizes Chromium's by its accessible class (BraveOmniboxViewViews,
+ OmniboxViewViews) and keeps it while it still says it is focused. Seen with
+ Brave Origin 1.97 started with --force-renderer-accessibility.
+Author: Pivuan <https://github.com/rations/pivuan>
+Forwarded: no
+Last-Update: 2026-10-25
+---
+--- a/Onboard/AtspiStateTracker.py
++++ b/Onboard/AtspiStateTracker.py
+@@ -236,6 +236,15 @@
+ 
+         return self._get_value_noex("is_urlbar", func)
+ 
++    def is_chromium_omnibox(self):
++        """ Is this the address bar of Chromium, Brave or Chrome? """
++        def func():
++            attributes = self.get_attributes()
++            return bool(attributes and
++                        attributes.get("class", "").endswith("OmniboxViewViews"))
++
++        return self._get_value_noex("is_chromium_omnibox", func)
++
+     def is_byobu(self):
+         """ Is this possibly byobu running in a terminal? """
+         def func():
+@@ -800,7 +809,12 @@
+         # Helps to keep the keyboard open in presence of popup selections
+         # e.g. in GNOME's file dialog and in Unity Dash.
+         if self._focused_accessible == accessible:
+-            if not focused:
++            # Pivuan: Chromium's (Brave's) address bar says it lost the focus when
++            # its suggestions open, while it keeps it (the first suggestion is only
++            # highlighted). Keep it while it still has the focused state.
++            if not focused and \
++               not (accessible.is_chromium_omnibox() and
++                    accessible.is_focused(True)):
+                 self._focused_accessible = None
+         else:
+             pid = accessible.get_pid()
