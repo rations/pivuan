@@ -1,0 +1,324 @@
+#!/usr/bin/python3
+#
+# Pivuan Audio: screenshots. Package pivuan-screenshot (rations/pivuan, screenshot/), installed
+# as /usr/bin/pivuan-screenshot. Pivuan Audio's jwmrc (rations/configng) binds the Print keys to
+# it, and Accessories > Screenshot in the Pivuan menu opens its window
+# (/usr/share/applications/pivuan-screenshot.desktop).
+#
+#   pivuan-screenshot          the window: the whole screen, a window or an area, after a delay
+#                              if asked, then a name and a folder to save it in (~/Pictures at
+#                              first)
+#   pivuan-screenshot screen   the whole screen (Print)
+#   pivuan-screenshot area     drag out an area with the mouse (Alt+Print)
+#   pivuan-screenshot window   click a window; the shot has its frame (Super+Print)
+#
+# The keys save in ~/Pictures (made if it is missing) at once, named by the date and time, as
+# the window's names are at first. scrot takes them all: it is small, where ImageMagick's import
+# (the same three on other desktops) brings a lot with it. A click instead of a drag in area
+# mode takes the window clicked, and a click on the desktop in window mode the whole screen.
+#
+import os
+import shutil
+import sys
+import time
+
+PICTURES = os.environ.get("XDG_PICTURES_DIR") or os.path.join(os.path.expanduser("~"),
+                                                              "Pictures")
+# The modes: what the window calls them, the start of the file name, and scrot's options.
+MODES = (("screen", "The whole screen", "screenshot", []),
+         ("window", "A window (click it)", "window", ["--select", "--border"]),
+         ("area", "An area (drag it out with the mouse)", "area", ["--select", "--freeze"]))
+DELAY_MAX = 30
+# Time for the window (and picom's fade) to leave the screen before the shot.
+HIDE_MS = 400
+
+
+def mode_info(mode):
+    return next(m for m in MODES if m[0] == mode)
+
+
+def file_name(mode):
+    return time.strftime(mode_info(mode)[2] + "_%Y%m%d_%H%M%S.png")
+
+
+def scrot_command(mode, path, delay=0):
+    """scrot's command line. --freeze takes the screen as the area's drag starts, which a
+    delay would come after, so with a delay the area is taken as it is when the delay ends.
+    Then the outline is a window of its own (mode=edge): scrot's usual one is drawn on the
+    desktop, where picom leaves it, and the shot has it."""
+    options = list(mode_info(mode)[3])
+    if delay:
+        if "--freeze" in options:
+            options = [o for o in options if o != "--freeze"] + ["--line", "mode=edge"]
+        options += ["--delay", str(delay)]
+    return ["scrot", "--overwrite"] + options + [path]
+
+
+def keys(mode):
+    """The keys: save in ~/Pictures at once. Without GTK, so the shot comes quickly."""
+    if shutil.which("scrot") is None:
+        return 1
+    try:
+        os.makedirs(PICTURES, exist_ok=True)
+    except OSError:
+        return 1
+    command = scrot_command(mode, os.path.join(PICTURES, file_name(mode)))
+    os.execvp(command[0], command)
+    return 1
+
+
+# The keys and wrong arguments, before GTK loads (not when test-window.py loads this file).
+if __name__ == "__main__" and len(sys.argv) == 2 and sys.argv[1] in [m[0] for m in MODES]:
+    sys.exit(keys(sys.argv[1]))
+if __name__ == "__main__" and len(sys.argv) > 1:
+    print("usage: pivuan-screenshot [screen|area|window]", file=sys.stderr)
+    sys.exit(2)
+
+import gi  # noqa: E402
+
+gi.require_version("Gtk", "3.0")
+gi.require_version("Gdk", "3.0")
+gi.require_version("GdkPixbuf", "2.0")
+from gi.repository import Gdk, GdkPixbuf, GLib, Gtk  # noqa: E402
+
+PREVIEW_WIDTH, PREVIEW_HEIGHT = 480, 270
+# The shot until it is saved or discarded. One window at a time (a second start brings the
+# first to the front), so one file.
+SHOT = os.path.join(GLib.get_user_cache_dir(), "pivuan", "screenshot.png")
+
+
+def workarea():
+    display = Gdk.Display.get_default()
+    monitor = display.get_primary_monitor() or display.get_monitor(0) if display else None
+    return monitor.get_workarea() if monitor is not None else None
+
+
+def remove_shot():
+    try:
+        os.remove(SHOT)
+    except OSError:
+        pass
+
+
+class Screenshot(Gtk.ApplicationWindow):
+    """Two pages: what to take, then the shot with its name and folder."""
+
+    def __init__(self, application):
+        super().__init__(application=application, title="Screenshot")
+        self.set_icon_name("applets-screenshooter")
+        self.set_position(Gtk.WindowPosition.CENTER)
+        self.set_resizable(False)
+        self.mode = "screen"
+        self.folder = PICTURES
+        self.pages = Gtk.Stack(hhomogeneous=False, vhomogeneous=False)
+        self.add(self.pages)
+
+        # What to take: buttons rather than a drop-down list, which a touchscreen cannot always
+        # open.
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10, border_width=12)
+        box.pack_start(Gtk.Label(label="Take a screenshot of:", xalign=0), False, False, 0)
+        self.modes = {}
+        group = None
+        for mode, label, _name, _options in MODES:
+            button = Gtk.RadioButton.new_with_label_from_widget(group, label)
+            group = group or button
+            button.set_margin_start(12)
+            self.modes[mode] = button
+            box.pack_start(button, False, False, 0)
+        delay = Gtk.Box(spacing=8)
+        self.delay = Gtk.SpinButton.new_with_range(0, DELAY_MAX, 1)
+        for widget in (Gtk.Label(label="Delay"), self.delay, Gtk.Label(label="seconds")):
+            delay.pack_start(widget, False, False, 0)
+        box.pack_start(delay, False, False, 0)
+        box.pack_start(self.small_print("A delay gives time to open a menu first; for a window "
+                                        "or an area it starts after the click or the drag."),
+                       False, False, 0)
+        self.status = Gtk.Label(xalign=0, wrap=True, max_width_chars=48)
+        box.pack_start(self.status, False, False, 0)
+        actions = Gtk.Box(spacing=6, halign=Gtk.Align.END)
+        close = Gtk.Button(label="Close")
+        close.connect("clicked", lambda *_: self.destroy())
+        self.take_button = Gtk.Button(label="Take Screenshot", can_default=True)
+        self.take_button.get_style_context().add_class("suggested-action")
+        self.take_button.connect("clicked", self.take)
+        actions.pack_start(close, False, False, 0)
+        actions.pack_start(self.take_button, False, False, 0)
+        box.pack_end(actions, False, False, 0)
+        self.pages.add_named(box, "take")
+
+        # The shot: a preview, its name and folder. The name is typed, the folder chosen.
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10, border_width=12)
+        self.preview = Gtk.Image()
+        frame = Gtk.Frame(shadow_type=Gtk.ShadowType.IN, halign=Gtk.Align.CENTER)
+        frame.add(self.preview)
+        box.pack_start(frame, False, False, 0)
+        grid = Gtk.Grid(column_spacing=8, row_spacing=8)
+        self.name = Gtk.Entry(hexpand=True, activates_default=True)
+        self.folder_button = Gtk.FileChooserButton(title="Save in",
+                                                   action=Gtk.FileChooserAction.SELECT_FOLDER)
+        self.folder_button.set_create_folders(True)
+        grid.attach(Gtk.Label(label="Name", xalign=0), 0, 0, 1, 1)
+        grid.attach(self.name, 1, 0, 1, 1)
+        grid.attach(Gtk.Label(label="Save in", xalign=0), 0, 1, 1, 1)
+        grid.attach(self.folder_button, 1, 1, 1, 1)
+        box.pack_start(grid, False, False, 0)
+        actions = Gtk.Box(spacing=6, halign=Gtk.Align.END)
+        discard = Gtk.Button(label="Discard")
+        discard.connect("clicked", self.discard)
+        self.save_button = Gtk.Button(label="Save", can_default=True)
+        self.save_button.get_style_context().add_class("suggested-action")
+        self.save_button.connect("clicked", self.save)
+        actions.pack_start(discard, False, False, 0)
+        actions.pack_start(self.save_button, False, False, 0)
+        box.pack_end(actions, False, False, 0)
+        self.pages.add_named(box, "save")
+
+        self.connect("destroy", lambda *_: remove_shot())
+        self.pages.show_all()
+        self.show_take("")
+
+    @staticmethod
+    def small_print(text):
+        label = Gtk.Label(xalign=0, wrap=True, max_width_chars=48)
+        label.set_markup("<small>" + GLib.markup_escape_text(text) + "</small>")
+        return label
+
+    def show_take(self, status):
+        self.status.set_text(status)
+        self.status.set_visible(bool(status))
+        self.pages.set_visible_child_name("take")
+        self.take_button.grab_default()
+        self.take_button.grab_focus()
+        self.resize(1, 1)
+
+    def take(self, _button):
+        self.mode = next(m for m, b in self.modes.items() if b.get_active())
+        self.delay.update()
+        delay = int(self.delay.get_value())
+        if shutil.which("scrot") is None:
+            self.show_take("scrot is not installed.")
+            return
+        try:
+            os.makedirs(os.path.dirname(SHOT), exist_ok=True)
+        except OSError as e:
+            self.show_take(str(e))
+            return
+        remove_shot()
+        self.hide()
+        GLib.timeout_add(HIDE_MS, self.run_scrot, delay)
+
+    def run_scrot(self, delay):
+        try:
+            pid = GLib.spawn_async(scrot_command(self.mode, SHOT, delay),
+                                   flags=GLib.SpawnFlags.SEARCH_PATH
+                                   | GLib.SpawnFlags.DO_NOT_REAP_CHILD
+                                   | GLib.SpawnFlags.STDOUT_TO_DEV_NULL
+                                   | GLib.SpawnFlags.STDERR_TO_DEV_NULL)[0]
+        except GLib.Error as e:
+            self.taken(None, 1, str(e))
+            return False
+        GLib.child_watch_add(GLib.PRIORITY_DEFAULT, pid, self.taken, None)
+        return False
+
+    def taken(self, _pid, status, error):
+        self.show()
+        self.present()
+        pixbuf = None
+        if status == 0:
+            try:
+                pixbuf = GdkPixbuf.Pixbuf.new_from_file(SHOT)
+            except GLib.Error as e:
+                error = str(e)
+        if pixbuf is None:
+            # Escape during a click or a drag cancels it.
+            self.show_take(error or "No screenshot was taken.")
+            return
+        # The preview, smaller on a small screen (a 7" screen has 800x480).
+        width, height = PREVIEW_WIDTH, PREVIEW_HEIGHT
+        area = workarea()
+        if area is not None:
+            width = max(160, min(width, area.width - 64))
+            height = max(90, min(height, area.height - 240))
+        scale = min(width / pixbuf.get_width(), height / pixbuf.get_height(), 1)
+        self.preview.set_from_pixbuf(pixbuf.scale_simple(
+            max(1, round(pixbuf.get_width() * scale)), max(1, round(pixbuf.get_height() * scale)),
+            GdkPixbuf.InterpType.BILINEAR))
+        name = file_name(self.mode)
+        self.name.set_text(name)
+        try:
+            os.makedirs(self.folder, exist_ok=True)
+        except OSError:
+            pass
+        self.folder_button.set_current_folder(self.folder)
+        self.pages.set_visible_child_name("save")
+        # Save has the focus, not the name: a text box with the focus brings up the on-screen
+        # keyboard, over the preview. Enter saves; a click on the name changes it.
+        self.save_button.grab_default()
+        self.save_button.grab_focus()
+        self.resize(1, 1)
+
+    def save(self, _button):
+        name = self.name.get_text().strip()
+        if not name or "/" in name or name in (".", ".."):
+            self.message(Gtk.MessageType.ERROR, "Type a name for the screenshot",
+                         "A name cannot be empty or have / in it.")
+            return
+        if not name.lower().endswith(".png"):
+            name += ".png"
+        folder = self.folder_button.get_filename() or self.folder
+        path = os.path.join(folder, name)
+        if os.path.exists(path) and not self.message(
+                Gtk.MessageType.QUESTION, "Replace %s?" % name,
+                "A file with this name is already in %s." % folder, "Replace"):
+            return
+        try:
+            shutil.copyfile(SHOT, path)
+        except OSError as e:
+            self.message(Gtk.MessageType.ERROR, "The screenshot could not be saved", str(e))
+            return
+        remove_shot()
+        self.folder = folder
+        home = os.path.expanduser("~")
+        shown = "~" + path[len(home):] if path.startswith(home + "/") else path
+        self.show_take("Saved as %s" % shown)
+
+    def discard(self, _button):
+        remove_shot()
+        self.show_take("")
+
+    def message(self, kind, text, detail, ok=None):
+        """An error, or a question with Cancel and ok; True if ok was chosen."""
+        dialog = Gtk.MessageDialog(transient_for=self, modal=True, message_type=kind,
+                                   buttons=Gtk.ButtonsType.NONE if ok else Gtk.ButtonsType.CLOSE,
+                                   text=text)
+        dialog.format_secondary_text(detail)
+        if ok:
+            dialog.add_buttons("Cancel", Gtk.ResponseType.CANCEL, ok, Gtk.ResponseType.OK)
+        answer = dialog.run()
+        dialog.destroy()
+        return answer == Gtk.ResponseType.OK
+
+
+class ScreenshotApp(Gtk.Application):
+    """One window: starting it again brings that window to the front."""
+
+    def __init__(self):
+        super().__init__(application_id="org.pivuan.Screenshot")
+        self.window = None
+
+    def do_activate(self):
+        if self.window is None:
+            self.window = Screenshot(self)
+            self.window.connect("destroy", self.closed)
+        self.window.present()
+
+    def closed(self, _window):
+        self.window = None
+
+
+def main():
+    return ScreenshotApp().run([sys.argv[0]])
+
+
+if __name__ == "__main__":
+    sys.exit(main())

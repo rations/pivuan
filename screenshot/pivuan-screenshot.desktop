@@ -1,0 +1,13 @@
+[Desktop Entry]
+# Screenshot for Pivuan Audio, in the Pivuan menu's Accessories: the whole screen, a window or
+# an area, saved with a name and folder of your choice (the Print keys save straight into
+# ~/Pictures). Installed as /usr/share/applications/pivuan-screenshot.desktop by the
+# pivuan-screenshot package.
+Type=Application
+Name=Screenshot
+Comment=Save a picture of the screen, a window or an area
+Exec=pivuan-screenshot
+Icon=applets-screenshooter
+Terminal=false
+Categories=GTK;Utility;
+OnlyShowIn=JWM;

@@ -147,6 +147,11 @@ It installs:
   own setting over HDMI (DDC/CI), or else dims the picture; the sun button on the panel opens
   just the brightness slider.
 
+**Screenshots**: Print saves the whole screen, Alt+Print an area you drag out, and
+Super+Print a window you click, as PNG files in `~/Pictures`. **Accessories > Screenshot** in
+the menu takes the same three, after a delay if you like, then lets you name the picture and
+choose its folder (`~/Pictures` at first).
+
 The **Pivuan menu** (jgmenu) is on the Pivuan button in the tray, on a right click on the
 desktop, and on Alt+F1. It has Terminal, Home and Web Browser, then the programs by category
 (Accessories, Audio, Video, Internet, Settings, System and so on, from the programs' own menu
