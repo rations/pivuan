@@ -1,0 +1,144 @@
+# Written by plan-sonicde.py from sonicde.conf; do not edit by hand.
+
+os  bison docbook-xml docbook-xsl flex gettext libacl1-dev libaspell-dev libattr1-dev
+os  libavcodec-dev libavfilter-dev libavformat-dev libavif-dev libblkid-dev libboost-dev libbz2-dev libcanberra-dev
+os  libcap-dev libcrypt-dev libcups2-dev libdisplay-info-dev libdmtx-dev libdrm-dev libegl-dev libei-dev
+os  libeis-dev libepoxy-dev libexiv2-dev libgcrypt20-dev libglib2.0-bin libheif-dev libhunspell-dev libhwy-dev
+os  libibus-1.0-dev libicu-dev libjxl-dev liblcms2-dev liblmdb-dev liblzma-dev libmount-dev libmtp-dev
+os  libnl-3-dev libnl-route-3-dev libnm-dev libopencv-dev libopenexr-dev libopengl-dev libopenjp2-7-dev libpam-dev
+os  libpam0g-dev libpci-dev libpipewire-0.3-dev libpolkit-agent-1-dev libpolkit-gobject-1-dev libproxy-dev libpulse-dev libpwquality-dev
+os  libqalculate-dev libqrencode-dev libraw-dev libsecret-1-dev libsensors-dev libsmbclient-dev libssh-dev libssl-dev
+os  libtag-dev libtirpc-dev libudev-dev libusb-1.0-0-dev libva-dev libvulkan-dev libx11-dev libx11-xcb-dev
+os  libxcb1-dev libxcursor-dev libxcvt-dev libxft-dev libxkbcommon-dev libxkbfile-dev libxkbregistry-dev libxml2-dev
+os  libxml2-utils libxslt-dev libxss-dev libxtst-dev libxxf86vm-dev libzxing-dev modemmanager-dev perl
+os  python3-build python3-cairo python3-lxml python3-setuptools python3-wheel sassc shared-mime-info xserver-xorg-dev
+os  xserver-xorg-input-libinput-dev xsltproc zlib1g-dev
+
+repo  frameworks  qcoro6  sonic-de/sonicde-builder/src/3rdparty/qcoro6  98f23d8d8d67e9e24217d268927faec97c713fb0  v0.13.0  -DBUILD_TESTING=OFF  -DBUILD_SHARED_LIBS=ON
+repo  frameworks  sonic-frameworks-cmake-modules  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-cmake-modules  4c6d42854f70fbdb01a4ed94ad6dee0dc46824a4  origin/6.31.0
+repo  frameworks  qtkeychain  sonicde-extra/qtkeychain  875f77d9f61bd97fd84cca47ce3bc71186dfbd09  refs/tags/0.17.0  -DBUILD_WITH_QT6=ON
+repo  frameworks  kdsoap  sonicde-extra/kdsoap  9bf6a463587a8c52f2596bf5919c32154f502452  refs/tags/kdsoap-2.3.0  -DKDSoap_QT6=ON  -DKDSoap_DOCS=OFF  -DKDSoap_EXAMPLES=OFF  -DKDSoap_TESTS=OFF
+repo  frameworks  kdsoap-ws-discovery-client  sonicde-extra/kdsoap-ws-discovery-client  cc51b4fc7401c9898d42b34cdf0d7abd90f4a447  refs/tags/v0.4.0  -DQT_MAJOR_VERSION=6  -DBUILD_QCH=OFF
+repo  workspace  sonic-activities  sonic-de/sonicde-builder/src/sonicde/sonic-activities  91b841306491e53906848e56095b2a8d7afba4ff  origin/6.8.0
+repo  workspace  sonic-activities-stats  sonic-de/sonicde-builder/src/sonicde/sonic-activities-stats  f07cb082fcf3004afb418452f03b7e7669fe3c2c  origin/6.8.0
+repo  frameworks  sonic-crypto-library  sonic-de/sonicde-builder/src/sonicde/sonic-crypto-library  f3db5a4193ad6ee16790f132b3e5832eab77b85c  origin/master  -DUSE_RELATIVE_PATHS=ON
+repo  workspace  sonic-decoration  sonic-de/sonicde-builder/src/sonicde/sonic-decoration  67e457d4d5d586b82a2f1faa416339a6dfa2eb17  origin/6.8.0
+repo  apps  sonic-exiv2-library  sonic-de/sonicde-builder/src/sonicde/sonic-exiv2-library  f7364fd171c19d80699b362ad00347c315d32cbb  origin/26.08.2
+repo  frameworks  sonic-frameworks-app-info  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-app-info  359bf84771b9bb626a43011fbed0294b02e6b8b9  origin/6.31.0
+repo  frameworks  sonic-frameworks-archive  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-archive  4e87062717808dcd8201db79d4457b41e12e3a6f  origin/6.31.0
+repo  frameworks  sonic-frameworks-auth  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-auth  0aa771c36c5f78ec58e82d9ceb8875e4a64f6d38  origin/6.31.0
+repo  frameworks  sonic-frameworks-barcode  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-barcode  e398830df3e5f00e2c4165fce594a92818ed7627  origin/6.31.0
+repo  frameworks  sonic-frameworks-bluetooth  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-bluetooth  58dc3057ea6b802c147094e405ce352e17e82af4  origin/6.31.0
+repo  frameworks  sonic-frameworks-crash-handler  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-crash-handler  e26c202cc1d9a9c841faaf8b1091697758674142  origin/6.31.0
+repo  frameworks  sonic-frameworks-data-models  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-data-models  92707b2e21181fea6b4a5278f2e8a8a03fd245f0  origin/6.31.0
+repo  frameworks  sonic-frameworks-data-views  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-data-views  affeda01aea9d238e0e6d972adc3711c40a7f8f9  origin/6.31.0
+repo  frameworks  sonic-frameworks-dbus  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-dbus  8bd6875316b43460e28c48f06610db2b2450a9fb  origin/6.31.0
+repo  frameworks  sonic-frameworks-device-integration  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-device-integration  d4d4fa3312cfb9497d7f0fcceb71055f294ec56e  origin/6.31.0
+repo  frameworks  sonic-frameworks-holidays  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-holidays  7543c18fbca15570e8a96751966878ba97cc5f1e  origin/6.31.0
+repo  frameworks  sonic-frameworks-idle-tracker  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-idle-tracker  c42537b6d9c1ec78681035e910546e36ad91559b  origin/6.31.0
+repo  frameworks  sonic-frameworks-image-formats  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-image-formats  372a1627da8bd7dcfc54855633bef2f7e2ddff85  origin/6.31.0
+repo  frameworks  sonic-frameworks-internationalization  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-internationalization  6188426bbd01e89c0a634a8474f0049991c92739  origin/6.31.0  -DBUILD_TESTING=OFF
+repo  frameworks  sonic-frameworks-doctools  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-doctools  465d28648fe1285a6601f6bf2ed6bc3dad12b9f0  origin/6.31.0
+repo  apps  sonic-frameworks-io-extras  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-io-extras  368b21968ff4ea259cf4a795b3c7bab0c687b64d  origin/26.08.2
+repo  frameworks  sonic-frameworks-keybind  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-keybind  e9f67fff94ab5dfc703e6bc458375b8f5a44480e  origin/6.31.0
+repo  frameworks  sonic-frameworks-keyring  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-keyring  d0ad3f1683541e2778f7a7c861e6b9bcdec976d1  origin/6.31.0
+repo  workspace  sonic-frameworks-keyring-pam  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-keyring-pam  8ebbc1700422182825fa956873fbf03e2e11b7c3  origin/6.8.0
+repo  frameworks  sonic-frameworks-notification-settings  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-notification-settings  6dca79eeabb0ec94ba6bee7c5bf4233f3c92fbb1  origin/6.31.0
+repo  frameworks  sonic-frameworks-open-collab  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-open-collab  e39bc8dca54595de018070bec0f5fc32370af634  origin/6.31.0
+repo  frameworks  sonic-frameworks-qml-bridge  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-qml-bridge  dfccb900ff91fea79d8e472998dcf0861551d281  origin/6.31.0
+repo  frameworks  sonic-frameworks-quick-charts  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-quick-charts  e72ced29c46cf6acc20814a07b4cc74d193c6f00  origin/6.31.0
+repo  frameworks  sonic-frameworks-quick-ui  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-quick-ui  45d20d984218d20acfcf14cb5b96fbefa4a6d49b  origin/6.31.0
+repo  frameworks  sonic-frameworks-quick-ui-addons  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-quick-ui-addons  53ecbb35bf3a5239b5f99548711a9b368fdc6bff  origin/master
+repo  frameworks  sonic-frameworks-settings  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-settings  2bf7be3cb2599e7d29330ae04e314a9695461b3e  origin/6.31.0
+repo  frameworks  sonic-frameworks-modemmanager  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-modemmanager  6193513e79d3ed22fb5a7248a0d7a51af574a34a  origin/6.31.0
+repo  frameworks  sonic-frameworks-networkmanager  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-networkmanager  603732121fac0d39d19cf822202f06dd6915d4a6  origin/6.31.0
+repo  frameworks  sonic-frameworks-spell-check  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-spell-check  c29d29a3ed7de6740e63f2d19c68b340f079f9e6  origin/6.31.0
+repo  frameworks  sonic-frameworks-syntax-highlighting  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-syntax-highlighting  042b9ee15ef2cd752d4491d4b46b1ebe428e4389  origin/6.31.0
+repo  frameworks  sonic-frameworks-text-codec  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-text-codec  74526654e2bbb9e685e33ae534220aac056fa05a  origin/6.31.0
+repo  frameworks  sonic-frameworks-autocomplete  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-autocomplete  d84de02673b6d93d379df7cae81f4714a30b3126  origin/6.31.0
+repo  frameworks  sonic-frameworks-feeds  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-feeds  d47243ff645620c7a2e4a2e66d5aac02be3874f6  origin/6.31.0
+repo  frameworks  sonic-frameworks-text-widgets  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-text-widgets  bdc034eb011da9c37190c48c81f5b96efcb28f43  origin/6.31.0
+repo  frameworks  sonic-frameworks-user-feedback  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-user-feedback  b78ebc8d208acbc11df3cef5880f1ded3697769f  origin/6.31.0
+repo  frameworks  sonic-frameworks-via  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-via  98a6251891f934cb172e15d7142d9cb118dcaf5d  origin/6.31.0
+repo  frameworks  sonic-frameworks-windowsystem  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-windowsystem  cf4196cd388f6ad0ced3267c59d14efaa3eb4094  origin/6.31.0.1
+repo  frameworks  sonic-frameworks-zeroconf  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-zeroconf  a85a4452149e95629d6c613b49d14fdf9834be26  origin/6.31.0
+repo  workspace  sonic-network-manager  sonic-de/sonicde-builder/src/sonicde/sonic-network-manager  7496c01790f4ea3505cff091c92d3e12a206e412  origin/6.8.0
+repo  frameworks  sonic-polkit  sonic-de/sonicde-builder/src/sonicde/sonic-polkit  7542c44840ea59c5e7eacb2e5ede63b353784ab2  origin/master  -DFEATURE_developer_build=ON
+repo  frameworks  sonic-pulseaudio-library  sonic-de/sonicde-builder/src/sonicde/sonic-pulseaudio-library  a561dc2a2db58c7586a9341959052796bff814f1  origin/master
+repo  frameworks  sonic-frameworks-core-addons  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-core-addons  b69c06eb2a7978623b46c4c625ad4abf0a191746  origin/6.31.0
+repo  frameworks  sonic-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-daemon  111c49ae1a9330a82a5ef7c4ae684c9cbfb4d1a3  origin/6.31.0
+repo  frameworks  sonic-frameworks-file-metadata  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-file-metadata  aa814d01ed2a056df038950873cf0fbaf4f56922  origin/6.31.0
+repo  frameworks  sonic-frameworks-gui-addons  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-gui-addons  c86ab08634c25c1271ac26b7091c235ee41bc820  origin/6.31.0
+repo  frameworks  sonic-frameworks-color-scheme  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-color-scheme  d5f5806f9772d6b800b1926f79a7f6e3b9ce85ee  origin/6.31.0
+repo  frameworks  sonic-frameworks-notifications  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-notifications  ae276ab8cee703ed54d12b811757acdb0eebb991  origin/6.31.0
+repo  frameworks  sonic-frameworks-package  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-package  2a504aa6e7d1613d705e9e5121588cc1a68b5e48  origin/6.31.0
+repo  frameworks  sonic-frameworks-pseudo-terminal  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-pseudo-terminal  4101e942150ffc44921078c2eb2ed11baefa308d  origin/6.31.0
+repo  frameworks  sonic-frameworks-root-shell  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-root-shell  c1d60e31a482e924371e4e95198113647a0a08d3  origin/6.31.0
+repo  frameworks  sonic-frameworks-status-notification  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-status-notification  256f573674ed57d5f669b162342566b2971a5b54  origin/6.31.0
+repo  frameworks  sonic-frameworks-svg  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-svg  c819937b3ebdf8fdcd3cbaeb39c50e35370de692  origin/6.31.0
+repo  frameworks  sonic-frameworks-unit-conversion  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-unit-conversion  8ea178a190970ed8918cd792bbb9598297235f5f  origin/6.31.0
+repo  frameworks  sonic-frameworks-widgets-addons  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-widgets-addons  6f6a2697a5b83309ffad6d1b71f93059da0b9176  origin/6.31.0
+repo  frameworks  sonic-frameworks-addons-downloader  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-addons-downloader  d1d740e49f322882d112d84eaca7a18a22e37a4e  origin/6.31.0
+repo  frameworks  sonic-frameworks-bookmarks  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-bookmarks  e501806bcbfce8963993c537876580f0b0e6b67e  origin/6.31.0
+repo  frameworks  sonic-frameworks-progress-ui  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-progress-ui  73e9b97e5d071919bfd71acba15543f0c7778a11  origin/6.31.0
+repo  frameworks  sonic-frameworks-settings-ui  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-settings-ui  d6c52db80975d16e193642b6c77b51bb6fcb6bd9  origin/6.31.0
+repo  frameworks  sonic-frameworks-xml-gui  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-xml-gui  218a87f16f9784b027c176541dc2339f373edcd7  origin/6.31.0
+repo  workspace  sonic-polkit-agent  sonic-de/sonicde-builder/src/sonicde/sonic-polkit-agent  78538c46e59f67cb887a83feef47fada0a9144d0  origin/6.8.0
+repo  apps  sonic-quick-image-editor  sonic-de/sonicde-builder/src/sonicde/sonic-quick-image-editor  7f866b4803145b672ea343297a8abd8a639ea7e6  origin/master
+repo  workspace  sonic-screen-library  sonic-de/sonicde-builder/src/sonicde/sonic-screen-library  298da1b893988117cfdad0666fe819aa123add1b  origin/6.8.0
+repo  frameworks  sonic-silver-icons  sonic-de/sonicde-builder/src/sonicde/sonic-silver-icons  0ffb69ef211e58edbd8609938404b5a1f85dabc6  origin/6.31.0
+repo  frameworks  sonic-frameworks-icon-themes  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-icon-themes  435d123e70e7aaad6e56c9d3f4ecbaae8e2dd29d  origin/6.31.0.1
+repo  frameworks  sonic-frameworks-io  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-io  07399f505b787ee16b568cb92dac3de71c0a8bae  origin/6.31.0
+repo  workspace  sonic-activity-manager-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-activity-manager-daemon  febc38b1ce883cecdc0dcfd9d8ac2b8d444a8eb8  origin/6.8.0
+repo  frameworks  sonic-frameworks-file-search  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-file-search  f675fcfb37125abaf747e52a3ad0c053df40e3f6  origin/6.31.0
+repo  frameworks  sonic-frameworks-io-fuse  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-io-fuse  d87a23428340d11b20bd382da1055dafee9e0555  origin/master
+repo  frameworks  sonic-frameworks-qt-integration  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-qt-integration  6edeefe2fab258c6867979c9908529b40b4c8710  origin/6.31.0
+repo  frameworks  sonic-frameworks-quick-desktop-style  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-quick-desktop-style  2ea0f1907b74a064c46958f9c2c6a4bd0f1e9a16  origin/6.31.0
+repo  workspace  sonic-frameworks-quick-silver-style  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-quick-silver-style  84f1ac977bb144e6a94c23d22b0ce677a3d14bbe  origin/6.8.0
+repo  frameworks  sonic-frameworks-runner  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-runner  8e2f1923071bdbdba081ce7c7dd68f0d7f9e73c6  origin/6.31.0
+repo  frameworks  sonic-frameworks-settings-utils  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-settings-utils  b2083a81338b82561c86eca0132cfeafa79072c4  origin/6.31.0
+repo  workspace  sonic-disks  sonic-de/sonicde-builder/src/sonicde/sonic-disks  33c80789ea60db2d6c8663958e90fc8c82900bb3  origin/6.8.0
+repo  frameworks  sonic-frameworks-purpose  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-purpose  b43bb17c689ad821242fa1b4d45c7cc0a8bcf0fc  origin/6.31.0
+repo  frameworks  sonic-frameworks-ui-components  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-ui-components  758eec76811a1f970aee45e31bb4c6093aaadb86  origin/6.31.0
+repo  apps  sonic-ecco  sonic-de/sonicde-builder/src/sonicde/sonic-ecco  ed54199043b87e03cbab9b093c879fc60219917d  origin/26.08.2
+repo  frameworks  sonic-frameworks-text-editor  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-text-editor  4f17e396301cfbce194c39934bed3aafa036537e  origin/6.31.0
+repo  workspace  sonic-gamma  sonic-de/sonicde-builder/src/sonicde/sonic-gamma  386cfe366ecb34d2b08e4722e55b27ee67db2f82  origin/6.8.0  -DBUILD_DOC=OFF
+repo  workspace  sonic-interface-libraries  sonic-de/sonicde-builder/src/sonicde/sonic-interface-libraries  99cdb5df31148e0def82007db35ba4fb5ee1012e  origin/6.8.0
+repo  workspace  sonic-audio-applet-pulse  sonic-de/sonicde-builder/src/sonicde/sonic-audio-applet-pulse  f8cac167d12f5526bab02a108bb18c1b18e78eee  origin/6.8.0  -DBUILD_DOC=OFF
+repo  workspace  sonic-bluetooth-runtime  sonic-de/sonicde-builder/src/sonicde/sonic-bluetooth-runtime  007e3b6be2d8d84c961392e43f0319a6d0c37b92  origin/6.8.0
+repo  workspace  sonic-file-search-ui  sonic-de/sonicde-builder/src/sonicde/sonic-file-search-ui  41c537a8a4d0037e8e4730de2a7f2d02c0125fb0  origin/6.8.0
+repo  workspace  sonic-keybind-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-keybind-daemon  170d567c0b45c99c91039fcd2f4b26de2fefd597  origin/6.8.0
+repo  workspace  sonic-keyboard  sonic-de/sonicde-builder/src/sonicde/sonic-keyboard  1443329f9b34a8248e0d7ad9601a3306f5718222  origin/6.8.0.1
+repo  workspace  sonic-launcher-menu-edit  sonic-de/sonicde-builder/src/sonicde/sonic-launcher-menu-edit  bd7e52c2dc45ac8eb5a9e30bcd6f3849a18450d7  origin/6.8.0
+repo  workspace  sonic-print-management  sonic-de/sonicde-builder/src/sonicde/sonic-print-management  29765cb992f811709638449e86834f4abeb5508d  origin/6.8.0
+repo  workspace  sonic-screen  sonic-de/sonicde-builder/src/sonicde/sonic-screen  70d30e55e03bbf5804f41edd9dc6d8ba6c5c88ff  origin/6.8.0
+repo  workspace  sonic-screenlocker  sonic-de/sonicde-builder/src/sonicde/sonic-screenlocker  294e7db095a7c1ff3a52e4198781d891883d2589  origin/6.8.0.2
+repo  workspace  sonic-silver  sonic-de/sonicde-builder/src/sonicde/sonic-silver  69f7e3465a9c165bd968f99ddb5629595c05e8e4  origin/6.8.0.1
+repo  workspace  sonic-breeze  sonic-de/sonicde-builder/src/sonicde/sonic-breeze  f5e6a7ee31410213f10da4831cda60ba30dca921  origin/6.8.0
+repo  workspace  sonic-qt-theme-bridge  sonic-de/sonicde-builder/src/sonicde/sonic-qt-theme-bridge  244592db64c67f7443d92e22d909f639a7eb7d35  origin/6.8.0
+repo  workspace  sonic-silver-gtk  sonic-de/sonicde-builder/src/sonicde/sonic-silver-gtk  2ac753e6b892cad484c851f2910e19bb0422535b  origin/6.8.0
+repo  workspace  sonic-gtk-theme-bridge  sonic-de/sonicde-builder/src/sonicde/sonic-gtk-theme-bridge  f4a22f0519aedd7d224d70aceceab9a0c036c24a  origin/6.8.0
+repo  workspace  sonic-silver-sound-theme  sonic-de/sonicde-builder/src/sonicde/sonic-silver-sound-theme  c874c023e6e607605f85af2132c253cef419d71e  origin/6.8.0
+repo  workspace  sonic-ssh-password-prompt  sonic-de/sonicde-builder/src/sonicde/sonic-ssh-password-prompt  2e5314490a5a29c060b654f56024f91b34ef8f82  origin/6.8.0
+repo  workspace  sonic-system-info  sonic-de/sonicde-builder/src/sonicde/sonic-system-info  82466285ef8ad66db57cf50cc50383f87725732b  origin/6.8.0  -DBUILD_DOC=OFF
+repo  apps  sonic-system-log  sonic-de/sonicde-builder/src/sonicde/sonic-system-log  d2ff710943bf4aded16953814cfa5f06adac944a  origin/26.08.2
+repo  workspace  sonic-system-monitor-library  sonic-de/sonicde-builder/src/sonicde/sonic-system-monitor-library  553fa14463235b569b6385033729d259b0de3ea4  origin/6.8.0
+repo  workspace  sonic-night-light  sonic-de/sonicde-builder/src/sonicde/sonic-night-light  f9de1619d8fd62b4a54f86e2131d15715175a636  origin/6.8.0
+repo  workspace  sonic-system-settings  sonic-de/sonicde-builder/src/sonicde/sonic-system-settings  2be2cb4ebf6bbedec93b27804e3a6de8fb87f4e2  origin/6.8.0
+repo  workspace  sonic-system-stats  sonic-de/sonicde-builder/src/sonicde/sonic-system-stats  9315d62221774a2ebfcc2f3275d2fa4a67bd9220  origin/6.8.0
+repo  workspace  sonic-system-monitor  sonic-de/sonicde-builder/src/sonicde/sonic-system-monitor  846bf9b0c3eae8d6111288a0bf1327479d71fe21  origin/6.8.0
+repo  apps  sonic-terminal  sonic-de/sonicde-builder/src/sonicde/sonic-terminal  b696eba4ed1e8898ce1a09e4220410fd2754189a  origin/26.08.2
+repo  workspace  sonic-terminal-tools  sonic-de/sonicde-builder/src/sonicde/sonic-terminal-tools  c3e6ab9cd4da9fa01fbc9fd821d73542f5c34473  origin/6.8.0
+repo  workspace  sonic-vault  sonic-de/sonicde-builder/src/sonicde/sonic-vault  a37e636a2583ceb322627933f42b23ffbbaf4d39  origin/6.8.0
+repo  workspace  sonic-welcome-center  sonic-de/sonicde-builder/src/sonicde/sonic-welcome-center  fd4a849b9e257db6a5c5ee12979c73b2fc9d7d4e  origin/6.8.0
+repo  workspace  sonic-win  sonic-de/sonicde-builder/src/sonicde/sonic-win  75dfe36a9c4dcdef35cc376cde6fa23e84392ab2  origin/6.8.0.2  -DBUILD_TESTING=OFF  -DKWIN_BUILD_SCREENLOCKER=OFF
+repo  workspace  sonic-workspace  sonic-de/sonicde-builder/src/sonicde/sonic-workspace  704b48e8ef05757e52b86363a849c16da3fa3e7d  origin/6.8.0.4
+repo  workspace  sonic-browser-integration  sonic-de/sonicde-builder/src/sonicde/sonic-browser-integration  41ec617392f129ff6068d5fe9b394a2b50df0bab  origin/6.8.0
+repo  workspace  sonic-desktop-interface  sonic-de/sonicde-builder/src/sonicde/sonic-desktop-interface  f154ac9bc51524f1248686accd962e35d094dc0d  origin/6.8.0.3  -DBUILD_KCM_TABLET=OFF  -DBUILD_DOC=OFF
+repo  workspace  sonic-power-management  sonic-de/sonicde-builder/src/sonicde/sonic-power-management  2474fc030aa9641ef2efcb010cd1367087091b9c  origin/6.8.0.1
+repo  workspace  sonic-workspace-addons  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-addons  6f260c73efc77db10216e4b12c1d30424a834876  origin/6.8.0
+repo  workspace  sonic-workspace-wallpapers  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-wallpapers  32018f0e859c0af5b3b214db4eaf34871adc3c7a  origin/6.8.0
+repo  workspace  sonic-write-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-write-daemon  f7ef21b8118cccff5deec181f41e4f378bd604d2  origin/6.8.0
+repo  workspace  xdg-desktop-portal-sonicde  sonic-de/sonicde-builder/src/sonicde/xdg-desktop-portal-sonicde  44ba642054278bcc7e75175736ce96a9c4f0126d  origin/6.8.0
+repo  workspace  sonic-pipewire  sonic-de/sonicde-builder/src/sonicde/sonic-pipewire  2bbfccb4c9e77228386cf7f0672ebd3787e42261  origin/6.8.0  -DBUILD_TESTING=OFF
+repo  workspace  sonic-screenies  sonic-de/sonicde-builder/src/sonicde/sonic-screenies  2fea9255e5c5b3171175ea789f2f4f9ec2960290  origin/6.8.0.1
