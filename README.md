@@ -133,12 +133,13 @@ It installs:
   and never overwrites anything.
   **Extra monitors**: Settings > Monitor Settings (lxrandr, "Display Settings") sets each
   monitor's resolution and where it is. The first monitor in its list stays put (its Position
-  is greyed out); each other one is placed on its left or right, above or below it, or shows
-  the same picture (best when both have the same resolution). After Apply, confirm within 15
-  seconds, or the old layout comes back. Save keeps it: the saved layout is applied at each
-  login, as are other programs in `~/.config/autostart` meant for LXDE or any desktop. Every
-  monitor gets its own desktop with the background, and with a touchscreen, touch stays on the
-  touchscreen's own monitor (a Raspberry Pi touch display, or else the smallest monitor),
+  is greyed out); each other one is placed on its left or right ("On left", "On right"), above
+  or below it, or shows the same picture: that is "Default" (best when both have the same
+  resolution). After Apply, confirm within 15 seconds, or the old layout comes back. Save
+  keeps it: the saved layout is applied at each login, as are other programs in
+  `~/.config/autostart` meant for LXDE or any desktop. Every monitor gets its own desktop with
+  the background, and with a touchscreen, touch stays on the touchscreen's own monitor (a
+  Raspberry Pi touch display, or else the smallest monitor),
 - the folders Desktop, Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3`
   and `.lv2` in each home, bookmarked in pcmanfm (the files in Desktop show on the desktop),
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
