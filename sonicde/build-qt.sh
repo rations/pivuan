@@ -24,7 +24,7 @@ jobs="${JOBS:-$(( $(awk '/MemTotal/ { print int($2 / 1048576) }' /proc/meminfo) 
 (( jobs < 1 )) && jobs=1
 
 all=(qtbase qtshadertools qtsvg qtimageformats qtdeclarative qt5compat qttools qtwebsockets
-	qtpositioning qtsensors qtmultimedia qtspeech)
+	qtpositioning qtlocation qtsensors qtmultimedia qtspeech qtvirtualkeyboard)
 modules=("${@:-${all[@]}}")
 
 # Options per module, on top of the common ones

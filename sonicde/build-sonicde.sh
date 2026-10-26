@@ -161,9 +161,16 @@ for i in $(seq 0 "${last}"); do
 	fi
 	echo "== ${name} (${group}, ${ref#origin/}): configure"
 	start="$(date +%s)"
-	cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@" \
-		> "${logs}/sonic-${name}-configure.log" 2>&1 \
-		|| { tail -40 "${logs}/sonic-${name}-configure.log"; exit 1; }
+	# Under qemu, cmake now and then misses an installed package (Qt6Qml, Qt6Gui) and finds it
+	# the next time: try once more before giving up
+	if ! cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@" \
+		> "${logs}/sonic-${name}-configure.log" 2>&1; then
+		mv "${logs}/sonic-${name}-configure.log" "${logs}/sonic-${name}-configure-failed.log"
+		echo "== ${name}: configure failed (${logs}/sonic-${name}-configure-failed.log), once more"
+		cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@" \
+			> "${logs}/sonic-${name}-configure.log" 2>&1 \
+			|| { tail -40 "${logs}/sonic-${name}-configure.log"; exit 1; }
+	fi
 	echo "== ${name}: build"
 	ninja -C "${build}/build" -j "${jobs}" > "${logs}/sonic-${name}-build.log" 2>&1 \
 		|| { grep -A12 -m3 '^FAILED' "${logs}/sonic-${name}-build.log" \
