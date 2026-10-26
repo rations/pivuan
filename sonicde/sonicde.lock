@@ -8,11 +8,12 @@ os  libhunspell-dev libhwy-dev libibus-1.0-dev libicu-dev libjxl-dev liblcms2-de
 os  libmount-dev libmtp-dev libnl-3-dev libnl-route-3-dev libnm-dev libopencv-dev libopenexr-dev libopengl-dev
 os  libopenjp2-7-dev libpam-dev libpam0g-dev libpci-dev libpipewire-0.3-dev libpolkit-agent-1-dev libpolkit-gobject-1-dev libproxy-dev
 os  libpulse-dev libpwquality-dev libqalculate-dev libqrencode-dev libraw-dev libsecret-1-dev libsensors-dev libsmbclient-dev
-os  libssh-dev libssl-dev libtag-dev libtirpc-dev libudev-dev liburi-perl libusb-1.0-0-dev libva-dev
-os  libvulkan-dev libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxcvt-dev libxft-dev libxkbcommon-dev
-os  libxkbfile-dev libxkbregistry-dev libxml2-dev libxml2-utils libxslt-dev libxss-dev libxtst-dev libxxf86vm-dev
-os  libzxing-dev meson modemmanager-dev perl python3-build python3-cairo python3-jinja2 python3-lxml
-os  python3-setuptools python3-wheel sassc shared-mime-info xserver-xorg-dev xserver-xorg-input-libinput-dev xsltproc zlib1g-dev
+os  libssh-dev libssl-dev libtag-dev libtesseract-dev libtirpc-dev libudev-dev liburi-perl libusb-1.0-0-dev
+os  libva-dev libvulkan-dev libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxcvt-dev libxft-dev
+os  libxkbcommon-dev libxkbfile-dev libxkbregistry-dev libxml2-dev libxml2-utils libxslt-dev libxss-dev libxtst-dev
+os  libxxf86vm-dev libzxing-dev meson modemmanager-dev perl python3-build python3-cairo python3-jinja2
+os  python3-lxml python3-setuptools python3-wheel sassc shared-mime-info xserver-xorg-dev xserver-xorg-input-libinput-dev xsltproc
+os  zlib1g-dev
 
 repo  frameworks  qcoro6  sonic-de/sonicde-builder/src/3rdparty/qcoro6  98f23d8d8d67e9e24217d268927faec97c713fb0  v0.13.0  -DBUILD_TESTING=OFF  -DBUILD_SHARED_LIBS=ON
 repo  frameworks  qtkeychain  sonicde-extra/qtkeychain  875f77d9f61bd97fd84cca47ce3bc71186dfbd09  refs/tags/0.17.0  -DBUILD_WITH_QT6=ON

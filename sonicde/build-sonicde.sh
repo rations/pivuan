@@ -17,6 +17,9 @@
 # Ctrl+C and a normal shutdown are safe; cutting the power during a compile can leave a broken
 # object file: delete that repo's build tree.
 #
+# Patches in patches/<repo>/ are applied when the repo is unpacked: delete its build tree after
+# adding one.
+#
 # Qt comes from build-qt.sh, in the same prefix: ECM puts plugins and QML where Qt has them, and
 # every binary gets /opt/sonicde/lib as its RPATH. No Python bindings, Qt 5, tests or docs.
 #
@@ -157,6 +160,13 @@ for i in $(seq 0 "${last}"); do
 				git -c safe.directory='*' -C "${dir}/${path}" archive --format=tar "${sub}" \
 					| tar -x -C "${build}/src/${path}"
 			done
+		# Pivuan's patches for the repo (DEP-3), in name order
+		for p in "${here}/patches/${name}"/*.patch; do
+			[[ -e "${p}" ]] || continue
+			echo "== ${name}: patch $(basename "${p}")"
+			patch -p1 -d "${build}/src" --quiet < "${p}" \
+				|| { echo "${p} does not apply" >&2; exit 1; }
+		done
 		echo "${commit} ${ref}" > "${build}/commit"
 	fi
 	echo "== ${name} (${group}, ${ref#origin/}): configure"
