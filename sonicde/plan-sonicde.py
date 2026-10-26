@@ -39,7 +39,7 @@ def git(repo, *args):
 
 
 def read_conf():
-    conf = {"extra": [], "skip": set(), "os": []}
+    conf = {"extra": [], "skip": set(), "os": [], "cmake": {}}
     for line in (here / "sonicde.conf").read_text().splitlines():
         line = line.split("#", 1)[0].split()
         if not line:
@@ -51,6 +51,8 @@ def read_conf():
             conf["skip"].add(values[0])
         elif key == "os":
             conf["os"] += values
+        elif key == "cmake":
+            conf["cmake"].setdefault(values[0], []).extend(values[1:])
         else:
             conf[key] = values[0]
     return conf
@@ -196,9 +198,13 @@ def main():
             ref = packages[n]["git"]["ref"]
             group = "frameworks" if ("frameworks" in name or "library" in name
                                      or name in ("qcoro6", "sonic-polkit")) else "apps"
-        repos[name] = (group, path, ref, packages[n].get("cmake_extra_args", []))
+        repos[name] = (group, path, ref,
+                       packages[n].get("cmake_extra_args", []) + conf["cmake"].get(name, []))
     if missing:
         sys.exit("No tag in the release series for:\n  " + "\n  ".join(missing))
+    for name in conf["cmake"]:
+        if name not in repos:
+            sys.exit(f"cmake {name}: not a repo that is built")
 
     # The rebuilt libraries need only Qt and the CMake modules: build them straight after
     names = [base(n) for n in kept if base(n) in repos]

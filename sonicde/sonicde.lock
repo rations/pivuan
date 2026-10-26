@@ -137,7 +137,7 @@ repo  workspace  sonic-workspace  sonic-de/sonicde-builder/src/sonicde/sonic-wor
 repo  workspace  sonic-browser-integration  sonic-de/sonicde-builder/src/sonicde/sonic-browser-integration  41ec617392f129ff6068d5fe9b394a2b50df0bab  origin/6.8.0
 repo  workspace  sonic-desktop-interface  sonic-de/sonicde-builder/src/sonicde/sonic-desktop-interface  f154ac9bc51524f1248686accd962e35d094dc0d  origin/6.8.0.3  -DBUILD_KCM_TABLET=OFF  -DBUILD_DOC=OFF
 repo  workspace  sonic-power-management  sonic-de/sonicde-builder/src/sonicde/sonic-power-management  2474fc030aa9641ef2efcb010cd1367087091b9c  origin/6.8.0.1
-repo  workspace  sonic-workspace-addons  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-addons  6f260c73efc77db10216e4b12c1d30424a834876  origin/6.8.0
+repo  workspace  sonic-workspace-addons  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-addons  6f260c73efc77db10216e4b12c1d30424a834876  origin/6.8.0  -DCMAKE_PROJECT_INCLUDE=/src/sonicde/cmake/qt-shadertools.cmake
 repo  workspace  sonic-workspace-wallpapers  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-wallpapers  32018f0e859c0af5b3b214db4eaf34871adc3c7a  origin/6.8.0
 repo  workspace  sonic-write-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-write-daemon  f7ef21b8118cccff5deec181f41e4f378bd604d2  origin/6.8.0
 repo  workspace  xdg-desktop-portal-sonicde  sonic-de/sonicde-builder/src/sonicde/xdg-desktop-portal-sonicde  44ba642054278bcc7e75175736ce96a9c4f0126d  origin/6.8.0
