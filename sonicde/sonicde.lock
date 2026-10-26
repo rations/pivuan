@@ -3,21 +3,22 @@
 os  bison docbook-xml docbook-xsl flex fuse3 gettext gsettings-desktop-schemas libacl1-dev
 os  libaspell-dev libattr1-dev libavcodec-dev libavfilter-dev libavformat-dev libavif-dev libblkid-dev libboost-dev
 os  libbz2-dev libcanberra-dev libcap-dev libcrypt-dev libcups2-dev libdisplay-info-dev libdmtx-dev libdrm-dev
-os  libegl-dev libei-dev libeis-dev libepoxy-dev libexiv2-dev libfuse3-dev libgcrypt20-dev libglib2.0-bin
-os  libgtk-3-dev libheif-dev libhunspell-dev libhwy-dev libibus-1.0-dev libicu-dev libjxl-dev liblcms2-dev
-os  liblmdb-dev liblzma-dev libmount-dev libmtp-dev libnl-3-dev libnl-route-3-dev libnm-dev libopencv-dev
-os  libopenexr-dev libopengl-dev libopenjp2-7-dev libpam-dev libpam0g-dev libpci-dev libpipewire-0.3-dev libpolkit-agent-1-dev
-os  libpolkit-gobject-1-dev libproxy-dev libpulse-dev libpwquality-dev libqalculate-dev libqrencode-dev libraw-dev libsecret-1-dev
-os  libsensors-dev libsmbclient-dev libssh-dev libssl-dev libtag-dev libtirpc-dev libudev-dev liburi-perl
-os  libusb-1.0-0-dev libva-dev libvulkan-dev libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxcvt-dev
-os  libxft-dev libxkbcommon-dev libxkbfile-dev libxkbregistry-dev libxml2-dev libxml2-utils libxslt-dev libxss-dev
-os  libxtst-dev libxxf86vm-dev libzxing-dev modemmanager-dev perl python3-build python3-cairo python3-lxml
+os  libegl-dev libepoxy-dev libexiv2-dev libfuse3-dev libgcrypt20-dev libglib2.0-bin libgtk-3-dev libheif-dev
+os  libhunspell-dev libhwy-dev libibus-1.0-dev libicu-dev libjxl-dev liblcms2-dev liblmdb-dev liblzma-dev
+os  libmount-dev libmtp-dev libnl-3-dev libnl-route-3-dev libnm-dev libopencv-dev libopenexr-dev libopengl-dev
+os  libopenjp2-7-dev libpam-dev libpam0g-dev libpci-dev libpipewire-0.3-dev libpolkit-agent-1-dev libpolkit-gobject-1-dev libproxy-dev
+os  libpulse-dev libpwquality-dev libqalculate-dev libqrencode-dev libraw-dev libsecret-1-dev libsensors-dev libsmbclient-dev
+os  libssh-dev libssl-dev libtag-dev libtirpc-dev libudev-dev liburi-perl libusb-1.0-0-dev libva-dev
+os  libvulkan-dev libx11-dev libx11-xcb-dev libxcb1-dev libxcursor-dev libxcvt-dev libxft-dev libxkbcommon-dev
+os  libxkbfile-dev libxkbregistry-dev libxml2-dev libxml2-utils libxslt-dev libxss-dev libxtst-dev libxxf86vm-dev
+os  libzxing-dev meson modemmanager-dev perl python3-build python3-cairo python3-jinja2 python3-lxml
 os  python3-setuptools python3-wheel sassc shared-mime-info xserver-xorg-dev xserver-xorg-input-libinput-dev xsltproc zlib1g-dev
 
 repo  frameworks  qcoro6  sonic-de/sonicde-builder/src/3rdparty/qcoro6  98f23d8d8d67e9e24217d268927faec97c713fb0  v0.13.0  -DBUILD_TESTING=OFF  -DBUILD_SHARED_LIBS=ON
 repo  frameworks  qtkeychain  sonicde-extra/qtkeychain  875f77d9f61bd97fd84cca47ce3bc71186dfbd09  refs/tags/0.17.0  -DBUILD_WITH_QT6=ON
 repo  frameworks  kdsoap  sonicde-extra/kdsoap  9bf6a463587a8c52f2596bf5919c32154f502452  refs/tags/kdsoap-2.3.0  -DKDSoap_QT6=ON  -DKDSoap_DOCS=OFF  -DKDSoap_EXAMPLES=OFF  -DKDSoap_TESTS=OFF
 repo  frameworks  highway  sonicde-extra/highway  ac0d5d297b13ab1b89f48484fc7911082d76a93f  refs/tags/1.3.0  -DBUILD_SHARED_LIBS=OFF  -DHWY_ENABLE_TESTS=OFF  -DHWY_ENABLE_EXAMPLES=OFF  -DHWY_ENABLE_CONTRIB=OFF
+repo  frameworks  libei  sonicde-extra/libei  8a46bf3d4b6af7f25a61be53386cf618218114ef  refs/tags/1.6.0  -Ddefault_library=static  -Dtests=disabled  -Dliboeffis=disabled
 repo  frameworks  sonic-polkit  sonic-de/sonicde-builder/src/sonicde/sonic-polkit  7542c44840ea59c5e7eacb2e5ede63b353784ab2  origin/master  -DFEATURE_developer_build=ON
 repo  frameworks  sonic-frameworks-cmake-modules  sonic-de/sonicde-builder/src/sonicde/sonic-frameworks-cmake-modules  4c6d42854f70fbdb01a4ed94ad6dee0dc46824a4  origin/6.31.0
 repo  frameworks  kdsoap-ws-discovery-client  sonicde-extra/kdsoap-ws-discovery-client  cc51b4fc7401c9898d42b34cdf0d7abd90f4a447  refs/tags/v0.4.0  -DQT_MAJOR_VERSION=6  -DBUILD_QCH=OFF
@@ -140,6 +141,6 @@ repo  workspace  sonic-power-management  sonic-de/sonicde-builder/src/sonicde/so
 repo  workspace  sonic-workspace-addons  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-addons  6f260c73efc77db10216e4b12c1d30424a834876  origin/6.8.0  -DCMAKE_PROJECT_INCLUDE=/src/sonicde/cmake/qt-shadertools.cmake
 repo  workspace  sonic-workspace-wallpapers  sonic-de/sonicde-builder/src/sonicde/sonic-workspace-wallpapers  32018f0e859c0af5b3b214db4eaf34871adc3c7a  origin/6.8.0
 repo  workspace  sonic-write-daemon  sonic-de/sonicde-builder/src/sonicde/sonic-write-daemon  f7ef21b8118cccff5deec181f41e4f378bd604d2  origin/6.8.0
-repo  workspace  xdg-desktop-portal-sonicde  sonic-de/sonicde-builder/src/sonicde/xdg-desktop-portal-sonicde  44ba642054278bcc7e75175736ce96a9c4f0126d  origin/6.8.0
+repo  workspace  xdg-desktop-portal-sonicde  sonic-de/sonicde-builder/src/sonicde/xdg-desktop-portal-sonicde  44ba642054278bcc7e75175736ce96a9c4f0126d  origin/6.8.0  -DCMAKE_CXX_FLAGS=-DSPA_POD_ALIGN=8
 repo  workspace  sonic-pipewire  sonic-de/sonicde-builder/src/sonicde/sonic-pipewire  2bbfccb4c9e77228386cf7f0672ebd3787e42261  origin/6.8.0  -DBUILD_TESTING=OFF
 repo  workspace  sonic-screenies  sonic-de/sonicde-builder/src/sonicde/sonic-screenies  2fea9255e5c5b3171175ea789f2f4f9ec2960290  origin/6.8.0.1

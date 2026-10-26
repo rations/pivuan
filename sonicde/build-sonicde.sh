@@ -111,7 +111,7 @@ if (( ${#wanted[@]} )); then
 fi
 
 export PATH="${prefix}/bin:${PATH}"
-export PKG_CONFIG_PATH="${prefix}/lib/pkgconfig:${prefix}/share/pkgconfig"
+export PKG_CONFIG_PATH="${prefix}/lib/aarch64-linux-gnu/pkgconfig:${prefix}/lib/pkgconfig:${prefix}/share/pkgconfig"
 export XDG_DATA_DIRS="${prefix}/share:/usr/share"
 
 common=(
@@ -161,14 +161,20 @@ for i in $(seq 0 "${last}"); do
 	fi
 	echo "== ${name} (${group}, ${ref#origin/}): configure"
 	start="$(date +%s)"
+	# CMake, or Meson for a repo without CMakeLists.txt (libei); the options are its own
+	if [[ -e "${build}/src/CMakeLists.txt" ]]; then
+		configure=(cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@")
+	else
+		configure=(meson setup --prefix="${prefix}" --buildtype=release "$@")
+		[[ -e "${build}/build/build.ninja" ]] && configure+=(--reconfigure)
+		configure+=("${build}/build" "${build}/src")
+	fi
 	# Under qemu, cmake now and then misses an installed package (Qt6Qml, Qt6Gui) and finds it
 	# the next time: try once more before giving up
-	if ! cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@" \
-		> "${logs}/sonic-${name}-configure.log" 2>&1; then
+	if ! "${configure[@]}" > "${logs}/sonic-${name}-configure.log" 2>&1; then
 		mv "${logs}/sonic-${name}-configure.log" "${logs}/sonic-${name}-configure-failed.log"
 		echo "== ${name}: configure failed (${logs}/sonic-${name}-configure-failed.log), once more"
-		cmake -S "${build}/src" -B "${build}/build" "${common[@]}" "$@" \
-			> "${logs}/sonic-${name}-configure.log" 2>&1 \
+		"${configure[@]}" > "${logs}/sonic-${name}-configure.log" 2>&1 \
 			|| { tail -40 "${logs}/sonic-${name}-configure.log"; exit 1; }
 	fi
 	echo "== ${name}: build"
@@ -178,8 +184,13 @@ for i in $(seq 0 "${last}"); do
 	ninja -C "${build}/build" install > "${logs}/sonic-${name}-install.log" 2>&1 \
 		|| { tail -40 "${logs}/sonic-${name}-install.log"; exit 1; }
 	end="$(date +%s)"
-	# Keep only what packaging needs: which files are this repo's
-	cp "${build}/build/install_manifest.txt" "${build}/install_manifest.txt"
+	# Keep only what packaging needs: which files are this repo's (Meson lists them in its
+	# install log, after comment lines)
+	if [[ -e "${build}/build/install_manifest.txt" ]]; then
+		cp "${build}/build/install_manifest.txt" "${build}/install_manifest.txt"
+	else
+		grep -v '^#' "${build}/build/meson-logs/install-log.txt" > "${build}/install_manifest.txt"
+	fi
 	rm -rf "${build}/build" "${build}/src"
 	touch "${build}/.installed"
 	printf '%s %s %d min\n' "$(date -I)" "${name}" "$(( (end - start) / 60 ))" \
