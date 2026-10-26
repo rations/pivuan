@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/lib/sonicde/startsonicde
+TryExec=/usr/lib/sonicde/startsonicde
+DesktopNames=KDE
+Name=SonicDE
+Comment=Sonic Desktop Environment (X11)

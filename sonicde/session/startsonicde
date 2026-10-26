@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Start SonicDE: LightDM runs this for the SonicDE session (/usr/share/xsessions/sonicde.desktop).
+#
+# SonicDE lives in /opt/sonicde with its own Qt. Its programs find their libraries and Qt plugins by
+# themselves (RUNPATH, Qt's prefix), so nothing here changes how Devuan's Qt programs start: only the
+# search paths for programs, data and settings put /opt/sonicde first.
+#
+# The session bus finds SonicDE's D-Bus services through XDG_DATA_DIRS, so it has to start after
+# that is set. Xsession may have started a bus already (dbus-x11), without them: SonicDE gets a bus
+# of its own.
+#
+prefix=/opt/sonicde
+
+: "${XDG_DATA_DIRS:=/usr/local/share:/usr/share}"
+: "${XDG_CONFIG_DIRS:=/etc/xdg}"
+case ":${PATH}:" in *":${prefix}/bin:"*) ;; *) PATH="${prefix}/bin:${PATH}" ;; esac
+case ":${XDG_DATA_DIRS}:" in *":${prefix}/share:"*) ;; *) XDG_DATA_DIRS="${prefix}/share:${XDG_DATA_DIRS}" ;; esac
+case ":${XDG_CONFIG_DIRS}:" in *":${prefix}/etc/xdg:"*) ;; *) XDG_CONFIG_DIRS="${prefix}/etc/xdg:${XDG_CONFIG_DIRS}" ;; esac
+export PATH XDG_DATA_DIRS XDG_CONFIG_DIRS
+
+exec dbus-run-session -- "${prefix}/bin/startplasma-x11"
