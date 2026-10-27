@@ -5,7 +5,9 @@
 #   the "Pivuan image build" workflow's settings, the image-time extras from
 #   `compile.sh config-dump-json`, and the Raspberry Pi firmware the bcm2711 family installs;
 # - the desktops: configng's parse_desktop_yaml.py, as pivuan-config runs it;
-# - the Pivuan apt repository: its arm64 Packages index on the gh-pages branch.
+# - the Pivuan apt repository: its arm64 Packages index on the gh-pages branch;
+# - the Pivuan SonicDE apt repository (rations/pivuan-sonicde): its arm64 Packages index, read
+#   over HTTPS (its gh-pages branch holds the .debs, hundreds of MB to fetch).
 # The lists name the packages Pivuan asks for, not the dependencies apt adds.
 #
 # Usage, from this repository (rations/pivuan), with ../build and ../configng next to it:
@@ -28,12 +30,15 @@ CONFIGNG = os.path.abspath(os.environ.get("CONFIGNG_DIR", os.path.join(REPO, "..
 # The image the "Pivuan image build" workflow makes (build .github/workflows/pivuan-build.yml).
 BOARD, BRANCH, RELEASE, BASE, ARCH = "rpi4b", "current", "excalibur", "trixie", "arm64"
 PACKAGES_INDEX = f"origin/gh-pages:dists/{RELEASE}/main/binary-{ARCH}/Packages"
+SONICDE_REPO = "https://rations.github.io/pivuan-sonicde"
+SONICDE_INDEX = f"{SONICDE_REPO}/dists/{RELEASE}/main/binary-{ARCH}/Packages"
 
 # The desktops pivuan-config offers on Pivuan, the order of the README.
 DESKTOPS = [
     ("audio", "Pivuan Audio", "pivuan-audio.md", {"minimal": "AUDI01"}),
     ("xfce", "XFCE", "xfce.md", {"minimal": "XFCE01", "mid": "XFCE05", "full": "XFCE06"}),
     ("mate", "MATE", "mate.md", {"minimal": "MATE01", "mid": "MATE05", "full": "MATE06"}),
+    ("sonicde", "SonicDE", "sonicde.md", {"minimal": "SONI01"}),
 ]
 TIERS = ["minimal", "mid", "full"]
 
@@ -54,7 +59,16 @@ def git_head(path):
 def repo_packages():
     """Newest version of each package in the Pivuan apt repository: name -> fields."""
     subprocess.run(["git", "-C", REPO, "fetch", "-q", "origin", "gh-pages"], check=False)
-    text = run(["git", "-C", REPO, "show", PACKAGES_INDEX])
+    return newest_packages(run(["git", "-C", REPO, "show", PACKAGES_INDEX]))
+
+
+def sonicde_packages():
+    """Newest version of each package in the Pivuan SonicDE apt repository."""
+    return newest_packages(run(["curl", "-fsSL", SONICDE_INDEX]))
+
+
+def newest_packages(text):
+    """A Packages index, newest version of each package: name -> fields."""
     newest = {}
     for stanza in text.strip().split("\n\n"):
         fields = {}
@@ -178,6 +192,7 @@ def write(name, text):
 
 def main():
     repo = repo_packages()
+    sonic = sonicde_packages()
     debootstrap, rootfs, image_extra = image_packages()
     firmware = rpi_firmware()
     pivuan_image = sorted(n for n in repo
@@ -191,15 +206,17 @@ def main():
         for tier in commands:
             tiers[(de, tier)], brave[de] = desktop(de, tier)
 
-    every = set(debootstrap) | set(rootfs) | set(image_extra) | set(firmware) | set(repo)
+    every = set(debootstrap) | set(rootfs) | set(image_extra) | set(firmware) | set(repo) | set(sonic)
     for (de, tier), pkgs in tiers.items():
         every |= set(pkgs)
     every |= {b for b in brave.values() if b}
-    desc = descriptions(every, repo)
+    desc = descriptions(every, {**sonic, **repo})
 
     def source(n):
         if n in repo:
             return "Pivuan"
+        if n in sonic:
+            return "Pivuan SonicDE"
         if n in brave.values():
             return "Brave"
         return "Devuan"
@@ -266,6 +283,15 @@ def main():
             parts += ["## Browser", "",
                       f"From [Brave's apt repository](https://brave.com/linux/), which `pivuan-config` adds.", "",
                       table([brave[de]], desc, source), ""]
+        if de == "sonicde":
+            rows = ["| Package | Version | Description |", "|---|---|---|"]
+            for n, f in sorted(sonic.items()):
+                rows.append(f"| `{n}` | `{f['Version']}` | {md_escape(f.get('Description', ''))} |")
+            parts += ["## The Pivuan SonicDE apt repository", "",
+                      f"`sonicde` brings all of these, from {SONICDE_REPO} (which `pivuan-config` adds): "
+                      "SonicDE and the Qt and frameworks it is built on, in `/opt/sonicde`. The repository "
+                      "keeps the last 2 versions of each.", "",
+                      "\n".join(rows), ""]
         write(filename, "\n".join(parts))
 
     # apt-repository.md: what each package is for.
@@ -292,7 +318,8 @@ def main():
         "# Packages in the Pivuan apt repository",
         "",
         f"The newest version of each package at https://rations.github.io/pivuan (suite `{RELEASE}`, "
-        f"`{ARCH}`). The repository keeps the last 3 versions of each.",
+        f"`{ARCH}`). The repository keeps the last 2 versions of each. SonicDE's packages are in their own "
+        f"repository: [sonicde.md](sonicde.md).",
         "",
         stamp,
         "",

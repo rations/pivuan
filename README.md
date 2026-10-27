@@ -16,7 +16,8 @@ configuration tool), and gets its updates from Devuan and from its own apt repos
 - **sysvinit, no systemd**: `init` is PID 1, with elogind, eudev and ifupdown. Packages that
   would pull in systemd are left out.
 - **Desktop in one command**: XFCE or MATE with a LightDM login screen, installed from the
-  Devuan archive (with XLibre from the Pivuan apt repository) by `pivuan-config`, or
+  Devuan archive (with XLibre from the Pivuan apt repository) by `pivuan-config`, SonicDE
+  (from KDE Plasma, built by Pivuan), or
   **Pivuan Audio** for music production (JWM and JACK), which also runs Windows plugins.
 - **Kept up to date**: Devuan's security updates through apt, and the Raspberry Pi kernel,
   firmware, board support and `pivuan-config` through the Pivuan apt repository.
@@ -82,7 +83,13 @@ image and is installed with each desktop.
 ## Desktop
 
 The image is minimal on purpose. To add a desktop, log in and install **Pivuan Audio**,
-the desktop Pivuan is made for, or XFCE or MATE.
+the desktop Pivuan is made for, or XFCE, MATE or SonicDE.
+
+One desktop is installed at a time. To change to another one, remove the desktop first, from
+the text login and not from a terminal in the desktop: removing it closes the desktop, and the
+removal with it. Press **Ctrl+Alt+F1** for the text login (Pivuan Audio has its login screen on
+tty1, so use **Ctrl+Alt+F2** there), log in and run the remove command of your desktop
+(`AUDI02`, `XFCE02`, `MATE02` or `SONI02` in place of `01`).
 
 ### Pivuan Audio
 
@@ -226,6 +233,38 @@ This installs, from the Devuan archive:
 - **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
 
 When it finishes, the login screen appears. Log in with the user you created in the wizard.
+
+### SonicDE
+
+[SonicDE](https://github.com/Sonic-DE) is a desktop forked from KDE Plasma 6 that keeps to X11:
+
+```sh
+sudo pivuan-config --cmd SONI01    # SonicDE (about 1.5 GB)
+```
+
+SonicDE needs a newer Qt and KDE Frameworks than Devuan has, so Pivuan builds the whole desktop,
+with its own Qt and frameworks, into `/opt/sonicde` and publishes it in an apt repository of its
+own, the [Pivuan SonicDE apt repository](https://github.com/rations/pivuan-sonicde), which
+`pivuan-config` adds (signed with the same key as the Pivuan apt repository). Devuan's own Qt
+programs are left as they are. This installs:
+
+- **SonicDE**: the desktop and panel, the sonic-win window manager (it draws its own effects,
+  without picom), System Settings, the file manager, terminal, system monitor, screenshot tool
+  and disk tool, with the **Silver Dark** look, the panel along the bottom and the
+  SonicBallLightning background (the lock screen keeps the black Pivuan one),
+- programs from Devuan that SonicDE has none of: **FeatherPad** (text editor), **VLC** (video
+  and music), **LXQt Archiver**, **qpdfview** (PDF viewer), **LXImage** (image viewer) and
+  **Qalculate** (calculator),
+- the **XLibre** X server from the Pivuan apt repository, as on the other desktops,
+- the **LightDM** login screen (no automatic login),
+- **NetworkManager**, **PulseAudio** and **Bluetooth**, in the panel (your wired and Wi-Fi
+  settings are moved over),
+- **Onboard**, the on-screen keyboard, which comes up when a text box is tapped on a
+  touchscreen,
+- **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
+
+When it finishes, the login screen appears. Log in with the user you created in the wizard.
+`sudo pivuan-config --cmd SONI02` removes it, and the Pivuan SonicDE apt repository with it.
 
 ## pivuan-config
 
