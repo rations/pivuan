@@ -6,7 +6,7 @@ build: the `wine-fex` packages.
 
 ## What it is
 
-- **Wine**: wine-staging 11.19, built natively for 64-bit ARM with ARM64EC support.
+- **Wine**: wine-staging 11.20, built natively for 64-bit ARM with ARM64EC support.
 - **FEX**: `libarm64ecfex.dll` and `libwow64fex.dll` from [FEX](https://github.com/FEX-Emu/FEX)
   (FEX-2609, with two patches), which translate x86 code to ARM.
 
@@ -18,6 +18,10 @@ vstbridge's plugin host is an ARM64EC program: its own code runs natively, and t
 loads runs through FEX. The host talks to the plugin in your DAW through a small native Linux
 library instead of Wine's sockets. On the Pi 5 a round trip takes 13.7 µs, the same as between two
 Linux programs (13.6 µs). Through Wine's sockets it took about 123 µs.
+
+32-bit plugins have their own host, a 32-bit x86 program (since vstbridge 0.0.4). Wine runs it
+through FEX's `libwow64fex.dll`, so all of its code is emulated, not only the plugin's, and it
+uses the same kind of native Linux library for talking to your DAW.
 
 ## Why DXVK isn't needed
 
@@ -35,7 +39,7 @@ DXVK requires, such as BC texture compression and 64-bit shader integers.
 
 ## What's different from upstream Wine and FEX
 
-Eight Wine patches, all in
+Seven Wine patches, all in
 [vstbridge's `aarch64/wine/patches`](https://github.com/rations/vstbridge/tree/arm64/aarch64/wine/patches):
 
 1. `IDXGIOutput::WaitForVBlank()` waits for a refresh interval (the fix above).
@@ -54,8 +58,9 @@ Eight Wine patches, all in
 
 7. Windows programs can use the x86 debug registers. Wine's ARM64 support dropped them, and it now
    passes them to FEX (below).
-8. Wine reads the Pi's OpenGL features the way its graphics driver needs. Without this, Wine 11.19
-   hung as soon as a Windows program opened a window.
+
+Wine 11.19 needed an eighth patch, because it hung on the Pi's graphics driver as soon as a Windows
+program opened a window. Wine 11.20 fixes that itself.
 
 Patches 4 to 6 are what iLok (PACE License Support) needs to install. Patch 7 and the FEX patches
 are what plugins protected by iLok, such as Neural DSP's, need to run.
@@ -74,7 +79,7 @@ Two FEX patches, in
 | Package | Contents |
 |---|---|
 | `wine-fex` | Wine and FEX in `/opt/vstbridge/wine`, the `wine` commands in `/usr/bin`, and the "Wine Windows Program Loader" for opening `.exe` and `.msi` files from pcmanfm |
-| `wine-fex-i386` | 32-bit Windows support, for programs such as many plugin installers |
+| `wine-fex-i386` | 32-bit Windows support, for 32-bit plugins and programs such as many plugin installers |
 | `wine-fex-mono` | Wine's .NET runtime, so a new Wine prefix is set up without a download |
 
 - `vstbridge` depends on all three, and Pivuan Audio installs them.
@@ -83,8 +88,8 @@ Two FEX patches, in
 
 ## Limits
 
-- 32-bit Windows programs run, but 32-bit plugins can't be bridged yet: vstbridge has only a
-  64-bit plugin host on ARM.
+- 32-bit plugins can use more CPU than their 64-bit versions, because FEX emulates their whole
+  host, not only the plugin. Use the 64-bit version of a plugin when there is one.
 - Emulated plugins use more CPU than on an x86 computer. FEX translates code the first time it
   runs, so a plugin can be slower for a moment just after it loads.
 

@@ -110,9 +110,9 @@ It installs:
   from the Pivuan apt repository: Jack Graph, JackDAW, NAMp, NAMix, lvtuner, DRUMix and
   CPU Power, and **TONE3000** (its amp and effects plug-in as VST3 and LV2, and the standalone
   program, for every user; tones download from tone3000.com),
-- **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridgectl"
-  in the Audio menu), with **Wine** and **FEX** for Windows programs, such as plugin
-  installers and license managers: they open from a right-click in pcmanfm
+- **vstbridge** for 64-bit and 32-bit Windows VST2, VST3 and CLAP plugins in the audio
+  programs ("vstbridgectl" in the Audio menu), with **Wine** and **FEX** for Windows programs,
+  such as plugin installers and license managers: they open from a right-click in pcmanfm
   ("Wine Windows Program Loader"). Installed Windows programs are in the **Wine** menu, which
   updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
   installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE),
