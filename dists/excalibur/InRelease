@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: arm64
+Codename: excalibur
+Components: main
+Date: Sat, 07 Nov 2026 04:07:04 +0000
+Description: Pivuan: Kernel, firmware, board support, pivuan-config and audio application updates for Devuan on the Raspberry Pi
+Label: Pivuan
+Origin: Pivuan
+Suite: excalibur
+MD5Sum:
+ 9d2a13f296cb30e86e6ffe0b555af426            67395 main/binary-arm64/Packages
+ 19243f29b227cc3eec0a067e9816c176            19301 main/binary-arm64/Packages.gz
+ 3f382a801c4805eae49155a430d10340            17232 main/binary-arm64/Packages.xz
+SHA1:
+ 4f2952f04c94e89247e91fc6500751ff3a0872a1            67395 main/binary-arm64/Packages
+ eae9c6ca80b6fd1e801b2717586b1bbac439f6fe            19301 main/binary-arm64/Packages.gz
+ 8fdb97377b860e8566a1544ff396d0c15c3f17c4            17232 main/binary-arm64/Packages.xz
+SHA256:
+ 1b8281e907ab1dc3f8662e0c5dd2f68dc0ac6df694fc923efa122845db90aca0            67395 main/binary-arm64/Packages
+ 5390af8061e583423e4e2e6a9f79f1957070dafd46398204d2bcc3bf46af76e2            19301 main/binary-arm64/Packages.gz
+ d21496c8c66530a933629e455826faf97071e445a955f019890fbed8820dbac2            17232 main/binary-arm64/Packages.xz
+SHA512:
+ 285fb198f7722e1bded87d9fed3c5a1767d846854dd32a4a175421abc68ac842e718ef215bb9b32ae46d9e6670f62572cdcfc9a4014d296a8a8dbc929d906440            67395 main/binary-arm64/Packages
+ dffcd3a2ed9c4d566c7f966a386aa9bdc0b78d2d38d8dea21fb156af7952d24f120c0167ca5046529c6b5dd32190339b38e03162de3f0c119ff946918cfbce17            19301 main/binary-arm64/Packages.gz
+ afdde7c4938fd0f22cd6183a51a380a77e5a087d1fb9854e501e2f09107258e7ed3f2f59ac5e19094ef39ee28ac3a10e9aec32c4cce974f16b9c6fc406c258d7            17232 main/binary-arm64/Packages.xz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEENOpPEV2DeTtsgDFVR2mSnyBLGM0FAmruo+gACgkQR2mSnyBL
+GM0xyBAAhUVtJzCJ6WDR5s6uSY7KMttjt0RQlABsi06Y6fdkq96gs7/hmaYT8nEg
+U3YPb4gHwo5keDd53hwIxqCaysiG/1bOhG26/1Q91qMNeblDrkPkoxocCE9ky2mt
+nLKSRctzAOFtgo+LU40vIE+X5FeLe+WcJdkxgBMK0s7kZ57rS8LLbWvIX3ZdIia/
+KFpLnFGSd023tuHBCl5Qxs2EtjMO4rrNocwxTxJZo2mGCg91EFEuTEhwpl+IORLr
+yrA8OqycbDhG07buPpnVZOr10JSxqqVFDAlNLIyDl2SZbyArCDPOhqbMlydcLwFN
+moHXJ6jp/oSz32kPyKrHlEtJjNnwpoYGuIPjCSd0ay1sF99D/HNRj2RInObd70JB
+3BWj1HWtyca8zL+9eNzCCSWBL8EBe666IUBVGCxgZmySuAQHAeSxmu9rWjpdN5+R
+86nahmdiJZn0ZQvhyZiJmsxwgfioYNAzVzLXj/6i+BXsa5RuCTeVPLIhI6pkC+Xl
+7RcxJVStH/Cg0D5MSel9GmLrDPdAJRQd6S1JjI0dIsa0HJNw75cNJQUcq5x4/X5b
+Q++UN0a5mDjGtsuI9If7G9PgqCxbAo5HKlilxy6ms+svS/vuSUQ0GzPApHSdVi6F
+opwPJuaECDAyuYxwwbl84nrFEqo/b2g6aHqTWk4UFfVRB+O1Ijs=
+=sF+V
+-----END PGP SIGNATURE-----
