@@ -2,7 +2,8 @@
 # to the Pivuan apt repository (this repository's gh-pages branch).
 #
 # xlibre-debian's packages need Devuan's backports on excalibur. These are built from X11Libre's
-# release tags with xlibre-debian's packaging (xlibre/xlibre.conf pins both), in an excalibur
+# release tags (or a commit on a release branch, with Pivuan's patches in xlibre/patches/) with
+# xlibre-debian's packaging (xlibre/xlibre.conf pins both), in an excalibur
 # arm64 root made with mmdebstrap from the Devuan archive (pinned Devuan keys), natively on
 # GitHub's arm64 runner, against excalibur's own libraries. The packages are then installed in a
 # clean excalibur root and checked: XLibre's Xorg runs, modesetting with glamor and libinput are

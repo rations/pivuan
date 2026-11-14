@@ -1,0 +1,3 @@
+# SonicDE's screen locker unlocks with the PAM service "kde": the user's password.
+@include common-auth
+@include common-account

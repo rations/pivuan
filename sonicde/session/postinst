@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+# SonicDE's MIME types: the database in /opt/sonicde/share/mime is made here, not shipped.
+if [ "$1" = configure ] && [ -d /opt/sonicde/share/mime/packages ]; then
+	update-mime-database /opt/sonicde/share/mime
+fi

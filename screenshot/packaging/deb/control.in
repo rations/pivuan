@@ -1,0 +1,16 @@
+Package: @PACKAGE@
+Version: @VERSION@
+Architecture: all
+Maintainer: @MAINTAINER@
+Installed-Size: @SIZE@
+Depends: python3, python3-gi, gir1.2-gtk-3.0, scrot
+Recommends: jwm
+Section: graphics
+Priority: optional
+Description: Screenshots for Pivuan Audio (JWM)
+ Takes a picture of the whole screen, a window (click it) or an area (drag it
+ out) with scrot. Its small window can wait a few seconds first, shows the
+ picture, and saves it with the name and in the folder you choose
+ (~/Pictures at first). Run as "pivuan-screenshot screen", "area" or
+ "window", it saves straight into ~/Pictures: Pivuan Audio (pivuan-config)
+ binds these to Print, Alt+Print and Super+Print.

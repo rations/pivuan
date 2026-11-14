@@ -16,7 +16,8 @@ configuration tool), and gets its updates from Devuan and from its own apt repos
 - **sysvinit, no systemd**: `init` is PID 1, with elogind, eudev and ifupdown. Packages that
   would pull in systemd are left out.
 - **Desktop in one command**: XFCE or MATE with a LightDM login screen, installed from the
-  Devuan archive (with XLibre from the Pivuan apt repository) by `pivuan-config`, or
+  Devuan archive (with XLibre from the Pivuan apt repository) by `pivuan-config`, SonicDE
+  (from KDE Plasma, built by Pivuan), or
   **Pivuan Audio** for music production (JWM and JACK), which also runs Windows plugins.
 - **Kept up to date**: Devuan's security updates through apt, and the Raspberry Pi kernel,
   firmware, board support and `pivuan-config` through the Pivuan apt repository.
@@ -82,7 +83,13 @@ image and is installed with each desktop.
 ## Desktop
 
 The image is minimal on purpose. To add a desktop, log in and install **Pivuan Audio**,
-the desktop Pivuan is made for, or XFCE or MATE.
+the desktop Pivuan is made for, or XFCE, MATE or SonicDE.
+
+One desktop is installed at a time. To change to another one, remove the desktop first, from
+the text login and not from a terminal in the desktop: removing it closes the desktop, and the
+removal with it. Press **Ctrl+Alt+F1** for the text login (Pivuan Audio has its login screen on
+tty1, so use **Ctrl+Alt+F2** there), log in and run the remove command of your desktop
+(`AUDI02`, `XFCE02`, `MATE02` or `SONI02` in place of `01`).
 
 ### Pivuan Audio
 
@@ -103,9 +110,9 @@ It installs:
   from the Pivuan apt repository: Jack Graph, JackDAW, NAMp, NAMix, lvtuner, DRUMix and
   CPU Power, and **TONE3000** (its amp and effects plug-in as VST3 and LV2, and the standalone
   program, for every user; tones download from tone3000.com),
-- **vstbridge** for Windows VST2, VST3 and CLAP plugins in the audio programs ("vstbridgectl"
-  in the Audio menu), with **Wine** and **FEX** for Windows programs, such as plugin
-  installers and license managers: they open from a right-click in pcmanfm
+- **vstbridge** for 64-bit and 32-bit Windows VST2, VST3 and CLAP plugins in the audio
+  programs ("vstbridgectl" in the Audio menu), with **Wine** and **FEX** for Windows programs,
+  such as plugin installers and license managers: they open from a right-click in pcmanfm
   ("Wine Windows Program Loader"). Installed Windows programs are in the **Wine** menu, which
   updates itself, with Wine Configuration and Uninstall Windows Programs, and the shortcuts
   installers put on the desktop show as desktop icons. Plugins protected by iLok (PACE),
@@ -131,8 +138,15 @@ It installs:
   zip or tar archive (.zip, .tar, .tar.gz, .tar.xz, .tar.bz2, .tar.zst) has **Extract Here**:
   it unpacks next to the archive, into a folder named after it when it holds several files,
   and never overwrites anything.
-  Screen settings saved in lxrandr are applied at each login, as are other programs in
-  `~/.config/autostart` meant for LXDE or any desktop,
+  **Extra monitors**: Settings > Monitor Settings (lxrandr, "Display Settings") sets each
+  monitor's resolution and where it is. The first monitor in its list stays put (its Position
+  is greyed out); each other one is placed on its left or right ("On left", "On right"), above
+  or below it, or shows the same picture: that is "Default" (best when both have the same
+  resolution). After Apply, confirm within 15 seconds, or the old layout comes back. Save
+  keeps it: the saved layout is applied at each login, as are other programs in
+  `~/.config/autostart` meant for LXDE or any desktop. Every monitor gets its own desktop with
+  the background, and with a touchscreen, touch stays on the touchscreen's own monitor (a
+  Raspberry Pi touch display, or else the smallest monitor),
 - the folders Desktop, Downloads, Documents, Music, Videos, NAM, Impulse Responses, `.vst3`
   and `.lv2` in each home, bookmarked in pcmanfm (the files in Desktop show on the desktop),
 - **NetworkManager** and **blueman** in the tray, and **Brave Origin**,
@@ -146,6 +160,11 @@ It installs:
   `~/.config/pivuan/desktop.conf`. Brightness uses the screen's backlight, or the monitor's
   own setting over HDMI (DDC/CI), or else dims the picture; the sun button on the panel opens
   just the brightness slider.
+
+**Screenshots**: Print saves the whole screen, Alt+Print an area you drag out, and
+Super+Print a window you click, as PNG files in `~/Pictures`. **Accessories > Screenshot** in
+the menu takes the same three, after a delay if you like, then lets you name the picture and
+choose its folder (`~/Pictures` at first).
 
 The **Pivuan menu** (jgmenu) is on the Pivuan button in the tray, on a right click on the
 desktop, and on Alt+F1. It has Terminal, Home and Web Browser, then the programs by category
@@ -214,6 +233,38 @@ This installs, from the Devuan archive:
 - **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
 
 When it finishes, the login screen appears. Log in with the user you created in the wizard.
+
+### SonicDE
+
+[SonicDE](https://github.com/Sonic-DE) is a desktop forked from KDE Plasma 6 that keeps to X11:
+
+```sh
+sudo pivuan-config --cmd SONI01    # SonicDE (about 1.5 GB)
+```
+
+SonicDE needs a newer Qt and KDE Frameworks than Devuan has, so Pivuan builds the whole desktop,
+with its own Qt and frameworks, into `/opt/sonicde` and publishes it in an apt repository of its
+own, the [Pivuan SonicDE apt repository](https://github.com/rations/pivuan-sonicde), which
+`pivuan-config` adds (signed with the same key as the Pivuan apt repository). Devuan's own Qt
+programs are left as they are. This installs:
+
+- **SonicDE**: the desktop and panel, the sonic-win window manager (it draws its own effects,
+  without picom), System Settings, the file manager, terminal, system monitor, screenshot tool
+  and disk tool, with the **Silver Dark** look, the panel along the bottom and the
+  SonicBallLightning background (the lock screen keeps the black Pivuan one),
+- programs from Devuan that SonicDE has none of: **FeatherPad** (text editor), **VLC** (video
+  and music), **LXQt Archiver**, **qpdfview** (PDF viewer), **LXImage** (image viewer) and
+  **Qalculate** (calculator),
+- the **XLibre** X server from the Pivuan apt repository, as on the other desktops,
+- the **LightDM** login screen (no automatic login),
+- **NetworkManager**, **PulseAudio** and **Bluetooth**, in the panel (your wired and Wi-Fi
+  settings are moved over),
+- **Onboard**, the on-screen keyboard, which comes up when a text box is tapped on a
+  touchscreen,
+- **Brave Origin** as the web browser, from [Brave's apt repository](https://brave.com/linux/).
+
+When it finishes, the login screen appears. Log in with the user you created in the wizard.
+`sudo pivuan-config --cmd SONI02` removes it, and the Pivuan SonicDE apt repository with it.
 
 ## pivuan-config
 

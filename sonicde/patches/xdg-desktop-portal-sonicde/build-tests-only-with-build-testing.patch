@@ -1,0 +1,21 @@
+Description: build the tests only with BUILD_TESTING
+ autotests/ is added unconditionally, so -DBUILD_TESTING=OFF still builds it,
+ and settingsportaltest.cpp uses std::vector's std::from_range constructor,
+ which GCC 14's libstdc++ (excalibur) does not have. The portal itself does
+ not use it.
+Forwarded: no
+Last-Update: 2026-10-26
+---
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -100,7 +100,9 @@
+ 
+ add_subdirectory(data)
+ add_subdirectory(src)
+-add_subdirectory(autotests)
++if(BUILD_TESTING)
++    add_subdirectory(autotests)
++endif()
+ 
+ # add clang-format target for all our real source files
+ file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
