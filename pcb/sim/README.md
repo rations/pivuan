@@ -1,6 +1,6 @@
-# Pedalboard simulations
+# Audio board simulations
 
-Circuit simulations of the pedalboard's analog parts and its 12 V supply, run in
+Circuit simulations of the board's analog parts and its 12 V supply, run in
 [ngspice](https://ngspice.sourceforge.io/) with Texas Instruments' own SPICE models. They test
 the schematic as drawn: `kinet.py` reads the parts, values and connections from the KiCad
 netlist, so a change on the schematic shows up here on the next run.
@@ -25,7 +25,7 @@ You need ngspice (version 44 was used) and Python 3. No Python packages are need
 | `get-models.sh` | Downloads TI's models: OPA164x (sbom627), LM393 (slcj016), TPS61040 (slvmda8), TPS7A4901 (sbvm528) |
 | `svgplot.py` | Draws the plots |
 
-## Results (2026-10-23)
+## Results (2026-10-23, run again 2026-11-15)
 
 | # | What | Result |
 |---|---|---|
@@ -33,7 +33,7 @@ You need ngspice (version 44 was used) and Python 3. No Python packages are need
 | A2 | Gain knob | 0 to +24.1 dB. Alps' log (15A) taper gives 0.6–4.1 dB per 30° of rotation; a linear pot would put 10 dB in the first 30° |
 | A3 | Noise at full gain, 10 kΩ source | The stage adds 1.0 dB to the noise of the source and the ADC together |
 | A4 | Clip LED | Lights at VREF +2.62 / −2.60 V, 1.1 dB under the ADC's full scale. One 1 kHz cycle 0.5 dB over: 2 mA for 98 ms. Off below the threshold |
-| A5 | Into the ADC | Flat within 0.07 dB from 20 Hz to 20 kHz. 0.1 % overshoot on a step, so no ringing |
+| A5 | Into the ADC | Flat within 0.06 dB from 20 Hz to 20 kHz. 0.2 % overshoot on a step, so no ringing. Current into the ADC pin's ESD diodes (TI's limit: about 5 mA): 1.9 mA overdriven, 3.7 mA for the worst jump from rail to rail, 0.7 mA at power-off |
 | A6 | Main outputs | Flat into 10 kΩ and 600 Ω (−3 dB at 2 Hz and 4.5 Hz). Power-on: a slow 0.4 V swell. **Power-off: a −4.8 V thump** (see below) |
 | A7 | Headphones | The knob keeps its shape within 2.7 dB under the amplifier's 37 kΩ input. Bass −3 dB at 15 Hz. A full-scale DAC signal is 1.09 V peak at the amplifier's inputs (limit 2.5 V) |
 | A8 | 15 V boost, 12 V regulator | 12.04 V at 10 and 30 mA. At 10 mA the boost switches in bursts (157 kHz on average, gaps up to 47 µs), which leaves a few µV of 4–10 kHz ripple on 12 V: 93 nV at the ADC pin, 40 dB under its floor. At 30 mA it switches steadily at 373 kHz |
@@ -55,6 +55,21 @@ You need ngspice (version 44 was used) and Python 3. No Python packages are need
   dual-gang pot as the volume knobs (RK09L12B0A4S, one gang used) with every resistor around it
   a fifth of its old value (20 kΩ across it, Rg 442 Ω, 100 µF, 220 pF): the same gain, and the
   lower resistances add less noise.
+
+### What the 2026-11-15 review changed
+
+- **ADC input resistor: 100 Ω → 2.2 kΩ, its capacitor 10 nF → 470 pF** (the same 150 kHz corner).
+  TI's datasheet (10.1.5.1) asks for about 5 mA at the very most through the input pins' ESD
+  diodes. The gain stage's output can swing from 0.2 V to 11.85 V around its 5 V rest, more
+  than the pin's −1.7 V to 5.0 V allows, and falls to 0 V at power-off. With 100 Ω that pushed
+  6 to 19 mA into the pin at power-off and about 30 mA when the stage was overdriven. With
+  2.2 kΩ it is 3.7 mA at the very worst (A5). It costs 0.9 dB of level into the ADC's 20 kΩ, so
+  the clip LED now lights about 2 dB under the ADC's full scale.
+- A5 drives the network with a source for these cases, not the op-amp: TI's model stops when
+  it is driven hard into both rails.
+- The clocks (not simulated: logic): both oscillators run all the time and an AND gate on each
+  lets the DAC's GPIO pass its clock. The oscillators take up to 5 ms to start from their
+  disable pin; the driver looks for the clock 3 to 4 ms after it switches.
 
 ### The power-off thump (A6)
 

@@ -70,7 +70,8 @@ def load(path=NETLIST):
     for comp in kids(kid(root, "components"), "comp"):
         ref = kid(comp, "ref")[1]
         lib = kid(comp, "libsource")
-        props = {kid(p, "name")[1]: kid(p, "value")[1] for p in kids(comp, "property")}
+        # a flag such as exclude_from_bom is a property with a name and no value
+        props = {kid(p, "name")[1]: (kid(p, "value") or [None, ""])[1] for p in kids(comp, "property")}
         fields = {f[1][1]: f[2] if len(f) > 2 else "" for f in kids(kid(comp, "fields") or [], "field")}
         parts[ref] = Part(ref, kid(comp, "value")[1], f"{kid(lib, 'lib')[1]}:{kid(lib, 'part')[1]}",
                           props.get("Sheetname", ""), fields)

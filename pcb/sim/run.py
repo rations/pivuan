@@ -321,7 +321,7 @@ def a3():
 
 
 def a5():
-    say("A5  Into the ADC: the 10 uF, 100 ohm, 10 nF network and the PCM1863's 20 kohm input")
+    say("A5  Into the ADC: the 10 uF, 2.2 kohm, 470 pF network and the PCM1863's 20 kohm input")
     ok = True
     for p, label in ((0, "least"), (1, "full")):
         ngspice(f"a5_{p}", guitar_deck(p, ["V_s GTR_TIP 0 dc 0 ac 1"]),
@@ -346,6 +346,46 @@ def a5():
     peak = max(v)
     over = (peak - final) / (final - base) * 100
     ok &= check("no ringing driving the network (step at full gain)", over < 10, f"overshoot {over:.1f} %")
+    ok &= adc_pin_stress()
+    return ok
+
+
+# The PCM1863's analog inputs may go from -1.7 V to 5.0 V (datasheet 7.1); past that its ESD
+# diodes clamp, and TI asks for about 5 mA through them at the very most (10.1.5.1). Modelled as
+# ideal clamps at those two voltages, with the current through each measured.
+ADC_ESD = [".model DESD D(IS=1e-12 N=1 RS=1)",
+           "D_esd_lo esd_lo esd_lo_i DESD", "V_esd_lo_i esd_lo_i ADC_VINL1 0", "V_esd_lo esd_lo 0 -1.1",
+           "D_esd_hi ADC_VINL1 esd_hi_i DESD", "V_esd_hi_i esd_hi_i esd_hi 0", "V_esd_hi esd_hi 0 4.4"]
+
+
+def adc_pin_stress():
+    """The current pushed into the ADC pin's ESD diodes when the gain stage is overdriven and at
+    power-off. The op-amp is replaced by a source that makes its worst output: TI's model stops
+    when it is driven hard into both rails, and the stress depends only on the voltage at
+    ADC_DRIVE. The OPA1642's output reaches 0.2 V from either rail (datasheet), so 0.2 to 11.85 V
+    around its 5 V rest."""
+    ok = True
+    lo, hi, rest = 0.2, V12 - 0.2, V12 * 100 / 240
+    bias_off = [f"R_adc ADC_VINL1 adc_bias {ADC_RIN:g}", "V_adcbias adc_bias 0 pwl(0 1.65 2 1.65 2.001 0)"]
+    cases = [
+        ("overdriven, a 1 kHz square from rail to rail", f"pulse({lo} {hi} 0 1u 1u 0.5m 1m)", ADC_LOAD,
+         "tran 2u 1.5 1.45 2u"),
+        ("overdriven from rest, the first peaks", f"pwl(0 {rest} 2 {rest} 2.000001 {hi} 2.0005 {hi} 2.000501 {lo} 2.001 {lo} 2.001001 {hi})",
+         ADC_LOAD, "tran 2u 2.003 1.999 2u"),
+        ("the worst jump: held at the low rail, then to the high rail", f"pwl(0 {lo} 3 {lo} 3.000001 {hi})",
+         ADC_LOAD, "tran 5u 3.05 2.99 5u"),
+        ("power-off: output and the ADC's bias gone in 1 ms", f"pwl(0 {rest} 2 {rest} 2.001 0)", bias_off,
+         "tran 5u 2.3 1.99 5u"),
+    ]
+    for i, (label, wave, load, tran) in enumerate(cases):
+        name = f"a5_esd_{i}"
+        lines = kinet.spice(PARTS, ADC_NET) + [f"V_drive ADC_DRIVE 0 {wave}"] + load + ADC_ESD
+        ngspice(name, lines, [tran, f"wrdata {name}.dat v(ADC_VINL1) i(V_esd_lo_i) i(V_esd_hi_i)"], models=AUDIO_MODELS)
+        d = data(f"{name}.dat")
+        pin = d["v(ADC_VINL1)"]
+        cur = max(max(abs(x) for x in d["i(V_esd_lo_i)"]), max(abs(x) for x in d["i(V_esd_hi_i)"])) * 1e3
+        ok &= check(f"ADC pin, {label}: ESD diode current under 5 mA", cur < 5.0,
+                    f"{cur:.2f} mA at most; pin between {min(pin):+.2f} and {max(pin):+.2f} V")
     return ok
 
 
