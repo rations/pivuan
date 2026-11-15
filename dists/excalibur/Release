@@ -1,0 +1,24 @@
+Architectures: arm64
+Codename: excalibur
+Components: main
+Date: Sun, 15 Nov 2026 23:58:21 +0000
+Description: Pivuan: Kernel, firmware, board support, pivuan-config and audio application updates for Devuan on the Raspberry Pi
+Label: Pivuan
+Origin: Pivuan
+Suite: excalibur
+MD5Sum:
+ ad4782f852164442d2419696d4de9cfe            67395 main/binary-arm64/Packages
+ c8b787f5857594a68b5c4cb5d8aaf97d            19246 main/binary-arm64/Packages.gz
+ dcd62565fd0727856cd42591137348b1            17212 main/binary-arm64/Packages.xz
+SHA1:
+ 0c536567f37397a77e696e2e9c5a28eafae8d578            67395 main/binary-arm64/Packages
+ a8b2159c63b4d1ff73797dc90ee24c155c856f36            19246 main/binary-arm64/Packages.gz
+ bd15d01d588d705155dc67f2d52055436fe3efeb            17212 main/binary-arm64/Packages.xz
+SHA256:
+ b8204e1a948b70c7463ea1fce52a9f72c911ea80808d977fff615f1ce0d01662            67395 main/binary-arm64/Packages
+ 96bfc0736ecf2219081c27be1f271845c697f95eba8a1152c99f5aba9172abab            19246 main/binary-arm64/Packages.gz
+ 7955b482161fdc339bce53bc25fe82334b90866c59af43e38bac2f8111a614f1            17212 main/binary-arm64/Packages.xz
+SHA512:
+ 838766218166751fe3b09a128e17fc0ae6e08db75984d749ef4fc2864810f0faf53c32f8bff33957a98e5e6c3b1a3866c51777a827f9f8ed674ca41023cdd21e            67395 main/binary-arm64/Packages
+ 5cf2a602bbc158cad853f9d654df07ee4241dbc91998c975d60bd28235936f9912ee00f8471bfea0f92e280aaea43942990baeca421b5d168e429234701f7dd0            19246 main/binary-arm64/Packages.gz
+ fbfb16e60d6a8a3e6a42a8d48077b062f5fbadc3e558ffa07d0ae213fd5fb2dc10e669551137f18f5b7b889ad73a0540d571ce03eafa2a9eb6c94537b8e059f2            17212 main/binary-arm64/Packages.xz
