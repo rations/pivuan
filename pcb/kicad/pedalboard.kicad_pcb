@@ -25309,7 +25309,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Kyocera"
+		(property "Manufacturer" "SCTF"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25321,7 +25321,7 @@
 				)
 			)
 		)
-		(property "MPN" "KC3225K24.5760C1GE00"
+		(property "MPN" "SX3M24.576B10F20TNN"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25333,7 +25333,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7431342"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25510,7 +25510,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Kyocera"
+		(property "Manufacturer" "SCTF"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25522,7 +25522,7 @@
 				)
 			)
 		)
-		(property "MPN" "KC3225K22.5792C1GE00"
+		(property "MPN" "SX3M22.5792B10F20TNN"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -25534,7 +25534,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7431341"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27250,7 +27250,7 @@
 				)
 			)
 		)
-		(property "Value" "TPS7A2033PDBV"
+		(property "Value" "NCP163ASN330"
 			(at 0 2.4 180)
 			(layer "F.Fab")
 			(uuid "4dc0c37a-8bd4-4070-b99e-d7f1d77dcf5d")
@@ -27285,7 +27285,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27297,7 +27297,7 @@
 				)
 			)
 		)
-		(property "MPN" "TPS7A2033PDBVR"
+		(property "MPN" "NCP163ASN330T1G"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -27309,7 +27309,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C603656"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29510,7 +29510,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393B"
+		(property "Value" "LM393"
 			(at 0 3.4 180)
 			(layer "F.Fab")
 			(uuid "4b629183-ac45-4f79-a0fb-abe8b534c95c")
@@ -29545,7 +29545,7 @@
 				)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29557,7 +29557,7 @@
 				)
 			)
 		)
-		(property "MPN" "LM393BIDR"
+		(property "MPN" "LM393DR2G"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -29569,7 +29569,7 @@
 				)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7955"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)

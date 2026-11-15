@@ -7977,7 +7977,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393B"
+		(property "Value" "LM393"
 			(at 116.84 238.76 0)
 			(effects
 				(font
@@ -7994,7 +7994,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm393.pdf"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/lm393-d.pdf"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -8012,7 +8012,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -8021,7 +8021,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "LM393BIDR"
+		(property "MPN" "LM393DR2G"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -8030,7 +8030,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7955"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -8039,7 +8039,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
+		(property "Note" "onsemi LM393DR2G (JLCPCB stocks it). Output leakage 0.1 nA typical, but up to 1 uA allowed when hot, which would make the LED glow faintly through the 2.2M. TI's LM393BIDR (50 nA at most) drops in if that shows"
 			(at 110.49 234.95 0)
 			(effects
 				(font
@@ -8146,7 +8146,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393B"
+		(property "Value" "LM393"
 			(at 116.84 265.43 0)
 			(effects
 				(font
@@ -8163,7 +8163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm393.pdf"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/lm393-d.pdf"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -8181,7 +8181,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -8190,7 +8190,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "LM393BIDR"
+		(property "MPN" "LM393DR2G"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -8199,7 +8199,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7955"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -8208,7 +8208,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
+		(property "Note" "onsemi LM393DR2G (JLCPCB stocks it). Output leakage 0.1 nA typical, but up to 1 uA allowed when hot, which would make the LED glow faintly through the 2.2M. TI's LM393BIDR (50 nA at most) drops in if that shows"
 			(at 110.49 261.62 0)
 			(effects
 				(font
@@ -8315,7 +8315,7 @@
 				)
 			)
 		)
-		(property "Value" "LM393B"
+		(property "Value" "LM393"
 			(at 146.05 265.43 0)
 			(effects
 				(font
@@ -8332,7 +8332,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/lm393.pdf"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/lm393-d.pdf"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -8350,7 +8350,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -8359,7 +8359,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "LM393BIDR"
+		(property "MPN" "LM393DR2G"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -8368,7 +8368,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7955"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -8377,7 +8377,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "The B version (LM393BIDR): output leakage at most 50 nA, which the 2.2M recharge needs (the plain LM393 allows 1 uA when hot)"
+		(property "Note" "onsemi LM393DR2G (JLCPCB stocks it). Output leakage 0.1 nA typical, but up to 1 uA allowed when hot, which would make the LED glow faintly through the 2.2M. TI's LM393BIDR (50 nA at most) drops in if that shows"
 			(at 139.7 261.62 0)
 			(effects
 				(font
@@ -8900,7 +8900,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Discharges the hold capacitor quickly: 5.5 mA, inside the LM393B's 6 mA minimum sink"
+		(property "Note" "Discharges the hold capacitor quickly: 5.5 mA, inside the LM393's 6 mA minimum sink"
 			(at 170.18 229.87 0)
 			(effects
 				(font

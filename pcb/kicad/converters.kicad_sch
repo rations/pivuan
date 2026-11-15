@@ -7785,7 +7785,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://global.kyocera.com/prdct/electro/product/pdf/clock_k_e.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7431341.pdf"
 			(at 252.73 80.01 0)
 			(effects
 				(font
@@ -7803,7 +7803,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Kyocera"
+		(property "Manufacturer" "SCTF"
 			(at 255.27 80.01 0)
 			(effects
 				(font
@@ -7812,7 +7812,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "KC3225K22.5792C1GE00"
+		(property "MPN" "SX3M22.5792B10F20TNN"
 			(at 255.27 80.01 0)
 			(effects
 				(font
@@ -7821,7 +7821,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7431341"
 			(at 255.27 80.01 0)
 			(effects
 				(font
@@ -7830,7 +7830,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Kyocera KC3225K: pad 1 INH (open/high runs; tied high: always running), 2 GND, 3 out, 4 VCC. Its land pattern (1.2 x 0.95 pads on 2.2 x 1.75) fits the ASE footprint"
+		(property "Note" "SCTF SX3M22.5792B10F20TNN, 3.3 V CMOS: pad 1 tri-state (open/high runs; tied high: always running), 2 GND, 3 out, 4 Vdd. Its land pattern (1.2 x 0.95 pads on 2.2 x 1.75) is the ASE footprint's, and the Kyocera KC3225K's, which it replaces"
 			(at 255.27 80.01 0)
 			(effects
 				(font
@@ -8145,7 +8145,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://global.kyocera.com/prdct/electro/product/pdf/clock_k_e.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C7431341.pdf"
 			(at 252.73 119.38 0)
 			(effects
 				(font
@@ -8163,7 +8163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Kyocera"
+		(property "Manufacturer" "SCTF"
 			(at 255.27 119.38 0)
 			(effects
 				(font
@@ -8172,7 +8172,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "KC3225K24.5760C1GE00"
+		(property "MPN" "SX3M24.576B10F20TNN"
 			(at 255.27 119.38 0)
 			(effects
 				(font
@@ -8181,7 +8181,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C7431342"
 			(at 255.27 119.38 0)
 			(effects
 				(font
@@ -8190,7 +8190,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Same series as the 22.5792 MHz part"
+		(property "Note" "SCTF SX3M24.576B10F20TNN, same series as the 22.5792 MHz part"
 			(at 255.27 119.38 0)
 			(effects
 				(font

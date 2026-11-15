@@ -6101,7 +6101,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TPS7A2033PDBV"
+		(property "Value" "NCP163ASN330"
 			(at 196.85 105.41 0)
 			(effects
 				(font
@@ -6119,7 +6119,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
+		(property "Datasheet" "https://www.onsemi.com/pdf/datasheet/ncp163-d.pdf"
 			(at 204.47 110.49 0)
 			(effects
 				(font
@@ -6137,7 +6137,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer" "Texas Instruments"
+		(property "Manufacturer" "onsemi"
 			(at 204.47 110.49 0)
 			(effects
 				(font
@@ -6146,7 +6146,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "TPS7A2033PDBVR"
+		(property "MPN" "NCP163ASN330T1G"
 			(at 204.47 110.49 0)
 			(effects
 				(font
@@ -6155,7 +6155,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C603656"
 			(at 204.47 110.49 0)
 			(effects
 				(font
@@ -6164,7 +6164,7 @@
 				(hide yes)
 			)
 		)
-		(property "Note" "Datasheet: 1 uF in, 1 uF out; 0.47-200 uF effective on OUT"
+		(property "Note" "NCP163ASN330T1G, SOT-23-5: 1 IN, 2 GND, 3 EN, 4 NC, 5 OUT; 1 uF in, 1 uF out. Drop-in for the TPS7A2033PDBVR (same pins), which JLCPCB does not stock"
 			(at 204.47 110.49 0)
 			(effects
 				(font
