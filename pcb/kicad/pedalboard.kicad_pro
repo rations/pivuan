@@ -367,10 +367,6 @@
         "pattern": "*BOOST_SW"
       },
       {
-        "netclass": "Supply",
-        "pattern": "PICO_3V3"
-      },
-      {
         "netclass": "Headphone",
         "pattern": "*HP_L_OUT"
       },
