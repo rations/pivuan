@@ -5,7 +5,7 @@
 	(uuid "3bcc4b79-1880-583a-b0ae-d715fcf404f8")
 	(paper "A4")
 	(title_block
-		(title "Pivuan pedalboard")
+		(title "Pivuan audio board")
 		(company "Pivuan pedalboard")
 		(comment 1 "CERN-OHL-S-2.0")
 	)
