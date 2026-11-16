@@ -43,7 +43,7 @@ module rear_cuts() {
     // J8: NMJ6HCD2
     translate([142, -1, 8.14]) rotate([-90, 0, 0]) cylinder(d = 11.4, h = wall + 2, $fn = 64);
     // SW1: PTS645
-    translate([161, -1, 3.5]) rotate([-90, 0, 0]) cylinder(d = 4.0, h = wall + 2, $fn = 64);
+    translate([161, -1, 4.05]) rotate([-90, 0, 0]) cylinder(d = 4.5, h = wall + 2, $fn = 64);
     // the Pi's USB 2 pair: 2.28 mm into the panel
     translate([170.25, -1.00, -14.40]) cube([15.50, 5.00, 18.35]);
     // the Pi's USB 3 pair: 2.50 mm into the panel
